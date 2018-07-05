@@ -301,14 +301,21 @@
       
         
           
-            <script type="math/tex; mode=display">
-  D=\underbrace{A}_{\text{low rank matrix}}+\underbrace{E}_{\text{sparse matrix}} \notag</script><script type="math/tex; mode=display">
+            <h1 id="Introduction-to-RPCA"><a href="#Introduction-to-RPCA" class="headerlink" title="Introduction to RPCA"></a>Introduction to RPCA</h1><p><br><br>The data we collect usually have the low rank property, but the property will vanished when the data is collected causing the noisy, but we can still decomposite the matrix into low-rank matrix and spares error matrix from the corruped data.</p>
+<script type="math/tex; mode=display">
+  D=\underbrace{A}_{\text{low rank matrix}}+\underbrace{E}_{\text{sparse matrix}} \notag</script><p>Traditional approach for solving this problem is using PCA (Principal Components Analysis), there are many interpretation to PCA, one relate to rank is despiting the low value singular value as this componets contribute less to the data. Thus, it can be considered as the noisy. So we take the $k^{th}$ largest singular value and drop the rest , this can be represnt as the following formulation :</p>
+<script type="math/tex; mode=display">
   \mathop{min}_{A,E} \|E \|_F, \ \ \ \
-  \text{subject to } \ rank(A)\leq r, D = A + E \notag</script><script type="math/tex; mode=display">
+  \text{subject to } \ rank(A)\leq r, D = A + E \notag</script><p>PCA has a shortage that it is not robust to the outliers,  then the RPCA (Robust Principal Components Analysis) came out, RPCA could making the matrix recovery whether the noisy is large or not only if the sparse property is confirmed, the original form of the RPCA can be written as :</p>
+<script type="math/tex; mode=display">
   \mathop{min}_{A,E} rank(A) + \|E\|_0, \ \ \ \
-  \text{subject to } \ D = A + E \notag</script><script type="math/tex; mode=display">
+  \text{subject to } \ D = A + E \notag</script><p>The optimization formulation above is non-convex and is hard to get the solution, we can use the convex relax technology apply on it, then it turn out into the most used and the most efficient from:</p>
+<script type="math/tex; mode=display">
   \mathop{min}_{A,E} \|A\|_* + \|E\|_1, \ \ \ \
-  \text{subject to } \ D = A + E \notag</script><script type="math/tex; mode=display">
+  \text{subject to } \ D = A + E \notag</script><p>$| \cdot |_*$ is the unclear norm, which is the sum of the all singular values : $\sum_i^n\sigma_i$, $l_1$ norm of matrix $| \cdot |_1$ is the sum of absolute value of all the element : $\sum_i^n \sum_j^n |D_{ij}|$ .</p>
+<hr>
+<h1 id="Algorithm-of-RPCA"><a href="#Algorithm-of-RPCA" class="headerlink" title="Algorithm of RPCA"></a>Algorithm of RPCA</h1><p><br><br>Before introducting the Algorithm, we first introducing the two operators</p>
+<script type="math/tex; mode=display">
 \begin{align}
   \mathcal{D}_{\tau}(X) :=  U \mathcal{D}_{\tau} (\Sigma) V^{\prime} ,
   \ \ \mathcal{D}_{\tau}(\Sigma) = diag (  \{  \sigma_i - \tau  \}  )
@@ -330,127 +337,6 @@
   E_{k+1} &= ST_{\lambda/\mu_k} (D - A_{k+1} + \mu_k^{-1} Y_k) \notag \\
   Y_{k+1} &= Y_k + \mu_k ( D - A_{k+1} - E_{k+1} ) \notag
 \end{align}</script>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/test/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Eulring">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="EyEular">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/04/test/" itemprop="url">test</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-04T21:34:13+08:00">
-                2018-07-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>\begin{align}<br>  \mathop{min}_{A,E} rank(A) + |E|_1,    \<br>  \text{subject to }  D = A + E \notag<br>\end{align}</p>
-<p>\begin{align}<br>  \mathcal{D}_{\tau}(X) :=  U \mathcal{D}_{\tau} (\Sigma) V^{\prime} ,<br>    \mathcal{D}_{\tau}(\Sigma) = diag (  \{  \sigma_i - \tau  \}  )<br>  \notag \\<br>  \mathcal{D}_{\tau}(Y) = \mathop{arg} \mathop{min}_{X} \left \{<br>    \frac{1}{2} | X- Y |_F^2 + \tau |X|_2<br>  \right \} \notag<br>\end{align}</p>
-
           
         
       
@@ -659,7 +545,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

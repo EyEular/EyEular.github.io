@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="D=\underbrace{A}_{\text{low rank matrix}}+\underbrace{E}_{\text{sparse matrix}} \notag   \mathop{min}_{A,E} \|E \|_F, \ \ \ \   \text{subject to } \ rank(A)\leq r, D = A + E \notag   \mathop{min}_{">
+<meta name="description" content="Introduction to RPCAThe data we collect usually have the low rank property, but the property will vanished when the data is collected causing the noisy, but we can still decomposite the matrix into lo">
 <meta name="keywords" content="CV &amp; MATH">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Robust PCA">
 <meta property="og:url" content="http://yoursite.com/2018/07/04/Robust-PCA/index.html">
 <meta property="og:site_name" content="EyEular">
-<meta property="og:description" content="D=\underbrace{A}_{\text{low rank matrix}}+\underbrace{E}_{\text{sparse matrix}} \notag   \mathop{min}_{A,E} \|E \|_F, \ \ \ \   \text{subject to } \ rank(A)\leq r, D = A + E \notag   \mathop{min}_{">
+<meta property="og:description" content="Introduction to RPCAThe data we collect usually have the low rank property, but the property will vanished when the data is collected causing the noisy, but we can still decomposite the matrix into lo">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-04T14:56:15.533Z">
+<meta property="og:updated_time" content="2018-07-05T08:55:32.288Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Robust PCA">
-<meta name="twitter:description" content="D=\underbrace{A}_{\text{low rank matrix}}+\underbrace{E}_{\text{sparse matrix}} \notag   \mathop{min}_{A,E} \|E \|_F, \ \ \ \   \text{subject to } \ rank(A)\leq r, D = A + E \notag   \mathop{min}_{">
+<meta name="twitter:description" content="Introduction to RPCAThe data we collect usually have the low rank property, but the property will vanished when the data is collected causing the noisy, but we can still decomposite the matrix into lo">
 
 
 
@@ -300,14 +300,21 @@
       
 
       
-        <script type="math/tex; mode=display">
-  D=\underbrace{A}_{\text{low rank matrix}}+\underbrace{E}_{\text{sparse matrix}} \notag</script><script type="math/tex; mode=display">
+        <h1 id="Introduction-to-RPCA"><a href="#Introduction-to-RPCA" class="headerlink" title="Introduction to RPCA"></a>Introduction to RPCA</h1><p><br><br>The data we collect usually have the low rank property, but the property will vanished when the data is collected causing the noisy, but we can still decomposite the matrix into low-rank matrix and spares error matrix from the corruped data.</p>
+<script type="math/tex; mode=display">
+  D=\underbrace{A}_{\text{low rank matrix}}+\underbrace{E}_{\text{sparse matrix}} \notag</script><p>Traditional approach for solving this problem is using PCA (Principal Components Analysis), there are many interpretation to PCA, one relate to rank is despiting the low value singular value as this componets contribute less to the data. Thus, it can be considered as the noisy. So we take the $k^{th}$ largest singular value and drop the rest , this can be represnt as the following formulation :</p>
+<script type="math/tex; mode=display">
   \mathop{min}_{A,E} \|E \|_F, \ \ \ \
-  \text{subject to } \ rank(A)\leq r, D = A + E \notag</script><script type="math/tex; mode=display">
+  \text{subject to } \ rank(A)\leq r, D = A + E \notag</script><p>PCA has a shortage that it is not robust to the outliers,  then the RPCA (Robust Principal Components Analysis) came out, RPCA could making the matrix recovery whether the noisy is large or not only if the sparse property is confirmed, the original form of the RPCA can be written as :</p>
+<script type="math/tex; mode=display">
   \mathop{min}_{A,E} rank(A) + \|E\|_0, \ \ \ \
-  \text{subject to } \ D = A + E \notag</script><script type="math/tex; mode=display">
+  \text{subject to } \ D = A + E \notag</script><p>The optimization formulation above is non-convex and is hard to get the solution, we can use the convex relax technology apply on it, then it turn out into the most used and the most efficient from:</p>
+<script type="math/tex; mode=display">
   \mathop{min}_{A,E} \|A\|_* + \|E\|_1, \ \ \ \
-  \text{subject to } \ D = A + E \notag</script><script type="math/tex; mode=display">
+  \text{subject to } \ D = A + E \notag</script><p>$| \cdot |_*$ is the unclear norm, which is the sum of the all singular values : $\sum_i^n\sigma_i$, $l_1$ norm of matrix $| \cdot |_1$ is the sum of absolute value of all the element : $\sum_i^n \sum_j^n |D_{ij}|$ .</p>
+<hr>
+<h1 id="Algorithm-of-RPCA"><a href="#Algorithm-of-RPCA" class="headerlink" title="Algorithm of RPCA"></a>Algorithm of RPCA</h1><p><br><br>Before introducting the Algorithm, we first introducing the two operators</p>
+<script type="math/tex; mode=display">
 \begin{align}
   \mathcal{D}_{\tau}(X) :=  U \mathcal{D}_{\tau} (\Sigma) V^{\prime} ,
   \ \ \mathcal{D}_{\tau}(\Sigma) = diag (  \{  \sigma_i - \tau  \}  )
@@ -352,8 +359,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/04/test/" rel="next" title="test">
-                <i class="fa fa-chevron-left"></i> test
+              <a href="/2018/07/04/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
           </div>
@@ -412,8 +419,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -428,7 +444,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -497,6 +513,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction-to-RPCA"><span class="nav-number">1.</span> <span class="nav-text">Introduction to RPCA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm-of-RPCA"><span class="nav-number">2.</span> <span class="nav-text">Algorithm of RPCA</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
