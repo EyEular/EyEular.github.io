@@ -230,6 +230,153 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/Robust-PCA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eulring">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EyEular">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/04/Robust-PCA/" itemprop="url">Robust PCA</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-04T22:47:11+08:00">
+                2018-07-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <script type="math/tex; mode=display">
+  D=\underbrace{A}_{\text{low rank matrix}}+\underbrace{E}_{\text{sparse matrix}} \notag</script><script type="math/tex; mode=display">
+  \mathop{min}_{A,E} \|E \|_F, \ \ \ \
+  \text{subject to } \ rank(A)\leq r, D = A + E \notag</script><script type="math/tex; mode=display">
+  \mathop{min}_{A,E} rank(A) + \|E\|_0, \ \ \ \
+  \text{subject to } \ D = A + E \notag</script><script type="math/tex; mode=display">
+  \mathop{min}_{A,E} \|A\|_* + \|E\|_1, \ \ \ \
+  \text{subject to } \ D = A + E \notag</script><script type="math/tex; mode=display">
+\begin{align}
+  \mathcal{D}_{\tau}(X) :=  U \mathcal{D}_{\tau} (\Sigma) V^{\prime} ,
+  \ \ \mathcal{D}_{\tau}(\Sigma) = diag (  \{  \sigma_i - \tau  \}  )
+  \notag \\
+  \mathcal{D}_{\tau}(Y) = \mathop{arg} \mathop{min}_{X} \left \{
+    \frac{1}{2} \| X- Y \|_F^2 + \tau \|X\|_*
+  \right \} \notag
+\end{align}</script><script type="math/tex; mode=display">
+\begin{align}
+  \psi_{st}(Y) =  \mathop{arg} \mathop{min}_{X} \left \{
+    \frac{1}{2} \| X- Y \|_F^2 + \tau \|X\|_1
+  \right \} \notag
+\end{align}</script><script type="math/tex; mode=display">
+\begin{align}
+  L(A,E,Y,\mu) = \|A\|_* + \lambda\|E\|_1+ \langle Y,D-A-E \rangle + \frac{\mu}{2} \| D- A -E \|_F^2 \notag
+\end{align}</script><script type="math/tex; mode=display">
+\begin{align}
+  A_{k+1} &= SVT_{1/\mu_k}(D-E_k + \mu_k^{-1} Y_k) \notag \\
+  E_{k+1} &= ST_{\lambda/\mu_k} (D - A_{k+1} + \mu_k^{-1} Y_k) \notag \\
+  Y_{k+1} &= Y_k + \mu_k ( D - A_{k+1} - E_{k+1} ) \notag
+\end{align}</script>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/test/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -512,7 +659,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

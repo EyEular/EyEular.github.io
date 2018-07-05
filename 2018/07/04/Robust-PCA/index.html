@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="\begin{align}  \mathop{min}_{A,E} rank(A) + |E|_1,    \  \text{subject to }  D = A + E \notag\end{align} \begin{align}  \mathcal{D}_{\tau}(X) :=  U \mathcal{D}_{\tau} (\Sigma) V^{\prime} ,    \mathcal">
+<meta name="description" content="D=\underbrace{A}_{\text{low rank matrix}}+\underbrace{E}_{\text{sparse matrix}} \notag   \mathop{min}_{A,E} \|E \|_F, \ \ \ \   \text{subject to } \ rank(A)\leq r, D = A + E \notag   \mathop{min}_{">
 <meta name="keywords" content="CV &amp; MATH">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test">
-<meta property="og:url" content="http://yoursite.com/2018/07/04/test/index.html">
+<meta property="og:title" content="Robust PCA">
+<meta property="og:url" content="http://yoursite.com/2018/07/04/Robust-PCA/index.html">
 <meta property="og:site_name" content="EyEular">
-<meta property="og:description" content="\begin{align}  \mathop{min}_{A,E} rank(A) + |E|_1,    \  \text{subject to }  D = A + E \notag\end{align} \begin{align}  \mathcal{D}_{\tau}(X) :=  U \mathcal{D}_{\tau} (\Sigma) V^{\prime} ,    \mathcal">
+<meta property="og:description" content="D=\underbrace{A}_{\text{low rank matrix}}+\underbrace{E}_{\text{sparse matrix}} \notag   \mathop{min}_{A,E} \|E \|_F, \ \ \ \   \text{subject to } \ rank(A)\leq r, D = A + E \notag   \mathop{min}_{">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-04T13:44:34.800Z">
+<meta property="og:updated_time" content="2018-07-04T14:56:15.533Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test">
-<meta name="twitter:description" content="\begin{align}  \mathop{min}_{A,E} rank(A) + |E|_1,    \  \text{subject to }  D = A + E \notag\end{align} \begin{align}  \mathcal{D}_{\tau}(X) :=  U \mathcal{D}_{\tau} (\Sigma) V^{\prime} ,    \mathcal">
+<meta name="twitter:title" content="Robust PCA">
+<meta name="twitter:description" content="D=\underbrace{A}_{\text{low rank matrix}}+\underbrace{E}_{\text{sparse matrix}} \notag   \mathop{min}_{A,E} \|E \|_F, \ \ \ \   \text{subject to } \ rank(A)\leq r, D = A + E \notag   \mathop{min}_{">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/04/test/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/04/Robust-PCA/"/>
 
 
 
 
 
-  <title>test | EyEular</title>
+  <title>Robust PCA | EyEular</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/test/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/Robust-PCA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eulring">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">test</h1>
+          <h1 class="post-title" itemprop="name headline">Robust PCA</h1>
         
 
         <div class="post-meta">
@@ -262,7 +262,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-04T21:34:13+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-04T22:47:11+08:00">
                 2018-07-04
               </time>
             
@@ -300,9 +300,35 @@
       
 
       
-        <p>\begin{align}<br>  \mathop{min}_{A,E} rank(A) + |E|_1,    \<br>  \text{subject to }  D = A + E \notag<br>\end{align}</p>
-<p>\begin{align}<br>  \mathcal{D}_{\tau}(X) :=  U \mathcal{D}_{\tau} (\Sigma) V^{\prime} ,<br>    \mathcal{D}_{\tau}(\Sigma) = diag (  \{  \sigma_i - \tau  \}  )<br>  \notag \\<br>  \mathcal{D}_{\tau}(Y) = \mathop{arg} \mathop{min}_{X} \left \{<br>    \frac{1}{2} | X- Y |_F^2 + \tau |X|_2<br>  \right \} \notag<br>\end{align}</p>
-
+        <script type="math/tex; mode=display">
+  D=\underbrace{A}_{\text{low rank matrix}}+\underbrace{E}_{\text{sparse matrix}} \notag</script><script type="math/tex; mode=display">
+  \mathop{min}_{A,E} \|E \|_F, \ \ \ \
+  \text{subject to } \ rank(A)\leq r, D = A + E \notag</script><script type="math/tex; mode=display">
+  \mathop{min}_{A,E} rank(A) + \|E\|_0, \ \ \ \
+  \text{subject to } \ D = A + E \notag</script><script type="math/tex; mode=display">
+  \mathop{min}_{A,E} \|A\|_* + \|E\|_1, \ \ \ \
+  \text{subject to } \ D = A + E \notag</script><script type="math/tex; mode=display">
+\begin{align}
+  \mathcal{D}_{\tau}(X) :=  U \mathcal{D}_{\tau} (\Sigma) V^{\prime} ,
+  \ \ \mathcal{D}_{\tau}(\Sigma) = diag (  \{  \sigma_i - \tau  \}  )
+  \notag \\
+  \mathcal{D}_{\tau}(Y) = \mathop{arg} \mathop{min}_{X} \left \{
+    \frac{1}{2} \| X- Y \|_F^2 + \tau \|X\|_*
+  \right \} \notag
+\end{align}</script><script type="math/tex; mode=display">
+\begin{align}
+  \psi_{st}(Y) =  \mathop{arg} \mathop{min}_{X} \left \{
+    \frac{1}{2} \| X- Y \|_F^2 + \tau \|X\|_1
+  \right \} \notag
+\end{align}</script><script type="math/tex; mode=display">
+\begin{align}
+  L(A,E,Y,\mu) = \|A\|_* + \lambda\|E\|_1+ \langle Y,D-A-E \rangle + \frac{\mu}{2} \| D- A -E \|_F^2 \notag
+\end{align}</script><script type="math/tex; mode=display">
+\begin{align}
+  A_{k+1} &= SVT_{1/\mu_k}(D-E_k + \mu_k^{-1} Y_k) \notag \\
+  E_{k+1} &= ST_{\lambda/\mu_k} (D - A_{k+1} + \mu_k^{-1} Y_k) \notag \\
+  Y_{k+1} &= Y_k + \mu_k ( D - A_{k+1} - E_{k+1} ) \notag
+\end{align}</script>
       
     </div>
     
@@ -326,8 +352,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/04/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/07/04/test/" rel="next" title="test">
+                <i class="fa fa-chevron-left"></i> test
               </a>
             
           </div>
@@ -335,10 +361,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/04/Robust-PCA/" rel="prev" title="Robust PCA">
-                Robust PCA <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
