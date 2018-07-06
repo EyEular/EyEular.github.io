@@ -79,19 +79,20 @@
 
 
 
-<meta name="description" content="Conditional Probability Two events $A$ and $B$, with $P(B)&amp;gt;0$, the conditional probability of $A$ given $B$ , denoted by $P(A|B)$, is defined as : P(A|B)=\frac{P(AB)}{P(B)} $P(A)$: prior probabilit">
+<meta name="description" content="Defination of Conditonal ProbabilityDefination Two events $A$ and $B$, with $P(B)&amp;gt;0$, the conditional probability of $A$ given $B$ , denoted by $P(A|B)$, is defined as : P(A|B)=\frac{P(AB)}{P(B)} $">
 <meta name="keywords" content="Math, Probability">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Stochastic Process (Conditional Probability)">
 <meta property="og:url" content="http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/index.html">
 <meta property="og:site_name" content="EyEular">
-<meta property="og:description" content="Conditional Probability Two events $A$ and $B$, with $P(B)&amp;gt;0$, the conditional probability of $A$ given $B$ , denoted by $P(A|B)$, is defined as : P(A|B)=\frac{P(AB)}{P(B)} $P(A)$: prior probabilit">
+<meta property="og:description" content="Defination of Conditonal ProbabilityDefination Two events $A$ and $B$, with $P(B)&amp;gt;0$, the conditional probability of $A$ given $B$ , denoted by $P(A|B)$, is defined as : P(A|B)=\frac{P(AB)}{P(B)} $">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/sp1.jpg">
-<meta property="og:updated_time" content="2018-07-06T01:08:56.951Z">
+<meta property="og:image" content="http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/sp2.jpg">
+<meta property="og:updated_time" content="2018-07-06T02:56:03.938Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stochastic Process (Conditional Probability)">
-<meta name="twitter:description" content="Conditional Probability Two events $A$ and $B$, with $P(B)&amp;gt;0$, the conditional probability of $A$ given $B$ , denoted by $P(A|B)$, is defined as : P(A|B)=\frac{P(AB)}{P(B)} $P(A)$: prior probabilit">
+<meta name="twitter:description" content="Defination of Conditonal ProbabilityDefination Two events $A$ and $B$, with $P(B)&amp;gt;0$, the conditional probability of $A$ given $B$ , denoted by $P(A|B)$, is defined as : P(A|B)=\frac{P(AB)}{P(B)} $">
 <meta name="twitter:image" content="http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/sp1.jpg">
 
 
@@ -302,17 +303,40 @@
       
 
       
-        <p>Conditional Probability</p>
-<p>Two events $A$ and $B$, with $P(B)&gt;0$, the conditional probability of $A$ given $B$ , denoted by $P(A|B)$, is defined as :</p>
+        <h1 id="Defination-of-Conditonal-Probability"><a href="#Defination-of-Conditonal-Probability" class="headerlink" title="Defination of Conditonal Probability"></a>Defination of Conditonal Probability</h1><p><strong>Defination</strong> Two events $A$ and $B$, with $P(B)&gt;0$, the conditional probability of $A$ given $B$ , denoted by $P(A|B)$, is defined as :</p>
 <script type="math/tex; mode=display">P(A|B)=\frac{P(AB)}{P(B)}</script><ul>
 <li>$P(A)$: prior probability</li>
 <li>$P(A|B)$: posterior probability</li>
 </ul>
 <hr>
-<p>Bayes’ Rule &amp; LOTP</p>
-<p>Chain Rule</p>
-<p><img src="/2018/07/06/Stochastic-Process-Conditional-Probability/sp1.jpg" alt="chain rule"></p>
-<script type="math/tex; mode=display">P(A_1,...,A_n)</script><script type="math/tex; mode=display">P(A|B) = \frac{P(B|A)P(A)}{P(B)}</script>
+<h1 id="Bayes’-Rule-amp-LOTP"><a href="#Bayes’-Rule-amp-LOTP" class="headerlink" title="Bayes’ Rule &amp; LOTP"></a>Bayes’ Rule &amp; LOTP</h1><h2 id="Chain-Rule"><a href="#Chain-Rule" class="headerlink" title="Chain Rule"></a>Chain Rule</h2><p><img src="/2018/07/06/Stochastic-Process-Conditional-Probability/sp1.jpg" alt="chain rule"></p>
+<script type="math/tex; mode=display">P(A_1,...,A_n) = P(A_1)P(A_2|A_1)P(A_3|A_1A_2)...P(A_n|A_1,...,A_{n-1})</script><h2 id="Bayes’-Rule"><a href="#Bayes’-Rule" class="headerlink" title="Bayes’ Rule"></a>Bayes’ Rule</h2><script type="math/tex; mode=display">P(A|B) = \frac{P(B|A)P(A)}{P(B)}</script><h2 id="LOTP-Law-of-Total-Probability"><a href="#LOTP-Law-of-Total-Probability" class="headerlink" title="LOTP (Law of Total Probability)"></a>LOTP (Law of Total Probability)</h2><p><img src="/2018/07/06/Stochastic-Process-Conditional-Probability/sp2.jpg" align="center" style=" width:300px;"></p>
+<p><strong>Theorem</strong>: Let $A_1,A_2,…,A_n$ be the partition of the sample space $S$, with $P(A_1)&gt;0$, Then :</p>
+<script type="math/tex; mode=display">P(B) = \sum_i^n P(B|A_i)P(A_i)</script><p><strong>Theorem</strong>: Let $A_1,A_2,…,A_n$ be the partition of the sample space $S$, for any event $B$ such that $P(B) &gt; 0$, we have :</p>
+<script type="math/tex; mode=display">P(A_i|B) = \frac{P(A_i)P(B|A_i)}{P(A_1)P(B|A_1)+\dotsb+P(A_n)P(B|A_n)}</script><hr>
+<h1 id="Conditional-Probabilitiy"><a href="#Conditional-Probabilitiy" class="headerlink" title="Conditional Probabilitiy"></a>Conditional Probabilitiy</h1><p>Conditional Probability is also the probability, so it inherent the property of probability (suppose the sample space is $S$):</p>
+<ul>
+<li>$P(S|E) = 1$ and $P(\emptyset|E) = 0$</li>
+<li>if events $A_1,…$ are disjoint, then $P(\cup_{j=1}^{\infty}A_j|E) = \sum_{j=1}^{\infty}P(A_j|E)$</li>
+<li>$P(A^c|E) = 1 - P(A|E)$</li>
+<li>Inclusion-Exclusion : $P(A\cup B|E) = P(A|E) + P(B|E) - P(A\cap B|E)$</li>
+</ul>
+<h2 id="Bayes’-Rule-with-Extra-Condition"><a href="#Bayes’-Rule-with-Extra-Condition" class="headerlink" title="Bayes’ Rule with Extra Condition:"></a>Bayes’ Rule with Extra Condition:</h2><p><strong>Theorem</strong>: Provided that $P(A\cap E)&gt;0$ and $P(B\cap E)&gt;0$, we have:</p>
+<script type="math/tex; mode=display">P(A|B,E) = \frac{P(B|A,E)P(A|E)}{P(B|E)}</script><h2 id="LOTP-with-Extra-Condition"><a href="#LOTP-with-Extra-Condition" class="headerlink" title="LOTP with Extra Condition:"></a>LOTP with Extra Condition:</h2><p><strong>Theorem</strong>: Let $A_1,A_2,…,A_n$ be the partition of the sample space $S$, with $P(A_i \cap E) &gt;0$, Then:</p>
+<script type="math/tex; mode=display">P(B|E) = \sum_{i=1}^n P(B|A_i,E)P(A_i|E)</script><h2 id="Approaches-for-P-A-B-C"><a href="#Approaches-for-P-A-B-C" class="headerlink" title="Approaches for $P(A|B,C)$"></a>Approaches for $P(A|B,C)$</h2><ul>
+<li><script type="math/tex; mode=display">P(A|B,C) = \frac{P(A,B,C)}{P(B,C)}</script></li>
+<li><script type="math/tex; mode=display">P(A|B,C) = \frac{P(B|A,C)P(A|C)}{P(B|C)}</script></li>
+<li><script type="math/tex; mode=display">P(A|B,C) = \frac{P(C|A,B)P(A|B)}{P(A|C)}</script></li>
+</ul>
+<hr>
+<h1 id="Independence-of-Events"><a href="#Independence-of-Events" class="headerlink" title="Independence of Events"></a>Independence of Events</h1><h2 id="Independence-of-Two-Events"><a href="#Independence-of-Two-Events" class="headerlink" title="Independence of Two Events"></a>Independence of Two Events</h2><p><strong>Defination</strong>: Events $A$ and $B$ are independent if</p>
+<script type="math/tex; mode=display">P(A\cap B) = P(A) P(B)  \Leftrightarrow P(A|B) = P(A) , P(B|A) = P(B)</script><h2 id="Independence-vs-Disjointness"><a href="#Independence-vs-Disjointness" class="headerlink" title="Independence vs Disjointness"></a>Independence vs Disjointness</h2><ul>
+<li>$A,B$ is disjoint : $P(A\cap B) = 0$</li>
+<li>$A,B$ is independent : $P(A) = 0, P(B) = 0$</li>
+</ul>
+<h2 id="Conditional-Independence"><a href="#Conditional-Independence" class="headerlink" title="Conditional Independence"></a>Conditional Independence</h2><p><strong>Defination</strong>: Events $A$ and $B$ are conditionally independent given E if:</p>
+<script type="math/tex; mode=display">P(A\cap B|E) = P(A|E)P(B|E)</script><script type="math/tex; mode=display">Contitional\ Independence \nRightarrow Independence</script><script type="math/tex; mode=display">Independence \nRightarrow Contitional\ Independence</script><p>w</p>
+
       
     </div>
     
@@ -406,8 +430,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -504,6 +537,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Defination-of-Conditonal-Probability"><span class="nav-number">1.</span> <span class="nav-text">Defination of Conditonal Probability</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bayes’-Rule-amp-LOTP"><span class="nav-number">2.</span> <span class="nav-text">Bayes’ Rule &amp; LOTP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Chain-Rule"><span class="nav-number">2.1.</span> <span class="nav-text">Chain Rule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bayes’-Rule"><span class="nav-number">2.2.</span> <span class="nav-text">Bayes’ Rule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LOTP-Law-of-Total-Probability"><span class="nav-number">2.3.</span> <span class="nav-text">LOTP (Law of Total Probability)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Conditional-Probabilitiy"><span class="nav-number">3.</span> <span class="nav-text">Conditional Probabilitiy</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Bayes’-Rule-with-Extra-Condition"><span class="nav-number">3.1.</span> <span class="nav-text">Bayes’ Rule with Extra Condition:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LOTP-with-Extra-Condition"><span class="nav-number">3.2.</span> <span class="nav-text">LOTP with Extra Condition:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Approaches-for-P-A-B-C"><span class="nav-number">3.3.</span> <span class="nav-text">Approaches for $P(A|B,C)$</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Independence-of-Events"><span class="nav-number">4.</span> <span class="nav-text">Independence of Events</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Independence-of-Two-Events"><span class="nav-number">4.1.</span> <span class="nav-text">Independence of Two Events</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Independence-vs-Disjointness"><span class="nav-number">4.2.</span> <span class="nav-text">Independence vs Disjointness</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conditional-Independence"><span class="nav-number">4.3.</span> <span class="nav-text">Conditional Independence</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
