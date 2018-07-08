@@ -230,6 +230,162 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/07/Stochastic-Process-Random-Variable/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eulring">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EyEular">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/07/Stochastic-Process-Random-Variable/" itemprop="url">Stochastic Process (Random Variable)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-07T08:21:04+08:00">
+                2018-07-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>Definition (Discrete Random Variable)</strong> A variable $X$ is <strong><em>discrete</em></strong> if there is a finite list of value $a_1,a_2,…,a_n$ that $P(X=a_j for some j) = 1$, $P(X=x)&gt;0$ is the <strong><em>support</em></strong> of $X$</p>
+<p><strong>Definition (Probability Mass Function)</strong> <strong><em>The probability mass function (PMF)</em></strong> of a discrete r.v. $X$ is the function $p_X$ given by $p_X(x) = P(X=x)$.</p>
+<h1 id="Bernoulli-amp-Binomial"><a href="#Bernoulli-amp-Binomial" class="headerlink" title="Bernoulli &amp; Binomial"></a>Bernoulli &amp; Binomial</h1><p><strong>Definition (Bernoulli Distribution)</strong> shortly, $P(X=1)=p$ and $P(X=0) = 1 - p$, and write as $X\sim Bern(p)$</p>
+<p><strong>Definition (Indicator Random Variable)</strong> The indicator random variable of an event $A$ is the r.v. equals 1 if $A$ occurs and 0 otherwise, We denote the indicator of $A$ by $I_A$ or $I(A)$. Note $I_A \sim Bern(p)$ with p = P(A)</p>
+<p><strong>Theorem (Binomial PMF)</strong> Binomial Distribution is the repeatation of Bernoulli Distribution. If $X\sim Bin(n, p)$ then the PMF of X is</p>
+<script type="math/tex; mode=display">P(X=k) = \left( \begin{array}{c} n \\ k \end{array} \right) p^k (1-p)^{n-k}</script><h1 id="Hypergeometric"><a href="#Hypergeometric" class="headerlink" title="Hypergeometric"></a>Hypergeometric</h1><p><strong>urn Model</strong> A box is fiiled with $w$ white and $b$ black balls, then drawing n balls</p>
+<ul>
+<li>With replacement: $Bin(n,w/(w+b))$ for the number of white balls</li>
+<li>Without replacement : Hypergeometric distribution $HGeom(w,b,n)$</li>
+</ul>
+<p><strong>Theorem (Hypergeometric PMF)</strong> If $X \sim HGeom(w,b,n)$, then the PMF of $X$ is</p>
+<script type="math/tex; mode=display">P(X=k) = \frac {\left ( \begin{array}{c} w \\ k \end{array} \right ) \left( \begin{array}{c} b \\ n-k \end{array} \right)}  {\left( \begin{array}{c} w+b \\ n \end{array} \right)}</script><p><strong>Zipf Distribution</strong> If $X\sim Zipf(\alpha &gt; 0)$, then PMF of $X$ is:</p>
+<script type="math/tex; mode=display">P(X=k) = \frac{\frac{1}{k^{\alpha + 1}}}  {\sum_{j=1}^{\infty}(\frac{1}{j})^{\alpha + 1}}</script><ul>
+<li>Zipf Distribution can measure the Word Frequency</li>
+</ul>
+<h1 id="Cumulative-Distribution-Functions"><a href="#Cumulative-Distribution-Functions" class="headerlink" title="Cumulative Distribution Functions"></a>Cumulative Distribution Functions</h1><p><strong>Definition (Cumulative Distributino Function)</strong> The <strong><em>cumulative distribution function(CDF)</em></strong> os an r.v. $X$ is the function $F_X$ given by $F_X(x) = P(X\leq x)$</p>
+<p><strong>Theorem (Valid CDFs)</strong> CDF has the following properties</p>
+<ul>
+<li>Increasing: If $x_1 &lt; x_2$, then $F(x_1) &lt; F(x_2)$</li>
+<li>Right-Continuous: $F(a)  = lim_{x\rightarrow a^+} F(x)$</li>
+<li>Convergence to $0$ and $1$: $lim_{x\rightarrow - \infty} F(x) = 0$ and $lim_{x \rightarrow \infty} F(x) = 1$</li>
+</ul>
+<h1 id="Functions-of-Random-Variable"><a href="#Functions-of-Random-Variable" class="headerlink" title="Functions of Random Variable:"></a>Functions of Random Variable:</h1><p><strong>Definition (Function of an r.v.)</strong> An experiment with sample space S, an r.v. $X$, and a function $g$, also the $g(X)$ is the variable that maps $s$ to $g(X(s))$, for all $s\in S$</p>
+<p><strong>Theorem (PMF of $g(X)$)</strong> for all y in the support of $g(X)$</p>
+<script type="math/tex; mode=display">P(g(X) = y) = \sum_{x:g(x)=y} P(X=x)</script><p>The function of r.v. map the sample space into real number, which is easy for us calculate in mathematic.</p>
+<h1 id="Independence-of-R-V-s"><a href="#Independence-of-R-V-s" class="headerlink" title="Independence of R.V.s"></a>Independence of R.V.s</h1><p><strong>Definition (Independence of two R.V.s)</strong> Random variables $X$ and $Y$ are said to be <strong><em>independent</em></strong></p>
+<script type="math/tex; mode=display">P(X\leq x,Y\leq y) = P(X\leq x)P(Y\leq y)</script><p>for all $x,y\in R$,<br>In the discrete case, equivalent to :</p>
+<script type="math/tex; mode=display">P(X=x,Y=y) = P(X=x)P(Y=y)</script><p><strong>Definition (Independence of many R.V.s)</strong> Random variables $X_1,…,X_n$ are independent if</p>
+<script type="math/tex; mode=display">P(X_1 \leq x_1,\dotsb , X_n \leq x_n) = P(X_1 \leq x_1) \dotsb P(X_n \leq x_n)</script><p>for all $x_1,\dotsb,x_n \in R$</p>
+<p><strong>Definition (i.i.d)</strong> We call some r.v. that are independent and have the same distribution <strong><em>independent and identicallly distributed</em></strong> or <strong><em>i.i.d</em></strong> for short</p>
+<ul>
+<li>Independent: r.v.s provide no information about each others</li>
+<li>Identically distributed: r.v.s have the same PMF</li>
+</ul>
+<p><strong>Theorem</strong> If $X\sim Bin(n,p)$ , $Y \sim Bin(m,p)$, and $X$ is independent of $Y$, then $X+Y \sim Bin(n+m,p)$</p>
+<p><strong>Definition (Conditional Independence of two R.V.s)</strong></p>
+<script type="math/tex; mode=display">P(X\leq x, Y \leq y| Z= z) = P(X\leq x |Z =z) P(Y\leq y|Z=z)</script><p>w</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -308,8 +464,8 @@
 <li>$P(A|B)$: posterior probability</li>
 </ul>
 <hr>
-<h1 id="Bayes’-Rule-amp-LOTP"><a href="#Bayes’-Rule-amp-LOTP" class="headerlink" title="Bayes’ Rule &amp; LOTP"></a>Bayes’ Rule &amp; LOTP</h1><h2 id="Chain-Rule"><a href="#Chain-Rule" class="headerlink" title="Chain Rule"></a>Chain Rule</h2><p><img src="/2018/07/06/Stochastic-Process-Conditional-Probability/sp1.jpg" alt="chain rule"></p>
-<script type="math/tex; mode=display">P(A_1,...,A_n) = P(A_1)P(A_2|A_1)P(A_3|A_1A_2)...P(A_n|A_1,...,A_{n-1})</script><h2 id="Bayes’-Rule"><a href="#Bayes’-Rule" class="headerlink" title="Bayes’ Rule"></a>Bayes’ Rule</h2><script type="math/tex; mode=display">P(A|B) = \frac{P(B|A)P(A)}{P(B)}</script><h2 id="LOTP-Law-of-Total-Probability"><a href="#LOTP-Law-of-Total-Probability" class="headerlink" title="LOTP (Law of Total Probability)"></a>LOTP (Law of Total Probability)</h2><p><img src="/2018/07/06/Stochastic-Process-Conditional-Probability/sp2.jpg" align="center" style=" width:300px;"></p>
+<h1 id="Bayes’-Rule-amp-LOTP"><a href="#Bayes’-Rule-amp-LOTP" class="headerlink" title="Bayes’ Rule &amp; LOTP"></a>Bayes’ Rule &amp; LOTP</h1><h3 id="Chain-Rule"><a href="#Chain-Rule" class="headerlink" title="Chain Rule"></a>Chain Rule</h3><p><img src="/2018/07/06/Stochastic-Process-Conditional-Probability/sp1.jpg" alt="chain rule"></p>
+<script type="math/tex; mode=display">P(A_1,...,A_n) = P(A_1)P(A_2|A_1)P(A_3|A_1A_2)...P(A_n|A_1,...,A_{n-1})</script><h3 id="Bayes’-Rule"><a href="#Bayes’-Rule" class="headerlink" title="Bayes’ Rule"></a>Bayes’ Rule</h3><script type="math/tex; mode=display">P(A|B) = \frac{P(B|A)P(A)}{P(B)}</script><h3 id="LOTP-Law-of-Total-Probability"><a href="#LOTP-Law-of-Total-Probability" class="headerlink" title="LOTP (Law of Total Probability)"></a>LOTP (Law of Total Probability)</h3><p><img src="/2018/07/06/Stochastic-Process-Conditional-Probability/sp2.jpg" align="center" style=" width:300px;"></p>
 <p><strong>Theorem</strong>: Let $A_1,A_2,…,A_n$ be the partition of the sample space $S$, with $P(A_1)&gt;0$, Then :</p>
 <script type="math/tex; mode=display">P(B) = \sum_i^n P(B|A_i)P(A_i)</script><p><strong>Theorem</strong>: Let $A_1,A_2,…,A_n$ be the partition of the sample space $S$, for any event $B$ such that $P(B) &gt; 0$, we have :</p>
 <script type="math/tex; mode=display">P(A_i|B) = \frac{P(A_i)P(B|A_i)}{P(A_1)P(B|A_1)+\dotsb+P(A_n)P(B|A_n)}</script><hr>
@@ -320,20 +476,20 @@
 <li>$P(A^c|E) = 1 - P(A|E)$</li>
 <li>Inclusion-Exclusion : $P(A\cup B|E) = P(A|E) + P(B|E) - P(A\cap B|E)$</li>
 </ul>
-<h2 id="Bayes’-Rule-with-Extra-Condition"><a href="#Bayes’-Rule-with-Extra-Condition" class="headerlink" title="Bayes’ Rule with Extra Condition:"></a>Bayes’ Rule with Extra Condition:</h2><p><strong>Theorem</strong>: Provided that $P(A\cap E)&gt;0$ and $P(B\cap E)&gt;0$, we have:</p>
-<script type="math/tex; mode=display">P(A|B,E) = \frac{P(B|A,E)P(A|E)}{P(B|E)}</script><h2 id="LOTP-with-Extra-Condition"><a href="#LOTP-with-Extra-Condition" class="headerlink" title="LOTP with Extra Condition:"></a>LOTP with Extra Condition:</h2><p><strong>Theorem</strong>: Let $A_1,A_2,…,A_n$ be the partition of the sample space $S$, with $P(A_i \cap E) &gt;0$, Then:</p>
-<script type="math/tex; mode=display">P(B|E) = \sum_{i=1}^n P(B|A_i,E)P(A_i|E)</script><h2 id="Approaches-for-P-A-B-C"><a href="#Approaches-for-P-A-B-C" class="headerlink" title="Approaches for $P(A|B,C)$"></a>Approaches for $P(A|B,C)$</h2><ul>
+<h3 id="Bayes’-Rule-with-Extra-Condition"><a href="#Bayes’-Rule-with-Extra-Condition" class="headerlink" title="Bayes’ Rule with Extra Condition:"></a>Bayes’ Rule with Extra Condition:</h3><p><strong>Theorem</strong>: Provided that $P(A\cap E)&gt;0$ and $P(B\cap E)&gt;0$, we have:</p>
+<script type="math/tex; mode=display">P(A|B,E) = \frac{P(B|A,E)P(A|E)}{P(B|E)}</script><h3 id="LOTP-with-Extra-Condition"><a href="#LOTP-with-Extra-Condition" class="headerlink" title="LOTP with Extra Condition:"></a>LOTP with Extra Condition:</h3><p><strong>Theorem</strong>: Let $A_1,A_2,…,A_n$ be the partition of the sample space $S$, with $P(A_i \cap E) &gt;0$, Then:</p>
+<script type="math/tex; mode=display">P(B|E) = \sum_{i=1}^n P(B|A_i,E)P(A_i|E)</script><h3 id="Approaches-for-P-A-B-C"><a href="#Approaches-for-P-A-B-C" class="headerlink" title="Approaches for $P(A|B,C)$"></a>Approaches for $P(A|B,C)$</h3><ul>
 <li><script type="math/tex; mode=display">P(A|B,C) = \frac{P(A,B,C)}{P(B,C)}</script></li>
 <li><script type="math/tex; mode=display">P(A|B,C) = \frac{P(B|A,C)P(A|C)}{P(B|C)}</script></li>
 <li><script type="math/tex; mode=display">P(A|B,C) = \frac{P(C|A,B)P(A|B)}{P(A|C)}</script></li>
 </ul>
 <hr>
-<h1 id="Independence-of-Events"><a href="#Independence-of-Events" class="headerlink" title="Independence of Events"></a>Independence of Events</h1><h2 id="Independence-of-Two-Events"><a href="#Independence-of-Two-Events" class="headerlink" title="Independence of Two Events"></a>Independence of Two Events</h2><p><strong>Defination</strong>: Events $A$ and $B$ are independent if</p>
-<script type="math/tex; mode=display">P(A\cap B) = P(A) P(B)  \Leftrightarrow P(A|B) = P(A) , P(B|A) = P(B)</script><h2 id="Independence-vs-Disjointness"><a href="#Independence-vs-Disjointness" class="headerlink" title="Independence vs Disjointness"></a>Independence vs Disjointness</h2><ul>
+<h1 id="Independence-of-Events"><a href="#Independence-of-Events" class="headerlink" title="Independence of Events"></a>Independence of Events</h1><h3 id="Independence-of-Two-Events"><a href="#Independence-of-Two-Events" class="headerlink" title="Independence of Two Events"></a>Independence of Two Events</h3><p><strong>Defination</strong>: Events $A$ and $B$ are independent if</p>
+<script type="math/tex; mode=display">P(A\cap B) = P(A) P(B)  \Leftrightarrow P(A|B) = P(A) , P(B|A) = P(B)</script><h3 id="Independence-vs-Disjointness"><a href="#Independence-vs-Disjointness" class="headerlink" title="Independence vs Disjointness"></a>Independence vs Disjointness</h3><ul>
 <li>$A,B$ is disjoint : $P(A\cap B) = 0$</li>
 <li>$A,B$ is independent : $P(A) = 0, P(B) = 0$</li>
 </ul>
-<h2 id="Conditional-Independence"><a href="#Conditional-Independence" class="headerlink" title="Conditional Independence"></a>Conditional Independence</h2><p><strong>Defination</strong>: Events $A$ and $B$ are conditionally independent given E if:</p>
+<h3 id="Conditional-Independence"><a href="#Conditional-Independence" class="headerlink" title="Conditional Independence"></a>Conditional Independence</h3><p><strong>Defination</strong>: Events $A$ and $B$ are conditionally independent given E if:</p>
 <script type="math/tex; mode=display">P(A\cap B|E) = P(A|E)P(B|E)</script><script type="math/tex; mode=display">Contitional\ Independence \nRightarrow Independence</script><script type="math/tex; mode=display">Independence \nRightarrow Contitional\ Independence</script><p>w</p>
 
           
@@ -575,7 +731,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
