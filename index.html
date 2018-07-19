@@ -230,6 +230,175 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/19/Neural-Style/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eulring">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EyEular">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/19/Neural-Style/" itemprop="url">Neural Style</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-19T10:25:16+08:00">
+                2018-07-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Nerual-Style"><a href="#Nerual-Style" class="headerlink" title="Nerual Style"></a>Nerual Style</h1><p>There are two aspect for a image, one is the <strong>content</strong> of the image, which can be descriped as elements or object in the image, another is the <strong>style</strong> of the image, it might be abstract, and usually revealed by the painting skill or technique.</p>
+<p>Shortly, we have two image, one for style while the other for content. now, we want to combine the style in image1 and the content in image2 together, and it can be achieved from deep neural net work, and we call it <strong>Neural Style</strong>.</p>
+<p>Moreover we simply define the loss function care both style and content</p>
+<script type="math/tex; mode=display">L_{total} = \alpha L_{content}+\beta L_{style}</script><p>Now let’s have a look about what neural network can do here, and analysis the affect of $L_{content}$ and $L_{style}$ independently.</p>
+<p>Suppose we have the content image, and send it to the neural network, it will have the responses in each layer by filters, we also construct a white noisy image, filter it in the same way, and define a loss $L_{content}$ between filtered content and filtered noisy, we take the noisy image as input,and it can update iterativly.</p>
+<p><img src="/2018/07/19/Neural-Style/sp2.jpg" align="center" style=" width:300px;"></p>
+<p><img src="/2018/07/19/Neural-Style/img1.jpg’" align="center" style=" width:500px;"></p>
+<p>The image above show the reconstruction result between different layers, and reconstruction from lower layers(a,b,c) is alomost perfect, the style reconstruction may be more realistic in the deeper layer.</p>
+<p>Let’s get familiar with some notion of the formulation first( suppse we are in the $l^{th}$ level of the net ):</p>
+<ul>
+<li><strong>$\vec{p}$</strong>: Original <strong>content</strong> image (input)<ul>
+<li><strong>$P^l$</strong>: Content feature representation in layer $l$ respect to $\vec{p}$</li>
+</ul>
+</li>
+<li><strong>$\vec{a}$</strong>: Original <strong>style</strong> image (input)<ul>
+<li><strong>$A^l$</strong>: Style feature representation in layer $l$ respect to $\vec{a}$</li>
+</ul>
+</li>
+<li><p><strong>$\vec{x}$</strong>: Target image (output)</p>
+<ul>
+<li><strong>$F^l$</strong>: Content feature representation in layer $l$ respect to $\vec{x}$</li>
+<li><strong>$G^l$</strong>: Style feature representation in layer $l$ respect to $\vec{x}$</li>
+<li><strong>$F_{ij}^l$</strong>: Element of $i^{th}$ filter at $j^{th}$ position in layer $l$</li>
+</ul>
+</li>
+<li><p><strong>$N_l$</strong>: The number of the filters in the $l^{th}$ level</p>
+</li>
+<li><strong>$M_l$</strong>: The size of a feature map produced by a filter,usually it equals to $height \times weight$</li>
+</ul>
+<p>The squared-error loss between two content feature representations is:</p>
+<script type="math/tex; mode=display">L_{content}(\vec{p},\vec{x},l) = \frac{1}{2} \sum_{i,j}(F_{ij}^l - P_{ij}^l)^2</script><p>In each layer, build a style representation compute the correlations between the different filter responses, which is called Gram Matrix $G^l\in R^{N_l \times N_l}$, and $G_{ij}^l$ is the inner product between the vectorized feature map between $i$ and $j$ in layer $l$</p>
+<script type="math/tex; mode=display">G_{ij}^l = \sum_k F_{ik}^l F_{jk}^l</script><p>Also we have</p>
+<script type="math/tex; mode=display">A_{ij}^l = \sum_k P_{ik}^l P_{jk}^l</script><p>The contribution of the layer to the total loss is</p>
+<script type="math/tex; mode=display">E_l = \frac{1}{4N_l^2 M_l^2 }\sum_{i,j}(G_{ij}^l - A_{ij}^l)^2</script><p>And the total loss is</p>
+<script type="math/tex; mode=display">L_{style}(\vec{a},\vec{x}) = \sum_{l=0}^L w_lE_l</script><p>Let’s focus more on the detail about the gradient of the loss:</p>
+<p>The derivative of content loss respect to activations in layer l equals</p>
+<script type="math/tex; mode=display">\frac{\partial L_{content}}{\partial F_{ij}^l} =
+\left \{
+  \begin{array}{ll}
+    (F^l - P^l)_{ij} & if\ F_{ij}^l > 0 \\
+    0 & if\ F_{ij}^l < 0
+  \end{array}
+\right .</script><p>The derivative of style loss respect to activations in layer l equals</p>
+<script type="math/tex; mode=display">\frac{\partial E_l}{\partial F_{ij}^l} =
+\left \{
+  \begin{array}{ll}
+    \frac{1}{N_l^2M_l^2}((F^l)^T(G^l - A^l))_{ij}& if\ F_{ij}^l > 0 \\
+    0 & if\ F_{ij}^l < 0
+  \end{array}
+\right .</script><p>The final loss function we want to minimize is</p>
+<script type="math/tex; mode=display">L_{total}(\vec{p},\vec{a},\vec{x}) = \alpha L_{content}(\vec{p},\vec{x}) + \beta L_{style}(\vec{a},\vec{x})</script>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/07/Stochastic-Process-Random-Variable/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -301,7 +470,7 @@
       
         
           
-            <p><strong>Definition (Discrete Random Variable)</strong> A variable $X$ is <strong><em>discrete</em></strong> if there is a finite list of value $a_1,a_2,…,a_n$ that $P(X=a_j for some j) = 1$, $P(X=x)&gt;0$ is the <strong><em>support</em></strong> of $X$</p>
+            <p><strong>Definition (Discrete Random Variable)</strong> A variable $X$ is <strong><em>discrete</em></strong> if there is a finite list of value $a_1,a_2,…,a_n$ that $P(X=a_j) = 1$, $P(X=x)&gt;0$ is the <strong><em>support</em></strong> of $X$</p>
 <p><strong>Definition (Probability Mass Function)</strong> <strong><em>The probability mass function (PMF)</em></strong> of a discrete r.v. $X$ is the function $p_X$ given by $p_X(x) = P(X=x)$.</p>
 <h1 id="Bernoulli-amp-Binomial"><a href="#Bernoulli-amp-Binomial" class="headerlink" title="Bernoulli &amp; Binomial"></a>Bernoulli &amp; Binomial</h1><p><strong>Definition (Bernoulli Distribution)</strong> shortly, $P(X=1)=p$ and $P(X=0) = 1 - p$, and write as $X\sim Bern(p)$</p>
 <p><strong>Definition (Indicator Random Variable)</strong> The indicator random variable of an event $A$ is the r.v. equals 1 if $A$ occurs and 0 otherwise, We denote the indicator of $A$ by $I_A$ or $I(A)$. Note $I_A \sim Bern(p)$ with p = P(A)</p>
@@ -731,7 +900,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
