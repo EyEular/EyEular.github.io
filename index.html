@@ -1,1238 +1,547 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="">
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
+    
+
+    
+
+    
 
 
 
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Optimization Computer-Vision" />
-
-
-
-
-
-
-
-
-
-
-<meta name="keywords" content="CV &amp; MATH">
+    <meta charset="utf-8">
+    
+    
+    
+    <title>EyEular</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Math &amp; AI">
+    <meta name="keywords" content="Math &amp; AI">
 <meta property="og:type" content="website">
 <meta property="og:title" content="EyEular">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="EyEular">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EyEular">
+    
+        <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
 
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/"/>
-
-
-
-
-
-  <title>EyEular</title>
-  
-
-
-
-
-
-
-
+    <!-- custom head -->
+    
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+<body>
+    <div id="loading" class="active"></div>
 
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">EyEular</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Eulring</h5>
+          <a href="mailto:bianjy@shanghaitech.edu.cn" title="bianjy@shanghaitech.edu.cn" class="mail">bianjy@shanghaitech.edu.cn</a>
+        </hgroup>
+      </div>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect active">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/EyEular" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                gayhub
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                Test
+              </a>
+            </li>
+        
+      </ul>
+    </div>
   </div>
+</aside>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">EyEular</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header index-header">
 
-<nav class="site-nav">
+    <div class="container fade-scale">
+        <h1 class="title">EyEular</h1>
+        <h5 class="subtitle">
+            
+                
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+<div class="container body-wrap">
+
+    <ul class="post-list">
+    
+        <li class="post-list-item fade">
+            <article id="post-Stochastic-Process-Expectation-Variance"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-07-22 10:30:26" datetime="2018-07-22T02:30:26.000Z"  itemprop="datePublished">2018-07-22</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/07/22/Stochastic-Process-Expectation-Variance/">Stochastic Process (Expectation &amp; Variance)</a>
+    </h3>
   
 
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
 
-      
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+    
+
+        <a href="/2018/07/22/Stochastic-Process-Expectation-Variance/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Math/">Math</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Probability/">Probability</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Neural-Style"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-07-19 10:25:16" datetime="2018-07-19T02:25:16.000Z"  itemprop="datePublished">2018-07-19</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/07/19/Neural-Style/">Neural Style</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Nerual StyleThere are two aspect for a image, one is the content of the image, which can be descriped as elements or object in the image, another is the style of the image, it might be abstract, an...
+    
+
+        <a href="/2018/07/19/Neural-Style/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Stochastic-Process-Random-Variable"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-07-07 08:21:04" datetime="2018-07-07T00:21:04.000Z"  itemprop="datePublished">2018-07-07</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/07/07/Stochastic-Process-Random-Variable/">Stochastic Process (Random Variable)</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        There are some notation occationals
+Definition (Discrete Random Variable) A variable $X$ is discrete if there is a finite list of value $a_1,a_2,…,a_n$ that $P(X=a_j) = 1$, $P(X=x)&gt;0$ is the sup...
+    
+
+        <a href="/2018/07/07/Stochastic-Process-Random-Variable/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Math/">Math</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Probability/">Probability</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Stochastic-Process-Conditional-Probability"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-07-06 08:24:34" datetime="2018-07-06T00:24:34.000Z"  itemprop="datePublished">2018-07-06</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/07/06/Stochastic-Process-Conditional-Probability/">Stochastic Process (Conditional Probability)</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+Defination of Conditonal ProbabilityDefination Two events $A$ and $B$, with $P(B)&gt;0$, the conditional probability of $A$ given $B$ , denoted by $P(A|B)$, is defined as :
+P(A|B)=\frac{P(AB)}{P(B...
+    
+
+        <a href="/2018/07/06/Stochastic-Process-Conditional-Probability/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Math/">Math</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Probability/">Probability</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Robust-PCA"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-07-04 22:47:11" datetime="2018-07-04T14:47:11.000Z"  itemprop="datePublished">2018-07-04</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/07/04/Robust-PCA/">Robust PCA</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+Introduction to RPCAThe data we collect usually have the low rank property, but the property will vanished when the data is collected causing the noisy, but we can still decomposite the matrix int...
+    
+
+        <a href="/2018/07/04/Robust-PCA/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Low-Rank/">Low-Rank</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Math/">Math</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Optimization/">Optimization</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
     </ul>
-  
 
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
     
-      
 
-  
+</div>
 
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/19/Neural-Style/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Eulring">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
     </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="EyEular">
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
     </span>
+</p>
 
-    
-      <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/19/Neural-Style/" itemprop="url">Neural Style</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <p>
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-19T10:25:16+08:00">
-                2018-07-19
-              </time>
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Nerual-Style"><a href="#Nerual-Style" class="headerlink" title="Nerual Style"></a>Nerual Style</h1><p>There are two aspect for a image, one is the <strong>content</strong> of the image, which can be descriped as elements or object in the image, another is the <strong>style</strong> of the image, it might be abstract, and usually revealed by the painting skill or technique.</p>
-<p>Shortly, we have two image, one for style while the other for content. now, we want to combine the style in image1 and the content in image2 together, and it can be achieved from deep neural net work, and we call it <strong>Neural Style</strong>.</p>
-<p>Moreover we simply define the loss function care both style and content</p>
-<script type="math/tex; mode=display">L_{total} = \alpha L_{content}+\beta L_{style}</script><p>Now let’s have a look about what neural network can do here, and analysis the affect of $L_{content}$ and $L_{style}$ independently.</p>
-<p>Suppose we have the content image, and send it to the neural network, it will have the responses in each layer by filters, we also construct a white noisy image, filter it in the same way, and define a loss $L_{content}$ between filtered content and filtered noisy, we take the noisy image as input,and it can update iterativly.</p>
-<p><img src="/2018/07/19/Neural-Style/sp2.jpg" align="center" style=" width:300px;"></p>
-<p><img src="/2018/07/19/Neural-Style/img1.jpg’" align="center" style=" width:500px;"></p>
-<p>The image above show the reconstruction result between different layers, and reconstruction from lower layers(a,b,c) is alomost perfect, the style reconstruction may be more realistic in the deeper layer.</p>
-<p>Let’s get familiar with some notion of the formulation first( suppse we are in the $l^{th}$ level of the net ):</p>
-<ul>
-<li><strong>$\vec{p}$</strong>: Original <strong>content</strong> image (input)<ul>
-<li><strong>$P^l$</strong>: Content feature representation in layer $l$ respect to $\vec{p}$</li>
-</ul>
-</li>
-<li><strong>$\vec{a}$</strong>: Original <strong>style</strong> image (input)<ul>
-<li><strong>$A^l$</strong>: Style feature representation in layer $l$ respect to $\vec{a}$</li>
-</ul>
-</li>
-<li><p><strong>$\vec{x}$</strong>: Target image (output)</p>
-<ul>
-<li><strong>$F^l$</strong>: Content feature representation in layer $l$ respect to $\vec{x}$</li>
-<li><strong>$G^l$</strong>: Style feature representation in layer $l$ respect to $\vec{x}$</li>
-<li><strong>$F_{ij}^l$</strong>: Element of $i^{th}$ filter at $j^{th}$ position in layer $l$</li>
-</ul>
-</li>
-<li><p><strong>$N_l$</strong>: The number of the filters in the $l^{th}$ level</p>
-</li>
-<li><strong>$M_l$</strong>: The size of a feature map produced by a filter,usually it equals to $height \times weight$</li>
-</ul>
-<p>The squared-error loss between two content feature representations is:</p>
-<script type="math/tex; mode=display">L_{content}(\vec{p},\vec{x},l) = \frac{1}{2} \sum_{i,j}(F_{ij}^l - P_{ij}^l)^2</script><p>In each layer, build a style representation compute the correlations between the different filter responses, which is called Gram Matrix $G^l\in R^{N_l \times N_l}$, and $G_{ij}^l$ is the inner product between the vectorized feature map between $i$ and $j$ in layer $l$</p>
-<script type="math/tex; mode=display">G_{ij}^l = \sum_k F_{ik}^l F_{jk}^l</script><p>Also we have</p>
-<script type="math/tex; mode=display">A_{ij}^l = \sum_k P_{ik}^l P_{jk}^l</script><p>The contribution of the layer to the total loss is</p>
-<script type="math/tex; mode=display">E_l = \frac{1}{4N_l^2 M_l^2 }\sum_{i,j}(G_{ij}^l - A_{ij}^l)^2</script><p>And the total loss is</p>
-<script type="math/tex; mode=display">L_{style}(\vec{a},\vec{x}) = \sum_{l=0}^L w_lE_l</script><p>Let’s focus more on the detail about the gradient of the loss:</p>
-<p>The derivative of content loss respect to activations in layer l equals</p>
-<script type="math/tex; mode=display">\frac{\partial L_{content}}{\partial F_{ij}^l} =
-\left \{
-  \begin{array}{ll}
-    (F^l - P^l)_{ij} & if\ F_{ij}^l > 0 \\
-    0 & if\ F_{ij}^l < 0
-  \end{array}
-\right .</script><p>The derivative of style loss respect to activations in layer l equals</p>
-<script type="math/tex; mode=display">\frac{\partial E_l}{\partial F_{ij}^l} =
-\left \{
-  \begin{array}{ll}
-    \frac{1}{N_l^2M_l^2}((F^l)^T(G^l - A^l))_{ij}& if\ F_{ij}^l > 0 \\
-    0 & if\ F_{ij}^l < 0
-  \end{array}
-\right .</script><p>The final loss function we want to minimize is</p>
-<script type="math/tex; mode=display">L_{total}(\vec{p},\vec{a},\vec{x}) = \alpha L_{content}(\vec{p},\vec{x}) + \beta L_{style}(\vec{a},\vec{x})</script>
-          
-        
-      
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/07/Stochastic-Process-Random-Variable/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Eulring">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="EyEular">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+    <div class="bottom">
+        <p><span>Eulring &copy; 2018</span>
+            <span>
                 
-                <a class="post-title-link" href="/2018/07/07/Stochastic-Process-Random-Variable/" itemprop="url">Stochastic Process (Random Variable)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-07T08:21:04+08:00">
-                2018-07-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>Definition (Discrete Random Variable)</strong> A variable $X$ is <strong><em>discrete</em></strong> if there is a finite list of value $a_1,a_2,…,a_n$ that $P(X=a_j) = 1$, $P(X=x)&gt;0$ is the <strong><em>support</em></strong> of $X$</p>
-<p><strong>Definition (Probability Mass Function)</strong> <strong><em>The probability mass function (PMF)</em></strong> of a discrete r.v. $X$ is the function $p_X$ given by $p_X(x) = P(X=x)$.</p>
-<h1 id="Bernoulli-amp-Binomial"><a href="#Bernoulli-amp-Binomial" class="headerlink" title="Bernoulli &amp; Binomial"></a>Bernoulli &amp; Binomial</h1><p><strong>Definition (Bernoulli Distribution)</strong> shortly, $P(X=1)=p$ and $P(X=0) = 1 - p$, and write as $X\sim Bern(p)$</p>
-<p><strong>Definition (Indicator Random Variable)</strong> The indicator random variable of an event $A$ is the r.v. equals 1 if $A$ occurs and 0 otherwise, We denote the indicator of $A$ by $I_A$ or $I(A)$. Note $I_A \sim Bern(p)$ with p = P(A)</p>
-<p><strong>Theorem (Binomial PMF)</strong> Binomial Distribution is the repeatation of Bernoulli Distribution. If $X\sim Bin(n, p)$ then the PMF of X is</p>
-<script type="math/tex; mode=display">P(X=k) = \left( \begin{array}{c} n \\ k \end{array} \right) p^k (1-p)^{n-k}</script><h1 id="Hypergeometric"><a href="#Hypergeometric" class="headerlink" title="Hypergeometric"></a>Hypergeometric</h1><p><strong>urn Model</strong> A box is fiiled with $w$ white and $b$ black balls, then drawing n balls</p>
-<ul>
-<li>With replacement: $Bin(n,w/(w+b))$ for the number of white balls</li>
-<li>Without replacement : Hypergeometric distribution $HGeom(w,b,n)$</li>
-</ul>
-<p><strong>Theorem (Hypergeometric PMF)</strong> If $X \sim HGeom(w,b,n)$, then the PMF of $X$ is</p>
-<script type="math/tex; mode=display">P(X=k) = \frac {\left ( \begin{array}{c} w \\ k \end{array} \right ) \left( \begin{array}{c} b \\ n-k \end{array} \right)}  {\left( \begin{array}{c} w+b \\ n \end{array} \right)}</script><p><strong>Zipf Distribution</strong> If $X\sim Zipf(\alpha &gt; 0)$, then PMF of $X$ is:</p>
-<script type="math/tex; mode=display">P(X=k) = \frac{\frac{1}{k^{\alpha + 1}}}  {\sum_{j=1}^{\infty}(\frac{1}{j})^{\alpha + 1}}</script><ul>
-<li>Zipf Distribution can measure the Word Frequency</li>
-</ul>
-<h1 id="Cumulative-Distribution-Functions"><a href="#Cumulative-Distribution-Functions" class="headerlink" title="Cumulative Distribution Functions"></a>Cumulative Distribution Functions</h1><p><strong>Definition (Cumulative Distributino Function)</strong> The <strong><em>cumulative distribution function(CDF)</em></strong> os an r.v. $X$ is the function $F_X$ given by $F_X(x) = P(X\leq x)$</p>
-<p><strong>Theorem (Valid CDFs)</strong> CDF has the following properties</p>
-<ul>
-<li>Increasing: If $x_1 &lt; x_2$, then $F(x_1) &lt; F(x_2)$</li>
-<li>Right-Continuous: $F(a)  = lim_{x\rightarrow a^+} F(x)$</li>
-<li>Convergence to $0$ and $1$: $lim_{x\rightarrow - \infty} F(x) = 0$ and $lim_{x \rightarrow \infty} F(x) = 1$</li>
-</ul>
-<h1 id="Functions-of-Random-Variable"><a href="#Functions-of-Random-Variable" class="headerlink" title="Functions of Random Variable:"></a>Functions of Random Variable:</h1><p><strong>Definition (Function of an r.v.)</strong> An experiment with sample space S, an r.v. $X$, and a function $g$, also the $g(X)$ is the variable that maps $s$ to $g(X(s))$, for all $s\in S$</p>
-<p><strong>Theorem (PMF of $g(X)$)</strong> for all y in the support of $g(X)$</p>
-<script type="math/tex; mode=display">P(g(X) = y) = \sum_{x:g(x)=y} P(X=x)</script><p>The function of r.v. map the sample space into real number, which is easy for us calculate in mathematic.</p>
-<h1 id="Independence-of-R-V-s"><a href="#Independence-of-R-V-s" class="headerlink" title="Independence of R.V.s"></a>Independence of R.V.s</h1><p><strong>Definition (Independence of two R.V.s)</strong> Random variables $X$ and $Y$ are said to be <strong><em>independent</em></strong></p>
-<script type="math/tex; mode=display">P(X\leq x,Y\leq y) = P(X\leq x)P(Y\leq y)</script><p>for all $x,y\in R$,<br>In the discrete case, equivalent to :</p>
-<script type="math/tex; mode=display">P(X=x,Y=y) = P(X=x)P(Y=y)</script><p><strong>Definition (Independence of many R.V.s)</strong> Random variables $X_1,…,X_n$ are independent if</p>
-<script type="math/tex; mode=display">P(X_1 \leq x_1,\dotsb , X_n \leq x_n) = P(X_1 \leq x_1) \dotsb P(X_n \leq x_n)</script><p>for all $x_1,\dotsb,x_n \in R$</p>
-<p><strong>Definition (i.i.d)</strong> We call some r.v. that are independent and have the same distribution <strong><em>independent and identicallly distributed</em></strong> or <strong><em>i.i.d</em></strong> for short</p>
-<ul>
-<li>Independent: r.v.s provide no information about each others</li>
-<li>Identically distributed: r.v.s have the same PMF</li>
-</ul>
-<p><strong>Theorem</strong> If $X\sim Bin(n,p)$ , $Y \sim Bin(m,p)$, and $X$ is independent of $Y$, then $X+Y \sim Bin(n+m,p)$</p>
-<p><strong>Definition (Conditional Independence of two R.V.s)</strong></p>
-<script type="math/tex; mode=display">P(X\leq x, Y \leq y| Z= z) = P(X\leq x |Z =z) P(Y\leq y|Z=z)</script><p>w</p>
-
-          
-        
-      
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
     </div>
-    
-    
-    
+</footer>
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Eulring">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="EyEular">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/06/Stochastic-Process-Conditional-Probability/" itemprop="url">Stochastic Process (Conditional Probability)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-06T08:24:34+08:00">
-                2018-07-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<h1 id="Defination-of-Conditonal-Probability"><a href="#Defination-of-Conditonal-Probability" class="headerlink" title="Defination of Conditonal Probability"></a>Defination of Conditonal Probability</h1><p><strong>Defination</strong> Two events $A$ and $B$, with $P(B)&gt;0$, the conditional probability of $A$ given $B$ , denoted by $P(A|B)$, is defined as :</p>
-<script type="math/tex; mode=display">P(A|B)=\frac{P(AB)}{P(B)}</script><ul>
-<li>$P(A)$: prior probability</li>
-<li>$P(A|B)$: posterior probability</li>
-</ul>
-<hr>
-<h1 id="Bayes’-Rule-amp-LOTP"><a href="#Bayes’-Rule-amp-LOTP" class="headerlink" title="Bayes’ Rule &amp; LOTP"></a>Bayes’ Rule &amp; LOTP</h1><h3 id="Chain-Rule"><a href="#Chain-Rule" class="headerlink" title="Chain Rule"></a>Chain Rule</h3><p><img src="/2018/07/06/Stochastic-Process-Conditional-Probability/sp1.jpg" alt="chain rule"></p>
-<script type="math/tex; mode=display">P(A_1,...,A_n) = P(A_1)P(A_2|A_1)P(A_3|A_1A_2)...P(A_n|A_1,...,A_{n-1})</script><h3 id="Bayes’-Rule"><a href="#Bayes’-Rule" class="headerlink" title="Bayes’ Rule"></a>Bayes’ Rule</h3><script type="math/tex; mode=display">P(A|B) = \frac{P(B|A)P(A)}{P(B)}</script><h3 id="LOTP-Law-of-Total-Probability"><a href="#LOTP-Law-of-Total-Probability" class="headerlink" title="LOTP (Law of Total Probability)"></a>LOTP (Law of Total Probability)</h3><p><img src="/2018/07/06/Stochastic-Process-Conditional-Probability/sp2.jpg" align="center" style=" width:300px;"></p>
-<p><strong>Theorem</strong>: Let $A_1,A_2,…,A_n$ be the partition of the sample space $S$, with $P(A_1)&gt;0$, Then :</p>
-<script type="math/tex; mode=display">P(B) = \sum_i^n P(B|A_i)P(A_i)</script><p><strong>Theorem</strong>: Let $A_1,A_2,…,A_n$ be the partition of the sample space $S$, for any event $B$ such that $P(B) &gt; 0$, we have :</p>
-<script type="math/tex; mode=display">P(A_i|B) = \frac{P(A_i)P(B|A_i)}{P(A_1)P(B|A_1)+\dotsb+P(A_n)P(B|A_n)}</script><hr>
-<h1 id="Conditional-Probabilitiy"><a href="#Conditional-Probabilitiy" class="headerlink" title="Conditional Probabilitiy"></a>Conditional Probabilitiy</h1><p>Conditional Probability is also the probability, so it inherent the property of probability (suppose the sample space is $S$):</p>
-<ul>
-<li>$P(S|E) = 1$ and $P(\emptyset|E) = 0$</li>
-<li>if events $A_1,…$ are disjoint, then $P(\cup_{j=1}^{\infty}A_j|E) = \sum_{j=1}^{\infty}P(A_j|E)$</li>
-<li>$P(A^c|E) = 1 - P(A|E)$</li>
-<li>Inclusion-Exclusion : $P(A\cup B|E) = P(A|E) + P(B|E) - P(A\cap B|E)$</li>
-</ul>
-<h3 id="Bayes’-Rule-with-Extra-Condition"><a href="#Bayes’-Rule-with-Extra-Condition" class="headerlink" title="Bayes’ Rule with Extra Condition:"></a>Bayes’ Rule with Extra Condition:</h3><p><strong>Theorem</strong>: Provided that $P(A\cap E)&gt;0$ and $P(B\cap E)&gt;0$, we have:</p>
-<script type="math/tex; mode=display">P(A|B,E) = \frac{P(B|A,E)P(A|E)}{P(B|E)}</script><h3 id="LOTP-with-Extra-Condition"><a href="#LOTP-with-Extra-Condition" class="headerlink" title="LOTP with Extra Condition:"></a>LOTP with Extra Condition:</h3><p><strong>Theorem</strong>: Let $A_1,A_2,…,A_n$ be the partition of the sample space $S$, with $P(A_i \cap E) &gt;0$, Then:</p>
-<script type="math/tex; mode=display">P(B|E) = \sum_{i=1}^n P(B|A_i,E)P(A_i|E)</script><h3 id="Approaches-for-P-A-B-C"><a href="#Approaches-for-P-A-B-C" class="headerlink" title="Approaches for $P(A|B,C)$"></a>Approaches for $P(A|B,C)$</h3><ul>
-<li><script type="math/tex; mode=display">P(A|B,C) = \frac{P(A,B,C)}{P(B,C)}</script></li>
-<li><script type="math/tex; mode=display">P(A|B,C) = \frac{P(B|A,C)P(A|C)}{P(B|C)}</script></li>
-<li><script type="math/tex; mode=display">P(A|B,C) = \frac{P(C|A,B)P(A|B)}{P(A|C)}</script></li>
-</ul>
-<hr>
-<h1 id="Independence-of-Events"><a href="#Independence-of-Events" class="headerlink" title="Independence of Events"></a>Independence of Events</h1><h3 id="Independence-of-Two-Events"><a href="#Independence-of-Two-Events" class="headerlink" title="Independence of Two Events"></a>Independence of Two Events</h3><p><strong>Defination</strong>: Events $A$ and $B$ are independent if</p>
-<script type="math/tex; mode=display">P(A\cap B) = P(A) P(B)  \Leftrightarrow P(A|B) = P(A) , P(B|A) = P(B)</script><h3 id="Independence-vs-Disjointness"><a href="#Independence-vs-Disjointness" class="headerlink" title="Independence vs Disjointness"></a>Independence vs Disjointness</h3><ul>
-<li>$A,B$ is disjoint : $P(A\cap B) = 0$</li>
-<li>$A,B$ is independent : $P(A) = 0, P(B) = 0$</li>
-</ul>
-<h3 id="Conditional-Independence"><a href="#Conditional-Independence" class="headerlink" title="Conditional Independence"></a>Conditional Independence</h3><p><strong>Defination</strong>: Events $A$ and $B$ are conditionally independent given E if:</p>
-<script type="math/tex; mode=display">P(A\cap B|E) = P(A|E)P(B|E)</script><script type="math/tex; mode=display">Contitional\ Independence \nRightarrow Independence</script><script type="math/tex; mode=display">Independence \nRightarrow Contitional\ Independence</script><p>w</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/Robust-PCA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Eulring">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="EyEular">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/04/Robust-PCA/" itemprop="url">Robust PCA</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-04T22:47:11+08:00">
-                2018-07-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<h1 id="Introduction-to-RPCA"><a href="#Introduction-to-RPCA" class="headerlink" title="Introduction to RPCA"></a>Introduction to RPCA</h1><p><br><br>The data we collect usually have the low rank property, but the property will vanished when the data is collected causing the noisy, but we can still decomposite the matrix into low-rank matrix and spares error matrix from the corruped data.</p>
-<script type="math/tex; mode=display">
-  D=\underbrace{A}_{\text{low rank matrix}}+\underbrace{E}_{\text{sparse matrix}} \notag</script><p>Traditional approach for solving this problem is using PCA (Principal Components Analysis), there are many interpretation to PCA, one relate to rank is despiting the low value singular value as this componets contribute less to the data. Thus, it can be considered as the noisy. So we take the $k^{th}$ largest singular value and drop the rest , this can be represnt as the following formulation :</p>
-<script type="math/tex; mode=display">
-  \mathop{min}_{A,E} \|E \|_F, \ \ \ \
-  \text{subject to } \ rank(A)\leq r, D = A + E \notag</script><p>PCA has a shortage that it is not robust to the outliers,  then the RPCA (Robust Principal Components Analysis) came out, RPCA could making the matrix recovery whether the noisy is large or not only if the sparse property is confirmed, the original form of the RPCA can be written as :</p>
-<script type="math/tex; mode=display">
-  \mathop{min}_{A,E} rank(A) + \|E\|_0, \ \ \ \
-  \text{subject to } \ D = A + E \notag</script><p>The optimization formulation above is non-convex and is hard to get the solution, we can use the convex relax technology apply on it, then it turn out into the most used and the most efficient from:</p>
-<script type="math/tex; mode=display">
-  \mathop{min}_{A,E} \|A\|_* + \|E\|_1, \ \ \ \
-  \text{subject to } \ D = A + E \notag</script><p>$| \cdot |_*$ is the unclear norm, which is the sum of the all singular values : $\sum_i^n\sigma_i$, $l_1$ norm of matrix $| \cdot |_1$ is the sum of absolute value of all the element : $\sum_i^n \sum_j^n |D_{ij}|$ .</p>
-<hr>
-<h1 id="Algorithm-of-RPCA"><a href="#Algorithm-of-RPCA" class="headerlink" title="Algorithm of RPCA"></a>Algorithm of RPCA</h1><p><br><br>Before introducting the Algorithm, we first introducing the two operators</p>
-<h2 id="Singular-Value-Thresholding"><a href="#Singular-Value-Thresholding" class="headerlink" title="Singular Value Thresholding"></a>Singular Value Thresholding</h2><p>The optimal solution to the optimization problem : $\frac{1}{2} | X- Y |_F^2 + \tau |X|_*$ with the variable $X$ is thresholing the singular value of $X$</p>
-<script type="math/tex; mode=display">
-\begin{align}
-  \mathcal{D}_{\tau}(X) :=  U \mathcal{D}_{\tau} (\Sigma) V^{\prime} ,
-  \ \ \mathcal{D}_{\tau}(\Sigma) = diag (  \{  \sigma_i - \tau  \}  )
-  \notag \\
-  \mathcal{D}_{\tau}(Y) = \mathop{arg} \mathop{min}_{X} \left \{
-    \frac{1}{2} \| X- Y \|_F^2 + \tau \|X\|_*
-  \right \} \notag
-\end{align}</script><h2 id="Soft-Thresholding"><a href="#Soft-Thresholding" class="headerlink" title="Soft Thresholding"></a>Soft Thresholding</h2><p>As same as the $l_1$ norm in vector, thresholding the absolute value of all the element in $X$.</p>
-<script type="math/tex; mode=display">
-\begin{align}
-  \psi_{st}(Y) =  \mathop{arg} \mathop{min}_{X} \left \{
-    \frac{1}{2} \| X- Y \|_F^2 + \tau \|X\|_1
-  \right \} \notag
-\end{align}</script><p>There are various methods to solving the RPCA problem, the most successful one is slove the Augmented Lagrangian function of the original problem which we called ALM algorithm, the Augmented Lagrangian function is:</p>
-<script type="math/tex; mode=display">
-\begin{align}
-  L(A,E,Y,\mu) = \|A\|_* + \lambda\|E\|_1+ \langle Y,D-A-E \rangle + \frac{\mu}{2} \| D- A -E \|_F^2 \notag
-\end{align}</script><p>Usually, we use ADMM to slove the ALM problems :</p>
-<script type="math/tex; mode=display">
-\begin{align}
-  A_{k+1} &= SVT_{1/\mu_k}(D-E_k + \mu_k^{-1} Y_k) \notag \\
-  E_{k+1} &= ST_{\lambda/\mu_k} (D - A_{k+1} + \mu_k^{-1} Y_k) \notag \\
-  Y_{k+1} &= Y_k + \mu_k ( D - A_{k+1} - E_{k+1} ) \notag
-\end{align}</script>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Eulring</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">tags</span>
-                
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/EyEular" target="_blank" title="EyEular">
-                      
-                        <i class="fa fa-fw fa-github"></i>EyEular</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/EyEular" target="_blank" title="Eulring">
-                      
-                        <i class="fa fa-fw fa-github"></i>Eulring</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:eyeular@gmail.com" target="_blank" title="gMail">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>gMail</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:bianjy@shanghaitech.edu.cn" target="_blank" title="eduMail">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>eduMail</a>
-                  </span>
-                
-            </div>
-          
-
-          
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                Links
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://perception.csl.illinois.edu/matrix-rank/home.html" title="Ma's Lab" target="_blank">Ma's Lab</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://jailbreakfox.github.io/" title="Xu's Blog" target="_blank">Xu's Blog</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
     </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Eulring</span>
 
-  
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/&title=EyEular&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/&title=EyEular&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=EyEular&url=http://yoursite.com/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/" alt="微信分享二维码">
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
 </script>
 
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
 
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 
 
 
-  
 
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
-
-
-  
-  
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/three.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
 <script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
 })();
 </script>
 
 
-  
-  
 
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
         tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
         }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
-
-
-  
-
-  
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>

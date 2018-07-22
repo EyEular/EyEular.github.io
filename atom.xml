@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>EyEular</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-07-22T02:51:48.714Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Eulring</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Stochastic Process (Expectation &amp; Variance)</title>
+    <link href="http://yoursite.com/2018/07/22/Stochastic-Process-Expectation-Variance/"/>
+    <id>http://yoursite.com/2018/07/22/Stochastic-Process-Expectation-Variance/</id>
+    <published>2018-07-22T02:30:26.000Z</published>
+    <updated>2018-07-22T02:51:48.714Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="Math" scheme="http://yoursite.com/tags/Math/"/>
+    
+      <category term="Probability" scheme="http://yoursite.com/tags/Probability/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Neural Style</title>
+    <link href="http://yoursite.com/2018/07/19/Neural-Style/"/>
+    <id>http://yoursite.com/2018/07/19/Neural-Style/</id>
+    <published>2018-07-19T02:25:16.000Z</published>
+    <updated>2018-07-22T02:31:09.823Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Nerual-Style"><a href="#Nerual-Style" class="headerlink" title="Nerual Style"></a>Nerual Style</h1><p>There are two aspect for a image, one is the <strong>content</strong> of the image, which can be descriped as elements or object in the image, another is the <strong>style</strong> of the image, it might be abstract, and usually revealed by the painting skill or technique.</p><p>Shortly, we have two image, one for style while the other for content. now, we want to combine the style in image1 and the content in image2 together, and it can be achieved from deep neural net work, and we call it <strong>Neural Style</strong>.</p><p>Moreover we simply define the loss function care both style and content</p><script type="math/tex; mode=display">L_{total} = \alpha L_{content}+\beta L_{style}</script><p>Now let’s have a look about what neural network can do here, and analysis the affect of $L_{content}$ and $L_{style}$ independently.</p><p>Suppose we have the content image, and send it to the neural network, it will have the responses in each layer by filters, we also construct a white noisy image, filter it in the same way, and define a loss $L_{content}$ between filtered content and filtered noisy, we take the noisy image as input,and it can update iterativly.</p><p><img src="/2018/07/19/Neural-Style/img1.jpg" alt="reconstruction"></p><p>The image above show the reconstruction result between different layers, and reconstruction from lower layers(a,b,c) is alomost perfect, the style reconstruction may be more realistic in the deeper layer.</p><p>Let’s get familiar with some notion of the formulation first( suppse we are in the $l^{th}$ level of the net ):</p><ul><li><strong>$\vec{p}$</strong>: Original <strong>content</strong> image (input)<ul><li><strong>$P^l$</strong>: Content feature representation in layer $l$ respect to $\vec{p}$</li></ul></li><li><strong>$\vec{a}$</strong>: Original <strong>style</strong> image (input)<ul><li><strong>$A^l$</strong>: Style feature representation in layer $l$ respect to $\vec{a}$</li></ul></li><li><p><strong>$\vec{x}$</strong>: Target image (output)</p><ul><li><strong>$F^l$</strong>: Content feature representation in layer $l$ respect to $\vec{x}$</li><li><strong>$G^l$</strong>: Style feature representation in layer $l$ respect to $\vec{x}$</li><li><strong>$F_{ij}^l$</strong>: Element of $i^{th}$ filter at $j^{th}$ position in layer $l$</li></ul></li><li><p><strong>$N_l$</strong>: The number of the filters in the $l^{th}$ level</p></li><li><strong>$M_l$</strong>: The size of a feature map produced by a filter,usually it equals to $height \times weight$</li></ul><p>The squared-error loss between two content feature representations is:</p><script type="math/tex; mode=display">L_{content}(\vec{p},\vec{x},l) = \frac{1}{2} \sum_{i,j}(F_{ij}^l - P_{ij}^l)^2</script><p>In each layer, build a style representation compute the correlations between the different filter responses, which is called Gram Matrix $G^l\in R^{N_l \times N_l}$, and $G_{ij}^l$ is the inner product between the vectorized feature map between $i$ and $j$ in layer $l$</p><script type="math/tex; mode=display">G_{ij}^l = \sum_k F_{ik}^l F_{jk}^l</script><p>Also we have</p><script type="math/tex; mode=display">A_{ij}^l = \sum_k P_{ik}^l P_{jk}^l</script><p>The contribution of the layer to the total loss is</p><script type="math/tex; mode=display">E_l = \frac{1}{4N_l^2 M_l^2 }\sum_{i,j}(G_{ij}^l - A_{ij}^l)^2</script><p>And the total loss is</p><script type="math/tex; mode=display">L_{style}(\vec{a},\vec{x}) = \sum_{l=0}^L w_lE_l</script><p>Let’s focus more on the detail about the gradient of the loss:</p><p>The derivative of content loss respect to activations in layer l equals</p><script type="math/tex; mode=display">\frac{\partial L_{content}}{\partial F_{ij}^l} =\left \{  \begin{array}{ll}    (F^l - P^l)_{ij} & if\ F_{ij}^l > 0 \\    0 & if\ F_{ij}^l < 0  \end{array}\right .</script><p>The derivative of style loss respect to activations in layer l equals</p><script type="math/tex; mode=display">\frac{\partial E_l}{\partial F_{ij}^l} =\left \{  \begin{array}{ll}    \frac{1}{N_l^2M_l^2}((F^l)^T(G^l - A^l))_{ij}& if\ F_{ij}^l > 0 \\    0 & if\ F_{ij}^l < 0  \end{array}\right .</script><p>The final loss function we want to minimize is</p><script type="math/tex; mode=display">L_{total}(\vec{p},\vec{a},\vec{x}) = \alpha L_{content}(\vec{p},\vec{x}) + \beta L_{style}(\vec{a},\vec{x})</script><hr><h1 id="Fast-Neural-Style"><a href="#Fast-Neural-Style" class="headerlink" title="Fast Neural Style"></a>Fast Neural Style</h1><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/2018/07/19/Neural-Style/img2.jpg" alt="FastNet" title="">                </div>                <div class="image-caption">FastNet</div>            </figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Nerual-Style&quot;&gt;&lt;a href=&quot;#Nerual-Style&quot; class=&quot;headerlink&quot; title=&quot;Nerual Style&quot;&gt;&lt;/a&gt;Nerual Style&lt;/h1&gt;&lt;p&gt;There are two aspect for a ima
+      
+    
+    </summary>
+    
+    
+      <category term="Deep Learning" scheme="http://yoursite.com/tags/Deep-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Stochastic Process (Random Variable)</title>
+    <link href="http://yoursite.com/2018/07/07/Stochastic-Process-Random-Variable/"/>
+    <id>http://yoursite.com/2018/07/07/Stochastic-Process-Random-Variable/</id>
+    <published>2018-07-07T00:21:04.000Z</published>
+    <updated>2018-07-22T02:55:04.070Z</updated>
+    
+    <content type="html"><![CDATA[<p>There are some notation occationals</p><p><strong>Definition (Discrete Random Variable)</strong> A variable $X$ is <strong><em>discrete</em></strong> if there is a finite list of value $a_1,a_2,…,a_n$ that $P(X=a_j) = 1$, $P(X=x)&gt;0$ is the <strong><em>support</em></strong> of $X$</p><p><strong>Definition (Probability Mass Function)</strong> <strong><em>The probability mass function (PMF)</em></strong> of a discrete r.v. $X$ is the function $p_X$ given by $p_X(x) = P(X=x)$.</p><h1 id="Bernoulli-amp-Binomial"><a href="#Bernoulli-amp-Binomial" class="headerlink" title="Bernoulli &amp; Binomial"></a>Bernoulli &amp; Binomial</h1><p><strong>Definition (Bernoulli Distribution)</strong> shortly, $P(X=1)=p$ and $P(X=0) = 1 - p$, and write as $X\sim Bern(p)$</p><p><strong>Definition (Indicator Random Variable)</strong> The indicator random variable of an event $A$ is the r.v. equals 1 if $A$ occurs and 0 otherwise, We denote the indicator of $A$ by $I_A$ or $I(A)$. Note $I_A \sim Bern(p)$ with p = P(A)</p><p><strong>Theorem (Binomial PMF)</strong> Binomial Distribution is the repeatation of Bernoulli Distribution. If $X\sim Bin(n, p)$ then the PMF of X is</p><script type="math/tex; mode=display">P(X=k) = \left( \begin{array}{c} n \\ k \end{array} \right) p^k (1-p)^{n-k}</script><h1 id="Hypergeometric"><a href="#Hypergeometric" class="headerlink" title="Hypergeometric"></a>Hypergeometric</h1><p><strong>urn Model</strong> A box is fiiled with $w$ white and $b$ black balls, then drawing n balls</p><ul><li>With replacement: $Bin(n,w/(w+b))$ for the number of white balls</li><li>Without replacement : Hypergeometric distribution $HGeom(w,b,n)$</li></ul><p><strong>Theorem (Hypergeometric PMF)</strong> If $X \sim HGeom(w,b,n)$, then the PMF of $X$ is</p><script type="math/tex; mode=display">P(X=k) = \frac {\left ( \begin{array}{c} w \\ k \end{array} \right ) \left( \begin{array}{c} b \\ n-k \end{array} \right)}  {\left( \begin{array}{c} w+b \\ n \end{array} \right)}</script><p><strong>Zipf Distribution</strong> If $X\sim Zipf(\alpha &gt; 0)$, then PMF of $X$ is:</p><script type="math/tex; mode=display">P(X=k) = \frac{\frac{1}{k^{\alpha + 1}}}  {\sum_{j=1}^{\infty}(\frac{1}{j})^{\alpha + 1}}</script><ul><li>Zipf Distribution can measure the Word Frequency</li></ul><h1 id="Cumulative-Distribution-Functions"><a href="#Cumulative-Distribution-Functions" class="headerlink" title="Cumulative Distribution Functions"></a>Cumulative Distribution Functions</h1><p><strong>Definition (Cumulative Distribution Function)</strong> The <strong><em>cumulative distribution function(CDF)</em></strong> os an r.v. $X$ is the function $F_X$ given by $F_X(x) = P(X\leq x)$</p><p><strong>Theorem (Valid CDFs)</strong> CDF has the following properties</p><ul><li>Increasing: If $x_1 &lt; x_2$, then $F(x_1) &lt; F(x_2)$</li><li>Right-Continuous: $F(a)  = lim_{x\rightarrow a^+} F(x)$</li><li>Convergence to $0$ and $1$: $lim_{x\rightarrow - \infty} F(x) = 0$ and $lim_{x \rightarrow \infty} F(x) = 1$</li></ul><h1 id="Functions-of-Random-Variable"><a href="#Functions-of-Random-Variable" class="headerlink" title="Functions of Random Variable:"></a>Functions of Random Variable:</h1><p><strong>Definition (Function of an r.v.)</strong> An experiment with sample space S, an r.v. $X$, and a function $g$, also the $g(X)$ is the variable that maps $s$ to $g(X(s))$, for all $s\in S$</p><p><strong>Theorem (PMF of $g(X)$)</strong> for all y in the support of $g(X)$</p><script type="math/tex; mode=display">P(g(X) = y) = \sum_{x:g(x)=y} P(X=x)</script><p>The function of r.v. map the sample space into real number, which is easy for us calculate in mathematic.</p><h1 id="Independence-of-R-V-s"><a href="#Independence-of-R-V-s" class="headerlink" title="Independence of R.V.s"></a>Independence of R.V.s</h1><p><strong>Definition (Independence of two R.V.s)</strong> Random variables $X$ and $Y$ are said to be <strong><em>independent</em></strong></p><script type="math/tex; mode=display">P(X\leq x,Y\leq y) = P(X\leq x)P(Y\leq y)</script><p>for all $x,y\in R$,<br>In the discrete case, equivalent to :</p><script type="math/tex; mode=display">P(X=x,Y=y) = P(X=x)P(Y=y)</script><p><strong>Definition (Independence of many R.V.s)</strong> Random variables $X_1,…,X_n$ are independent if</p><script type="math/tex; mode=display">P(X_1 \leq x_1,\dotsb , X_n \leq x_n) = P(X_1 \leq x_1) \dotsb P(X_n \leq x_n)</script><p>for all $x_1,\dotsb,x_n \in R$</p><p><strong>Definition (i.i.d)</strong> We call some r.v. that are independent and have the same distribution <strong><em>independent and identicallly distributed</em></strong> or <strong><em>i.i.d</em></strong> for short</p><ul><li>Independent: r.v.s provide no information about each others</li><li>Identically distributed: r.v.s have the same PMF</li></ul><p><strong>Theorem</strong> If $X\sim Bin(n,p)$ , $Y \sim Bin(m,p)$, and $X$ is independent of $Y$, then $X+Y \sim Bin(n+m,p)$</p><p><strong>Definition (Conditional Independence of two R.V.s)</strong></p><script type="math/tex; mode=display">P(X\leq x, Y \leq y| Z= z) = P(X\leq x |Z =z) P(Y\leq y|Z=z)</script><p>w</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;There are some notation occationals&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definition (Discrete Random Variable)&lt;/strong&gt; A variable $X$ is &lt;strong&gt;&lt;em&gt;discrete&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="Math" scheme="http://yoursite.com/tags/Math/"/>
+    
+      <category term="Probability" scheme="http://yoursite.com/tags/Probability/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Stochastic Process (Conditional Probability)</title>
+    <link href="http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/"/>
+    <id>http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/</id>
+    <published>2018-07-06T00:24:34.000Z</published>
+    <updated>2018-07-19T02:27:09.257Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h1 id="Defination-of-Conditonal-Probability"><a href="#Defination-of-Conditonal-Probability" class="headerlink" title="Defination of Conditonal Probability"></a>Defination of Conditonal Probability</h1><p><strong>Defination</strong> Two events $A$ and $B$, with $P(B)&gt;0$, the conditional probability of $A$ given $B$ , denoted by $P(A|B)$, is defined as :</p><script type="math/tex; mode=display">P(A|B)=\frac{P(AB)}{P(B)}</script><ul><li>$P(A)$: prior probability</li><li>$P(A|B)$: posterior probability</li></ul><hr><h1 id="Bayes’-Rule-amp-LOTP"><a href="#Bayes’-Rule-amp-LOTP" class="headerlink" title="Bayes’ Rule &amp; LOTP"></a>Bayes’ Rule &amp; LOTP</h1><h3 id="Chain-Rule"><a href="#Chain-Rule" class="headerlink" title="Chain Rule"></a>Chain Rule</h3><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/2018/07/06/Stochastic-Process-Conditional-Probability/sp1.jpg" alt="chain rule" title="">                </div>                <div class="image-caption">chain rule</div>            </figure><script type="math/tex; mode=display">P(A_1,...,A_n) = P(A_1)P(A_2|A_1)P(A_3|A_1A_2)...P(A_n|A_1,...,A_{n-1})</script><h3 id="Bayes’-Rule"><a href="#Bayes’-Rule" class="headerlink" title="Bayes’ Rule"></a>Bayes’ Rule</h3><script type="math/tex; mode=display">P(A|B) = \frac{P(B|A)P(A)}{P(B)}</script><h3 id="LOTP-Law-of-Total-Probability"><a href="#LOTP-Law-of-Total-Probability" class="headerlink" title="LOTP (Law of Total Probability)"></a>LOTP (Law of Total Probability)</h3><p><img src="/2018/07/06/Stochastic-Process-Conditional-Probability/sp2.jpg" align="center" style=" width:300px;"></p><p><strong>Theorem</strong>: Let $A_1,A_2,…,A_n$ be the partition of the sample space $S$, with $P(A_1)&gt;0$, Then :</p><script type="math/tex; mode=display">P(B) = \sum_i^n P(B|A_i)P(A_i)</script><p><strong>Theorem</strong>: Let $A_1,A_2,…,A_n$ be the partition of the sample space $S$, for any event $B$ such that $P(B) &gt; 0$, we have :</p><script type="math/tex; mode=display">P(A_i|B) = \frac{P(A_i)P(B|A_i)}{P(A_1)P(B|A_1)+\dotsb+P(A_n)P(B|A_n)}</script><hr><h1 id="Conditional-Probabilitiy"><a href="#Conditional-Probabilitiy" class="headerlink" title="Conditional Probabilitiy"></a>Conditional Probabilitiy</h1><p>Conditional Probability is also the probability, so it inherent the property of probability (suppose the sample space is $S$):</p><ul><li>$P(S|E) = 1$ and $P(\emptyset|E) = 0$</li><li>if events $A_1,…$ are disjoint, then $P(\cup_{j=1}^{\infty}A_j|E) = \sum_{j=1}^{\infty}P(A_j|E)$</li><li>$P(A^c|E) = 1 - P(A|E)$</li><li>Inclusion-Exclusion : $P(A\cup B|E) = P(A|E) + P(B|E) - P(A\cap B|E)$</li></ul><h3 id="Bayes’-Rule-with-Extra-Condition"><a href="#Bayes’-Rule-with-Extra-Condition" class="headerlink" title="Bayes’ Rule with Extra Condition:"></a>Bayes’ Rule with Extra Condition:</h3><p><strong>Theorem</strong>: Provided that $P(A\cap E)&gt;0$ and $P(B\cap E)&gt;0$, we have:</p><script type="math/tex; mode=display">P(A|B,E) = \frac{P(B|A,E)P(A|E)}{P(B|E)}</script><h3 id="LOTP-with-Extra-Condition"><a href="#LOTP-with-Extra-Condition" class="headerlink" title="LOTP with Extra Condition:"></a>LOTP with Extra Condition:</h3><p><strong>Theorem</strong>: Let $A_1,A_2,…,A_n$ be the partition of the sample space $S$, with $P(A_i \cap E) &gt;0$, Then:</p><script type="math/tex; mode=display">P(B|E) = \sum_{i=1}^n P(B|A_i,E)P(A_i|E)</script><h3 id="Approaches-for-P-A-B-C"><a href="#Approaches-for-P-A-B-C" class="headerlink" title="Approaches for $P(A|B,C)$"></a>Approaches for $P(A|B,C)$</h3><ul><li><script type="math/tex; mode=display">P(A|B,C) = \frac{P(A,B,C)}{P(B,C)}</script></li><li><script type="math/tex; mode=display">P(A|B,C) = \frac{P(B|A,C)P(A|C)}{P(B|C)}</script></li><li><script type="math/tex; mode=display">P(A|B,C) = \frac{P(C|A,B)P(A|B)}{P(A|C)}</script></li></ul><hr><h1 id="Independence-of-Events"><a href="#Independence-of-Events" class="headerlink" title="Independence of Events"></a>Independence of Events</h1><h3 id="Independence-of-Two-Events"><a href="#Independence-of-Two-Events" class="headerlink" title="Independence of Two Events"></a>Independence of Two Events</h3><p><strong>Defination</strong>: Events $A$ and $B$ are independent if</p><script type="math/tex; mode=display">P(A\cap B) = P(A) P(B)  \Leftrightarrow P(A|B) = P(A) , P(B|A) = P(B)</script><h3 id="Independence-vs-Disjointness"><a href="#Independence-vs-Disjointness" class="headerlink" title="Independence vs Disjointness"></a>Independence vs Disjointness</h3><ul><li>$A,B$ is disjoint : $P(A\cap B) = 0$</li><li>$A,B$ is independent : $P(A) = 0, P(B) = 0$</li></ul><h3 id="Conditional-Independence"><a href="#Conditional-Independence" class="headerlink" title="Conditional Independence"></a>Conditional Independence</h3><p><strong>Defination</strong>: Events $A$ and $B$ are conditionally independent given E if:</p><script type="math/tex; mode=display">P(A\cap B|E) = P(A|E)P(B|E)</script><script type="math/tex; mode=display">Contitional\ Independence \nRightarrow Independence</script><script type="math/tex; mode=display">Independence \nRightarrow Contitional\ Independence</script><p>w</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;h1 id=&quot;Defination-of-Conditonal-Probability&quot;&gt;&lt;a href=&quot;#Defination-of-Conditonal-Probability&quot; class=&quot;headerlink&quot; title=&quot;Defination of C
+      
+    
+    </summary>
+    
+    
+      <category term="Math" scheme="http://yoursite.com/tags/Math/"/>
+    
+      <category term="Probability" scheme="http://yoursite.com/tags/Probability/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Robust PCA</title>
+    <link href="http://yoursite.com/2018/07/04/Robust-PCA/"/>
+    <id>http://yoursite.com/2018/07/04/Robust-PCA/</id>
+    <published>2018-07-04T14:47:11.000Z</published>
+    <updated>2018-07-06T02:58:06.587Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h1 id="Introduction-to-RPCA"><a href="#Introduction-to-RPCA" class="headerlink" title="Introduction to RPCA"></a>Introduction to RPCA</h1><p><br><br>The data we collect usually have the low rank property, but the property will vanished when the data is collected causing the noisy, but we can still decomposite the matrix into low-rank matrix and spares error matrix from the corruped data.</p><script type="math/tex; mode=display">  D=\underbrace{A}_{\text{low rank matrix}}+\underbrace{E}_{\text{sparse matrix}} \notag</script><p>Traditional approach for solving this problem is using PCA (Principal Components Analysis), there are many interpretation to PCA, one relate to rank is despiting the low value singular value as this componets contribute less to the data. Thus, it can be considered as the noisy. So we take the $k^{th}$ largest singular value and drop the rest , this can be represnt as the following formulation :</p><script type="math/tex; mode=display">  \mathop{min}_{A,E} \|E \|_F, \ \ \ \  \text{subject to } \ rank(A)\leq r, D = A + E \notag</script><p>PCA has a shortage that it is not robust to the outliers,  then the RPCA (Robust Principal Components Analysis) came out, RPCA could making the matrix recovery whether the noisy is large or not only if the sparse property is confirmed, the original form of the RPCA can be written as :</p><script type="math/tex; mode=display">  \mathop{min}_{A,E} rank(A) + \|E\|_0, \ \ \ \  \text{subject to } \ D = A + E \notag</script><p>The optimization formulation above is non-convex and is hard to get the solution, we can use the convex relax technology apply on it, then it turn out into the most used and the most efficient from:</p><script type="math/tex; mode=display">  \mathop{min}_{A,E} \|A\|_* + \|E\|_1, \ \ \ \  \text{subject to } \ D = A + E \notag</script><p>$| \cdot |_*$ is the unclear norm, which is the sum of the all singular values : $\sum_i^n\sigma_i$, $l_1$ norm of matrix $| \cdot |_1$ is the sum of absolute value of all the element : $\sum_i^n \sum_j^n |D_{ij}|$ .</p><hr><h1 id="Algorithm-of-RPCA"><a href="#Algorithm-of-RPCA" class="headerlink" title="Algorithm of RPCA"></a>Algorithm of RPCA</h1><p><br><br>Before introducting the Algorithm, we first introducing the two operators</p><h2 id="Singular-Value-Thresholding"><a href="#Singular-Value-Thresholding" class="headerlink" title="Singular Value Thresholding"></a>Singular Value Thresholding</h2><p>The optimal solution to the optimization problem : $\frac{1}{2} | X- Y |_F^2 + \tau |X|_*$ with the variable $X$ is thresholing the singular value of $X$</p><script type="math/tex; mode=display">\begin{align}  \mathcal{D}_{\tau}(X) :=  U \mathcal{D}_{\tau} (\Sigma) V^{\prime} ,  \ \ \mathcal{D}_{\tau}(\Sigma) = diag (  \{  \sigma_i - \tau  \}  )  \notag \\  \mathcal{D}_{\tau}(Y) = \mathop{arg} \mathop{min}_{X} \left \{    \frac{1}{2} \| X- Y \|_F^2 + \tau \|X\|_*  \right \} \notag\end{align}</script><h2 id="Soft-Thresholding"><a href="#Soft-Thresholding" class="headerlink" title="Soft Thresholding"></a>Soft Thresholding</h2><p>As same as the $l_1$ norm in vector, thresholding the absolute value of all the element in $X$.</p><script type="math/tex; mode=display">\begin{align}  \psi_{st}(Y) =  \mathop{arg} \mathop{min}_{X} \left \{    \frac{1}{2} \| X- Y \|_F^2 + \tau \|X\|_1  \right \} \notag\end{align}</script><p>There are various methods to solving the RPCA problem, the most successful one is slove the Augmented Lagrangian function of the original problem which we called ALM algorithm, the Augmented Lagrangian function is:</p><script type="math/tex; mode=display">\begin{align}  L(A,E,Y,\mu) = \|A\|_* + \lambda\|E\|_1+ \langle Y,D-A-E \rangle + \frac{\mu}{2} \| D- A -E \|_F^2 \notag\end{align}</script><p>Usually, we use ADMM to slove the ALM problems :</p><script type="math/tex; mode=display">\begin{align}  A_{k+1} &= SVT_{1/\mu_k}(D-E_k + \mu_k^{-1} Y_k) \notag \\  E_{k+1} &= ST_{\lambda/\mu_k} (D - A_{k+1} + \mu_k^{-1} Y_k) \notag \\  Y_{k+1} &= Y_k + \mu_k ( D - A_{k+1} - E_{k+1} ) \notag\end{align}</script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;h1 id=&quot;Introduction-to-RPCA&quot;&gt;&lt;a href=&quot;#Introduction-to-RPCA&quot; class=&quot;headerlink&quot; title=&quot;Introduction to RPCA&quot;&gt;&lt;/a&gt;Introduction to RPCA&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="Math" scheme="http://yoursite.com/tags/Math/"/>
+    
+      <category term="Optimization" scheme="http://yoursite.com/tags/Optimization/"/>
+    
+      <category term="Low-Rank" scheme="http://yoursite.com/tags/Low-Rank/"/>
+    
+  </entry>
+  
+</feed>
