@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-22T02:51:48.714Z</updated>
+  <updated>2018-07-23T08:04:28.768Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,17 @@
     <link href="http://yoursite.com/2018/07/22/Stochastic-Process-Expectation-Variance/"/>
     <id>http://yoursite.com/2018/07/22/Stochastic-Process-Expectation-Variance/</id>
     <published>2018-07-22T02:30:26.000Z</published>
-    <updated>2018-07-22T02:51:48.714Z</updated>
+    <updated>2018-07-23T08:04:28.768Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>Definition (Expectation of R.V.)</strong></p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;Definition (Expectation of R.V.)&lt;/strong&gt;&lt;/p&gt;
+
+      
     
     </summary>
     
