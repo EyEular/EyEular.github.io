@@ -52,7 +52,7 @@
     <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
       <div class="brand">
         <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/img/avatar.jpg">
+          <img src="/img/E.jpg">
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">Eulring</h5>
@@ -65,36 +65,85 @@
         
             <li class="waves-block waves-effect">
               <a href="/"  >
-                <i class="icon icon-lg icon-home"></i>
+                <i class="icon icon-lg icon-react"></i>
                 Home
               </a>
             </li>
         
             <li class="waves-block waves-effect">
               <a href="/archives"  >
-                <i class="icon icon-lg icon-archives"></i>
+                <i class="icon icon-lg icon-triangle"></i>
                 Archives
               </a>
             </li>
         
             <li class="waves-block waves-effect">
               <a href="/tags"  >
-                <i class="icon icon-lg icon-tags"></i>
+                <i class="icon icon-lg icon-diamond"></i>
                 Tags
               </a>
             </li>
         
             <li class="waves-block waves-effect">
               <a href="https://github.com/EyEular" target="_blank" >
-                <i class="icon icon-lg icon-github"></i>
+                <i class="icon icon-lg icon-star"></i>
                 gayhub
               </a>
             </li>
         
             <li class="waves-block waves-effect">
               <a href="/links"  >
-                <i class="icon icon-lg icon-link"></i>
-                Test
+                <i class="icon icon-lg icon-hexagon"></i>
+                Links
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/links"  >
+                <i class="icon icon-lg icon-octagon"></i>
+                About me
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/links"  >
+                <i class="icon icon-lg icon-adjust"></i>
+                Adjust
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/links"  >
+                <i class="icon icon-lg icon-bandcamp"></i>
+                Bandcamp
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/links"  >
+                <i class="icon icon-lg icon-bullseye"></i>
+                Bullseye
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/links"  >
+                <i class="icon icon-lg icon-chrome"></i>
+                Chrome
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/links"  >
+                <i class="icon icon-lg icon-compass"></i>
+                Compass
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/links"  >
+                <i class="icon icon-lg icon-copyright"></i>
+                Copyright
               </a>
             </li>
         
@@ -198,7 +247,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/categories/&title=EyEular&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/categories/&title=EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -283,10 +332,10 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
     var OriginTitile = document.title, titleTime;
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            document.title = '死鬼去哪里了！';
+            document.title = '(一条消息未读。。)';
             clearTimeout(titleTime);
         } else {
-            document.title = '(つェ⊂)咦!又好了!';
+            document.title = 'EyEular';
             titleTime = setTimeout(function() {
                 document.title = OriginTitile;
             },2000);
