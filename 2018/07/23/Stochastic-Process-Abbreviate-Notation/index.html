@@ -13,28 +13,22 @@
     
     
     
-    <title>Neural Style | EyEular</title>
+    <title>Stochastic-Process （Abbreviate &amp; Notation） | EyEular</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Deep Learning">
-    <meta name="description" content="Nerual StyleThere are two aspect for a image, one is the content of the image, which can be descriped as elements or object in the image, another is the style of the image, it might be abstract, and u">
-<meta name="keywords" content="Deep Learning">
+    <meta name="keywords" content="Math,Probability">
+    <meta name="keywords" content="Math,Probability">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Neural Style">
-<meta property="og:url" content="http://yoursite.com/2018/07/19/Neural-Style/index.html">
+<meta property="og:title" content="Stochastic-Process （Abbreviate &amp; Notation）">
+<meta property="og:url" content="http://yoursite.com/2018/07/23/Stochastic-Process-Abbreviate-Notation/index.html">
 <meta property="og:site_name" content="EyEular">
-<meta property="og:description" content="Nerual StyleThere are two aspect for a image, one is the content of the image, which can be descriped as elements or object in the image, another is the style of the image, it might be abstract, and u">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2018/07/19/Neural-Style/img1.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/07/19/Neural-Style/img2.jpg">
-<meta property="og:updated_time" content="2018-07-22T02:31:09.823Z">
+<meta property="og:updated_time" content="2018-07-23T08:55:24.425Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Neural Style">
-<meta name="twitter:description" content="Nerual StyleThere are two aspect for a image, one is the content of the image, which can be descriped as elements or object in the image, another is the style of the image, it might be abstract, and u">
-<meta name="twitter:image" content="http://yoursite.com/2018/07/19/Neural-Style/img1.jpg">
+<meta name="twitter:title" content="Stochastic-Process （Abbreviate &amp; Notation）">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
     
@@ -122,7 +116,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Neural Style</div>
+        <div class="flex-col header-title ellipsis">Stochastic-Process （Abbreviate &amp; Notation）</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -144,11 +138,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Neural Style</h1>
+        <h1 class="title">Stochastic-Process （Abbreviate &amp; Notation）</h1>
         <h5 class="subtitle">
             
-                <time datetime="2018-07-19T02:25:16.000Z" itemprop="datePublished" class="page-time">
-  2018-07-19
+                <time datetime="2018-07-23T08:54:34.000Z" itemprop="datePublished" class="page-time">
+  2018-07-23
 </time>
 
 
@@ -164,20 +158,13 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Nerual-Style"><span class="post-toc-number">1.</span> <span class="post-toc-text">Nerual Style</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Fast-Neural-Style"><span class="post-toc-number">2.</span> <span class="post-toc-text">Fast Neural Style</span></a></li></ol>
-        </nav>
-    </aside>
-    
-<article id="post-Neural-Style"
+<article id="post-Stochastic-Process-Abbreviate-Notation"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Neural Style</h1>
+        <h1 class="post-card-title">Stochastic-Process （Abbreviate & Notation）</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-07-19 10:25:16" datetime="2018-07-19T02:25:16.000Z"  itemprop="datePublished">2018-07-19</time>
+            <time class="post-time" title="2018-07-23 16:54:34" datetime="2018-07-23T08:54:34.000Z"  itemprop="datePublished">2018-07-23</time>
 
             
 
@@ -190,64 +177,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="Nerual-Style"><a href="#Nerual-Style" class="headerlink" title="Nerual Style"></a>Nerual Style</h1><p>There are two aspect for a image, one is the <strong>content</strong> of the image, which can be descriped as elements or object in the image, another is the <strong>style</strong> of the image, it might be abstract, and usually revealed by the painting skill or technique.</p>
-<p>Shortly, we have two image, one for style while the other for content. now, we want to combine the style in image1 and the content in image2 together, and it can be achieved from deep neural net work, and we call it <strong>Neural Style</strong>.</p>
-<p>Moreover we simply define the loss function care both style and content</p>
-<script type="math/tex; mode=display">L_{total} = \alpha L_{content}+\beta L_{style}</script><p>Now let’s have a look about what neural network can do here, and analysis the affect of $L_{content}$ and $L_{style}$ independently.</p>
-<p>Suppose we have the content image, and send it to the neural network, it will have the responses in each layer by filters, we also construct a white noisy image, filter it in the same way, and define a loss $L_{content}$ between filtered content and filtered noisy, we take the noisy image as input,and it can update iterativly.</p>
-<p><img src="/2018/07/19/Neural-Style/img1.jpg" alt="reconstruction"></p>
-<p>The image above show the reconstruction result between different layers, and reconstruction from lower layers(a,b,c) is alomost perfect, the style reconstruction may be more realistic in the deeper layer.</p>
-<p>Let’s get familiar with some notion of the formulation first( suppse we are in the $l^{th}$ level of the net ):</p>
-<ul>
-<li><strong>$\vec{p}$</strong>: Original <strong>content</strong> image (input)<ul>
-<li><strong>$P^l$</strong>: Content feature representation in layer $l$ respect to $\vec{p}$</li>
-</ul>
-</li>
-<li><strong>$\vec{a}$</strong>: Original <strong>style</strong> image (input)<ul>
-<li><strong>$A^l$</strong>: Style feature representation in layer $l$ respect to $\vec{a}$</li>
-</ul>
-</li>
-<li><p><strong>$\vec{x}$</strong>: Target image (output)</p>
-<ul>
-<li><strong>$F^l$</strong>: Content feature representation in layer $l$ respect to $\vec{x}$</li>
-<li><strong>$G^l$</strong>: Style feature representation in layer $l$ respect to $\vec{x}$</li>
-<li><strong>$F_{ij}^l$</strong>: Element of $i^{th}$ filter at $j^{th}$ position in layer $l$</li>
-</ul>
-</li>
-<li><p><strong>$N_l$</strong>: The number of the filters in the $l^{th}$ level</p>
-</li>
-<li><strong>$M_l$</strong>: The size of a feature map produced by a filter,usually it equals to $height \times weight$</li>
-</ul>
-<p>The squared-error loss between two content feature representations is:</p>
-<script type="math/tex; mode=display">L_{content}(\vec{p},\vec{x},l) = \frac{1}{2} \sum_{i,j}(F_{ij}^l - P_{ij}^l)^2</script><p>In each layer, build a style representation compute the correlations between the different filter responses, which is called Gram Matrix $G^l\in R^{N_l \times N_l}$, and $G_{ij}^l$ is the inner product between the vectorized feature map between $i$ and $j$ in layer $l$</p>
-<script type="math/tex; mode=display">G_{ij}^l = \sum_k F_{ik}^l F_{jk}^l</script><p>Also we have</p>
-<script type="math/tex; mode=display">A_{ij}^l = \sum_k P_{ik}^l P_{jk}^l</script><p>The contribution of the layer to the total loss is</p>
-<script type="math/tex; mode=display">E_l = \frac{1}{4N_l^2 M_l^2 }\sum_{i,j}(G_{ij}^l - A_{ij}^l)^2</script><p>And the total loss is</p>
-<script type="math/tex; mode=display">L_{style}(\vec{a},\vec{x}) = \sum_{l=0}^L w_lE_l</script><p>Let’s focus more on the detail about the gradient of the loss:</p>
-<p>The derivative of content loss respect to activations in layer l equals</p>
-<script type="math/tex; mode=display">\frac{\partial L_{content}}{\partial F_{ij}^l} =
-\left \{
-  \begin{array}{ll}
-    (F^l - P^l)_{ij} & if\ F_{ij}^l > 0 \\
-    0 & if\ F_{ij}^l < 0
-  \end{array}
-\right .</script><p>The derivative of style loss respect to activations in layer l equals</p>
-<script type="math/tex; mode=display">\frac{\partial E_l}{\partial F_{ij}^l} =
-\left \{
-  \begin{array}{ll}
-    \frac{1}{N_l^2M_l^2}((F^l)^T(G^l - A^l))_{ij}& if\ F_{ij}^l > 0 \\
-    0 & if\ F_{ij}^l < 0
-  \end{array}
-\right .</script><p>The final loss function we want to minimize is</p>
-<script type="math/tex; mode=display">L_{total}(\vec{p},\vec{a},\vec{x}) = \alpha L_{content}(\vec{p},\vec{x}) + \beta L_{style}(\vec{a},\vec{x})</script><hr>
-<h1 id="Fast-Neural-Style"><a href="#Fast-Neural-Style" class="headerlink" title="Fast Neural Style"></a>Fast Neural Style</h1><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2018/07/19/Neural-Style/img2.jpg" alt="FastNet" title="">
-                </div>
-                <div class="image-caption">FastNet</div>
-            </figure>
-
+            
         </div>
 
         <blockquote class="post-copyright">
@@ -255,7 +185,7 @@
         
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/07/19/Neural-Style/" target="_blank" rel="external">http://yoursite.com/2018/07/19/Neural-Style/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/07/23/Stochastic-Process-Abbreviate-Notation/" target="_blank" rel="external">http://yoursite.com/2018/07/23/Stochastic-Process-Abbreviate-Notation/</a>
         
     </div>
     <footer>
@@ -275,7 +205,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Math/">Math</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Probability/">Probability</a></li></ul>
 
 
             
@@ -285,7 +215,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/19/Neural-Style/&title=《Neural Style》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/23/Stochastic-Process-Abbreviate-Notation/&title=《Stochastic-Process （Abbreviate & Notation）》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -295,22 +225,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/19/Neural-Style/&title=《Neural Style》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/23/Stochastic-Process-Abbreviate-Notation/&title=《Stochastic-Process （Abbreviate & Notation）》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/19/Neural-Style/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/23/Stochastic-Process-Abbreviate-Notation/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Neural Style》 — EyEular&url=http://yoursite.com/2018/07/19/Neural-Style/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stochastic-Process （Abbreviate & Notation）》 — EyEular&url=http://yoursite.com/2018/07/23/Stochastic-Process-Abbreviate-Notation/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/19/Neural-Style/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/23/Stochastic-Process-Abbreviate-Notation/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -330,21 +260,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2018/07/22/Stochastic-Process-Expectation-Variance/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Stochastic Process (Expectation &amp; Variance)</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018/07/07/Stochastic-Process-Random-Variable/" id="post-next" class="post-nav-link">
+      <a href="/2018/07/22/Stochastic-Process-Expectation-Variance/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Stochastic Process (Random Variable)</h4>
+        <h4 class="title">Stochastic Process (Expectation &amp; Variance)</h4>
       </a>
     </div>
   
@@ -438,7 +361,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/19/Neural-Style/&title=《Neural Style》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/23/Stochastic-Process-Abbreviate-Notation/&title=《Stochastic-Process （Abbreviate & Notation）》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -448,22 +371,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/19/Neural-Style/&title=《Neural Style》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/23/Stochastic-Process-Abbreviate-Notation/&title=《Stochastic-Process （Abbreviate & Notation）》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/19/Neural-Style/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/23/Stochastic-Process-Abbreviate-Notation/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Neural Style》 — EyEular&url=http://yoursite.com/2018/07/19/Neural-Style/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stochastic-Process （Abbreviate & Notation）》 — EyEular&url=http://yoursite.com/2018/07/23/Stochastic-Process-Abbreviate-Notation/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/19/Neural-Style/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/23/Stochastic-Process-Abbreviate-Notation/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -474,7 +397,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/07/19/Neural-Style/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/07/23/Stochastic-Process-Abbreviate-Notation/" alt="微信分享二维码">
 </div>
 
 

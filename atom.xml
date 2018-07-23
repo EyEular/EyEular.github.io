@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-23T08:04:28.768Z</updated>
+  <updated>2018-07-23T08:55:24.425Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,20 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Stochastic-Process （Abbreviate &amp; Notation）</title>
+    <link href="http://yoursite.com/2018/07/23/Stochastic-Process-Abbreviate-Notation/"/>
+    <id>http://yoursite.com/2018/07/23/Stochastic-Process-Abbreviate-Notation/</id>
+    <published>2018-07-23T08:54:34.000Z</published>
+    <updated>2018-07-23T08:55:24.425Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="Math" scheme="http://yoursite.com/tags/Math/"/>
+    
+      <category term="Probability" scheme="http://yoursite.com/tags/Probability/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Stochastic Process (Expectation &amp; Variance)</title>
     <link href="http://yoursite.com/2018/07/22/Stochastic-Process-Expectation-Variance/"/>
     <id>http://yoursite.com/2018/07/22/Stochastic-Process-Expectation-Variance/</id>
     <published>2018-07-22T02:30:26.000Z</published>
-    <updated>2018-07-23T08:04:28.768Z</updated>
+    <updated>2018-07-23T08:54:58.535Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>Definition (Expectation of R.V.)</strong></p>]]></content>
+    <content type="html"><![CDATA[<p><strong>Definition</strong><br><strong>Theorem</strong></p><p><strong>Definition (Expectation of R.V.)</strong></p><script type="math/tex; mode=display">E(X) = \sum_{x}\underbrace{x}_{value} \underbrace{P(X=x)}_{PMF\ at\ x}</script><p><strong>Theorem (Linearty)</strong></p><script type="math/tex; mode=display">E(X+Y) = E(X) + E(Y)</script><script type="math/tex; mode=display">E(cX) = c E(x)</script><p><strong>Theorem (Monotonicity)</strong></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;strong&gt;Definition (Expectation of R.V.)&lt;/strong&gt;&lt;/p&gt;
-
+        &lt;p&gt;&lt;strong&gt;Definition&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Theorem&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definition (Expectation of R.V.)&lt;/strong&gt;&lt;/p&gt;
+&lt;script type=&quot;math/t
       
     
     </summary>
