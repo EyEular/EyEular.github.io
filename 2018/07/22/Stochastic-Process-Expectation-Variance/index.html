@@ -20,18 +20,18 @@
     
     
     <meta name="keywords" content="Math,Probability">
-    <meta name="description" content="DefinitionTheorem Definition (Expectation of R.V.) E(X) = \sum_{x}\underbrace{x}_{value} \underbrace{P(X=x)}_{PMF\ at\ x}Theorem (Linearty) E(X+Y) = E(X) + E(Y)E(cX) = c E(x)Theorem (Monotonicity)">
+    <meta name="description" content="DefinitionTheorem Definition (Expectation of R.V.) E(X) = \sum_{x}\underbrace{x}_{value} \underbrace{P(X=x)}_{PMF\ at\ x}Theorem (Linearty) E(X+Y) = E(X) + E(Y)E(cX) = c E(x)Theorem (Monotonicity): $X">
 <meta name="keywords" content="Math,Probability">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Stochastic Process (Expectation &amp; Variance)">
 <meta property="og:url" content="http://yoursite.com/2018/07/22/Stochastic-Process-Expectation-Variance/index.html">
 <meta property="og:site_name" content="EyEular">
-<meta property="og:description" content="DefinitionTheorem Definition (Expectation of R.V.) E(X) = \sum_{x}\underbrace{x}_{value} \underbrace{P(X=x)}_{PMF\ at\ x}Theorem (Linearty) E(X+Y) = E(X) + E(Y)E(cX) = c E(x)Theorem (Monotonicity)">
+<meta property="og:description" content="DefinitionTheorem Definition (Expectation of R.V.) E(X) = \sum_{x}\underbrace{x}_{value} \underbrace{P(X=x)}_{PMF\ at\ x}Theorem (Linearty) E(X+Y) = E(X) + E(Y)E(cX) = c E(x)Theorem (Monotonicity): $X">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-23T08:54:58.535Z">
+<meta property="og:updated_time" content="2018-07-23T09:07:00.968Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stochastic Process (Expectation &amp; Variance)">
-<meta name="twitter:description" content="DefinitionTheorem Definition (Expectation of R.V.) E(X) = \sum_{x}\underbrace{x}_{value} \underbrace{P(X=x)}_{PMF\ at\ x}Theorem (Linearty) E(X+Y) = E(X) + E(Y)E(cX) = c E(x)Theorem (Monotonicity)">
+<meta name="twitter:description" content="DefinitionTheorem Definition (Expectation of R.V.) E(X) = \sum_{x}\underbrace{x}_{value} \underbrace{P(X=x)}_{PMF\ at\ x}Theorem (Linearty) E(X+Y) = E(X) + E(Y)E(cX) = c E(x)Theorem (Monotonicity): $X">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
     
@@ -183,8 +183,9 @@
             <p><strong>Definition</strong><br><strong>Theorem</strong></p>
 <p><strong>Definition (Expectation of R.V.)</strong></p>
 <script type="math/tex; mode=display">E(X) = \sum_{x}\underbrace{x}_{value} \underbrace{P(X=x)}_{PMF\ at\ x}</script><p><strong>Theorem (Linearty)</strong></p>
-<script type="math/tex; mode=display">E(X+Y) = E(X) + E(Y)</script><script type="math/tex; mode=display">E(cX) = c E(x)</script><p><strong>Theorem (Monotonicity)</strong></p>
-
+<script type="math/tex; mode=display">E(X+Y) = E(X) + E(Y)</script><script type="math/tex; mode=display">E(cX) = c E(x)</script><p><strong>Theorem (Monotonicity)</strong>: $X$ and $Y$ are r.v.s. such that $X&gt;Y$ with probability 1.<br>Then $E(X)\geq E(Y)$</p>
+<p><strong>Theorem (Expectation via Survial Function)</strong>: Let $X$ be a nonnegative r.v. Let $F$ be the CDF of $X$, and define survial function of $X$ named $G$ as $G(x) = 1-F(x) = P(X&gt;x)$, Then</p>
+<script type="math/tex; mode=display">E(x) = \sum_{n=0}^{\infty} G(x)</script>
         </div>
 
         <blockquote class="post-copyright">
@@ -473,6 +474,22 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 </script>
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </body>
 </html>
