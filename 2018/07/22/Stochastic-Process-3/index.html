@@ -13,25 +13,25 @@
     
     
     
-    <title>Stochastic Process (Expectation &amp; Variance) | EyEular</title>
+    <title>Stochastic Process (Expectation) | EyEular</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="Math,Probability">
-    <meta name="description" content="DefinitionTheorem Definition (Expectation of R.V.) E(X) = \sum_{x}\underbrace{x}_{value} \underbrace{P(X=x)}_{PMF\ at\ x}Theorem (Linearty) E(X+Y) = E(X) + E(Y)E(cX) = c E(x)Theorem (Monotonicity): $X">
+    <meta name="description" content="DefinitionTheorem ExpectationDefinition (Expectation of R.V.) E(X) = \sum_{x}\underbrace{x}_{value} \underbrace{P(X=x)}_{PMF\ at\ x}Theorem (Monotonicity): $X$ and $Y$ are r.v.s. such that $X&amp;gt;Y$ w">
 <meta name="keywords" content="Math,Probability">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Stochastic Process (Expectation &amp; Variance)">
-<meta property="og:url" content="http://yoursite.com/2018/07/22/Stochastic-Process-Expectation-Variance/index.html">
+<meta property="og:title" content="Stochastic Process (Expectation)">
+<meta property="og:url" content="http://yoursite.com/2018/07/22/Stochastic-Process-3/index.html">
 <meta property="og:site_name" content="EyEular">
-<meta property="og:description" content="DefinitionTheorem Definition (Expectation of R.V.) E(X) = \sum_{x}\underbrace{x}_{value} \underbrace{P(X=x)}_{PMF\ at\ x}Theorem (Linearty) E(X+Y) = E(X) + E(Y)E(cX) = c E(x)Theorem (Monotonicity): $X">
+<meta property="og:description" content="DefinitionTheorem ExpectationDefinition (Expectation of R.V.) E(X) = \sum_{x}\underbrace{x}_{value} \underbrace{P(X=x)}_{PMF\ at\ x}Theorem (Monotonicity): $X$ and $Y$ are r.v.s. such that $X&amp;gt;Y$ w">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-23T09:07:00.968Z">
+<meta property="og:updated_time" content="2018-07-24T03:19:35.541Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Stochastic Process (Expectation &amp; Variance)">
-<meta name="twitter:description" content="DefinitionTheorem Definition (Expectation of R.V.) E(X) = \sum_{x}\underbrace{x}_{value} \underbrace{P(X=x)}_{PMF\ at\ x}Theorem (Linearty) E(X+Y) = E(X) + E(Y)E(cX) = c E(x)Theorem (Monotonicity): $X">
+<meta name="twitter:title" content="Stochastic Process (Expectation)">
+<meta name="twitter:description" content="DefinitionTheorem ExpectationDefinition (Expectation of R.V.) E(X) = \sum_{x}\underbrace{x}_{value} \underbrace{P(X=x)}_{PMF\ at\ x}Theorem (Monotonicity): $X$ and $Y$ are r.v.s. such that $X&amp;gt;Y$ w">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
     
@@ -119,7 +119,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Stochastic Process (Expectation &amp; Variance)</div>
+        <div class="flex-col header-title ellipsis">Stochastic Process (Expectation)</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -141,7 +141,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Stochastic Process (Expectation &amp; Variance)</h1>
+        <h1 class="title">Stochastic Process (Expectation)</h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-07-22T02:30:26.000Z" itemprop="datePublished" class="page-time">
@@ -161,11 +161,18 @@
 
 <div class="container body-wrap">
     
-<article id="post-Stochastic-Process-Expectation-Variance"
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Expectation"><span class="post-toc-number">1.</span> <span class="post-toc-text">Expectation</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Propertise-of-Expectation"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">Propertise of Expectation</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Inequalities-of-Expectation"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">Inequalities of Expectation</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Variance"><span class="post-toc-number">2.</span> <span class="post-toc-text">Variance</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Propertise-of-Variance"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">Propertise of Variance</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Geometric-and-Negative-Binomial"><span class="post-toc-number">3.</span> <span class="post-toc-text">Geometric and Negative Binomial</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Indicator-R-V"><span class="post-toc-number">4.</span> <span class="post-toc-text">Indicator R.V.</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Propertise-of-Indicator-R-V"><span class="post-toc-number">4.0.1.</span> <span class="post-toc-text">Propertise of Indicator R.V.</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Moments-amp-Indicators"><span class="post-toc-number">5.</span> <span class="post-toc-text">Moments &amp; Indicators</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Poisson"><span class="post-toc-number">6.</span> <span class="post-toc-text">Poisson</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Stochastic-Process-3"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Stochastic Process (Expectation & Variance)</h1>
+        <h1 class="post-card-title">Stochastic Process (Expectation)</h1>
         <div class="post-meta">
             <time class="post-time" title="2018-07-22 10:30:26" datetime="2018-07-22T02:30:26.000Z"  itemprop="datePublished">2018-07-22</time>
 
@@ -180,12 +187,67 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>Definition</strong><br><strong>Theorem</strong></p>
-<p><strong>Definition (Expectation of R.V.)</strong></p>
-<script type="math/tex; mode=display">E(X) = \sum_{x}\underbrace{x}_{value} \underbrace{P(X=x)}_{PMF\ at\ x}</script><p><strong>Theorem (Linearty)</strong></p>
-<script type="math/tex; mode=display">E(X+Y) = E(X) + E(Y)</script><script type="math/tex; mode=display">E(cX) = c E(x)</script><p><strong>Theorem (Monotonicity)</strong>: $X$ and $Y$ are r.v.s. such that $X&gt;Y$ with probability 1.<br>Then $E(X)\geq E(Y)$</p>
+            <hr>
+<p><strong>Definition</strong><br><strong>Theorem</strong></p>
+<h1 id="Expectation"><a href="#Expectation" class="headerlink" title="Expectation"></a>Expectation</h1><p><strong>Definition (Expectation of R.V.)</strong></p>
+<script type="math/tex; mode=display">E(X) = \sum_{x}\underbrace{x}_{value} \underbrace{P(X=x)}_{PMF\ at\ x}</script><p><strong>Theorem (Monotonicity)</strong>: $X$ and $Y$ are r.v.s. such that $X&gt;Y$ with probability 1.<br>Then $E(X)\geq E(Y)$</p>
 <p><strong>Theorem (Expectation via Survial Function)</strong>: Let $X$ be a nonnegative r.v. Let $F$ be the CDF of $X$, and define survial function of $X$ named $G$ as $G(x) = 1-F(x) = P(X&gt;x)$, Then</p>
-<script type="math/tex; mode=display">E(x) = \sum_{n=0}^{\infty} G(x)</script>
+<script type="math/tex; mode=display">E(x) = \sum_{n=0}^{\infty} G(x)</script><p><strong>Theorem (Low Of The Unconscious Statistician(LOTUS))</strong>: If $X$ is discrete r.v. and $g$ is a function from $R$ to $R$, then</p>
+<script type="math/tex; mode=display">E(g(x)) = \sum_x g(x)P(X=x)</script><h3 id="Propertise-of-Expectation"><a href="#Propertise-of-Expectation" class="headerlink" title="Propertise of Expectation"></a>Propertise of Expectation</h3><ul>
+<li>$E(X+Y) = E(X) + E(Y)$</li>
+<li>$E(cX) = c E(x)$</li>
+<li>If $X$ and $Y$ are independent, $E(XY) = E(X) E(Y)$</li>
+</ul>
+<h3 id="Inequalities-of-Expectation"><a href="#Inequalities-of-Expectation" class="headerlink" title="Inequalities of Expectation"></a>Inequalities of Expectation</h3><ul>
+<li>Cauchy–Bunyakovsky–Schwarz inequality<script type="math/tex; mode=display">E[XY]^2\leq E[X^2] E[Y^2]</script></li>
+<li><a href="https://en.wikipedia.org/wiki/Expected_value#Inequalities" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Expected_value#Inequalities</a> …</li>
+</ul>
+<hr>
+<h1 id="Variance"><a href="#Variance" class="headerlink" title="Variance"></a>Variance</h1><p><strong>Definition (Variance and Standard Deviation)</strong> variance of an r.v. $X$ is</p>
+<script type="math/tex; mode=display">Var(X) = E(X-EX)^2</script><p>Square root of the variance is standard deviation (SD):</p>
+<script type="math/tex; mode=display">SD(X)  = \sqrt{Var(X)}</script><h3 id="Propertise-of-Variance"><a href="#Propertise-of-Variance" class="headerlink" title="Propertise of Variance"></a>Propertise of Variance</h3><ul>
+<li>For any r.v. $X$, $Var(X) = E(X^2) - (EX)^2$</li>
+<li>$Var(X + c ) = Var(X)$</li>
+<li>$Var(c X ) = c^2Var(X)$</li>
+<li>If $X$ and $Y$ are independent, then $Var(X+Y) = Var(X) + Var(Y)$</li>
+</ul>
+<hr>
+<h1 id="Geometric-and-Negative-Binomial"><a href="#Geometric-and-Negative-Binomial" class="headerlink" title="Geometric and Negative Binomial"></a>Geometric and Negative Binomial</h1><p><strong>Definition (Geometric Distribution)</strong>: Consider a sequence of independent Bernoulli trials, each with the same success probability $p\in (0,1)$, trails performed until a success occurs. Let $X$ be the number of the failures before the first successful trail. Then $X$ has the Geometric Distributions, denote by $X\sim Geom(p)$</p>
+<p><strong>Theorem (Geometric PMF)</strong>: If $X\sim Geom(p)$, then the PMF of $X$ is</p>
+<script type="math/tex; mode=display">P(X=k) = (1-p)^kp</script><p><strong>Theorem (Memoryless Property)</strong>: If $X\sim Geom(p)$, then for positive integer n</p>
+<script type="math/tex; mode=display">P(X\geq n+k | X \geq k ) = P(X\geq n)</script><p><strong>Definition (First Success Distribution)</strong>: very similay to Geometric $X$, Let it be $Y$, and $X+1 = Y$ …. , we denote it by $FS(p)$</p>
+<p><strong>Definition (Negative Binomial Distribution)</strong>: In a sequence of independent Bernoulli trails with p, if $X$ is the number of failures before $r^{th}$ success, then $X$ is the Negative Binomial Distribution with $r$ and $p$, denoted by $X\sim NBin(r, p)$</p>
+<p><strong>Theorem (Negative Binomial PMF)</strong>: If $X\sim NBin(r,p)$, then the PMF of $X$ is</p>
+<script type="math/tex; mode=display">P(X=n) = \left ( \begin{array}{c} n+r-1 \\ r-1 \end{array}   \right )p^r(1-p)^n</script><p><strong>Theorem (Geometric &amp; Negative Binomial)</strong>: Let $X\sim NBin(r,p)$, and $X_i$ are $i.i.d. Geom(p)$ , Then we have $X= X_1+\dotsb + X_r$</p>
+<hr>
+<h1 id="Indicator-R-V"><a href="#Indicator-R-V" class="headerlink" title="Indicator R.V."></a>Indicator R.V.</h1><p><strong>Definition (Indicator R.V.)</strong></p>
+<script type="math/tex; mode=display">I_A =
+\left \{
+  \begin{array}{ll}
+    1 & if\ A\ occurs \\
+    0 & otherwise
+  \end{array}
+\right .</script><h3 id="Propertise-of-Indicator-R-V"><a href="#Propertise-of-Indicator-R-V" class="headerlink" title="Propertise of Indicator R.V."></a>Propertise of Indicator R.V.</h3><ul>
+<li>$(I_A)^k = I_A$</li>
+<li>$I_{A^c} = 1- I_A$</li>
+<li>$I_{A\cap B} = I_A I_B$</li>
+<li>$I_{A\cup B} = I_A + I_B - I_A I_B$</li>
+</ul>
+<p><strong>Theorem (Bridge between Probability &amp; Expectation)</strong></p>
+<script type="math/tex; mode=display">P(A) = E(I_A)</script><hr>
+<h1 id="Moments-amp-Indicators"><a href="#Moments-amp-Indicators" class="headerlink" title="Moments &amp; Indicators"></a>Moments &amp; Indicators</h1><p>Given n events $A_1,\dotsb, A_n$ and indicators $I_j, j = 1, \dotsb, n$</p>
+<ul>
+<li>$X = \sum_{j=1}^n I_j$: the number of events occur</li>
+<li>$\left( \begin{array}{c} X \ 2 \end{array} \right) = \sum_{i&lt;j}I_iI_j$: the number of pairs of events that occur</li>
+<li>$E( \left( \begin{array}{c} X \ 2 \end{array} \right) ) = \sum_{i&lt;j} P(A_iA_j)$<ul>
+<li>$E(X^2) = 2\sum_{i&lt;j} P(A_iA_j) + E(X)$</li>
+<li>$Var(X) = 2\sum_{i&lt;j} P(A_iA_j) + E(X) - (E(X))^2$</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="Poisson"><a href="#Poisson" class="headerlink" title="Poisson"></a>Poisson</h1><p><strong>Definition (Poisson Distribution)</strong> $X\sim Pois(\lambda)$</p>
+<script type="math/tex; mode=display">P(X=k) = \frac{e^{-\lambda}\lambda^k}{k!},k=0,1,2,\dotsb</script>
         </div>
 
         <blockquote class="post-copyright">
@@ -193,7 +255,7 @@
         
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/07/22/Stochastic-Process-Expectation-Variance/" target="_blank" rel="external">http://yoursite.com/2018/07/22/Stochastic-Process-Expectation-Variance/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/07/22/Stochastic-Process-3/" target="_blank" rel="external">http://yoursite.com/2018/07/22/Stochastic-Process-3/</a>
         
     </div>
     <footer>
@@ -223,7 +285,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/22/Stochastic-Process-Expectation-Variance/&title=《Stochastic Process (Expectation & Variance)》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/22/Stochastic-Process-3/&title=《Stochastic Process (Expectation)》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -233,22 +295,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/22/Stochastic-Process-Expectation-Variance/&title=《Stochastic Process (Expectation & Variance)》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/22/Stochastic-Process-3/&title=《Stochastic Process (Expectation)》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/22/Stochastic-Process-Expectation-Variance/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/22/Stochastic-Process-3/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stochastic Process (Expectation & Variance)》 — EyEular&url=http://yoursite.com/2018/07/22/Stochastic-Process-Expectation-Variance/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stochastic Process (Expectation)》 — EyEular&url=http://yoursite.com/2018/07/22/Stochastic-Process-3/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/22/Stochastic-Process-Expectation-Variance/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/22/Stochastic-Process-3/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -271,7 +333,7 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2018/07/23/Stochastic-Process-Abbreviate-Notation/" id="post-prev" class="post-nav-link">
+      <a href="/2018/07/23/Stochastic-Process-0/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
         <h4 class="title">Stochastic-Process （Abbreviate &amp; Notation）</h4>
       </a>
@@ -376,7 +438,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/22/Stochastic-Process-Expectation-Variance/&title=《Stochastic Process (Expectation & Variance)》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/22/Stochastic-Process-3/&title=《Stochastic Process (Expectation)》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -386,22 +448,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/22/Stochastic-Process-Expectation-Variance/&title=《Stochastic Process (Expectation & Variance)》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/22/Stochastic-Process-3/&title=《Stochastic Process (Expectation)》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/22/Stochastic-Process-Expectation-Variance/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/22/Stochastic-Process-3/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stochastic Process (Expectation & Variance)》 — EyEular&url=http://yoursite.com/2018/07/22/Stochastic-Process-Expectation-Variance/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stochastic Process (Expectation)》 — EyEular&url=http://yoursite.com/2018/07/22/Stochastic-Process-3/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/22/Stochastic-Process-Expectation-Variance/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/22/Stochastic-Process-3/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -412,7 +474,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/07/22/Stochastic-Process-Expectation-Variance/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/07/22/Stochastic-Process-3/" alt="微信分享二维码">
 </div>
 
 

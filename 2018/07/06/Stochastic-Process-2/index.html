@@ -24,17 +24,17 @@
 <meta name="keywords" content="Math,Probability">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Stochastic Process (Conditional Probability)">
-<meta property="og:url" content="http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/07/06/Stochastic-Process-2/index.html">
 <meta property="og:site_name" content="EyEular">
 <meta property="og:description" content="Defination of Conditonal ProbabilityDefination Two events $A$ and $B$, with $P(B)&amp;gt;0$, the conditional probability of $A$ given $B$ , denoted by $P(A|B)$, is defined as : P(A|B)=\frac{P(AB)}{P(B)}">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/sp1.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/sp2.jpg">
-<meta property="og:updated_time" content="2018-07-19T02:27:09.257Z">
+<meta property="og:image" content="http://yoursite.com/2018/07/06/Stochastic-Process-2/sp1.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/06/Stochastic-Process-2/sp2.jpg">
+<meta property="og:updated_time" content="2018-07-23T12:01:35.232Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stochastic Process (Conditional Probability)">
 <meta name="twitter:description" content="Defination of Conditonal ProbabilityDefination Two events $A$ and $B$, with $P(B)&amp;gt;0$, the conditional probability of $A$ given $B$ , denoted by $P(A|B)$, is defined as : P(A|B)=\frac{P(AB)}{P(B)}">
-<meta name="twitter:image" content="http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/sp1.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2018/07/06/Stochastic-Process-2/sp1.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
     
@@ -171,7 +171,7 @@
         </nav>
     </aside>
     
-<article id="post-Stochastic-Process-Conditional-Probability"
+<article id="post-Stochastic-Process-2"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
@@ -200,11 +200,11 @@
 <h1 id="Bayes’-Rule-amp-LOTP"><a href="#Bayes’-Rule-amp-LOTP" class="headerlink" title="Bayes’ Rule &amp; LOTP"></a>Bayes’ Rule &amp; LOTP</h1><h3 id="Chain-Rule"><a href="#Chain-Rule" class="headerlink" title="Chain Rule"></a>Chain Rule</h3><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2018/07/06/Stochastic-Process-Conditional-Probability/sp1.jpg" alt="chain rule" title="">
+                    <img src="/2018/07/06/Stochastic-Process-2/sp1.jpg" alt="chain rule" title="">
                 </div>
                 <div class="image-caption">chain rule</div>
             </figure>
-<script type="math/tex; mode=display">P(A_1,...,A_n) = P(A_1)P(A_2|A_1)P(A_3|A_1A_2)...P(A_n|A_1,...,A_{n-1})</script><h3 id="Bayes’-Rule"><a href="#Bayes’-Rule" class="headerlink" title="Bayes’ Rule"></a>Bayes’ Rule</h3><script type="math/tex; mode=display">P(A|B) = \frac{P(B|A)P(A)}{P(B)}</script><h3 id="LOTP-Law-of-Total-Probability"><a href="#LOTP-Law-of-Total-Probability" class="headerlink" title="LOTP (Law of Total Probability)"></a>LOTP (Law of Total Probability)</h3><p><img src="/2018/07/06/Stochastic-Process-Conditional-Probability/sp2.jpg" align="center" style=" width:300px;"></p>
+<script type="math/tex; mode=display">P(A_1,...,A_n) = P(A_1)P(A_2|A_1)P(A_3|A_1A_2)...P(A_n|A_1,...,A_{n-1})</script><h3 id="Bayes’-Rule"><a href="#Bayes’-Rule" class="headerlink" title="Bayes’ Rule"></a>Bayes’ Rule</h3><script type="math/tex; mode=display">P(A|B) = \frac{P(B|A)P(A)}{P(B)}</script><h3 id="LOTP-Law-of-Total-Probability"><a href="#LOTP-Law-of-Total-Probability" class="headerlink" title="LOTP (Law of Total Probability)"></a>LOTP (Law of Total Probability)</h3><p><img src="/2018/07/06/Stochastic-Process-2/sp2.jpg" align="center" style=" width:300px;"></p>
 <p><strong>Theorem</strong>: Let $A_1,A_2,…,A_n$ be the partition of the sample space $S$, with $P(A_1)&gt;0$, Then :</p>
 <script type="math/tex; mode=display">P(B) = \sum_i^n P(B|A_i)P(A_i)</script><p><strong>Theorem</strong>: Let $A_1,A_2,…,A_n$ be the partition of the sample space $S$, for any event $B$ such that $P(B) &gt; 0$, we have :</p>
 <script type="math/tex; mode=display">P(A_i|B) = \frac{P(A_i)P(B|A_i)}{P(A_1)P(B|A_1)+\dotsb+P(A_n)P(B|A_n)}</script><hr>
@@ -229,8 +229,7 @@
 <li>$A,B$ is independent : $P(A) = 0, P(B) = 0$</li>
 </ul>
 <h3 id="Conditional-Independence"><a href="#Conditional-Independence" class="headerlink" title="Conditional Independence"></a>Conditional Independence</h3><p><strong>Defination</strong>: Events $A$ and $B$ are conditionally independent given E if:</p>
-<script type="math/tex; mode=display">P(A\cap B|E) = P(A|E)P(B|E)</script><script type="math/tex; mode=display">Contitional\ Independence \nRightarrow Independence</script><script type="math/tex; mode=display">Independence \nRightarrow Contitional\ Independence</script><p>w</p>
-
+<script type="math/tex; mode=display">P(A\cap B|E) = P(A|E)P(B|E)</script><script type="math/tex; mode=display">Contitional\ Independence \nRightarrow Independence</script><script type="math/tex; mode=display">Independence \nRightarrow Contitional\ Independence</script>
         </div>
 
         <blockquote class="post-copyright">
@@ -238,7 +237,7 @@
         
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/07/06/Stochastic-Process-Conditional-Probability/" target="_blank" rel="external">http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/07/06/Stochastic-Process-2/" target="_blank" rel="external">http://yoursite.com/2018/07/06/Stochastic-Process-2/</a>
         
     </div>
     <footer>
@@ -268,7 +267,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/&title=《Stochastic Process (Conditional Probability)》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/06/Stochastic-Process-2/&title=《Stochastic Process (Conditional Probability)》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -278,22 +277,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/&title=《Stochastic Process (Conditional Probability)》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/06/Stochastic-Process-2/&title=《Stochastic Process (Conditional Probability)》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/06/Stochastic-Process-2/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stochastic Process (Conditional Probability)》 — EyEular&url=http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stochastic Process (Conditional Probability)》 — EyEular&url=http://yoursite.com/2018/07/06/Stochastic-Process-2/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/06/Stochastic-Process-2/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -316,7 +315,7 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2018/07/07/Stochastic-Process-Random-Variable/" id="post-prev" class="post-nav-link">
+      <a href="/2018/07/07/Stochastic-Process-1/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
         <h4 class="title">Stochastic Process (Random Variable)</h4>
       </a>
@@ -421,7 +420,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/&title=《Stochastic Process (Conditional Probability)》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/06/Stochastic-Process-2/&title=《Stochastic Process (Conditional Probability)》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -431,22 +430,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/&title=《Stochastic Process (Conditional Probability)》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/06/Stochastic-Process-2/&title=《Stochastic Process (Conditional Probability)》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/06/Stochastic-Process-2/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stochastic Process (Conditional Probability)》 — EyEular&url=http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stochastic Process (Conditional Probability)》 — EyEular&url=http://yoursite.com/2018/07/06/Stochastic-Process-2/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/06/Stochastic-Process-2/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -457,7 +456,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/07/06/Stochastic-Process-Conditional-Probability/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/07/06/Stochastic-Process-2/" alt="微信分享二维码">
 </div>
 
 
