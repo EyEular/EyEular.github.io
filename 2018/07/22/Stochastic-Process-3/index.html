@@ -19,16 +19,16 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Math,Probability">
+    <meta name="keywords" content="Probability,Math">
     <meta name="description" content="ExpectationDefinition (Expectation of R.V.) E(X) = \sum_{x}\underbrace{x}_{value} \underbrace{P(X=x)}_{PMF\ at\ x}Theorem (Monotonicity): $X$ and $Y$ are r.v.s. such that $X&amp;gt;Y$ with probability 1.">
-<meta name="keywords" content="Math,Probability">
+<meta name="keywords" content="Probability,Math">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Stochastic Process (Expectation)">
 <meta property="og:url" content="http://yoursite.com/2018/07/22/Stochastic-Process-3/index.html">
 <meta property="og:site_name" content="EyEular">
 <meta property="og:description" content="ExpectationDefinition (Expectation of R.V.) E(X) = \sum_{x}\underbrace{x}_{value} \underbrace{P(X=x)}_{PMF\ at\ x}Theorem (Monotonicity): $X$ and $Y$ are r.v.s. such that $X&amp;gt;Y$ with probability 1.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-25T09:07:36.008Z">
+<meta property="og:updated_time" content="2018-07-27T12:39:21.846Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stochastic Process (Expectation)">
 <meta name="twitter:description" content="ExpectationDefinition (Expectation of R.V.) E(X) = \sum_{x}\underbrace{x}_{value} \underbrace{P(X=x)}_{PMF\ at\ x}Theorem (Monotonicity): $X$ and $Y$ are r.v.s. such that $X&amp;gt;Y$ with probability 1.">
@@ -233,11 +233,13 @@
 <li>$I_{A\cup B} = I_A + I_B - I_A I_B$</li>
 </ul>
 <p><strong>Theorem (Bridge between Probability &amp; Expectation)</strong></p>
-<script type="math/tex; mode=display">P(A) = E(I_A)</script><h3 id="Moments-amp-Indicators"><a href="#Moments-amp-Indicators" class="headerlink" title="Moments &amp; Indicators"></a>Moments &amp; Indicators</h3><p>Given n events $A_1,\dotsb, A_n$ and indicators $I_j, j = 1, \dotsb, n$</p>
+<script type="math/tex; mode=display">P(A) = E(I_A)</script><p><strong>Example 1</strong>: Au urn contain R G B three balls, r g b is probability draw a ball from it (r+g+b = 1), whats the expected number of different <strong><em>colors</em></strong> of ball before getting the first R ball ?<br>Let $I_g$ be the $1$ if G is obtained before R, and define the $I_b$ similarly. Then</p>
+<script type="math/tex; mode=display">E(I_g) = P(green\ before\ red) = \frac{g}{g+r}</script><p>since “green before red” means that first non-blue ball is green , so probability is $frac{g}{g+r}$, then, the final result is</p>
+<script type="math/tex; mode=display">E(I_g+I_b) = \frac{g}{g+r} + \frac{b}{b+r}</script><h3 id="Moments-amp-Indicators"><a href="#Moments-amp-Indicators" class="headerlink" title="Moments &amp; Indicators"></a>Moments &amp; Indicators</h3><p>Given n events $A_1,\dotsb, A_n$ and indicators $I_j, j = 1, \dotsb, n$</p>
 <ul>
 <li>$X = \sum_{j=1}^n I_j$: the number of events occur</li>
-<li>$\left( \begin{array}{c} X \ 2 \end{array} \right) = \sum_{i&lt;j}I_iI_j$: the number of pairs of events that occur</li>
-<li>$E( \left( \begin{array}{c} X \ 2 \end{array} \right) ) = \sum_{i&lt;j} P(A_iA_j)$<ul>
+<li><script type="math/tex">\left( \begin{array}{c} X \\ 2 \end{array} \right) = \sum_{i<j}I_iI_j</script>: the number of pairs of events that occur</li>
+<li><script type="math/tex">E( \left( \begin{array}{c} X \\ 2 \end{array} \right) ) = \sum_{i<j} P(A_iA_j)</script> .<ul>
 <li>$E(X^2) = 2\sum_{i&lt;j} P(A_iA_j) + E(X)$</li>
 <li>$Var(X) = 2\sum_{i&lt;j} P(A_iA_j) + E(X) - (E(X))^2$</li>
 </ul>
