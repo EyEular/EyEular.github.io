@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="EyEular">
 <meta property="og:description" content="Generating FunctionThree kinds of generating functions Probability Generating Function (PGF) : related to Z-transform Moment Generating Function (MGF) : related to Laplace transform Characteristic Fun">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-28T00:46:39.180Z">
+<meta property="og:updated_time" content="2018-07-28T09:06:43.720Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stochastic-Process (Generating Function)">
 <meta name="twitter:description" content="Generating FunctionThree kinds of generating functions Probability Generating Function (PGF) : related to Z-transform Moment Generating Function (MGF) : related to Laplace transform Characteristic Fun">
@@ -164,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Generating-Function"><span class="post-toc-number">1.</span> <span class="post-toc-text">Generating Function</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Three-kinds-of-generating-functions"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">Three kinds of generating functions</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Moment-Generating-Function"><span class="post-toc-number">2.</span> <span class="post-toc-text">Moment Generating Function</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Probability-Generating-Function"><span class="post-toc-number">3.</span> <span class="post-toc-text">Probability Generating Function</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Characteristic-Function"><span class="post-toc-number">4.</span> <span class="post-toc-text">Characteristic Function</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Generating-Function"><span class="post-toc-number">1.</span> <span class="post-toc-text">Generating Function</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Three-kinds-of-generating-functions"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">Three kinds of generating functions</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Motivation"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">Motivation</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Application"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">Application</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Moment-Generating-Function"><span class="post-toc-number">2.</span> <span class="post-toc-text">Moment Generating Function</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Why-we-need-MGF"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">Why we need MGF</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MGF-of-Distribution"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">MGF of Distribution</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Sum-of-Independent-Distributions"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">Sum of Independent Distributions</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Probability-Generating-Function"><span class="post-toc-number">3.</span> <span class="post-toc-text">Probability Generating Function</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Characteristic-Function"><span class="post-toc-number">4.</span> <span class="post-toc-text">Characteristic Function</span></a></li></ol>
         </nav>
     </aside>
     
@@ -192,12 +192,53 @@
 <li>Moment Generating Function (MGF) : related to Laplace transform</li>
 <li>Characteristic Function (CF) : related to Fourier transform</li>
 </ul>
+<h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><ul>
+<li>PGF: handling non-negative integral random variables</li>
+<li>MGF: handling general random variables</li>
+<li>CF: equally useful with MGF</li>
+</ul>
+<h3 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h3><ul>
+<li>Easy to characterizing the distribution of the sum of independent random variables</li>
+<li>Play a central role in the study of branching processes</li>
+<li>Provide a bridge between complex analysis and probability</li>
+<li>……</li>
+</ul>
 <hr>
-<h1 id="Moment-Generating-Function"><a href="#Moment-Generating-Function" class="headerlink" title="Moment Generating Function"></a>Moment Generating Function</h1><p><strong>Definition (Moment Generating Function)</strong> MGF of an r.v. $X$ is $M(t) = E(e^{tx})$, as a function of $t$ (different t denote different valued moment)</p>
-<p><strong>Example 1 (Bernoulli MGF)</strong> MGF of $X\sim Bern(p)$</p>
+<h1 id="Moment-Generating-Function"><a href="#Moment-Generating-Function" class="headerlink" title="Moment Generating Function"></a>Moment Generating Function</h1><p><strong>Definition (Moment Generating Function)</strong> MGF of an r.v. $X$ is $M(t) = E(e^{tX})$, as a function of $t$ (different t denote different valued moment) <strong><em>and this must finite on some open interval (-a,a) containing 0</em></strong> or dont exist.</p>
+<h3 id="Why-we-need-MGF"><a href="#Why-we-need-MGF" class="headerlink" title="Why we need MGF"></a>Why we need MGF</h3><ul>
+<li>MGF encodes the moments of an r.v.</li>
+<li>MGF of an r.v. Determines its distribution, like CDF and PMF/PDF</li>
+<li>MFG make it easy to find the distribution of a sum of i.r.v.s.</li>
+</ul>
+<p><strong>Theorem (Moments via Derivatives of the MGF)</strong> $E(X^n) = M^{(n)}(0)$<br>Using Taylor expansion of $M(t)$ at 0</p>
+<script type="math/tex; mode=display">M(t) = \sum_{n=0}^{\infty} M^{(n)}(0) \frac{t^n}{n!}</script><p>Using Taylor expansion of $E(X)$</p>
+<script type="math/tex; mode=display">M(t) = E(e^{tX}) = E\left(  \sum_{n=0}^{\infty} X^n \frac{t^n}{n!}  \right)=\sum_{n=0}^{\infty} E(X^n) \frac{t^n}{n!}</script><p>Matching the coefficients of two expansions, we get $E(X^n) = M^{(n)}(0)$</p>
+<h3 id="MGF-of-Distribution"><a href="#MGF-of-Distribution" class="headerlink" title="MGF of Distribution"></a>MGF of Distribution</h3><p><strong>Theorem (MGF Determines the Distribution)</strong> Two r.v. have the same MGF have the same distribution, more strictly, if there is even a tiny interval containing 0 on which the MGF are equal, the the r.v.s must have same distribution.</p>
+<p><strong>Example 1 (Bernoulli MGF)</strong> MGF of $X\sim Bern(p)$<br>$e^{tX}=e^t$ with probability $p$, and $1$ with probability $q$, so $M(t) = E(e^{tX})=pe^t + q$</p>
+<p><strong>Example 2 (Geometric MGF)</strong> MGF of $X\sim Geom(p)$</p>
+<script type="math/tex; mode=display">M(t) = E(e^{tX})=\sum_{k=0}^{\infty} e^{tk}q^kp=p\sum_{k=0}^{\infty} (qe^t)^k=\frac{p}{1-qe^t}</script><p>t in $(-\infty, log(1/p))$</p>
+<p><strong>Example 3 (Uniform MGF)</strong> MGF of $U\sim Unif(a,b)$</p>
+<script type="math/tex; mode=display">M(t) = E(e^{tU}) = \int_a^b e^{tu}\frac{1}{b-a} du = \frac{e^{tb}-e^{ta}}{t(b-a)}</script><p>and $M(0) = 1$</p>
+<p><strong>Example 4 (Binomial MGF)</strong> $Bin(n,p)$</p>
+<script type="math/tex; mode=display">M(t) = (pe^t+q)^n</script><p><strong>Example 5 (Negative Binomial)</strong> $NBin(r,p)$</p>
+<script type="math/tex; mode=display">M(t) = \left(  \frac{p}{1-qe^t}  \right)^r</script><p><strong>Theorem (MGF of Location-Scale Transformation)</strong> If $X$ has MGF $M(t)$, then MGF of $a+bX$ is</p>
+<script type="math/tex; mode=display">E(e^{t(a+bX)})=e^{at}E(e^{btX})=e^{at}M(bt)</script><p><strong>Example 6 (Normal MGF)</strong> MGF of $(X = \mu + \sigma Z) \sim N(\mu,\sigma^2)$</p>
+<script type="math/tex; mode=display">M_Z(t) = E(e^{tZ})=\int_{-\infty}^{\infty}e^{tz}\frac{1}{\sqrt{2\pi}}e^{-z^2/2}dz=e^{t^2/2}</script><p>Use the Theorem above then</p>
+<script type="math/tex; mode=display">M_X(t) = e^{\mu t}M_Z(\sigma t) = e^{\mu t}e^{(\sigma t)^2/2}  = e^{\mu t + \frac{1}{2} \sigma^2 t^2}</script><h3 id="Sum-of-Independent-Distributions"><a href="#Sum-of-Independent-Distributions" class="headerlink" title="Sum of Independent Distributions"></a>Sum of Independent Distributions</h3><p><strong>Theorem (MGF of A Sum of Independent R.V.s)</strong> If $X$ and $Y$ are independent, Then</p>
+<script type="math/tex; mode=display">M_{X+Y} (t) = M_X(t) M_Y(t)</script><p><strong>Example 1 (Sum of Poissons)</strong> $X\sim Pois(\lambda), Y\sim Pois(\mu)$, $X$ and $Y$ are independent. Then $X+Y \sim Pois(\lambda + \mu)$<br>The MGF of $X$ is</p>
+<script type="math/tex; mode=display">E(e^{tX}) = \sum_{k=0}^{\infty}e^{tk}\frac{e^{-\lambda}\lambda^k}{k!}=e^{-\lambda}\sum_{k=0}^{\infty}\frac{(\lambda e^t)^k}{k!}=e^{-\lambda}e^{\lambda e^t}=e^{\lambda(e^t-1)}</script><p>The MGF of $X+Y$ is</p>
+<script type="math/tex; mode=display">E(e^{tX})E(e^{tY}) = e^{\lambda (e^t-1)} e^{\mu (e^t-1)} = e^{(\lambda + \mu)(e^t-1)}</script><p>Which is the $Pois(\lambda + \mu)$, so $X+Y\sum Pois(\lambda+\mu)$</p>
+<p><strong>Example 2 (Sum of Normals)</strong> $X_1\sim N(\mu_1,\sigma_1^2)$ and $X_2 \sim N(\mu_2,\sigma_2^2)$, $X_1+X_2 = ?$<br>MGF of $X_1+X_2$ is</p>
+<script type="math/tex; mode=display">M_{X_1+X_2}(t)=  M_{X_1}(t)M_{X_2}(t)= e^{\mu_1t+\frac{1}{2}\sigma^2_1t^2}\cdot e^{\mu_2 t+\frac{1}{2}\sigma_2^2 t^2}=e^{(\mu_1+\mu_2)t+\frac{1}{2}(\sigma_1^2+\sigma_2^2)t^2}</script><p>Which is the N(\mu_1 + \mu_2, \sigma_2^2 + \sigma_1^2) MGF.</p>
 <hr>
-<h1 id="Probability-Generating-Function"><a href="#Probability-Generating-Function" class="headerlink" title="Probability Generating Function"></a>Probability Generating Function</h1><hr>
-<h1 id="Characteristic-Function"><a href="#Characteristic-Function" class="headerlink" title="Characteristic Function"></a>Characteristic Function</h1>
+<h1 id="Probability-Generating-Function"><a href="#Probability-Generating-Function" class="headerlink" title="Probability Generating Function"></a>Probability Generating Function</h1><p><strong>Definition (PGF)</strong> PGF of a nonnegative integer-valued r.v. $X$ with PMF $p_k = P(X=k)$ is the generating function of the PMF, By LOTUS , this is</p>
+<script type="math/tex; mode=display">E(t^X) = \sum_{k=0}^{\infty} p_k t^k</script><p><strong>Example 1 (Generating Dice Probabilities)</strong> Let $X$ be the sum from rolling 6 pair dice, $X_1,…,X_6$ be the individual rolls, what is $P(X=18)$ ?<br>The PGF of $X_1$ is</p>
+<script type="math/tex; mode=display">E(t^{X_1}) = \frac{1}{6}(t+t^2+\dotsb+t^6)</script><p>The PGF of $X$ is</p>
+<script type="math/tex; mode=display">E(t^X) = E(t^{X_1}\dotsb t^{X_6}) = E(t^{X_1})\dotsb E(t^{X_6})=\frac{t^6}{6^6}(1+t+\dotsb +t^5)^6</script><p>The coefficient of $t^{18}$ in the PGF is $P(X=18)$, so</p>
+<script type="math/tex; mode=display">P(X=18) = \frac{3421}{6^6}</script><p><strong>Theorem (PMF \&amp; PGF)</strong></p>
+<script type="math/tex; mode=display">P(X=k) = \frac{g_{X}^{(k)}(0)}{k!}</script><hr>
+<h1 id="Characteristic-Function"><a href="#Characteristic-Function" class="headerlink" title="Characteristic Function"></a>Characteristic Function</h1><p><strong>Definition CF</strong> The Characteristic function of a random variable $X$ is the function $\phi : R \rightarrow C$ defined by</p>
+<script type="math/tex; mode=display">\phi(t) = E(e^{itX}), i = \sqrt{-1}</script>
         </div>
 
         <blockquote class="post-copyright">
