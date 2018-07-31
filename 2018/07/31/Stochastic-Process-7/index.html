@@ -13,25 +13,25 @@
     
     
     
-    <title>Stochastic Process (Random Variable) | EyEular</title>
+    <title>Stochastic-Process (Order Statistics &amp; Conjugacy) | EyEular</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Math,Probability">
-    <meta name="description" content="There are some notation occationals Definition (Discrete Random Variable) A variable $X$ is discrete if there is a finite list of value $a_1,a_2,…,a_n$ that $P(X=a_j) = 1$, $P(X=x)&amp;gt;0$ is the suppor">
-<meta name="keywords" content="Math,Probability">
+    <meta name="keywords" content="Probability">
+    <meta name="description" content="Order StatisticsDefinition (Order Statistics) For r.v.s $X_1,X_2,…,X_n$ the order statistics sre the random variables $X_{(1)},…,X_{(2)}$, where  $X_{(1)}  = min (X_1,…,X_n)$ $X_{(2)}$ is the $2^{nd}$">
+<meta name="keywords" content="Probability">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Stochastic Process (Random Variable)">
-<meta property="og:url" content="http://yoursite.com/2018/07/07/Stochastic-Process-1/index.html">
+<meta property="og:title" content="Stochastic-Process (Order Statistics &amp; Conjugacy)">
+<meta property="og:url" content="http://yoursite.com/2018/07/31/Stochastic-Process-7/index.html">
 <meta property="og:site_name" content="EyEular">
-<meta property="og:description" content="There are some notation occationals Definition (Discrete Random Variable) A variable $X$ is discrete if there is a finite list of value $a_1,a_2,…,a_n$ that $P(X=a_j) = 1$, $P(X=x)&amp;gt;0$ is the suppor">
+<meta property="og:description" content="Order StatisticsDefinition (Order Statistics) For r.v.s $X_1,X_2,…,X_n$ the order statistics sre the random variables $X_{(1)},…,X_{(2)}$, where  $X_{(1)}  = min (X_1,…,X_n)$ $X_{(2)}$ is the $2^{nd}$">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-22T02:55:04.070Z">
+<meta property="og:updated_time" content="2018-07-31T11:33:52.846Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Stochastic Process (Random Variable)">
-<meta name="twitter:description" content="There are some notation occationals Definition (Discrete Random Variable) A variable $X$ is discrete if there is a finite list of value $a_1,a_2,…,a_n$ that $P(X=a_j) = 1$, $P(X=x)&amp;gt;0$ is the suppor">
+<meta name="twitter:title" content="Stochastic-Process (Order Statistics &amp; Conjugacy)">
+<meta name="twitter:description" content="Order StatisticsDefinition (Order Statistics) For r.v.s $X_1,X_2,…,X_n$ the order statistics sre the random variables $X_{(1)},…,X_{(2)}$, where  $X_{(1)}  = min (X_1,…,X_n)$ $X_{(2)}$ is the $2^{nd}$">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
     
@@ -119,7 +119,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Stochastic Process (Random Variable)</div>
+        <div class="flex-col header-title ellipsis">Stochastic-Process (Order Statistics &amp; Conjugacy)</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -141,11 +141,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Stochastic Process (Random Variable)</h1>
+        <h1 class="title">Stochastic-Process (Order Statistics &amp; Conjugacy)</h1>
         <h5 class="subtitle">
             
-                <time datetime="2018-07-07T00:21:04.000Z" itemprop="datePublished" class="page-time">
-  2018-07-07
+                <time datetime="2018-07-31T02:35:18.000Z" itemprop="datePublished" class="page-time">
+  2018-07-31
 </time>
 
 
@@ -164,17 +164,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Bernoulli-amp-Binomial"><span class="post-toc-number">1.</span> <span class="post-toc-text">Bernoulli &amp; Binomial</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hypergeometric"><span class="post-toc-number">2.</span> <span class="post-toc-text">Hypergeometric</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Cumulative-Distribution-Functions"><span class="post-toc-number">3.</span> <span class="post-toc-text">Cumulative Distribution Functions</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Functions-of-Random-Variable"><span class="post-toc-number">4.</span> <span class="post-toc-text">Functions of Random Variable:</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Independence-of-R-V-s"><span class="post-toc-number">5.</span> <span class="post-toc-text">Independence of R.V.s</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Order-Statistics"><span class="post-toc-number">1.</span> <span class="post-toc-text">Order Statistics</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Beta-Binomial-Conjugacy"><span class="post-toc-number">2.</span> <span class="post-toc-text">Beta-Binomial Conjugacy</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-Stochastic-Process-1"
+<article id="post-Stochastic-Process-7"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Stochastic Process (Random Variable)</h1>
+        <h1 class="post-card-title">Stochastic-Process (Order Statistics & Conjugacy)</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-07-07 08:21:04" datetime="2018-07-07T00:21:04.000Z"  itemprop="datePublished">2018-07-07</time>
+            <time class="post-time" title="2018-07-31 10:35:18" datetime="2018-07-31T02:35:18.000Z"  itemprop="datePublished">2018-07-31</time>
 
             
 
@@ -187,44 +187,42 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>There are some notation occationals</p>
-<p><strong>Definition (Discrete Random Variable)</strong> A variable $X$ is <strong><em>discrete</em></strong> if there is a finite list of value $a_1,a_2,…,a_n$ that $P(X=a_j) = 1$, $P(X=x)&gt;0$ is the <strong><em>support</em></strong> of $X$</p>
-<p><strong>Definition (Probability Mass Function)</strong> <strong><em>The probability mass function (PMF)</em></strong> of a discrete r.v. $X$ is the function $p_X$ given by $p_X(x) = P(X=x)$.</p>
-<h1 id="Bernoulli-amp-Binomial"><a href="#Bernoulli-amp-Binomial" class="headerlink" title="Bernoulli &amp; Binomial"></a>Bernoulli &amp; Binomial</h1><p><strong>Definition (Bernoulli Distribution)</strong> shortly, $P(X=1)=p$ and $P(X=0) = 1 - p$, and write as $X\sim Bern(p)$</p>
-<p><strong>Definition (Indicator Random Variable)</strong> The indicator random variable of an event $A$ is the r.v. equals 1 if $A$ occurs and 0 otherwise, We denote the indicator of $A$ by $I_A$ or $I(A)$. Note $I_A \sim Bern(p)$ with p = P(A)</p>
-<p><strong>Theorem (Binomial PMF)</strong> Binomial Distribution is the repeatation of Bernoulli Distribution. If $X\sim Bin(n, p)$ then the PMF of X is</p>
-<script type="math/tex; mode=display">P(X=k) = \left( \begin{array}{c} n \\ k \end{array} \right) p^k (1-p)^{n-k}</script><h1 id="Hypergeometric"><a href="#Hypergeometric" class="headerlink" title="Hypergeometric"></a>Hypergeometric</h1><p><strong>urn Model</strong> A box is fiiled with $w$ white and $b$ black balls, then drawing n balls</p>
+            <h1 id="Order-Statistics"><a href="#Order-Statistics" class="headerlink" title="Order Statistics"></a>Order Statistics</h1><p><strong>Definition (Order Statistics)</strong> For r.v.s $X_1,X_2,…,X_n$ the order statistics sre the random variables $X_{(1)},…,X_{(2)}$, where</p>
 <ul>
-<li>With replacement: $Bin(n,w/(w+b))$ for the number of white balls</li>
-<li>Without replacement : Hypergeometric distribution $HGeom(w,b,n)$</li>
+<li>$X_{(1)}  = min (X_1,…,X_n)$</li>
+<li>$X_{(2)}$ is the $2^{nd}$ of $X_1,…,X_n$</li>
+<li>$\vdots$</li>
+<li>$X_{n} = max(X_1,…,X_n)$</li>
 </ul>
-<p><strong>Theorem (Hypergeometric PMF)</strong> If $X \sim HGeom(w,b,n)$, then the PMF of $X$ is</p>
-<script type="math/tex; mode=display">P(X=k) = \frac {\left ( \begin{array}{c} w \\ k \end{array} \right ) \left( \begin{array}{c} b \\ n-k \end{array} \right)}  {\left( \begin{array}{c} w+b \\ n \end{array} \right)}</script><p><strong>Zipf Distribution</strong> If $X\sim Zipf(\alpha &gt; 0)$, then PMF of $X$ is:</p>
-<script type="math/tex; mode=display">P(X=k) = \frac{\frac{1}{k^{\alpha + 1}}}  {\sum_{j=1}^{\infty}(\frac{1}{j})^{\alpha + 1}}</script><ul>
-<li>Zipf Distribution can measure the Word Frequency</li>
-</ul>
-<h1 id="Cumulative-Distribution-Functions"><a href="#Cumulative-Distribution-Functions" class="headerlink" title="Cumulative Distribution Functions"></a>Cumulative Distribution Functions</h1><p><strong>Definition (Cumulative Distribution Function)</strong> The <strong><em>cumulative distribution function(CDF)</em></strong> os an r.v. $X$ is the function $F_X$ given by $F_X(x) = P(X\leq x)$</p>
-<p><strong>Theorem (Valid CDFs)</strong> CDF has the following properties</p>
-<ul>
-<li>Increasing: If $x_1 &lt; x_2$, then $F(x_1) &lt; F(x_2)$</li>
-<li>Right-Continuous: $F(a)  = lim_{x\rightarrow a^+} F(x)$</li>
-<li>Convergence to $0$ and $1$: $lim_{x\rightarrow - \infty} F(x) = 0$ and $lim_{x \rightarrow \infty} F(x) = 1$</li>
-</ul>
-<h1 id="Functions-of-Random-Variable"><a href="#Functions-of-Random-Variable" class="headerlink" title="Functions of Random Variable:"></a>Functions of Random Variable:</h1><p><strong>Definition (Function of an r.v.)</strong> An experiment with sample space S, an r.v. $X$, and a function $g$, also the $g(X)$ is the variable that maps $s$ to $g(X(s))$, for all $s\in S$</p>
-<p><strong>Theorem (PMF of $g(X)$)</strong> for all y in the support of $g(X)$</p>
-<script type="math/tex; mode=display">P(g(X) = y) = \sum_{x:g(x)=y} P(X=x)</script><p>The function of r.v. map the sample space into real number, which is easy for us calculate in mathematic.</p>
-<h1 id="Independence-of-R-V-s"><a href="#Independence-of-R-V-s" class="headerlink" title="Independence of R.V.s"></a>Independence of R.V.s</h1><p><strong>Definition (Independence of two R.V.s)</strong> Random variables $X$ and $Y$ are said to be <strong><em>independent</em></strong></p>
-<script type="math/tex; mode=display">P(X\leq x,Y\leq y) = P(X\leq x)P(Y\leq y)</script><p>for all $x,y\in R$,<br>In the discrete case, equivalent to :</p>
-<script type="math/tex; mode=display">P(X=x,Y=y) = P(X=x)P(Y=y)</script><p><strong>Definition (Independence of many R.V.s)</strong> Random variables $X_1,…,X_n$ are independent if</p>
-<script type="math/tex; mode=display">P(X_1 \leq x_1,\dotsb , X_n \leq x_n) = P(X_1 \leq x_1) \dotsb P(X_n \leq x_n)</script><p>for all $x_1,\dotsb,x_n \in R$</p>
-<p><strong>Definition (i.i.d)</strong> We call some r.v. that are independent and have the same distribution <strong><em>independent and identicallly distributed</em></strong> or <strong><em>i.i.d</em></strong> for short</p>
-<ul>
-<li>Independent: r.v.s provide no information about each others</li>
-<li>Identically distributed: r.v.s have the same PMF</li>
-</ul>
-<p><strong>Theorem</strong> If $X\sim Bin(n,p)$ , $Y \sim Bin(m,p)$, and $X$ is independent of $Y$, then $X+Y \sim Bin(n+m,p)$</p>
-<p><strong>Definition (Conditional Independence of two R.V.s)</strong></p>
-<script type="math/tex; mode=display">P(X\leq x, Y \leq y| Z= z) = P(X\leq x |Z =z) P(Y\leq y|Z=z)</script><p>w</p>
+<p>The order statistics are dependent, for example , if $X_{(1)} = 100$, then $X_{(n)}$ is forced to be $\geq 100$</p>
+<p>We foucs on the case $X_1,…,X_n$ are i.i.d continuous r.v.s, with CDF $F$ and PDF $f$</p>
+<p><strong>Theorem (CDF of Order Statistics)</strong>  Let $X_1,…,X_n$ be i.i.d continuous r.v.s with CDF F, Then the CDF of the $j^{th}$ order statistic $X_{(j)}$ is</p>
+<script type="math/tex; mode=display">P(X_{(j)}\leq x)=\sum_{k=j}^n
+\left( \begin{array}{c} n\\k  \end{array} \right) F(x)^k(1-F(x))^{n-k}</script><p><strong><em>Proof:</em></strong></p>
+<hr>
+<p>Let’s start with a specical case when $j=n, X_{(n)}=max(X_1,…,X_n)$:</p>
+<script type="math/tex; mode=display">\begin{align}
+F_{X_{(n)}} (x) &= P[max(X_1,...,X_n)\leq x] \\
+&=P(X_1\leq  x)\dotsb P(X_n\leq x) \\
+&=[F(x)]^n
+\end{align}</script><hr>
+<p>Then, consider another special case when $j=1, X_{(1)} = min(X_1,…,X_n)$:</p>
+<script type="math/tex; mode=display">\begin{align}
+F_{X_{(1)}} (x) &= P[min(X_1,...,X_n)\leq x] \\
+&=1 - P(X_1>  x)\dotsb P(X_n> x) \\
+&=1-[1-F(x)]^n
+\end{align}</script><p>The result here can be rewrite as $\sum_{k=1}^n\left( \begin{array}{c} n\\k \end{array} \right) F(x)^k (1-F(x))^{n-k}$</p>
+<p>This result can be obtained by expand $[F(x) + 1 -F(x)]^n$</p>
+<hr>
+<p>Finally, let’s consider more general case where $1&lt;j&lt;n, X_{(j)}\leq x$, this means at least $j$ of $\{X_i \}$ fall to the left of $x$</p>
+<p>Denote $N$ as the nunber of $X_i$ landing to the left of $x$. $X_i$ lands to the left of $x$ w.p. $P(X_i\leq x) = F(x)$. Then $N\sim Bin(n,F(x))$</p>
+<script type="math/tex; mode=display">P(X_{(j)}\leq x) = P(N\geq j=\sum_{k=j}^n \left( \begin{array}{c} n\\k \end{array} \right) F(x)^k(1-F(x))^{n-k}</script><hr>
+<p><strong>Theorem (PDF of Order Statistic)</strong> Let $X_1,…,X_n$ be i.i.d. continuous r.v.s with CDF $F$ and PDF $f$. Then the marginal PDF of $j^{th}$ order statistic $X_{(j)}$ is</p>
+<script type="math/tex; mode=display">f_{X_{(j)}} (x) = n \left( \begin{array}{c} n-1\\j-1 \end{array} \right) f(x) F(x)^{j-1} (1-F(x))^{n-j}</script><p><strong>Theorem (Joint PDF)</strong> Let $X_1,…,X_n$ be i.i.d. continuous r.v.s with PDF $f$, Then the joint PDF of all order statistics is</p>
+<script type="math/tex; mode=display">f_{X_{(1)},...,X_{(n)}}(x_1,...,x_n) = n! \prod_{i=1}^n f(x_i), x_1<x_2<\dotsb <x_n</script><p><strong>Example 1(Order Statistics of Uniforms)</strong> $U_1,U_2,…,U_n$ are i.i.d. $Unif(0,1)$ r.v.s with CDF F and PDF $f$</p>
+<p>For $0\leq x\leq 1$ ,$f(x) = 1$ , $F(x) = x$, Then</p>
+<script type="math/tex; mode=display">f_{U_{(j)}} = n \left( \begin{array}{c} n-1\\j-1 \end{array} \right) x^{j-1} (1-x)^{n-j}</script><script type="math/tex; mode=display">F_{U_{(j)}}(x) = \sum_{k=j}^n \left( \begin{array}{c} n\\k \end{array} \right)x^k (1-x)^{n-k} = \int_0^x f_{U_{(j)}} (t) dt = \frac{n!}{(j-1)!(n-j)!}\int_0^x t^{j-1}(1-t)^{n-j}dt</script><hr>
+<h1 id="Beta-Binomial-Conjugacy"><a href="#Beta-Binomial-Conjugacy" class="headerlink" title="Beta-Binomial Conjugacy"></a>Beta-Binomial Conjugacy</h1><p>.</p>
 
         </div>
 
@@ -233,7 +231,7 @@
         
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/07/07/Stochastic-Process-1/" target="_blank" rel="external">http://yoursite.com/2018/07/07/Stochastic-Process-1/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/07/31/Stochastic-Process-7/" target="_blank" rel="external">http://yoursite.com/2018/07/31/Stochastic-Process-7/</a>
         
     </div>
     <footer>
@@ -253,7 +251,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Math/">Math</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Probability/">Probability</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Probability/">Probability</a></li></ul>
 
 
             
@@ -263,7 +261,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/07/Stochastic-Process-1/&title=《Stochastic Process (Random Variable)》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/31/Stochastic-Process-7/&title=《Stochastic-Process (Order Statistics & Conjugacy)》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -273,22 +271,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/07/Stochastic-Process-1/&title=《Stochastic Process (Random Variable)》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/31/Stochastic-Process-7/&title=《Stochastic-Process (Order Statistics & Conjugacy)》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/07/Stochastic-Process-1/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/31/Stochastic-Process-7/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stochastic Process (Random Variable)》 — EyEular&url=http://yoursite.com/2018/07/07/Stochastic-Process-1/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stochastic-Process (Order Statistics & Conjugacy)》 — EyEular&url=http://yoursite.com/2018/07/31/Stochastic-Process-7/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/07/Stochastic-Process-1/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/31/Stochastic-Process-7/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -308,21 +306,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2018/07/19/Neural-Style/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Neural Style</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018/07/06/Stochastic-Process-2/" id="post-next" class="post-nav-link">
+      <a href="/2018/07/29/Stochastic-Process-6/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Stochastic Process (Conditional Probability)</h4>
+        <h4 class="title">Stochastic-Process (Multivariate)</h4>
       </a>
     </div>
   
@@ -416,7 +407,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/07/Stochastic-Process-1/&title=《Stochastic Process (Random Variable)》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/31/Stochastic-Process-7/&title=《Stochastic-Process (Order Statistics & Conjugacy)》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -426,22 +417,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/07/Stochastic-Process-1/&title=《Stochastic Process (Random Variable)》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/31/Stochastic-Process-7/&title=《Stochastic-Process (Order Statistics & Conjugacy)》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/07/Stochastic-Process-1/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/31/Stochastic-Process-7/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stochastic Process (Random Variable)》 — EyEular&url=http://yoursite.com/2018/07/07/Stochastic-Process-1/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stochastic-Process (Order Statistics & Conjugacy)》 — EyEular&url=http://yoursite.com/2018/07/31/Stochastic-Process-7/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/07/Stochastic-Process-1/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/31/Stochastic-Process-7/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -452,7 +443,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/07/07/Stochastic-Process-1/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/07/31/Stochastic-Process-7/" alt="微信分享二维码">
 </div>
 
 
