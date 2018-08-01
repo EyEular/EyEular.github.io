@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-31T11:33:52.846Z</updated>
+  <updated>2018-08-01T03:25:53.417Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2018/07/31/Stochastic-Process-7/"/>
     <id>http://yoursite.com/2018/07/31/Stochastic-Process-7/</id>
     <published>2018-07-31T02:35:18.000Z</published>
-    <updated>2018-07-31T11:33:52.846Z</updated>
+    <updated>2018-08-01T03:25:53.417Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Order-Statistics"><a href="#Order-Statistics" class="headerlink" title="Order Statistics"></a>Order Statistics</h1><p><strong>Definition (Order Statistics)</strong> For r.v.s $X_1,X_2,…,X_n$ the order statistics sre the random variables $X_{(1)},…,X_{(2)}$, where</p><ul><li>$X_{(1)}  = min (X_1,…,X_n)$</li><li>$X_{(2)}$ is the $2^{nd}$ of $X_1,…,X_n$</li><li>$\vdots$</li><li>$X_{n} = max(X_1,…,X_n)$</li></ul><p>The order statistics are dependent, for example , if $X_{(1)} = 100$, then $X_{(n)}$ is forced to be $\geq 100$</p><p>We foucs on the case $X_1,…,X_n$ are i.i.d continuous r.v.s, with CDF $F$ and PDF $f$</p><p><strong>Theorem (CDF of Order Statistics)</strong>  Let $X_1,…,X_n$ be i.i.d continuous r.v.s with CDF F, Then the CDF of the $j^{th}$ order statistic $X_{(j)}$ is</p><script type="math/tex; mode=display">P(X_{(j)}\leq x)=\sum_{k=j}^n\left( \begin{array}{c} n\\k  \end{array} \right) F(x)^k(1-F(x))^{n-k}</script><p><strong><em>Proof:</em></strong></p><hr><p>Let’s start with a specical case when $j=n, X_{(n)}=max(X_1,…,X_n)$:</p><script type="math/tex; mode=display">\begin{align}F_{X_{(n)}} (x) &= P[max(X_1,...,X_n)\leq x] \\&=P(X_1\leq  x)\dotsb P(X_n\leq x) \\&=[F(x)]^n\end{align}</script><hr><p>Then, consider another special case when $j=1, X_{(1)} = min(X_1,…,X_n)$:</p><script type="math/tex; mode=display">\begin{align}F_{X_{(1)}} (x) &= P[min(X_1,...,X_n)\leq x] \\&=1 - P(X_1>  x)\dotsb P(X_n> x) \\&=1-[1-F(x)]^n\end{align}</script><p>The result here can be rewrite as $\sum_{k=1}^n\left( \begin{array}{c} n\\k \end{array} \right) F(x)^k (1-F(x))^{n-k}$</p><p>This result can be obtained by expand $[F(x) + 1 -F(x)]^n$</p><hr><p>Finally, let’s consider more general case where $1&lt;j&lt;n, X_{(j)}\leq x$, this means at least $j$ of $\{X_i \}$ fall to the left of $x$</p><p>Denote $N$ as the nunber of $X_i$ landing to the left of $x$. $X_i$ lands to the left of $x$ w.p. $P(X_i\leq x) = F(x)$. Then $N\sim Bin(n,F(x))$</p><script type="math/tex; mode=display">P(X_{(j)}\leq x) = P(N\geq j=\sum_{k=j}^n \left( \begin{array}{c} n\\k \end{array} \right) F(x)^k(1-F(x))^{n-k}</script><hr><p><strong>Theorem (PDF of Order Statistic)</strong> Let $X_1,…,X_n$ be i.i.d. continuous r.v.s with CDF $F$ and PDF $f$. Then the marginal PDF of $j^{th}$ order statistic $X_{(j)}$ is</p><script type="math/tex; mode=display">f_{X_{(j)}} (x) = n \left( \begin{array}{c} n-1\\j-1 \end{array} \right) f(x) F(x)^{j-1} (1-F(x))^{n-j}</script><p><strong>Theorem (Joint PDF)</strong> Let $X_1,…,X_n$ be i.i.d. continuous r.v.s with PDF $f$, Then the joint PDF of all order statistics is</p><script type="math/tex; mode=display">f_{X_{(1)},...,X_{(n)}}(x_1,...,x_n) = n! \prod_{i=1}^n f(x_i), x_1<x_2<\dotsb <x_n</script><p><strong>Example 1(Order Statistics of Uniforms)</strong> $U_1,U_2,…,U_n$ are i.i.d. $Unif(0,1)$ r.v.s with CDF F and PDF $f$</p><p>For $0\leq x\leq 1$ ,$f(x) = 1$ , $F(x) = x$, Then</p><script type="math/tex; mode=display">f_{U_{(j)}} = n \left( \begin{array}{c} n-1\\j-1 \end{array} \right) x^{j-1} (1-x)^{n-j}</script><script type="math/tex; mode=display">F_{U_{(j)}}(x) = \sum_{k=j}^n \left( \begin{array}{c} n\\k \end{array} \right)x^k (1-x)^{n-k} = \int_0^x f_{U_{(j)}} (t) dt = \frac{n!}{(j-1)!(n-j)!}\int_0^x t^{j-1}(1-t)^{n-j}dt</script><hr><h1 id="Beta-Binomial-Conjugacy"><a href="#Beta-Binomial-Conjugacy" class="headerlink" title="Beta-Binomial Conjugacy"></a>Beta-Binomial Conjugacy</h1><p>.</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Order-Statistics"><a href="#Order-Statistics" class="headerlink" title="Order Statistics"></a>Order Statistics</h1><p><strong>Definition (Order Statistics)</strong> For r.v.s $X_1,X_2,…,X_n$ the order statistics sre the random variables $X_{(1)},…,X_{(2)}$, where</p><ul><li>$X_{(1)}  = min (X_1,…,X_n)$</li><li>$X_{(2)}$ is the $2^{nd}$ of $X_1,…,X_n$</li><li>$\vdots$</li><li>$X_{n} = max(X_1,…,X_n)$</li></ul><p>The order statistics are dependent, for example , if $X_{(1)} = 100$, then $X_{(n)}$ is forced to be $\geq 100$</p><p>We foucs on the case $X_1,…,X_n$ are i.i.d continuous r.v.s, with CDF $F$ and PDF $f$</p><p><strong>Theorem (CDF of Order Statistics)</strong>  Let $X_1,…,X_n$ be i.i.d continuous r.v.s with CDF F, Then the CDF of the $j^{th}$ order statistic $X_{(j)}$ is</p><script type="math/tex; mode=display">P(X_{(j)}\leq x)=\sum_{k=j}^n\left( \begin{array}{c} n\\k  \end{array} \right) F(x)^k(1-F(x))^{n-k}</script><p><strong><em>Proof:</em></strong></p><hr><p>Let’s start with a specical case when $j=n, X_{(n)}=max(X_1,…,X_n)$:</p><script type="math/tex; mode=display">\begin{align}F_{X_{(n)}} (x) &= P[max(X_1,...,X_n)\leq x] \\&=P(X_1\leq  x)\dotsb P(X_n\leq x) \\&=[F(x)]^n\end{align}</script><hr><p>Then, consider another special case when $j=1, X_{(1)} = min(X_1,…,X_n)$:</p><script type="math/tex; mode=display">\begin{align}F_{X_{(1)}} (x) &= P[min(X_1,...,X_n)\leq x] \\&=1 - P(X_1>  x)\dotsb P(X_n> x) \\&=1-[1-F(x)]^n\end{align}</script><p>The result here can be rewrite as $\sum_{k=1}^n\left( \begin{array}{c} n\\k \end{array} \right) F(x)^k (1-F(x))^{n-k}$</p><p>This result can be obtained by expand $[F(x) + 1 -F(x)]^n$</p><hr><p>Finally, let’s consider more general case where $1&lt;j&lt;n, X_{(j)}\leq x$, this means at least $j$ of $\{X_i \}$ fall to the left of $x$</p><p>Denote $N$ as the nunber of $X_i$ landing to the left of $x$. $X_i$ lands to the left of $x$ w.p. $P(X_i\leq x) = F(x)$. Then $N\sim Bin(n,F(x))$</p><script type="math/tex; mode=display">P(X_{(j)}\leq x) = P(N\geq j=\sum_{k=j}^n \left( \begin{array}{c} n\\k \end{array} \right) F(x)^k(1-F(x))^{n-k}</script><hr><p><strong>Theorem (PDF of Order Statistic)</strong> Let $X_1,…,X_n$ be i.i.d. continuous r.v.s with CDF $F$ and PDF $f$. Then the marginal PDF of $j^{th}$ order statistic $X_{(j)}$ is</p><script type="math/tex; mode=display">f_{X_{(j)}} (x) = n \left( \begin{array}{c} n-1\\j-1 \end{array} \right) f(x) F(x)^{j-1} (1-F(x))^{n-j}</script><p><strong>Theorem (Joint PDF)</strong> Let $X_1,…,X_n$ be i.i.d. continuous r.v.s with PDF $f$, Then the joint PDF of all order statistics is</p><script type="math/tex; mode=display">f_{X_{(1)},...,X_{(n)}}(x_1,...,x_n) = n! \prod_{i=1}^n f(x_i), x_1<x_2<\dotsb <x_n</script><p><strong>Example 1(Order Statistics of Uniforms)</strong> $U_1,U_2,…,U_n$ are i.i.d. $Unif(0,1)$ r.v.s with CDF F and PDF $f$</p><p>For $0\leq x\leq 1$ ,$f(x) = 1$ , $F(x) = x$, Then</p><script type="math/tex; mode=display">f_{U_{(j)}} = n \left( \begin{array}{c} n-1\\j-1 \end{array} \right) x^{j-1} (1-x)^{n-j}</script><script type="math/tex; mode=display">F_{U_{(j)}}(x) = \sum_{k=j}^n \left( \begin{array}{c} n\\k \end{array} \right)x^k (1-x)^{n-k} = \int_0^x f_{U_{(j)}} (t) dt = \frac{n!}{(j-1)!(n-j)!}\int_0^x t^{j-1}(1-t)^{n-j}dt</script><hr><h1 id="Beta-Binomial-Conjugacy"><a href="#Beta-Binomial-Conjugacy" class="headerlink" title="Beta-Binomial Conjugacy"></a>Beta-Binomial Conjugacy</h1><p><strong>Definition (Beta Distribution)</strong> An r.v. $X$ is said to have <strong><em>Beta distribution</em></strong> with parameters $a$ and $b$, if its PDF is</p><script type="math/tex; mode=display">f(x) = \frac{1}{\beta(a,b)}x^{a-1}(1-x)^{b-1},0<x<1</script><p>where $\beta(a,b)$ is constant to make PDF integrate to 1, We write this as $X\sim Beta(a,b)$</p><p><em>Beta Distribution is the generalization of uniform distribution while $a=b=1$</em></p><p>The Beta is a flexible family of continuous distributions on (0,1), and has many stories. One is Beta r.v. often used to represent an unknown probability. <strong><em>we can use Beta to put probabilities on unknown probabilities</em></strong> If a parameter $p$ satisfies $0&lt;p&lt;1$, we can assume the prior distribution of $p$ is Beta(a,b)</p><p>.</p>]]></content>
     
     <summary type="html">
     
@@ -164,9 +164,9 @@
     <link href="http://yoursite.com/2018/07/23/Stochastic-Process-0/"/>
     <id>http://yoursite.com/2018/07/23/Stochastic-Process-0/</id>
     <published>2018-07-23T08:54:34.000Z</published>
-    <updated>2018-07-31T10:47:20.391Z</updated>
+    <updated>2018-08-01T03:14:29.309Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>r.v.s.</strong>: random variable sequence</p><p><strong>i.i.d</strong>: individual identical distribution</p><p><strong>w.p.</strong>: with probability</p><p><strong>PMF (Probability Mass Function)</strong> $P(X=x)$</p><p><strong>CDF (Cumulative Distribution Function)</strong> $P(X \leq x)$</p><p><strong>PDF (Probability Density Function)</strong> derivate of CDF</p><p><strong>PGF (Probability Generating Function)</strong> $E(t^X) = \sum_{k=0}^{\infty} p_k t^k$</p><p><strong>MGF (Moment Generating Function)</strong> $M(t) = E(e^{tX})$</p><hr><h1 id="Distributions"><a href="#Distributions" class="headerlink" title="Distributions"></a>Distributions</h1><ul><li><strong>Binomial Distribution</strong> $X\sim B(n,p)$: number of success in n trails</li><li><strong>HyperGeometric Distribution</strong> $X\sim HGeom(w,b,n)$: draw n balls between w white and b black</li><li><strong>Geometric Distribution</strong> $X\sim Geom(p)$: number of the Bernoulli trails before success (First Success Distribution)</li><li><strong>Negative Binomial Distribution</strong> $X\sim NBin(r,p)$: number of the Bernoulli trails before $r^{th}$ success</li><li><strong>Poisson Distribution</strong> $X\sim Pois(\lambda)$: number of times an event occurs in an interval of time or space</li><li><strong>Uniform Distribution</strong> $U\sim Unif(a,b)$: Distribution on the interval $(a,b)$</li><li><strong>Standard Normal Distribution</strong> $X\sim N(0,1)$</li><li><strong>Normal Distribution</strong> $X\sim N(\mu,\sigma^2)$</li></ul><p><img src="/2018/07/23/Stochastic-Process-0/img1.jpg" align="justify" style=" width:600px;"></p>]]></content>
+    <content type="html"><![CDATA[<p><strong>r.v.s.</strong>: random variable sequence</p><p><strong>i.i.d</strong>: individual identical distribution</p><p><strong>w.p.</strong>: with probability</p><p><strong>PMF (Probability Mass Function)</strong> $P(X=x)$</p><p><strong>CDF (Cumulative Distribution Function)</strong> $P(X \leq x)$</p><p><strong>PDF (Probability Density Function)</strong> derivate of CDF</p><p><strong>PGF (Probability Generating Function)</strong> $E(t^X) = \sum_{k=0}^{\infty} p_k t^k$</p><p><strong>MGF (Moment Generating Function)</strong> $M(t) = E(e^{tX})$</p><hr><h1 id="Distributions"><a href="#Distributions" class="headerlink" title="Distributions"></a>Distributions</h1><ul><li><strong>Binomial Distribution</strong> $X\sim B(n,p)$: number of success in n trails</li><li><strong>HyperGeometric Distribution</strong> $X\sim HGeom(w,b,n)$: draw n balls between w white and b black</li><li><strong>Geometric Distribution</strong> $X\sim Geom(p)$: number of the Bernoulli trails before success (First Success Distribution)</li><li><strong>Negative Binomial Distribution</strong> $X\sim NBin(r,p)$: number of the Bernoulli trails before $r^{th}$ success</li><li><strong>Poisson Distribution</strong> $X\sim Pois(\lambda)$: number of times an event occurs in an interval of time or space</li><li><strong>Uniform Distribution</strong> $U\sim Unif(a,b)$: Distribution on the interval $(a,b)$</li><li><strong>Standard Normal Distribution</strong> $X\sim N(0,1)$</li><li><strong>Normal Distribution</strong> $X\sim N(\mu,\sigma^2)$</li><li><strong>Beta Distribution</strong> $X\sim Beta(a,b)$</li></ul><p><img src="/2018/07/23/Stochastic-Process-0/img1.jpg" align="justify" style=" width:600px;"></p>]]></content>
     
     <summary type="html">
     
@@ -204,9 +204,9 @@
     </summary>
     
     
-      <category term="Math" scheme="http://yoursite.com/tags/Math/"/>
-    
       <category term="Probability" scheme="http://yoursite.com/tags/Probability/"/>
+    
+      <category term="Math" scheme="http://yoursite.com/tags/Math/"/>
     
   </entry>
   
@@ -253,9 +253,9 @@
     </summary>
     
     
-      <category term="Math" scheme="http://yoursite.com/tags/Math/"/>
-    
       <category term="Probability" scheme="http://yoursite.com/tags/Probability/"/>
+    
+      <category term="Math" scheme="http://yoursite.com/tags/Math/"/>
     
   </entry>
   
@@ -279,9 +279,9 @@
     </summary>
     
     
-      <category term="Math" scheme="http://yoursite.com/tags/Math/"/>
-    
       <category term="Probability" scheme="http://yoursite.com/tags/Probability/"/>
+    
+      <category term="Math" scheme="http://yoursite.com/tags/Math/"/>
     
   </entry>
   

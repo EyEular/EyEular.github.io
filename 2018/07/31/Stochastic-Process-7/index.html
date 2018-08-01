@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="EyEular">
 <meta property="og:description" content="Order StatisticsDefinition (Order Statistics) For r.v.s $X_1,X_2,…,X_n$ the order statistics sre the random variables $X_{(1)},…,X_{(2)}$, where  $X_{(1)}  = min (X_1,…,X_n)$ $X_{(2)}$ is the $2^{nd}$">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-31T11:33:52.846Z">
+<meta property="og:updated_time" content="2018-08-01T03:25:53.417Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stochastic-Process (Order Statistics &amp; Conjugacy)">
 <meta name="twitter:description" content="Order StatisticsDefinition (Order Statistics) For r.v.s $X_1,X_2,…,X_n$ the order statistics sre the random variables $X_{(1)},…,X_{(2)}$, where  $X_{(1)}  = min (X_1,…,X_n)$ $X_{(2)}$ is the $2^{nd}$">
@@ -222,7 +222,11 @@ F_{X_{(1)}} (x) &= P[min(X_1,...,X_n)\leq x] \\
 <script type="math/tex; mode=display">f_{X_{(1)},...,X_{(n)}}(x_1,...,x_n) = n! \prod_{i=1}^n f(x_i), x_1<x_2<\dotsb <x_n</script><p><strong>Example 1(Order Statistics of Uniforms)</strong> $U_1,U_2,…,U_n$ are i.i.d. $Unif(0,1)$ r.v.s with CDF F and PDF $f$</p>
 <p>For $0\leq x\leq 1$ ,$f(x) = 1$ , $F(x) = x$, Then</p>
 <script type="math/tex; mode=display">f_{U_{(j)}} = n \left( \begin{array}{c} n-1\\j-1 \end{array} \right) x^{j-1} (1-x)^{n-j}</script><script type="math/tex; mode=display">F_{U_{(j)}}(x) = \sum_{k=j}^n \left( \begin{array}{c} n\\k \end{array} \right)x^k (1-x)^{n-k} = \int_0^x f_{U_{(j)}} (t) dt = \frac{n!}{(j-1)!(n-j)!}\int_0^x t^{j-1}(1-t)^{n-j}dt</script><hr>
-<h1 id="Beta-Binomial-Conjugacy"><a href="#Beta-Binomial-Conjugacy" class="headerlink" title="Beta-Binomial Conjugacy"></a>Beta-Binomial Conjugacy</h1><p>.</p>
+<h1 id="Beta-Binomial-Conjugacy"><a href="#Beta-Binomial-Conjugacy" class="headerlink" title="Beta-Binomial Conjugacy"></a>Beta-Binomial Conjugacy</h1><p><strong>Definition (Beta Distribution)</strong> An r.v. $X$ is said to have <strong><em>Beta distribution</em></strong> with parameters $a$ and $b$, if its PDF is</p>
+<script type="math/tex; mode=display">f(x) = \frac{1}{\beta(a,b)}x^{a-1}(1-x)^{b-1},0<x<1</script><p>where $\beta(a,b)$ is constant to make PDF integrate to 1, We write this as $X\sim Beta(a,b)$</p>
+<p><em>Beta Distribution is the generalization of uniform distribution while $a=b=1$</em></p>
+<p>The Beta is a flexible family of continuous distributions on (0,1), and has many stories. One is Beta r.v. often used to represent an unknown probability. <strong><em>we can use Beta to put probabilities on unknown probabilities</em></strong> If a parameter $p$ satisfies $0&lt;p&lt;1$, we can assume the prior distribution of $p$ is Beta(a,b)</p>
+<p>.</p>
 
         </div>
 
