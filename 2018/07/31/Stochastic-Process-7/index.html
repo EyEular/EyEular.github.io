@@ -28,10 +28,12 @@
 <meta property="og:site_name" content="EyEular">
 <meta property="og:description" content="Order StatisticsDefinition (Order Statistics) For r.v.s $X_1,X_2,…,X_n$ the order statistics sre the random variables $X_{(1)},…,X_{(2)}$, where  $X_{(1)}  = min (X_1,…,X_n)$ $X_{(2)}$ is the $2^{nd}$">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-01T03:25:53.417Z">
+<meta property="og:image" content="http://yoursite.com/2018/07/31/Stochastic-Process-7/sp7img1.jpg">
+<meta property="og:updated_time" content="2018-08-01T12:04:28.170Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stochastic-Process (Order Statistics &amp; Conjugacy)">
 <meta name="twitter:description" content="Order StatisticsDefinition (Order Statistics) For r.v.s $X_1,X_2,…,X_n$ the order statistics sre the random variables $X_{(1)},…,X_{(2)}$, where  $X_{(1)}  = min (X_1,…,X_n)$ $X_{(2)}$ is the $2^{nd}$">
+<meta name="twitter:image" content="http://yoursite.com/2018/07/31/Stochastic-Process-7/sp7img1.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
     
@@ -164,7 +166,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Order-Statistics"><span class="post-toc-number">1.</span> <span class="post-toc-text">Order Statistics</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Beta-Binomial-Conjugacy"><span class="post-toc-number">2.</span> <span class="post-toc-text">Beta-Binomial Conjugacy</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Order-Statistics"><span class="post-toc-number">1.</span> <span class="post-toc-text">Order Statistics</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Beta-Binomial-Conjugacy"><span class="post-toc-number">2.</span> <span class="post-toc-text">Beta-Binomial Conjugacy</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Dirichlet-Multinomial-Conjugacy"><span class="post-toc-number">3.</span> <span class="post-toc-text">Dirichlet-Multinomial Conjugacy</span></a></li></ol>
         </nav>
     </aside>
     
@@ -224,8 +226,53 @@ F_{X_{(1)}} (x) &= P[min(X_1,...,X_n)\leq x] \\
 <script type="math/tex; mode=display">f_{U_{(j)}} = n \left( \begin{array}{c} n-1\\j-1 \end{array} \right) x^{j-1} (1-x)^{n-j}</script><script type="math/tex; mode=display">F_{U_{(j)}}(x) = \sum_{k=j}^n \left( \begin{array}{c} n\\k \end{array} \right)x^k (1-x)^{n-k} = \int_0^x f_{U_{(j)}} (t) dt = \frac{n!}{(j-1)!(n-j)!}\int_0^x t^{j-1}(1-t)^{n-j}dt</script><hr>
 <h1 id="Beta-Binomial-Conjugacy"><a href="#Beta-Binomial-Conjugacy" class="headerlink" title="Beta-Binomial Conjugacy"></a>Beta-Binomial Conjugacy</h1><p><strong>Definition (Beta Distribution)</strong> An r.v. $X$ is said to have <strong><em>Beta distribution</em></strong> with parameters $a$ and $b$, if its PDF is</p>
 <script type="math/tex; mode=display">f(x) = \frac{1}{\beta(a,b)}x^{a-1}(1-x)^{b-1},0<x<1</script><p>where $\beta(a,b)$ is constant to make PDF integrate to 1, We write this as $X\sim Beta(a,b)$</p>
+<p>By varying the values of $a$ and $b$, we get PDFs with a variety of shapes<br><img src="/2018/07/31/Stochastic-Process-7/sp7img1.jpg" align="justify"></p>
 <p><em>Beta Distribution is the generalization of uniform distribution while $a=b=1$</em></p>
 <p>The Beta is a flexible family of continuous distributions on (0,1), and has many stories. One is Beta r.v. often used to represent an unknown probability. <strong><em>we can use Beta to put probabilities on unknown probabilities</em></strong> If a parameter $p$ satisfies $0&lt;p&lt;1$, we can assume the prior distribution of $p$ is Beta(a,b)</p>
+<p><strong>Beta Integral</strong> One inportant issue to analyse the Beta Distribution is the Integral</p>
+<script type="math/tex; mode=display">\beta(a,b) = \int_0^1 x^{a-1}(1-x)^{b-1}dx</script><p><strong>Bayes’ billiards</strong> It’s hard to get the reuslt directly from calculus, the left and right sides of the above formulation can be connected by one event $P(X=k)$</p>
+<script type="math/tex; mode=display">\int_0^1 \left( \begin{array}{c} n\\k \end{array} \right) x^k(1-x)^{n-k}dx = \frac{1}{n+1}</script><p><strong><em>Left side Story</em></strong>: Having $n+1$ balls , $n$ white and $1$ gray. Randomly throw each ball onto the interval $[0,1]$, so the position of balls are i.i.d. $Unif(0,1)$. Let $X$ be the number of white balls to the left of the gray ball.</p>
+<p>To get the probability of the event $X=k$, we use LOTP. Conditioning on the position of gray ball, call it $B$, Conditional on $B=p$, the number of the white ball landing to the left of $p$ has $Bin(n,p)$ distribution, The PDF of $B$ is $f(p) =1$ since $B\sim Unif(0,1)$</p>
+<script type="math/tex; mode=display">P(X=k) = \int_0^1 P(X=k|B=p)f(p)dp = \int_0^1 \left( \begin{array}{c} n\\k \end{array} \right) p^k(1-k)^{n-k}dp</script><p><strong><em>Right side Story</em></strong>: Having $n+1$ balls, all white, randomly throw onto unit interval; then choose one ball at random and paint it gray. Again, let $X$ be the number of white balls to the left of gray ball. By symmetry, any one of the $n+1$ balls is equally likely to be painted gray, then</p>
+<script type="math/tex; mode=display">P(X=k) = \frac{1}{n+1}</script><p>$X$ has the same distribution, then</p>
+<script type="math/tex; mode=display">\int_0^1 \left( \begin{array}{c} n\\k \end{array} \right) p^k (1-p)^{n-k}dp= \frac{1}{n+1}</script><p>Using the result, we are capable to calculate the $\beta(a,b)$ by substituting $a-1$ for $k$ and $b-1$ for $n-k$</p>
+<script type="math/tex; mode=display">\beta(a,b) = \frac{1}{(a+b-1) \left( \begin{array}{c} a+b-2\\a-1 \end{array} \right)} = \frac{(a-1)!(b-1)!}{(a+b-1)!}</script><p>For a r.v. $X\sim Beta(a,b)$, The Expectation</p>
+<script type="math/tex; mode=display">\begin{align}
+E(X) &= \int_0^1 xf(x)dx= \int_0^1 x\cdot \frac{x^{a-1}(1-x)^{b-1}}{\beta(a,b)}dx=\frac{1}{\beta(a,b)}\int_0^1 x^a(1-x)^{b-1}dx \\
+&= \frac{1}{\beta(a,b)}\cdot \beta(a+1,b) = \frac{\frac{a!(b-1)!}{(a+b)!}}{\frac{(a-1)!(b-1)!}{(a+b-1)!}} = \frac{a}{a+b}
+\end{align}</script><p><strong>Beta-Binomial Conjugacy</strong> Now let’s see the connection between Beta distribution and Binomial distribution, the relation we call it Conjugacy.</p>
+<p>We have a coin lands head with p. $p$, and we dont know what %p% is. Our goal is to infer the value of $p$ after observing the outcomes of n tosses of the coin.</p>
+<p><strong><em>Bayesian Inference</em></strong></p>
+<ul>
+<li>Treat all unknown probability $p$ as r.v. and give $p$ a distribution</li>
+<li>Above is called <em>prior distribution</em>, it reflects out uncertainty about the ture value of $p$ before observing</li>
+<li>After experiment and data are gathered, prior distribution is updated using Baye’s rule,; This yields the posterior distribution, which reflects the new beliefs about $p$</li>
+</ul>
+<p>Suppose the prior distribution on $p$ is Beta distribution. Let $p\sim Beta(a,b)$ for known constants $a$ and $b$, $X$ be the number of heads in $n$ tosses of the coin. Conditional on knowing ture value of $p$ then</p>
+<script type="math/tex; mode=display">X|p \sim Bin(n,p)</script><p>We use the Bayes rule. Letting $f(p)$ be the prior distribution and $f(p|X=k)$ be the posterior distribution after observing $k$ heads</p>
+<script type="math/tex; mode=display">f(p|X=k) = \frac{P(X=k|p)f(p)}{P(X=k)}=\frac{\left( \begin{array}{c} n\\k \end{array} \right) p^k (1-p)^{n-k}\cdot \frac{1}{\beta(a,b)}p^{a-1}(1-p)^{b-1}}{P(X=k)}</script><p>The denominator $P(X=k)$ is the marginal PMF of $X$, is given by</p>
+<script type="math/tex; mode=display">P(X=k) = \int_0^1 P(X=k|p) f(p)dp = \int_0^1 \left( \begin{array}{c} n\\k \end{array} \right) p^k(1-p)^{n-k}f(p)dp</script><p>If $a=b=1$ , $P(X=k) = 1/(n+1)$, but it not seem easy to find $P(X=k)$ in general , Are we stuck ?</p>
+<p>Actually, is much easier than it appears at first, the conditional PDF $f(p|X=k)$ is a function of $p$, so everything doesn’t depend on $p$ is just a constant. After dropping constants gives</p>
+<script type="math/tex; mode=display">f(p|X=k) \propto p^{a+k-1}(1-p)^{b+n-k-1}</script><p>which is the $Beta(a+k,b+n-k)$ PDF.Therefore the posterior distribution of $p$ is</p>
+<script type="math/tex; mode=display">p|X = k\sim Beta(a+k,b+n-k)</script><p>The posterior distribution of $p$ after observing $X=k$ is still a Beta distribution!</p>
+<p>We say <em>Beta is the Conjugate prior of the Binomial</em></p>
+<ul>
+<li>We add the observed successes $k$ to the first parameter</li>
+<li>We add the observed successes $k-n$ to the second parameter</li>
+<li>$a$ and $b$ have a concrete interpretation in this context<ul>
+<li>$a$ as the number of prior successes in earlier experiments</li>
+<li>$b$ as the number of prior failures in earlier experiments</li>
+</ul>
+</li>
+</ul>
+<p><strong>Mean vs Bayesian Average</strong></p>
+<ul>
+<li>Mean: $\frac{k}{n}$</li>
+<li>Bayesian Average: $E(p|X=k) = \frac{a+k}{a+b+n}$</li>
+</ul>
+<h1 id="Dirichlet-Multinomial-Conjugacy"><a href="#Dirichlet-Multinomial-Conjugacy" class="headerlink" title="Dirichlet-Multinomial Conjugacy"></a>Dirichlet-Multinomial Conjugacy</h1><p>$n$ objects are independently placed into one of $k$ categories, with probability of $p_j$ to category j, and $\sum_{j=1}^k p_j = 1$. Let $X_i$ be the number of objects in category $i$, $X_1 + … + X_n = n$. Then $X = (X_1,…,X_k)$ is said to have <strong>Multinomial distribution</strong> with parameters $n$ and $\mathbf{p} = (p_1,…,p_k)$, write as $\mathbf{X} \sim Mult_k(n,\mathbf{p})$</p>
+<p><strong>Theorem (Multinomial Marginals)</strong><br>If $\mathbf{X}\sim Mult_k(n,\mathbf{p})$, then the joint PMF of $\mathbf{X}$ is</p>
+<script type="math/tex; mode=display">P(X_1=n_1,...,X_k=n_k) = \frac{n!}{n_1!n_2!...n_k!}\cdot p_1^{n_1}p_2^{n_2}\dotsb p_k^{n_k}</script><p><strong>Theorem (Multinomial Lumping)</strong></p>
 <p>.</p>
 
         </div>
