@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2018/07/29/Stochastic-Process-6/img1.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/07/29/Stochastic-Process-6/img2.jpg">
-<meta property="og:updated_time" content="2018-07-31T02:41:17.934Z">
+<meta property="og:updated_time" content="2018-08-02T01:39:52.453Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stochastic-Process (Multivariate)">
 <meta name="twitter:description" content="Discrete Multivariate R.V.sDefinition (Joint CDF) The Joint CDf of r.v.s $X$ and $Y$ is the function $F_{X,Y}$ given by F_{X,Y}(x,y) = P(X\leq x,Y\leq y)Definition (Joint PMF) The Joint PMF of discret">
@@ -167,7 +167,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Discrete-Multivariate-R-V-s"><span class="post-toc-number">1.</span> <span class="post-toc-text">Discrete Multivariate R.V.s</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Continuous-Multivariate-R-V-s"><span class="post-toc-number">2.</span> <span class="post-toc-text">Continuous Multivariate R.V.s</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#General-Bayes’-Rule"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">General Bayes’ Rule</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Convariance-and-Correlation"><span class="post-toc-number">3.</span> <span class="post-toc-text">Convariance and Correlation</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Properties-of-Covariance"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">Properties of Covariance</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Change-of-Variables"><span class="post-toc-number">4.</span> <span class="post-toc-text">Change of Variables</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Convolutions"><span class="post-toc-number">5.</span> <span class="post-toc-text">Convolutions</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Discrete-Multivariate-R-V-s"><span class="post-toc-number">1.</span> <span class="post-toc-text">Discrete Multivariate R.V.s</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Continuous-Multivariate-R-V-s"><span class="post-toc-number">2.</span> <span class="post-toc-text">Continuous Multivariate R.V.s</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#General-Bayes’-Rule"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">General Bayes’ Rule</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Convariance-and-Correlation"><span class="post-toc-number">3.</span> <span class="post-toc-text">Convariance and Correlation</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Properties-of-Covariance"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">Properties of Covariance</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Change-of-Variables"><span class="post-toc-number">4.</span> <span class="post-toc-text">Change of Variables</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Convolutions"><span class="post-toc-number">5.</span> <span class="post-toc-text">Convolutions</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Order-Statistics"><span class="post-toc-number">6.</span> <span class="post-toc-text">Order Statistics</span></a></li></ol>
         </nav>
     </aside>
     
@@ -249,7 +249,42 @@
 <script type="math/tex; mode=display">\begin{align}
   f_T(t)  =& \int_{-\infty}^{\infty} f_Y(t-x) f_X(x) dx \\
           =& \int_{-\infty}^{\infty} f_X(t-y) f_Y(y) dy
-\end{align}</script>
+\end{align}</script><hr>
+<h1 id="Order-Statistics"><a href="#Order-Statistics" class="headerlink" title="Order Statistics"></a>Order Statistics</h1><p><strong>Definition (Order Statistics)</strong> For r.v.s $X_1,X_2,…,X_n$ the order statistics sre the random variables $X_{(1)},…,X_{(2)}$, where</p>
+<ul>
+<li>$X_{(1)}  = min (X_1,…,X_n)$</li>
+<li>$X_{(2)}$ is the $2^{nd}$ of $X_1,…,X_n$</li>
+<li>$\vdots$</li>
+<li>$X_{n} = max(X_1,…,X_n)$</li>
+</ul>
+<p>The order statistics are dependent, for example , if $X_{(1)} = 100$, then $X_{(n)}$ is forced to be $\geq 100$</p>
+<p>We foucs on the case $X_1,…,X_n$ are i.i.d continuous r.v.s, with CDF $F$ and PDF $f$</p>
+<p><strong>Theorem (CDF of Order Statistics)</strong>  Let $X_1,…,X_n$ be i.i.d continuous r.v.s with CDF F, Then the CDF of the $j^{th}$ order statistic $X_{(j)}$ is</p>
+<script type="math/tex; mode=display">P(X_{(j)}\leq x)=\sum_{k=j}^n
+\left( \begin{array}{c} n\\k  \end{array} \right) F(x)^k(1-F(x))^{n-k}</script><p><strong><em>Proof:</em></strong></p>
+<hr>
+<p>Let’s start with a specical case when $j=n, X_{(n)}=max(X_1,…,X_n)$:</p>
+<script type="math/tex; mode=display">\begin{align}
+F_{X_{(n)}} (x) &= P[max(X_1,...,X_n)\leq x] \\
+&=P(X_1\leq  x)\dotsb P(X_n\leq x) \\
+&=[F(x)]^n
+\end{align}</script><hr>
+<p>Then, consider another special case when $j=1, X_{(1)} = min(X_1,…,X_n)$:</p>
+<script type="math/tex; mode=display">\begin{align}
+F_{X_{(1)}} (x) &= P[min(X_1,...,X_n)\leq x] \\
+&=1 - P(X_1>  x)\dotsb P(X_n> x) \\
+&=1-[1-F(x)]^n
+\end{align}</script><p>The result here can be rewrite as $\sum_{k=1}^n\left( \begin{array}{c} n\\k \end{array} \right) F(x)^k (1-F(x))^{n-k}$</p>
+<p>This result can be obtained by expand $[F(x) + 1 -F(x)]^n$</p>
+<hr>
+<p>Finally, let’s consider more general case where $1&lt;j&lt;n, X_{(j)}\leq x$, this means at least $j$ of $\{X_i \}$ fall to the left of $x$</p>
+<p>Denote $N$ as the nunber of $X_i$ landing to the left of $x$. $X_i$ lands to the left of $x$ w.p. $P(X_i\leq x) = F(x)$. Then $N\sim Bin(n,F(x))$</p>
+<script type="math/tex; mode=display">P(X_{(j)}\leq x) = P(N\geq j=\sum_{k=j}^n \left( \begin{array}{c} n\\k \end{array} \right) F(x)^k(1-F(x))^{n-k}</script><hr>
+<p><strong>Theorem (PDF of Order Statistic)</strong> Let $X_1,…,X_n$ be i.i.d. continuous r.v.s with CDF $F$ and PDF $f$. Then the marginal PDF of $j^{th}$ order statistic $X_{(j)}$ is</p>
+<script type="math/tex; mode=display">f_{X_{(j)}} (x) = n \left( \begin{array}{c} n-1\\j-1 \end{array} \right) f(x) F(x)^{j-1} (1-F(x))^{n-j}</script><p><strong>Theorem (Joint PDF)</strong> Let $X_1,…,X_n$ be i.i.d. continuous r.v.s with PDF $f$, Then the joint PDF of all order statistics is</p>
+<script type="math/tex; mode=display">f_{X_{(1)},...,X_{(n)}}(x_1,...,x_n) = n! \prod_{i=1}^n f(x_i), x_1<x_2<\dotsb <x_n</script><p><strong>Example 1(Order Statistics of Uniforms)</strong> $U_1,U_2,…,U_n$ are i.i.d. $Unif(0,1)$ r.v.s with CDF F and PDF $f$</p>
+<p>For $0\leq x\leq 1$ ,$f(x) = 1$ , $F(x) = x$, Then</p>
+<script type="math/tex; mode=display">f_{U_{(j)}} = n \left( \begin{array}{c} n-1\\j-1 \end{array} \right) x^{j-1} (1-x)^{n-j}</script><script type="math/tex; mode=display">F_{U_{(j)}}(x) = \sum_{k=j}^n \left( \begin{array}{c} n\\k \end{array} \right)x^k (1-x)^{n-k} = \int_0^x f_{U_{(j)}} (t) dt = \frac{n!}{(j-1)!(n-j)!}\int_0^x t^{j-1}(1-t)^{n-j}dt</script>
         </div>
 
         <blockquote class="post-copyright">
@@ -337,7 +372,7 @@
     <div class="waves-block waves-effect prev">
       <a href="/2018/07/31/Stochastic-Process-7/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Stochastic-Process (Order Statistics &amp; Conjugacy)</h4>
+        <h4 class="title">Stochastic-Process (Conjugacy &amp; Bayesian)</h4>
       </a>
     </div>
   
