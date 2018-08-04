@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Stochastic-Process (Conditional Expectation) | EyEular</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Probability">
+    <meta name="description" content="Conditional Expectation Given An EventIf $Y$ is a discrete r.v. E(Y|A) = \sum_y P(Y=y|A)If $Y$ is continuous r.v. E(Y|A) = \int_{-\infty}^{\infty} yf(y|A)dyApproximationImage a large number of $n$ of">
+<meta name="keywords" content="Probability">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stochastic-Process (Conditional Expectation)">
+<meta property="og:url" content="http://yoursite.com/2018/08/03/Stochastic-Process-8/index.html">
+<meta property="og:site_name" content="EyEular">
+<meta property="og:description" content="Conditional Expectation Given An EventIf $Y$ is a discrete r.v. E(Y|A) = \sum_y P(Y=y|A)If $Y$ is continuous r.v. E(Y|A) = \int_{-\infty}^{\infty} yf(y|A)dyApproximationImage a large number of $n$ of">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-08-04T03:18:47.805Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Stochastic-Process (Conditional Expectation)">
+<meta name="twitter:description" content="Conditional Expectation Given An EventIf $Y$ is a discrete r.v. E(Y|A) = \sum_y P(Y=y|A)If $Y$ is continuous r.v. E(Y|A) = \int_{-\infty}^{\infty} yf(y|A)dyApproximationImage a large number of $n$ of">
+    
+        <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/E.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Eulring</h5>
+          <a href="mailto:bianjy@shanghaitech.edu.cn" title="bianjy@shanghaitech.edu.cn" class="mail">bianjy@shanghaitech.edu.cn</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-rebel"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-codepen"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-diamond"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/EyEular" target="_blank" >
+                <i class="icon icon-lg icon-gitlab"></i>
+                gayhub
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/links"  >
+                <i class="icon icon-lg icon-gg"></i>
+                Links
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-eye"></i>
+                About me
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Stochastic-Process (Conditional Expectation)</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Stochastic-Process (Conditional Expectation)</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-08-03T12:33:40.000Z" itemprop="datePublished" class="page-time">
+  2018-08-03
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Conditional-Expectation-Given-An-Event"><span class="post-toc-number">1.</span> <span class="post-toc-text">Conditional Expectation Given An Event</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Approximation"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">Approximation</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Example-Life-Expectation"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">Example (Life Expectation)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Law-of-Total-Expectation"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">Law of Total Expectation</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Example-Geometric-Expectation-Redux"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">Example (Geometric Expectation Redux)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Example-Time-until-HH-vs-HT"><span class="post-toc-number">1.0.5.</span> <span class="post-toc-text">Example (Time until HH vs. HT)</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Conditional-Expectation-Given-An-R-V"><span class="post-toc-number">2.</span> <span class="post-toc-text">Conditional Expectation Given An R.V.</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Example-Stick-Length"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">Example (Stick Length)</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Properties-of-Conditional-Expectation"><span class="post-toc-number">3.</span> <span class="post-toc-text">Properties of Conditional Expectation</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Theorem-Dropping-independent"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">Theorem (Dropping independent)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Taking-Out-What’s-Known"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">Taking Out What’s Known</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Theorem-Linearity"><span class="post-toc-number">3.0.3.</span> <span class="post-toc-text">Theorem (Linearity)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Theorem-Adam’s-Law"><span class="post-toc-number">3.0.4.</span> <span class="post-toc-text">Theorem (Adam’s Law)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Theorem-Adam’s-Law-with-Extra-Conditioning"><span class="post-toc-number">3.0.5.</span> <span class="post-toc-text">Theorem (Adam’s Law with Extra Conditioning)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Definition-Conditional-Variance"><span class="post-toc-number">3.0.6.</span> <span class="post-toc-text">Definition (Conditional Variance)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Theorem-Eve’s-Low"><span class="post-toc-number">3.0.7.</span> <span class="post-toc-text">Theorem (Eve’s Low)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Example-Random-Sum"><span class="post-toc-number">3.0.8.</span> <span class="post-toc-text">Example (Random Sum)</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Prediction-and-Estimation"><span class="post-toc-number">4.</span> <span class="post-toc-text">Prediction and Estimation</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Theorem-Projection-Interpretation"><span class="post-toc-number">4.0.1.</span> <span class="post-toc-text">Theorem (Projection Interpretation)</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Stochastic-Process-8"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Stochastic-Process (Conditional Expectation)</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-08-03 20:33:40" datetime="2018-08-03T12:33:40.000Z"  itemprop="datePublished">2018-08-03</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Conditional-Expectation-Given-An-Event"><a href="#Conditional-Expectation-Given-An-Event" class="headerlink" title="Conditional Expectation Given An Event"></a>Conditional Expectation Given An Event</h1><p>If $Y$ is a discrete r.v.</p>
+<script type="math/tex; mode=display">E(Y|A) = \sum_y P(Y=y|A)</script><p>If $Y$ is continuous r.v.</p>
+<script type="math/tex; mode=display">E(Y|A) = \int_{-\infty}^{\infty} yf(y|A)dy</script><h3 id="Approximation"><a href="#Approximation" class="headerlink" title="Approximation"></a>Approximation</h3><p>Image a large number of $n$ of replication of experiments $y_1,…,y_n$</p>
+<script type="math/tex; mode=display">E(Y)\approx \frac{1}{n}\sum_{j=1}^n y_j</script><p>If $I_j$ is the indicator of $A$ occurring</p>
+<script type="math/tex; mode=display">E(Y|A) \approx \frac{\sum_{j=1}^n y_j I_j}{\sum_{j=1}^n I_j}</script><h3 id="Example-Life-Expectation"><a href="#Example-Life-Expectation" class="headerlink" title="Example (Life Expectation)"></a>Example (Life Expectation)</h3><p>Yang is 24 years old, he hear average life expectancy is $80$, Should he conclude he has 50 years of life left ?</p>
+<p>Of Course not, cause he already live $24$ years and some people may die less than $24$</p>
+<script type="math/tex; mode=display">E(T) < E(T|T\geq 30)</script><h3 id="Law-of-Total-Expectation"><a href="#Law-of-Total-Expectation" class="headerlink" title="Law of Total Expectation"></a>Law of Total Expectation</h3><p>Let $A_1,…,A_n$ be partition of a sample space, $Y$ be a random variable on sample space. Then</p>
+<script type="math/tex; mode=display">E(Y) = \sum_{i=1}^n E(Y|A_i) P(A_i)</script><h3 id="Example-Geometric-Expectation-Redux"><a href="#Example-Geometric-Expectation-Redux" class="headerlink" title="Example (Geometric Expectation Redux)"></a>Example (Geometric Expectation Redux)</h3><p>Let $X\sim Geom(p)$, as the number of Tails before the first Heads in a sequence of coin flips with p. $p$ of head. To get $E(X)$ from sum of series, it also can be obtained in another way. We condition on the outcome of the first toss: if it lands heads, then $X$ is $0$ and we’re done ; if it lands Tails, then we wasted one toss and back to where we started by memorylessness Therefore</p>
+<script type="math/tex; mode=display">\begin{align}
+E(X) &= E(X|\text{first toss }H)\cdot p + E(X|\text{first toss }T)\cdot q \\
+     &= 0 \cdot p + (1+E(X)) \cdot q
+\end{align}</script><p>which gives $E(X) = q/p$</p>
+<h3 id="Example-Time-until-HH-vs-HT"><a href="#Example-Time-until-HH-vs-HT" class="headerlink" title="Example (Time until HH vs. HT)"></a>Example (Time until HH vs. HT)</h3><p>You toss a fair coin repeatedly. What is the expected number of tosses until the pattern HT/HH appears for the first times ?</p>
+<p><strong>Times until HT</strong></p>
+<ul>
+<li>$W_{HT}$: number of tosses untill HT appears</li>
+<li>$W_1$: waiting time for first H</li>
+<li><p>$W_2$: additional waiting time for the first T</p>
+<p>Then</p>
+<p>$W_1\sim Fs(\frac{1}{2}),E[W_1] = 2$</p>
+<p>$W_2\sim Fs(\frac{1}{2}),E[W_2] = 2$</p>
+<script type="math/tex; mode=display">E[W_{HT}] = E[W_1+W_2]=E[W_1] + E[W_2] = 4</script></li>
+</ul>
+<p><strong>Times until HH</strong></p>
+<script type="math/tex; mode=display">E[W_{HH}] = E[W_HH|\text{first toss }H]\cdot \frac{1}{2} + E[W_HH|\text{first toss }T]\cdot \frac{1}{2}</script><p>  where</p>
+<script type="math/tex; mode=display">E[W_{HH}|\text{first toss }T] = 1 + E[W_{HH}]</script><p>  and</p>
+<script type="math/tex; mode=display">\begin{align}
+  E[W_{HH}|\text{first toss }H] =& E[W_{HH}|\text{first toss }H, \text{second toss }H]\cdot \frac{1}{2} \\
+  &+ E[W_{HH}|\text{first toss }H, \text{second toss }T]\cdot \frac{1}{2} \\
+  =& 2\cdot \frac{1}{2} + (E[W_{HH}]+2)\cdot \frac{1}{2}
+  \end{align}</script><p>  Thus we get $E[W_{HH}] = 6$</p>
+<p><strong><em>As we can see the above example use the memorylessness property of the Conditional Expectation of distribution, and construct target in both side to calculate the target</em></strong></p>
+<hr>
+<h1 id="Conditional-Expectation-Given-An-R-V"><a href="#Conditional-Expectation-Given-An-R-V" class="headerlink" title="Conditional Expectation Given An R.V."></a>Conditional Expectation Given An R.V.</h1><p>Let $g(x) = E(Y|X=x)$ Then the conditional expectation of $Y$ given $X$, denoted $E(Y|E)$ is defined to be the random variable $g(X)$</p>
+<h3 id="Example-Stick-Length"><a href="#Example-Stick-Length" class="headerlink" title="Example (Stick Length)"></a>Example (Stick Length)</h3><p>Suppose we have a stick of length $1$ and break the stick at a point $X$ chosen uniformly at random. Given that $X=x$, we then choose another breakpoint $Y$ uniformly on the interval $[0,x]$, find $E(Y|X)$, and its mean and variance</p>
+<script type="math/tex; mode=display">E(Y|X) = X/2</script><script type="math/tex; mode=display">E(E(Y|X)) = E(X/2) = \frac{1}{4}</script><script type="math/tex; mode=display">Var(E(Y|X)) = Var(X/2) = \frac{1}{48}</script><hr>
+<h1 id="Properties-of-Conditional-Expectation"><a href="#Properties-of-Conditional-Expectation" class="headerlink" title="Properties of Conditional Expectation"></a>Properties of Conditional Expectation</h1><h3 id="Theorem-Dropping-independent"><a href="#Theorem-Dropping-independent" class="headerlink" title="Theorem (Dropping independent)"></a>Theorem (Dropping independent)</h3><p>If $X$ and $Y$ are independent, then $E(Y|X)=E(Y)$</p>
+<h3 id="Taking-Out-What’s-Known"><a href="#Taking-Out-What’s-Known" class="headerlink" title="Taking Out What’s Known"></a>Taking Out What’s Known</h3><script type="math/tex; mode=display">E(h(X)Y|X) = h(X) E(Y|X)</script><h3 id="Theorem-Linearity"><a href="#Theorem-Linearity" class="headerlink" title="Theorem (Linearity)"></a>Theorem (Linearity)</h3><script type="math/tex; mode=display">E(Y_1+Y_2|X) = E(Y_1|X) + E(Y_2|X)</script><h3 id="Theorem-Adam’s-Law"><a href="#Theorem-Adam’s-Law" class="headerlink" title="Theorem (Adam’s Law)"></a>Theorem (Adam’s Law)</h3><p>For any r.v.s $X$ and $Y$</p>
+<script type="math/tex; mode=display">E(E(Y|X)) = E(Y)</script><p><strong>Proof by LOTP</strong></p>
+<p>  For $X$ discrete</p>
+<script type="math/tex; mode=display">E(Y) = \sum_x E(Y|X=x) P(X=x)</script><p>  We let $E(Y|X=x) = g(x)$, then</p>
+<script type="math/tex; mode=display">E(E(Y|X)) = E(g(X)) = \sum_x g(x) P(X=x) = \sum_x E(Y|X=x) P(X=x)</script><p>  So</p>
+<script type="math/tex; mode=display">E(E(Y|X)) = E(Y)</script><h3 id="Theorem-Adam’s-Law-with-Extra-Conditioning"><a href="#Theorem-Adam’s-Law-with-Extra-Conditioning" class="headerlink" title="Theorem (Adam’s Law with Extra Conditioning)"></a>Theorem (Adam’s Law with Extra Conditioning)</h3><p>For any r.v.s $X,Y,Z$</p>
+<script type="math/tex; mode=display">E(E(Y|X,Z)|Z) = E(Y|Z)</script><script type="math/tex; mode=display">E(E(X|Z,Y)|Y) = E(X|Y)</script><h3 id="Definition-Conditional-Variance"><a href="#Definition-Conditional-Variance" class="headerlink" title="Definition (Conditional Variance)"></a>Definition (Conditional Variance)</h3><script type="math/tex; mode=display">Var(Y|X) = E((Y-E(Y|X))^2|X)</script><p>this equivalent to</p>
+<script type="math/tex; mode=display">Var(Y|X) = E(Y^2|X) - (E(Y|X))^2</script><h3 id="Theorem-Eve’s-Low"><a href="#Theorem-Eve’s-Low" class="headerlink" title="Theorem (Eve’s Low)"></a>Theorem (Eve’s Low)</h3><script type="math/tex; mode=display">Var(Y) = E(Var(Y|X)) + Var(E(Y|X))</script><h3 id="Example-Random-Sum"><a href="#Example-Random-Sum" class="headerlink" title="Example (Random Sum)"></a>Example (Random Sum)</h3><p>A store receives $N$ customers a day, $N$ is an r.v. with finite mean and variance. Let $X_j$ be the amount spend by the $j^{th}$ customer, $X_j$ has the mean $\mu$ and variance $\sigma^2$, $N$ and $X_j$ are independent of one another. Find the random sum $X = \sum_{j=1}^N X_j$ in terms of $\mu,\sigma^2,E(N),Var(N)$</p>
+<p><strong>For E(X)</strong></p>
+<script type="math/tex; mode=display">E(X|N) = E\left( \sum_{j=1}^N X_j|N \right) = \sum_{j=1}^N E(X_j|N)= \sum_{j=1}^N E(X_j) = N\mu</script><p>  Finally, by Adam’s Law</p>
+<script type="math/tex; mode=display">E(X) = E(E(X|N)) = E(N\mu) =\mu E(N)</script><p><strong>For Var(X)</strong></p>
+<p>  We conditon on $N$ get $Var(X|N)$</p>
+<script type="math/tex; mode=display">Var(X|N) = Var\left( \sum_{j=1}^N X_j|N \right) = \sum_{j=1}^N Var(X_j|N) = \sum_{j=1}^N Var(X_j) = N\sigma^2</script><p>  Eve’s Law give the unconditional variance of $X$</p>
+<script type="math/tex; mode=display">\begin{align}
+    Var(X) =& E(Var(X|N)) + Var(E(X|N))\\
+           =& E(N\sigma^2) + Var(N\mu) \\
+           =& \sigma^2 E(N) + \mu^2 Var(N)
+  \end{align}</script><hr>
+<h1 id="Prediction-and-Estimation"><a href="#Prediction-and-Estimation" class="headerlink" title="Prediction and Estimation"></a>Prediction and Estimation</h1><h3 id="Theorem-Projection-Interpretation"><a href="#Theorem-Projection-Interpretation" class="headerlink" title="Theorem (Projection Interpretation)"></a>Theorem (Projection Interpretation)</h3><p>For any function $h$, the r.v. $Y-E(Y|X)$ is Uncorrelated with $h(X)$: $Cov(Y-E(Y|X),h(X)) = 0$, equivalently</p>
+<script type="math/tex; mode=display">E((Y-E(Y|X))h(X)) = 0</script><p>.</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/08/03/Stochastic-Process-8/" target="_blank" rel="external">http://yoursite.com/2018/08/03/Stochastic-Process-8/</a>
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/E.jpg" alt="Eulring">
+            Eulring
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Probability/">Probability</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/03/Stochastic-Process-8/&title=《Stochastic-Process (Conditional Expectation)》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/03/Stochastic-Process-8/&title=《Stochastic-Process (Conditional Expectation)》 — EyEular&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/03/Stochastic-Process-8/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stochastic-Process (Conditional Expectation)》 — EyEular&url=http://yoursite.com/2018/08/03/Stochastic-Process-8/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/03/Stochastic-Process-8/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/08/04/Stochastic-Process-9/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Stochastic-Process (Martingale)</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/07/31/Stochastic-Process-7/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Stochastic-Process (Conjugacy &amp; Bayesian)</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        thanks~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wepay.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wepay.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Eulring &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/03/Stochastic-Process-8/&title=《Stochastic-Process (Conditional Expectation)》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/03/Stochastic-Process-8/&title=《Stochastic-Process (Conditional Expectation)》 — EyEular&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/03/Stochastic-Process-8/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stochastic-Process (Conditional Expectation)》 — EyEular&url=http://yoursite.com/2018/08/03/Stochastic-Process-8/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/03/Stochastic-Process-8/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/08/03/Stochastic-Process-8/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '(一条消息未读。。)';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'EyEular';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+</html>
