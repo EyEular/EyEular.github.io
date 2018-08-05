@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Stochastic-Process-10 | EyEular</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Probability">
+    <meta name="description" content="Bayesian InferenceBayesian Inference FrameworkWe aim to extract information about $\Theta$, based on observing a collection $X = (X_1,…,X_n)$  Unknow $\Theta$ treated as a random variable prior distri">
+<meta name="keywords" content="Probability">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stochastic-Process-10">
+<meta property="og:url" content="http://yoursite.com/2018/08/04/Stochastic-Process-10/index.html">
+<meta property="og:site_name" content="EyEular">
+<meta property="og:description" content="Bayesian InferenceBayesian Inference FrameworkWe aim to extract information about $\Theta$, based on observing a collection $X = (X_1,…,X_n)$  Unknow $\Theta$ treated as a random variable prior distri">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2018/08/04/Stochastic-Process-10/sp10img1.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/04/Stochastic-Process-10/sp10img2.jpg">
+<meta property="og:updated_time" content="2018-08-05T03:09:46.845Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Stochastic-Process-10">
+<meta name="twitter:description" content="Bayesian InferenceBayesian Inference FrameworkWe aim to extract information about $\Theta$, based on observing a collection $X = (X_1,…,X_n)$  Unknow $\Theta$ treated as a random variable prior distri">
+<meta name="twitter:image" content="http://yoursite.com/2018/08/04/Stochastic-Process-10/sp10img1.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/E.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Eulring</h5>
+          <a href="mailto:bianjy@shanghaitech.edu.cn" title="bianjy@shanghaitech.edu.cn" class="mail">bianjy@shanghaitech.edu.cn</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-rebel"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-codepen"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-diamond"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/EyEular" target="_blank" >
+                <i class="icon icon-lg icon-gitlab"></i>
+                gayhub
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/links"  >
+                <i class="icon icon-lg icon-gg"></i>
+                Links
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-eye"></i>
+                About me
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Stochastic-Process-10</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Stochastic-Process-10</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-08-04T08:05:13.000Z" itemprop="datePublished" class="page-time">
+  2018-08-04
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Bayesian-Inference"><span class="post-toc-number">1.</span> <span class="post-toc-text">Bayesian Inference</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Bayesian-Inference-Framework"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">Bayesian Inference Framework</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Principal-Bayesian-Estimation-Method"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">Principal Bayesian Estimation Method</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Example-Inferring-the-Unknown-Bias-of-A-Coin"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">Example (Inferring the Unknown Bias of A Coin)</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Classical-Inference"><span class="post-toc-number">2.</span> <span class="post-toc-text">Classical Inference</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Sampling-Moments"><span class="post-toc-number">3.</span> <span class="post-toc-text">Sampling Moments</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Definition-Moments"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">Definition (Moments)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Definition-Sample-Moments"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">Definition (Sample Moments)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Theorem-Mean-and-Var-of-Sample-Mean"><span class="post-toc-number">3.0.3.</span> <span class="post-toc-text">Theorem (Mean and Var of Sample Mean)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Definition-Sample-Variance"><span class="post-toc-number">3.0.4.</span> <span class="post-toc-text">Definition (Sample Variance)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Theorem-Unbiaseness-of-Sample-Var"><span class="post-toc-number">3.0.5.</span> <span class="post-toc-text">Theorem (Unbiaseness of Sample Var)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Definition-Convergence-with-Probability"><span class="post-toc-number">3.0.6.</span> <span class="post-toc-text">Definition (Convergence with Probability)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Definition-Convergence-in-Probability"><span class="post-toc-number">3.0.7.</span> <span class="post-toc-text">Definition (Convergence in Probability)</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Stochastic-Process-10"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Stochastic-Process-10</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-08-04 16:05:13" datetime="2018-08-04T08:05:13.000Z"  itemprop="datePublished">2018-08-04</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Bayesian-Inference"><a href="#Bayesian-Inference" class="headerlink" title="Bayesian Inference"></a>Bayesian Inference</h1><h3 id="Bayesian-Inference-Framework"><a href="#Bayesian-Inference-Framework" class="headerlink" title="Bayesian Inference Framework"></a>Bayesian Inference Framework</h3><p>We aim to extract information about $\Theta$, based on observing a collection $X = (X_1,…,X_n)$</p>
+<ul>
+<li>Unknow $\Theta$<ul>
+<li>treated as a random variable</li>
+<li>prior distribution $p_\Theta$ or $f_\Theta$</li>
+</ul>
+</li>
+<li>Observation $X$<ul>
+<li>observation model $p_X|\Theta$ or $f_X|\Theta$</li>
+</ul>
+</li>
+<li>Use appropriate version of the bayes rule to find $p_{\Theta|X}(\cdot|X=x)$</li>
+</ul>
+<h3 id="Principal-Bayesian-Estimation-Method"><a href="#Principal-Bayesian-Estimation-Method" class="headerlink" title="Principal Bayesian Estimation Method"></a>Principal Bayesian Estimation Method</h3><ul>
+<li><strong>Maximum a posterior probability (MAP) rule</strong> Select the possible parameter with maximum conditional/posterior probability given the data</li>
+<li><strong>Least mean squares (LMS) estimation</strong> Select an estimator/function of the data that minimizes the mean squared error between the parameterand its estimate<ul>
+<li>$p_{\Theta|X}(\theta^*|x)=\mathop{max}_{\theta}p_{\Theta|X}(\theta|x)$</li>
+</ul>
+</li>
+</ul>
+<h3 id="Example-Inferring-the-Unknown-Bias-of-A-Coin"><a href="#Example-Inferring-the-Unknown-Bias-of-A-Coin" class="headerlink" title="Example (Inferring the Unknown Bias of A Coin)"></a>Example (Inferring the Unknown Bias of A Coin)</h3><p>We wish to estimate the probability of heads, denoted by $p$, suppose the prior is a beta density with $a,b$, that is , $p \sim Beta(a,b)$. We consider n independent tosses and let $X$ be the number of heads observed</p>
+<p><strong>MAP Estimate</strong> The posterior PDF of $p$ has the form</p>
+<script type="math/tex; mode=display">\begin{align}
+f(p|X=k) &= \frac{P(X=k|p)f(p)}{P(X=k)}=\frac{\left( \begin{array}{c} n\\k \end{array} \right) p^k(1-p)^{n-k}\frac{1}{\beta(a,b)}p^{a-1}(1-p)^{b-1}}{P(X=k)} \\
+&= c\cdot p^{a+k-1} (1-p)^{b+(n-k)-1}
+\end{align}</script><p>Hence the posterior density is beta with parameters $a+k$ and $b+(n-k)$</p>
+<p>By MAP rule, we select the eatimator as</p>
+<script type="math/tex; mode=display">\hat{p}_{MAP} = \mathop{arg}\mathop{max}_p f(p|X=k) = \mathop{arg}\mathop{max}_p p^{a+k-1}(1-p)^{b+(n-k)-1}</script><p>Let $g(p) = p^{a+k-1}(1-p)^{b+(n-k)-1}$,then we have</p>
+<script type="math/tex; mode=display">log(g(p)) = (a+k-1)\mathop{log}p + (b+(n-k)-1)\mathop{log}(1-p)</script><p>To find $p^*$ let</p>
+<script type="math/tex; mode=display">\partial \frac{  \mathop{log}(g(p))} {\partial p}|_{p=p^*}  = 0</script><p>which yields</p>
+<script type="math/tex; mode=display">\hat{p}_{MAP}  = \frac{a+k-1}{a+b+n-2}</script><p>When the prior distribution of $p$ is $Unif(0,1)$, that is $a=0,b=0$, the estimator under MAP rule is $\hat{p}_{MAP} = \frac{k}{n}$</p>
+<p><strong>LMS Estimate</strong> By Beta-Binomial conjugacy, $f(p|X=k) \sim Beta(a+k,b+n-k)$, the expectation of random variable $Y\sim Beta(a,b)$ is $E(Y) = \frac{a}{a+b}$, we have</p>
+<script type="math/tex; mode=display">\hat{p}_{LMS} = E(p|X=k) = \frac{a+k}{(a+k)+(b+n-k)} = \frac{a+k}{a+b+k}</script><p>When the prior distribution of $p$ id $Unif(0,1)$, that is $a = 1,b = 1$, the estimator under MAP rule is $\hat{p}_{MAP} = \frac{k+1}{n+2}$</p>
+<hr>
+<h1 id="Classical-Inference"><a href="#Classical-Inference" class="headerlink" title="Classical Inference"></a>Classical Inference</h1><ul>
+<li>Classical Statistics: unknown constant $\theta$<ul>
+<li>also for vectors $X$ and $\theta$ : $p_{X_1,…,X_n}(x_1,…,x_n; \theta_1,…,\theta_m)$</li>
+<li>$p_X(x;\theta)$ are NOT conditional probabilities; $\theta$ is not random</li>
+<li>mathematically: many models, one for each possible value of $\theta$</li>
+</ul>
+</li>
+</ul>
+<p>For example, the data observation model is $X\sim Binomial(n,\theta)$, Then under each possible value of $\theta$, the candidate model is</p>
+<script type="math/tex; mode=display">p_X(x;\theta) = P(X=x;\theta) = \left( \begin{array}{c} n\\k \end{array} \right) \theta^x (1-\theta)^{n-x}</script><p>Classical Inference use the maximum likelihood to estimate the $\theta$</p>
+<hr>
+<h1 id="Sampling-Moments"><a href="#Sampling-Moments" class="headerlink" title="Sampling Moments"></a>Sampling Moments</h1><h3 id="Definition-Moments"><a href="#Definition-Moments" class="headerlink" title="Definition (Moments)"></a>Definition (Moments)</h3><p>Let $X$ be an r.v. with mean $\mu$ and variance $\sigma^2$, The $n^{th}$ moment of $X$ is $E(X^n)$, the $n^{th}$ central moment is $E((X-\mu)^n)$, and the $n^{th}$ standardized moment is $E((\frac{X-\mu}{\sigma})^n)$</p>
+<h3 id="Definition-Sample-Moments"><a href="#Definition-Sample-Moments" class="headerlink" title="Definition (Sample Moments)"></a>Definition (Sample Moments)</h3><p>Let $X_1,…,X_n$ be i.i.d. random variables, the $k^{th}$ sample moment is the</p>
+<script type="math/tex; mode=display">M_k = \frac{1}{n} \sum_{j=1}^n (X_j)^k</script><p>The sample mean $\bar{X}_n$ is the first sample moment:</p>
+<script type="math/tex; mode=display">\bar{X}_n = \frac{1}{n} \sum_{j=1}^n X_j</script><h3 id="Theorem-Mean-and-Var-of-Sample-Mean"><a href="#Theorem-Mean-and-Var-of-Sample-Mean" class="headerlink" title="Theorem (Mean and Var of Sample Mean)"></a>Theorem (Mean and Var of Sample Mean)</h3><p>Let $X_1,…,X_n$ be i.i.d. r.v.s with unknown mean $\mu$ and variance $\sigma^2$. Then the sample mean $\bar{X}_n$ is unbiased for estimating $\mu$. That is</p>
+<script type="math/tex; mode=display">E(\bar{X}_n) = \mu</script><p>The variance is</p>
+<script type="math/tex; mode=display">Var(\bar{X}_n) = \frac{\sigma^2}{n}</script><h3 id="Definition-Sample-Variance"><a href="#Definition-Sample-Variance" class="headerlink" title="Definition (Sample Variance)"></a>Definition (Sample Variance)</h3><p>Let $X_1,…,X_n$ be i.i.d. random variables. The sample variance is the r.v.</p>
+<script type="math/tex; mode=display">S_n^2 = \frac{1}{n-1} \sum_{j=1}^n (X_j-\bar{X}_n)^2</script><h3 id="Theorem-Unbiaseness-of-Sample-Var"><a href="#Theorem-Unbiaseness-of-Sample-Var" class="headerlink" title="Theorem (Unbiaseness of Sample Var)"></a>Theorem (Unbiaseness of Sample Var)</h3><p>Let $X_1,…,X_n$ be i.i.d. r.v.s with unknown mean $\mu$ and variance $\sigma^2$. The Sample Var $S_n^2$ is unbiased for estimating $\sigma^2$</p>
+<script type="math/tex; mode=display">E(S_n^2) = \sigma^2</script><h3 id="Definition-Convergence-with-Probability"><a href="#Definition-Convergence-with-Probability" class="headerlink" title="Definition (Convergence with Probability)"></a>Definition (Convergence with Probability)</h3><p>Let $X_1,X_2,…$ be random variables. $X_n$ converges <strong>almost surely</strong> (a.s.) to the random variable $X$ as $n\rightarrow \infty$ and only if</p>
+<script type="math/tex; mode=display">P(\left\{  \omega : X_n(\omega) \rightarrow X(\omega)\ as\ n\rightarrow \infty  \right\}) = 1</script><p>Notation: $X_n \xrightarrow{a.s.} X  as  n\rightarrow \infty$</p>
+<p><strong>Example</strong><br><img src="/2018/08/04/Stochastic-Process-10/sp10img1.jpg" align="justify"></p>
+<h3 id="Definition-Convergence-in-Probability"><a href="#Definition-Convergence-in-Probability" class="headerlink" title="Definition (Convergence in Probability)"></a>Definition (Convergence in Probability)</h3><p>Let $X_1,X_2,…$ be random variables. $X_n$ converges in probability to the random variable $X$ as $n\rightarrow \infty$ if and only if for every $\epsilon &gt;0$</p>
+<script type="math/tex; mode=display">P(|X_n-X|>\epsilon) \rightarrow0 \ as \ n\rightarrow \infty</script><p>Notation: $X_n \xrightarrow{P} X  as  n\rightarrow \infty$</p>
+<p><strong>Example</strong><br><img src="/2018/08/04/Stochastic-Process-10/sp10img2.jpg" align="justify"></p>
+<p>.</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/08/04/Stochastic-Process-10/" target="_blank" rel="external">http://yoursite.com/2018/08/04/Stochastic-Process-10/</a>
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/E.jpg" alt="Eulring">
+            Eulring
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Probability/">Probability</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/04/Stochastic-Process-10/&title=《Stochastic-Process-10》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/04/Stochastic-Process-10/&title=《Stochastic-Process-10》 — EyEular&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/04/Stochastic-Process-10/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stochastic-Process-10》 — EyEular&url=http://yoursite.com/2018/08/04/Stochastic-Process-10/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/04/Stochastic-Process-10/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/08/04/Stochastic-Process-11/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Stochastic-Process-11</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/08/04/Stochastic-Process-9/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Stochastic-Process (Martingale)</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        thanks~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wepay.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wepay.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Eulring &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/04/Stochastic-Process-10/&title=《Stochastic-Process-10》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/04/Stochastic-Process-10/&title=《Stochastic-Process-10》 — EyEular&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/04/Stochastic-Process-10/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stochastic-Process-10》 — EyEular&url=http://yoursite.com/2018/08/04/Stochastic-Process-10/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/04/Stochastic-Process-10/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/08/04/Stochastic-Process-10/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '(一条消息未读。。)';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'EyEular';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+</html>

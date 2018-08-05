@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="EyEular">
 <meta property="og:description" content="Stopping TimeTheorem (Mean of Random Sum is Sum of Means)Let $X_1,X_2,…,X_n$ be i.i.d. random variables and $N\geq 0$ independent of all $X_n$ Then E\left( \sum_{n=1}^N X_n \right) = E(N) E(X_1)  Proo">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-04T07:33:27.777Z">
+<meta property="og:updated_time" content="2018-08-04T07:46:59.326Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stochastic-Process (Martingale)">
 <meta name="twitter:description" content="Stopping TimeTheorem (Mean of Random Sum is Sum of Means)Let $X_1,X_2,…,X_n$ be i.i.d. random variables and $N\geq 0$ independent of all $X_n$ Then E\left( \sum_{n=1}^N X_n \right) = E(N) E(X_1)  Proo">
@@ -188,8 +188,9 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <h1 id="Stopping-Time"><a href="#Stopping-Time" class="headerlink" title="Stopping Time"></a>Stopping Time</h1><h3 id="Theorem-Mean-of-Random-Sum-is-Sum-of-Means"><a href="#Theorem-Mean-of-Random-Sum-is-Sum-of-Means" class="headerlink" title="Theorem (Mean of Random Sum is Sum of Means)"></a>Theorem (Mean of Random Sum is Sum of Means)</h3><p>Let $X_1,X_2,…,X_n$ be i.i.d. random variables and $N\geq 0$ independent of all $X_n$ Then</p>
-<script type="math/tex; mode=display">E\left( \sum_{n=1}^N X_n \right) = E(N) E(X_1)</script><p>  <strong>Proof</strong></p>
-
+<script type="math/tex; mode=display">E\left( \sum_{n=1}^N X_n \right) = E(N) E(X_1)</script><p>  <strong>Proof</strong> using Adam’s Law</p>
+<script type="math/tex; mode=display">E\left(  \sum_{n=1}^N X_n \right) = E\left( E\left( \sum_{n=1}^N X_n|N \right) \right) = E(NE(X_1|N))</script><p>  Since $N$ is independent of $X_1$, we have</p>
+<script type="math/tex; mode=display">E\left(  \sum_{n=1}^N X_n \right) = E(NE(X_1)) = E(X_1)E(N)</script>
         </div>
 
         <blockquote class="post-copyright">
@@ -272,7 +273,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/08/04/Stochastic-Process-10/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Stochastic-Process-10</h4>
+      </a>
+    </div>
   
 
   
