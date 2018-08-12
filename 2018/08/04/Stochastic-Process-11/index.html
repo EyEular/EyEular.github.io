@@ -19,16 +19,26 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="keywords" content="Math &amp; AI">
+    <meta name="keywords" content="Probability">
+    <meta name="description" content="i.i.d sequence of random variables: too restrictive assumption completely dependent among random variables: hard to analysis balance between complete independence &amp;amp; complete dependence Classificat">
+<meta name="keywords" content="Probability">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Stochastic-Process-11">
 <meta property="og:url" content="http://yoursite.com/2018/08/04/Stochastic-Process-11/index.html">
 <meta property="og:site_name" content="EyEular">
+<meta property="og:description" content="i.i.d sequence of random variables: too restrictive assumption completely dependent among random variables: hard to analysis balance between complete independence &amp;amp; complete dependence Classificat">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-04T08:05:19.362Z">
+<meta property="og:image" content="http://yoursite.com/2018/08/04/Stochastic-Process-11/sp11img1.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/04/Stochastic-Process-11/sp11img2.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/04/Stochastic-Process-11/sp11img3.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/04/Stochastic-Process-11/sp11img4.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/04/Stochastic-Process-11/sp11img5.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/04/Stochastic-Process-11/sp11img6.jpg">
+<meta property="og:updated_time" content="2018-08-06T01:27:43.065Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stochastic-Process-11">
+<meta name="twitter:description" content="i.i.d sequence of random variables: too restrictive assumption completely dependent among random variables: hard to analysis balance between complete independence &amp;amp; complete dependence Classificat">
+<meta name="twitter:image" content="http://yoursite.com/2018/08/04/Stochastic-Process-11/sp11img1.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
     
@@ -158,6 +168,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Definition-Markov-Chain"><span class="post-toc-number">1.</span> <span class="post-toc-text">Definition (Markov Chain)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Definition-Transition-Matrix"><span class="post-toc-number">2.</span> <span class="post-toc-text">Definition (Transition Matrix)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Definition-n-step-Transition-Probability"><span class="post-toc-number">3.</span> <span class="post-toc-text">Definition (n-step Transition Probability)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Theorem-Chapman-Kolmogorov-Equation"><span class="post-toc-number">4.</span> <span class="post-toc-text">Theorem (Chapman-Kolmogorov Equation)</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#First-Step-Analysis"><span class="post-toc-number"></span> <span class="post-toc-text">First Step Analysis</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Example-Toss-A-Coin-till-HH-Appear"><span class="post-toc-number">1.</span> <span class="post-toc-text">Example (Toss A Coin till HH Appear)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Example-Toss-A-Coin-till-HTHT-Appear"><span class="post-toc-number">2.</span> <span class="post-toc-text">Example (Toss A Coin till HTHT Appear)</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Classification-of-States"><span class="post-toc-number"></span> <span class="post-toc-text">Classification of States</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Definition-Recurrent-and-Transition-States"><span class="post-toc-number">1.</span> <span class="post-toc-text">Definition (Recurrent and Transition States)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Definition-Irreducible-amp-Reducible-Chain"><span class="post-toc-number">2.</span> <span class="post-toc-text">Definition (Irreducible &amp; Reducible Chain)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Theorem-Irreducible-Implies-All-States-Recurrent"><span class="post-toc-number">3.</span> <span class="post-toc-text">Theorem (Irreducible Implies All States Recurrent)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Example-Coupon-Collector"><span class="post-toc-number">4.</span> <span class="post-toc-text">Example (Coupon Collector)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Definition-Period"><span class="post-toc-number">5.</span> <span class="post-toc-text">Definition (Period)</span></a></li></ol>
+        </nav>
+    </aside>
+    
 <article id="post-Stochastic-Process-11"
   class="post-article article-type-post fade" itemprop="blogPost">
 
@@ -177,7 +194,42 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            
+            <p>i.i.d sequence of random variables: too restrictive assumption</p>
+<p>completely dependent among random variables: hard to analysis</p>
+<p>balance between complete independence &amp; complete dependence</p>
+<p>Classification of Markov Process</p>
+<ul>
+<li>Discrete-Time Markov Chain: Discrete $S$ &amp; Discrete $T$</li>
+<li>Continuous-Time Markov Chain: Discrete $S$ &amp; Continuous $T$</li>
+<li>Discrete Markov Chain: Continuous $S$ &amp; Discrete $T$</li>
+<li>Continuous Markov Chain: Continuous $S$ &amp; Continuous $T$</li>
+</ul>
+<h3 id="Definition-Markov-Chain"><a href="#Definition-Markov-Chain" class="headerlink" title="Definition (Markov Chain)"></a>Definition (Markov Chain)</h3><p>A sequence of random variables $X_0,X_1,X_2,…$ taking values in the state space $\{1,2,…,M\}$ is called <strong>Markov Chain</strong>, the event $X_i+1$ only influenced by $X_i$</p>
+<script type="math/tex; mode=display">P(X_{n+1}=j|X_n = i,X_{n-1}=i_{n-1},...,X_0=i_0) = P(X_{n+1}=j|X_n=i)</script><h3 id="Definition-Transition-Matrix"><a href="#Definition-Transition-Matrix" class="headerlink" title="Definition (Transition Matrix)"></a>Definition (Transition Matrix)</h3><p>Let $X_0,X_1,X_2,…$ be a Markov Chain with state space $\{1,2,…,M\}$, and let<br>$q_{ij} = P(X_{n+1}=j|X_N=i)$ be the transition probability from state $i$ to state $j$. The $M \times M$ matrix $Q=(q_{ij})$ is called transition matrix of the chain.</p>
+<p><img src="/2018/08/04/Stochastic-Process-11/sp11img1.jpg" align="justify"></p>
+<h3 id="Definition-n-step-Transition-Probability"><a href="#Definition-n-step-Transition-Probability" class="headerlink" title="Definition (n-step Transition Probability)"></a>Definition (n-step Transition Probability)</h3><p>The n-step transition probability from $i$ to $j$ is the probability of being at $j$ exactly $n$ steps after being at $i$. Denote this by $q^{(n)}_{ij}$</p>
+<script type="math/tex; mode=display">q^{(n)}_{ij} = P(X_n=j|X_0=i)=\sum_{k\in S} q^{(1)}_{kj} q^{(n-1)}_{ik}</script><p>which implies</p>
+<script type="math/tex; mode=display">Q^n = Q^{n-1}\cdot Q</script><h3 id="Theorem-Chapman-Kolmogorov-Equation"><a href="#Theorem-Chapman-Kolmogorov-Equation" class="headerlink" title="Theorem (Chapman-Kolmogorov Equation)"></a>Theorem (Chapman-Kolmogorov Equation)</h3><script type="math/tex; mode=display">q_{ij}^{(n+m)} = \sum_{k\in S} q^{(n)}_{ik} q^{(m)}_{kj}</script><h1 id="First-Step-Analysis"><a href="#First-Step-Analysis" class="headerlink" title="First Step Analysis"></a>First Step Analysis</h1><h3 id="Example-Toss-A-Coin-till-HH-Appear"><a href="#Example-Toss-A-Coin-till-HH-Appear" class="headerlink" title="Example (Toss A Coin till HH Appear)"></a>Example (Toss A Coin till HH Appear)</h3><p>This problem can be formulated as a 3-state markov chain<br><img src="/2018/08/04/Stochastic-Process-11/sp11img2.jpg" align="justify"><br>The Transition graph is equivalent to<br><img src="/2018/08/04/Stochastic-Process-11/sp11img3.jpg" align="justify"><br>Let $e_s = E[\text{waiting time for HH|initial state = s}]$, then we have</p>
+<script type="math/tex; mode=display">\begin{align}
+e_{Null} &= \frac{1}{2} (1+e_{Null})+\frac{1}{2} (1+e_H) \\
+e_H &= \frac{1}{2} (1+e_{HH}) + \frac{1}{2} (1+e_{Null})\\
+e_{HH} &= 0
+\end{align}</script><h3 id="Example-Toss-A-Coin-till-HTHT-Appear"><a href="#Example-Toss-A-Coin-till-HTHT-Appear" class="headerlink" title="Example (Toss A Coin till HTHT Appear)"></a>Example (Toss A Coin till HTHT Appear)</h3><p>Let see a more complicate case , this can be done by establish a linear equation</p>
+<p><img src="/2018/08/04/Stochastic-Process-11/sp11img4.jpg" align="justify"></p>
+<h1 id="Classification-of-States"><a href="#Classification-of-States" class="headerlink" title="Classification of States"></a>Classification of States</h1><h3 id="Definition-Recurrent-and-Transition-States"><a href="#Definition-Recurrent-and-Transition-States" class="headerlink" title="Definition (Recurrent and Transition States)"></a>Definition (Recurrent and Transition States)</h3><ul>
+<li><strong>Recurrent</strong> State $i$ of Markov chain have the probability of $1$ eventually return to $i$</li>
+<li><strong>Transient</strong> Other-wise, the state is Transient</li>
+</ul>
+<p><img src="/2018/08/04/Stochastic-Process-11/sp11img5.jpg" align="justify"></p>
+<h3 id="Definition-Irreducible-amp-Reducible-Chain"><a href="#Definition-Irreducible-amp-Reducible-Chain" class="headerlink" title="Definition (Irreducible &amp; Reducible Chain)"></a>Definition (Irreducible &amp; Reducible Chain)</h3><ul>
+<li><strong>Irreducible</strong> any state $i$ and $j$, possible to go from $i$ to $j$ in a finite number of steps.</li>
+<li><strong>Reducible</strong> not irreducible</li>
+</ul>
+<h3 id="Theorem-Irreducible-Implies-All-States-Recurrent"><a href="#Theorem-Irreducible-Implies-All-States-Recurrent" class="headerlink" title="Theorem (Irreducible Implies All States Recurrent)"></a>Theorem (Irreducible Implies All States Recurrent)</h3><p>In an irreducible Markov Chain with a finite state space, all states are recurrent</p>
+<h3 id="Example-Coupon-Collector"><a href="#Example-Coupon-Collector" class="headerlink" title="Example (Coupon Collector)"></a>Example (Coupon Collector)</h3><p>We want to collect all $C$ types coupons, Let $X_n$ be the number of distinct coupon types in our collection after $n$ attempts. Then $X_0,X_1,…$ is a Markov Chain on the state space $\{ 0,1,…,C \}$<br><img src="/2018/08/04/Stochastic-Process-11/sp11img6.jpg" align="justify"></p>
+<h3 id="Definition-Period"><a href="#Definition-Period" class="headerlink" title="Definition (Period)"></a>Definition (Period)</h3><p>The <strong>period</strong> of state $i$ in a markov chain is the gcd of the possible numbers of steps can return to $i$ when starting at $i$. A state is called <strong>aperiodic</strong> if its period equals 1, and periodic otherwise.</p>
+<p>.</p>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -205,6 +257,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Probability/">Probability</a></li></ul>
+
 
             
 <div class="page-share-wrap">
@@ -258,7 +312,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/08/08/PGM-1/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">PGM-1</h4>
+      </a>
+    </div>
   
 
   

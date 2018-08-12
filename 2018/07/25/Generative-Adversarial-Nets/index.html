@@ -20,18 +20,18 @@
     
     
     <meta name="keywords" content="Deep Learning,GAN">
-    <meta name="description" content="\mathop{min}_G \mathop{max}_D = E_{}">
+    <meta name="description" content="$x$: Data we already have $z$: Data we want to generate $\theta_g$: parameter for Generator $\theta_d$: parameter for D $G$: Generator $D$: Discriminator  target is training $G$ to minimize \mathop{m">
 <meta name="keywords" content="Deep Learning,GAN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Generative-Adversarial-Nets">
 <meta property="og:url" content="http://yoursite.com/2018/07/25/Generative-Adversarial-Nets/index.html">
 <meta property="og:site_name" content="EyEular">
-<meta property="og:description" content="\mathop{min}_G \mathop{max}_D = E_{}">
+<meta property="og:description" content="$x$: Data we already have $z$: Data we want to generate $\theta_g$: parameter for Generator $\theta_d$: parameter for D $G$: Generator $D$: Discriminator  target is training $G$ to minimize \mathop{m">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-25T11:57:38.016Z">
+<meta property="og:updated_time" content="2018-08-10T01:04:48.720Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Generative-Adversarial-Nets">
-<meta name="twitter:description" content="\mathop{min}_G \mathop{max}_D = E_{}">
+<meta name="twitter:description" content="$x$: Data we already have $z$: Data we want to generate $\theta_g$: parameter for Generator $\theta_d$: parameter for D $G$: Generator $D$: Discriminator  target is training $G$ to minimize \mathop{m">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
     
@@ -161,6 +161,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Algorithm"><span class="post-toc-number">1.</span> <span class="post-toc-text">Algorithm</span></a></li></ol>
+        </nav>
+    </aside>
+    
 <article id="post-Generative-Adversarial-Nets"
   class="post-article article-type-post fade" itemprop="blogPost">
 
@@ -180,7 +187,50 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <script type="math/tex; mode=display">\mathop{min}_G \mathop{max}_D = E_{}</script>
+            <ul>
+<li>$x$: Data we already have</li>
+<li>$z$: Data we want to generate</li>
+<li>$\theta_g$: parameter for Generator</li>
+<li>$\theta_d$: parameter for D</li>
+<li>$G$: Generator</li>
+<li>$D$: Discriminator</li>
+</ul>
+<p>target is training $G$ to minimize</p>
+<script type="math/tex; mode=display">\mathop{min}_G \mathop{max}_D V(D,G) = E_{x\sim p_{data(x)}}[\mathop{log}D(x)] + E_{z\sim p_z(z)}[\mathop{log}(1-D(G(z)))]</script><p>For player $D$, want V bigger by</p>
+<ul>
+<li>making more accurate estimate on real date x as $D(x)\rightarrow 1$</li>
+<li>discriminate the fake data by $D(G(z)) \rightarrow 0$ equals to $(1 - D(G(z))) \rightarrow 1$</li>
+<li>more accurate the $D$ is ,the larger value of $V$ can be</li>
+</ul>
+<p>For player $G$, want V smaller by</p>
+<ul>
+<li>enlarge $D(G(z))\rightarrow 1$ for $(1 - D(G(z))) \rightarrow 0$</li>
+<li>better fake of $G$, $G(z)\rightarrow 1$, and less value of $V$</li>
+</ul>
+<hr>
+<h3 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h3><blockquote>
+<p><strong>for</strong> number of iterations <strong>do</strong></p>
+<blockquote>
+<p><strong>for</strong> $k$ steps <strong>do</strong></p>
+<blockquote>
+<ul>
+<li>Sample $m$ noise samples $\{ z^{(1)},…,z^{(m)} \}$ from noise prior $p_g(z)$</li>
+<li>Sample $m$ examples $\{ x^{(1)},…,x^{(m)} \}$ from data generating distribution $p_{data}(x)$</li>
+<li>Update the discriminator by ascending its stochastic gradient :<script type="math/tex; mode=display">\nabla_{\theta_g} \frac{1}{m} \sum_{i=1}^m \left[ \mathop{log}D(x^{(i)})+log\left(1-D(G(z^{(i)}))\right) \right]</script></li>
+</ul>
+</blockquote>
+<p><strong>end for</strong></p>
+<ul>
+<li>Sample $m$ noise samples $\{ z^{(1)},…,z^{(m)} \}$ from noise prior $p_g(z)$</li>
+<li>Update the generator by descending its stochastic gradient :<script type="math/tex; mode=display">\nabla_{\theta_g} \frac{1}{m}\sum_{i=1}^m\mathop{log}\left( 1-D(G(z^{(i)})) \right)</script></li>
+</ul>
+</blockquote>
+<p><strong>end for</strong></p>
+</blockquote>
+<pre><code>  ew
+  - q
+  - q
+</code></pre>
         </div>
 
         <blockquote class="post-copyright">

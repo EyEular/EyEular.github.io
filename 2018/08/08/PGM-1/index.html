@@ -13,25 +13,28 @@
     
     
     
-    <title>Stochastic Process (Random Variable) | EyEular</title>
+    <title>PGM-1 | EyEular</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Probability">
-    <meta name="description" content="There are some notation occationals Definition (Discrete Random Variable) A variable $X$ is discrete if there is a finite list of value $a_1,a_2,…,a_n$ that $P(X=a_j) = 1$, $P(X=x)&amp;gt;0$ is the suppor">
-<meta name="keywords" content="Probability">
+    <meta name="keywords" content="">
+    <meta name="description" content="# For a joint distribution $P(X_1,X_2,…,X_n)$, can be written in two ways  All Dependent: $P(X_1,X_2,…,X_n) = P(X_1)P(X_2|X_1)P(X_2|X_1,X_2)…P(X_n|X_1,…,X_{n-1})$ pro: the formular are correct in any">
+<meta name="keywords" content="Math &amp; AI">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Stochastic Process (Random Variable)">
-<meta property="og:url" content="http://yoursite.com/2018/07/07/Stochastic-Process-1/index.html">
+<meta property="og:title" content="PGM-1">
+<meta property="og:url" content="http://yoursite.com/2018/08/08/PGM-1/index.html">
 <meta property="og:site_name" content="EyEular">
-<meta property="og:description" content="There are some notation occationals Definition (Discrete Random Variable) A variable $X$ is discrete if there is a finite list of value $a_1,a_2,…,a_n$ that $P(X=a_j) = 1$, $P(X=x)&amp;gt;0$ is the suppor">
+<meta property="og:description" content="# For a joint distribution $P(X_1,X_2,…,X_n)$, can be written in two ways  All Dependent: $P(X_1,X_2,…,X_n) = P(X_1)P(X_2|X_1)P(X_2|X_1,X_2)…P(X_n|X_1,…,X_{n-1})$ pro: the formular are correct in any">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-05T08:52:51.528Z">
+<meta property="og:image" content="http://yoursite.com/2018/08/08/PGM-1/pgm1img2.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/08/PGM-1/pgm1img3.jpg">
+<meta property="og:updated_time" content="2018-08-11T01:44:33.368Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Stochastic Process (Random Variable)">
-<meta name="twitter:description" content="There are some notation occationals Definition (Discrete Random Variable) A variable $X$ is discrete if there is a finite list of value $a_1,a_2,…,a_n$ that $P(X=a_j) = 1$, $P(X=x)&amp;gt;0$ is the suppor">
+<meta name="twitter:title" content="PGM-1">
+<meta name="twitter:description" content="# For a joint distribution $P(X_1,X_2,…,X_n)$, can be written in two ways  All Dependent: $P(X_1,X_2,…,X_n) = P(X_1)P(X_2|X_1)P(X_2|X_1,X_2)…P(X_n|X_1,…,X_{n-1})$ pro: the formular are correct in any">
+<meta name="twitter:image" content="http://yoursite.com/2018/08/08/PGM-1/pgm1img2.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
     
@@ -119,7 +122,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Stochastic Process (Random Variable)</div>
+        <div class="flex-col header-title ellipsis">PGM-1</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -141,11 +144,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Stochastic Process (Random Variable)</h1>
+        <h1 class="title">PGM-1</h1>
         <h5 class="subtitle">
             
-                <time datetime="2018-07-07T00:21:04.000Z" itemprop="datePublished" class="page-time">
-  2018-07-07
+                <time datetime="2018-08-08T12:51:00.000Z" itemprop="datePublished" class="page-time">
+  2018-08-08
 </time>
 
 
@@ -164,17 +167,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Bernoulli-amp-Binomial"><span class="post-toc-number">1.</span> <span class="post-toc-text">Bernoulli &amp; Binomial</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hypergeometric"><span class="post-toc-number">2.</span> <span class="post-toc-text">Hypergeometric</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Cumulative-Distribution-Functions"><span class="post-toc-number">3.</span> <span class="post-toc-text">Cumulative Distribution Functions</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Functions-of-Random-Variable"><span class="post-toc-number">4.</span> <span class="post-toc-text">Functions of Random Variable:</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Independence-of-R-V-s"><span class="post-toc-number">5.</span> <span class="post-toc-text">Independence of R.V.s</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Graph-model-and-Bayesian"><span class="post-toc-number">1.</span> <span class="post-toc-text">Graph model and Bayesian</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Active-trail"><span class="post-toc-number">2.</span> <span class="post-toc-text">Active trail</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-Stochastic-Process-1"
+<article id="post-PGM-1"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Stochastic Process (Random Variable)</h1>
+        <h1 class="post-card-title">PGM-1</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-07-07 08:21:04" datetime="2018-07-07T00:21:04.000Z"  itemprop="datePublished">2018-07-07</time>
+            <time class="post-time" title="2018-08-08 20:51:00" datetime="2018-08-08T12:51:00.000Z"  itemprop="datePublished">2018-08-08</time>
 
             
 
@@ -187,44 +190,76 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>There are some notation occationals</p>
-<p><strong>Definition (Discrete Random Variable)</strong> A variable $X$ is <strong><em>discrete</em></strong> if there is a finite list of value $a_1,a_2,…,a_n$ that $P(X=a_j) = 1$, $P(X=x)&gt;0$ is the <strong><em>support</em></strong> of $X$</p>
-<p><strong>Definition (Probability Mass Function)</strong> <strong><em>The probability mass function (PMF)</em></strong> of a discrete r.v. $X$ is the function $p_X$ given by $p_X(x) = P(X=x)$.</p>
-<h1 id="Bernoulli-amp-Binomial"><a href="#Bernoulli-amp-Binomial" class="headerlink" title="Bernoulli &amp; Binomial"></a>Bernoulli &amp; Binomial</h1><p><strong>Definition (Bernoulli Distribution)</strong> shortly, $P(X=1)=p$ and $P(X=0) = 1 - p$, and write as $X\sim Bern(p)$</p>
-<p><strong>Definition (Indicator Random Variable)</strong> The indicator random variable of an event $A$ is the r.v. equals 1 if $A$ occurs and 0 otherwise, We denote the indicator of $A$ by $I_A$ or $I(A)$. Note $I_A \sim Bern(p)$ with p = P(A)</p>
-<p><strong>Theorem (Binomial PMF)</strong> Binomial Distribution is the repeatation of Bernoulli Distribution. If $X\sim Bin(n, p)$ then the PMF of X is</p>
-<script type="math/tex; mode=display">P(X=k) = \left( \begin{array}{c} n \\ k \end{array} \right) p^k (1-p)^{n-k}</script><h1 id="Hypergeometric"><a href="#Hypergeometric" class="headerlink" title="Hypergeometric"></a>Hypergeometric</h1><p><strong>urn Model</strong> A box is fiiled with $w$ white and $b$ black balls, then drawing n balls</p>
+            <p>#</p>
+<p>For a joint distribution $P(X_1,X_2,…,X_n)$, can be written in two ways</p>
 <ul>
-<li>With replacement: $Bin(n,w/(w+b))$ for the number of white balls</li>
-<li>Without replacement : Hypergeometric distribution $HGeom(w,b,n)$</li>
+<li>All Dependent: $P(X_1,X_2,…,X_n) = P(X_1)P(X_2|X_1)P(X_2|X_1,X_2)…P(X_n|X_1,…,X_{n-1})$<ul>
+<li>pro: the formular are correct in any case</li>
+<li>con: require huge probability table $O(k^n)$</li>
 </ul>
-<p><strong>Theorem (Hypergeometric PMF)</strong> If $X \sim HGeom(w,b,n)$, then the PMF of $X$ is</p>
-<script type="math/tex; mode=display">P(X=k) = \frac {\left ( \begin{array}{c} w \\ k \end{array} \right ) \left( \begin{array}{c} b \\ n-k \end{array} \right)}  {\left( \begin{array}{c} w+b \\ n \end{array} \right)}</script><p><strong>Zipf Distribution</strong> If $X\sim Zipf(\alpha &gt; 0)$, then PMF of $X$ is:</p>
-<script type="math/tex; mode=display">P(X=k) = \frac{\frac{1}{k^{\alpha + 1}}}  {\sum_{j=1}^{\infty}(\frac{1}{j})^{\alpha + 1}}</script><ul>
-<li>Zipf Distribution can measure the Word Frequency</li>
+</li>
+<li>Independent: $P(X_1,X_2,…,X_n) = P(X_1)P(X_2)…P(X_n)$<ul>
+<li>pro: probability table only take $O(kn)$ memory</li>
+<li>con: independent are restrictive hypothese</li>
 </ul>
-<h1 id="Cumulative-Distribution-Functions"><a href="#Cumulative-Distribution-Functions" class="headerlink" title="Cumulative Distribution Functions"></a>Cumulative Distribution Functions</h1><p><strong>Definition (Cumulative Distribution Function)</strong> The <strong><em>cumulative distribution function(CDF)</em></strong> os an r.v. $X$ is the function $F_X$ given by $F_X(x) = P(X\leq x)$</p>
-<p><strong>Theorem (Valid CDFs)</strong> CDF has the following properties</p>
+</li>
+</ul>
+<p>The PGM are target a middle-ground between two extremes</p>
+<p>Two types of GMs</p>
 <ul>
-<li>Increasing: If $x_1 &lt; x_2$, then $F(x_1) &lt; F(x_2)$</li>
-<li>Right-Continuous: $F(a)  = lim_{x\rightarrow a^+} F(x)$</li>
-<li>Convergence to $0$ and $1$: $lim_{x\rightarrow - \infty} F(x) = 0$ and $lim_{x \rightarrow \infty} F(x) = 1$</li>
+<li><strong>Directed edges</strong> give causality relationships (Bayesian Network or Directed Graphical Model)</li>
+<li><strong>Undirected edges</strong> simply give correlations between variables (Markov Random Field or Undirected Graphical model)</li>
 </ul>
-<h1 id="Functions-of-Random-Variable"><a href="#Functions-of-Random-Variable" class="headerlink" title="Functions of Random Variable:"></a>Functions of Random Variable:</h1><p><strong>Definition (Function of an r.v.)</strong> An experiment with sample space S, an r.v. $X$, and a function $g$, also the $g(X)$ is the variable that maps $s$ to $g(X(s))$, for all $s\in S$</p>
-<p><strong>Theorem (PMF of $g(X)$)</strong> for all y in the support of $g(X)$</p>
-<script type="math/tex; mode=display">P(g(X) = y) = \sum_{x:g(x)=y} P(X=x)</script><p>The function of r.v. map the sample space into real number, which is easy for us calculate in mathematic.</p>
-<h1 id="Independence-of-R-V-s"><a href="#Independence-of-R-V-s" class="headerlink" title="Independence of R.V.s"></a>Independence of R.V.s</h1><p><strong>Definition (Independence of two R.V.s)</strong> Random variables $X$ and $Y$ are said to be <strong><em>independent</em></strong></p>
-<script type="math/tex; mode=display">P(X\leq x,Y\leq y) = P(X\leq x)P(Y\leq y)</script><p>for all $x,y\in R$,<br>In the discrete case, equivalent to :</p>
-<script type="math/tex; mode=display">P(X=x,Y=y) = P(X=x)P(Y=y)</script><p><strong>Definition (Independence of many R.V.s)</strong> Random variables $X_1,…,X_n$ are independent if</p>
-<script type="math/tex; mode=display">P(X_1 \leq x_1,\dotsb , X_n \leq x_n) = P(X_1 \leq x_1) \dotsb P(X_n \leq x_n)</script><p>for all $x_1,\dotsb,x_n \in R$</p>
-<p><strong>Definition (i.i.d)</strong> We call some r.v. that are independent and have the same distribution <strong><em>independent and identicallly distributed</em></strong> or <strong><em>i.i.d</em></strong> for short</p>
+<p>Factorization Theorem</p>
+<script type="math/tex; mode=display">P(X_1,X_2,...,X_n) = \prod_{i=1:n} P(X_i|Parents(X_i))</script><p><img src="/2018/08/08/PGM-1/pgm1img2.jpg" align="justify"></p>
 <ul>
-<li>Independent: r.v.s provide no information about each others</li>
-<li>Identically distributed: r.v.s have the same PMF</li>
+<li>a: Cascade<ul>
+<li>$Y$ observed $X,Z$ are independent</li>
 </ul>
-<p><strong>Theorem</strong> If $X\sim Bin(n,p)$ , $Y \sim Bin(m,p)$, and $X$ is independent of $Y$, then $X+Y \sim Bin(n+m,p)$</p>
-<p><strong>Definition (Conditional Independence of two R.V.s)</strong></p>
-<script type="math/tex; mode=display">P(X\leq x, Y \leq y| Z= z) = P(X\leq x |Z =z) P(Y\leq y|Z=z)</script><p>w</p>
+</li>
+<li>b: Common parent<ul>
+<li>$Y$ observed $X,Z$ are independent</li>
+<li>$Y$ unknow $X,Z$ are dependent</li>
+</ul>
+</li>
+<li>c: V-structure<ul>
+<li>$Y$ observed $X,Z$ are dependent</li>
+<li>$Y$ unknow $X,Z$ are independent</li>
+</ul>
+</li>
+</ul>
+<p>Let $P$ be a distribution of $X$, $I(P)$ is the set of independence assertions of the form $(X \bot Y | Z)$ that hold in $P$. $I(G)$ is the sub-set of the $I(P)$,</p>
+<p>We say that $K$ is an $I$-map for a _set_ of independencies $I$ if $I(K) ⊆ I$</p>
+<p>概率图模型就是用简洁明了的 Graph 来紧凑表示复杂的概率分布，Graph 的 node 表示随机变量，edge 表示直接的概率关系。但给定一张 Graph，这张 Graph 能否等价地表示这个概率分布呢？这就是 I-map 这块要回答的。一个概率分布 P 包含有一堆条件独立关系，把这个条件独立关系的集合称为 I(P)；一张 Graph G 也包含了一堆条件独立关系，把这堆条件独立关系的集合称为 I(G)。如果 I(G) 包含于 I(P)，那么就把这张 Graph G 叫做这个概率分布的 I-map (Independence-map)。显而易见，只要是 I(P) 的 子集，其对应的 Graph 就是概率分布 P 的 I-map，所以 I-map 可以有很多。只有 I(G) = I(P) 时，对应的 Graph 才可以等价地表示这个概率分布，也叫做 P 的 P-map (Perfect-map)。</p>
+<h3 id="Graph-model-and-Bayesian"><a href="#Graph-model-and-Bayesian" class="headerlink" title="Graph model and Bayesian"></a>Graph model and Bayesian</h3><p>Suppose the distribution is $A\leftarrow B \rightarrow C$</p>
+<ul>
+<li>Bayesian Interpretation: $P(ABC) = P(B) P(A|B) P(C|B)$</li>
+<li><p>Graph Model Interpretation: $I(G) = \{ A\bot C |B \}$<br>now we want to prove $I(P(ABC)) = I(\{ A\bot C |B \})$</p>
+<script type="math/tex; mode=display">\begin{align}
+  P(AC|B) &= P(A|B)P(C|B) \leftarrow \{ A\bot C |B \}\\
+  P(AC|B) &= \frac{P(ABC)}{P(B)} = \frac{ P(B) P(A|B) P(C|B)}{P(B)} \leftarrow P(ABC)
+\end{align}</script></li>
+</ul>
+<p><strong>conditional Independence :</strong><br>for $X\leftarrow Z \rightarrow Y$, $Z$ represent the height of father, $X,Y$ are the brother, the relation between $X$ and $Y$ :</p>
+<ul>
+<li>Dependent : we dont know the height of father, but we know the height of $Y$, so $Y$ may effect the distribution of $Z$, at the same time also influence the $X$</li>
+<li>Independent : we already know the height of father, so whether $Y$ is dont influence $X$</li>
+</ul>
+<p><strong>local Markov assumption :</strong><br>each node $X_i$ is independent of its nondescendants given its parents.<br>_when you confirm the parents, you only dependent with your childs_</p>
+<h3 id="Active-trail"><a href="#Active-trail" class="headerlink" title="Active trail"></a>Active trail</h3><ul>
+<li>Causal Trail $X → Z → Y$ : active iff $Z$ is not observed.</li>
+<li>Evidential Trail $X ← Z ← Y$ : active iff $Z$ is not observed.</li>
+<li>Common Cause $X ← Z → Y$: active iff $Z$ is not observed.</li>
+<li>Common Effect $X → Z ← Y$ : active iff $Z$ (or any of its descendents) is observed.<br>_here active means the dependent relation estibilish_</li>
+</ul>
+<p>Definition : Let $\textbf{X}, \textbf{Y} , \textbf{Z}$ be three sets of nodes in $G$. We say that $\textbf{X}$ and $\textbf{Y}$ are d-separated given $\textbf{Z}$, denoted $dsep_G(\textbf{X};\textbf{Y}|\textbf{Z})$, if there is no active trail between any node $X \in \textbf{X}$ and $Y \in \textbf{Y}$ given $\textbf{Z}$</p>
+<p>Definition: $I(G)=$ all independence properties that correspond to d- separation:</p>
+<script type="math/tex; mode=display">I(G) = {X \bot Y | Z : dsep_G(X \bot Y | Z)}</script><hr>
+<p>Clique Example<br><img src="/2018/08/08/PGM-1/pgm1img3.jpg"></p>
+<ul>
+<li>max-cliques = $\{A,B,D\}, \{B,C,D\}$,</li>
+<li>sub-cliques = $\{A,B\}, \{C,D\}, …\text{ all edges and single point}$</li>
+</ul>
 
         </div>
 
@@ -233,7 +268,7 @@
         
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/07/07/Stochastic-Process-1/" target="_blank" rel="external">http://yoursite.com/2018/07/07/Stochastic-Process-1/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/08/08/PGM-1/" target="_blank" rel="external">http://yoursite.com/2018/08/08/PGM-1/</a>
         
     </div>
     <footer>
@@ -253,8 +288,6 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Probability/">Probability</a></li></ul>
-
 
             
 <div class="page-share-wrap">
@@ -263,7 +296,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/07/Stochastic-Process-1/&title=《Stochastic Process (Random Variable)》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/08/PGM-1/&title=《PGM-1》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -273,22 +306,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/07/Stochastic-Process-1/&title=《Stochastic Process (Random Variable)》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/08/PGM-1/&title=《PGM-1》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/07/Stochastic-Process-1/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/08/PGM-1/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stochastic Process (Random Variable)》 — EyEular&url=http://yoursite.com/2018/07/07/Stochastic-Process-1/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PGM-1》 — EyEular&url=http://yoursite.com/2018/08/08/PGM-1/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/07/Stochastic-Process-1/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/08/PGM-1/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -311,18 +344,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2018/07/19/Neural-Style/" id="post-prev" class="post-nav-link">
+      <a href="/2018/08/09/Random-Record/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Neural Style</h4>
+        <h4 class="title">Random-Record</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018/07/06/Stochastic-Process-2/" id="post-next" class="post-nav-link">
+      <a href="/2018/08/04/Stochastic-Process-11/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Stochastic Process (Conditional Probability)</h4>
+        <h4 class="title">Stochastic-Process-11</h4>
       </a>
     </div>
   
@@ -416,7 +449,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/07/Stochastic-Process-1/&title=《Stochastic Process (Random Variable)》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/08/PGM-1/&title=《PGM-1》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -426,22 +459,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/07/Stochastic-Process-1/&title=《Stochastic Process (Random Variable)》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/08/PGM-1/&title=《PGM-1》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/07/Stochastic-Process-1/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/08/PGM-1/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stochastic Process (Random Variable)》 — EyEular&url=http://yoursite.com/2018/07/07/Stochastic-Process-1/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PGM-1》 — EyEular&url=http://yoursite.com/2018/08/08/PGM-1/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/07/Stochastic-Process-1/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/08/PGM-1/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -452,7 +485,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/07/07/Stochastic-Process-1/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/08/08/PGM-1/" alt="微信分享二维码">
 </div>
 
 
