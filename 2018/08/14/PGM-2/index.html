@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>PGM-2 | EyEular</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="PGM">
+    <meta name="description" content="DAG -&amp;gt; Undirected Tree -&amp;gt; Undirected Graph Variable EliminationProbabilistic InferenceThere are two important tasks :  Querying: Computing the likelihood of certain variables, optionally conditi">
+<meta name="keywords" content="PGM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PGM-2">
+<meta property="og:url" content="http://yoursite.com/2018/08/14/PGM-2/index.html">
+<meta property="og:site_name" content="EyEular">
+<meta property="og:description" content="DAG -&amp;gt; Undirected Tree -&amp;gt; Undirected Graph Variable EliminationProbabilistic InferenceThere are two important tasks :  Querying: Computing the likelihood of certain variables, optionally conditi">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2018/08/14/PGM-2/pgm2img1.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/14/PGM-2/pgm2img2.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/14/PGM-2/pgm2img3.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/14/PGM-2/pgm2img4.jpg">
+<meta property="og:updated_time" content="2018-08-17T03:40:56.392Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PGM-2">
+<meta name="twitter:description" content="DAG -&amp;gt; Undirected Tree -&amp;gt; Undirected Graph Variable EliminationProbabilistic InferenceThere are two important tasks :  Querying: Computing the likelihood of certain variables, optionally conditi">
+<meta name="twitter:image" content="http://yoursite.com/2018/08/14/PGM-2/pgm2img1.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/E.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Eulring</h5>
+          <a href="mailto:bianjy@shanghaitech.edu.cn" title="bianjy@shanghaitech.edu.cn" class="mail">bianjy@shanghaitech.edu.cn</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-rebel"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-codepen"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-diamond"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/EyEular" target="_blank" >
+                <i class="icon icon-lg icon-gitlab"></i>
+                gayhub
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/links"  >
+                <i class="icon icon-lg icon-gg"></i>
+                Links
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-eye"></i>
+                About me
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">PGM-2</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">PGM-2</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-08-14T02:46:32.000Z" itemprop="datePublished" class="page-time">
+  2018-08-14
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Variable-Elimination"><span class="post-toc-number">1.</span> <span class="post-toc-text">Variable Elimination</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Probabilistic-Inference"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">Probabilistic Inference</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Elimination"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">Elimination</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Directed-Chain"><span class="post-toc-number">1.0.2.0.1.</span> <span class="post-toc-text">Directed Chain</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Undirected-Chain"><span class="post-toc-number">1.0.2.0.2.</span> <span class="post-toc-text">Undirected Chain</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#General-Variable-Elimination"><span class="post-toc-number">1.0.2.0.3.</span> <span class="post-toc-text">General Variable Elimination</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#The-elimination-algorithm"><span class="post-toc-number">1.0.2.0.4.</span> <span class="post-toc-text">The elimination algorithm</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Complexity-of-Variable-Elimination"><span class="post-toc-number">1.0.2.0.5.</span> <span class="post-toc-text">Complexity of Variable Elimination</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Graph-Elimination"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">Graph Elimination</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Belief-Propagation"><span class="post-toc-number">2.</span> <span class="post-toc-text">Belief Propagation</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Elimination-on-tree"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">Elimination on tree</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Factor-Trees"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">Factor Trees</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-PGM-2"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">PGM-2</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-08-14 10:46:32" datetime="2018-08-14T02:46:32.000Z"  itemprop="datePublished">2018-08-14</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>DAG -&gt; Undirected Tree -&gt; Undirected Graph</p>
+<h1 id="Variable-Elimination"><a href="#Variable-Elimination" class="headerlink" title="Variable Elimination"></a>Variable Elimination</h1><h3 id="Probabilistic-Inference"><a href="#Probabilistic-Inference" class="headerlink" title="Probabilistic Inference"></a>Probabilistic Inference</h3><p>There are two important tasks :</p>
+<ul>
+<li>Querying: Computing the likelihood of certain variables, optionally conditioned on another set of variables. This is generally called Probabilistic Inference</li>
+<li>Estimation: When the model itself is unknown, estimating a plausible model M from data D. This process is called Learning.</li>
+</ul>
+<p><strong>Likelihood</strong> : Likelihood is calculated to get the conditional probability of a different subset of variables conditioned based on Evidence $\mathbf{E} = \{ X_{k+1},…,X_n \}$, Evidence is the unknown variables, so we need eliminate the unsure variables to get the specific lieklihood.</p>
+<script type="math/tex; mode=display">P(\mathbf{e}) = \sum_{x_1}\cdots \sum_{x_k} P(x_1,...,x_k,\mathbf{e})</script><p><strong>Conditional Probability</strong> : The conditional probability distribution of some query nodes conditioned on an<br>evidence.</p>
+<script type="math/tex; mode=display">P(X|\mathbf{e}) = \frac{P(X,\mathbf{e})}{P(\mathbf{e})}= \frac{P(X,\mathbf{e})}{\sum_{x}P(X=x,\mathbf{e})}</script><p>Let $\mathbf{Y}$ be a subset of all domain variables $\mathbf{X} = \{ \mathbf{Y},\mathbf{Z} \}$, $\mathbf{Z}$ is the set of variables under elimination.</p>
+<script type="math/tex; mode=display">P(\mathbf{Y}|\mathbf{e}) = \sum_{z}P(\mathbf{Y},\mathbf{Z}=z|\mathbf{e})</script><p><strong>Most Probable Assignment</strong> : In this query, we are interested in finding only one set of values for the query variables that maximize the given conditional probability instead of finding the entire distribution.</p>
+<script type="math/tex; mode=display">MPA(\mathbf{Y}|\mathbf{e})=\mathop{arg}\mathop{max}_{y\in \mathbf{Y}}P(y|\mathbf{e})=\mathop{arg}\mathop{max}_{y\in \mathbf{Y}}\sum_{z} P(y,z|\mathbf{e})</script><h3 id="Elimination"><a href="#Elimination" class="headerlink" title="Elimination"></a>Elimination</h3><h5 id="Directed-Chain"><a href="#Directed-Chain" class="headerlink" title="Directed Chain"></a>Directed Chain</h5><p>Suppose the graph is $A\rightarrow B\rightarrow C\rightarrow D\rightarrow E$</p>
+<script type="math/tex; mode=display">\begin{align}
+P(e) &= \sum_{a,b,c,d} p(a,b,c,d) \\
+    &= \sum_{a,b,c,d} P (a)P (b|a)P (c|b)P (d|c)P (e|d) \\
+    &=\sum_{d,c,b} P(c|b) P(d|c) P(e|d) \sum_a P(a) P(b|a) \\
+    &\text{this is an one variable elimination cost } k^2\\
+    &= \sum_{d,c,b} P(c|b) P(d|c) P(e|d) p(b) \\
+    &\ \cdots \\
+    &= \sum_d P(e|d) p(d)
+\end{align}</script><p>Complexity:</p>
+<ul>
+<li>Eliminate: costs $O(k^2 n)$ _the iter cost k and probability cost k_</li>
+<li>Naive: cost $O(k^n)$</li>
+</ul>
+<h5 id="Undirected-Chain"><a href="#Undirected-Chain" class="headerlink" title="Undirected Chain"></a>Undirected Chain</h5><p>Suppose the graph is $A - B - C - D - E$</p>
+<script type="math/tex; mode=display">\begin{align}
+P(e) &= \sum_{a,b,c,d} \frac{1}{Z} \phi(b,a) \phi(c,b) \phi(d,c) \phi(e,d) \\
+ &\propto \sum_{a,b,c,d} \phi(b,a) \phi(c,b) \phi(d,c) \phi(e,d) \\
+ &= \sum_{a,b,c,d}  \phi(c,b) \phi(d,c) \phi(e,d)\sum_a \phi(b,a)  \\
+ &= \sum_{a,b,c,d}  \phi(c,b) \phi(d,c) \phi(e,d) m_a(b)  \\
+ &\ \cdots \\
+ &= m_d(e)
+\end{align}</script><p>Finally we normalize to obtain a proper probability:</p>
+<script type="math/tex; mode=display">P(e) =  \frac{m_d(e)}{\sum_e m_d(e)}</script><h5 id="General-Variable-Elimination"><a href="#General-Variable-Elimination" class="headerlink" title="General Variable Elimination"></a>General Variable Elimination</h5><p>For different evidence, we may need construct different formulation use the method above, we want the computer can automatically calculate the elimination, more general form is needed design.</p>
+<ul>
+<li>Let $X$ be set of all random variables</li>
+<li>Let $F$ denote the set of factors and then for each $\phi \in F$,$Scope[\phi] \in X$</li>
+<li>There three type of variables in Elimination Model<ul>
+<li>Let $Y\subset X$ be a set of <strong>query</strong> variables</li>
+<li>Let $Z = X - Y$ would be the set of variables to be <strong>eliminated</strong></li>
+<li>Let $\mathcal{E}$ be the <strong>known</strong> variables, and $\bar{e}_i$ is the assignment</li>
+</ul>
+</li>
+</ul>
+<p>The core operation can be view as the form of, we can extend it to general form by import evidence potential</p>
+<script type="math/tex; mode=display">\tau(Y) =  \sum_z \prod_{\phi \in F} \phi</script><ul>
+<li><p>The evidence potantial:</p>
+<script type="math/tex; mode=display">\begin{align}
+  \delta(\mathcal{E}) = \left \{ \begin{array}{ll} 1& if\ \mathcal{E_i} \equiv \bar{e}_i \\ 0 & if\ \mathcal{E_i} \neq \bar{e}_i  \end{array}
+  \right .
+\end{align}</script></li>
+<li><p>Total evidence potential:</p>
+<script type="math/tex; mode=display">\begin{align}
+  \delta(\mathbf{\mathcal{E}},\mathbf{\bar{e}})= \prod_{i\in I_{\mathcal{E}}} \delta (\mathcal{E}_i,\bar{e}_i)
+\end{align}</script></li>
+<li>Introducing evidence:<script type="math/tex; mode=display">\tau(\mathbf{Y},\mathbf{\bar{e}}) = \sum_{z,e}\prod_{\phi \in F} \phi \times \delta(\mathbf{\mathcal{E}},\bar{\mathbf{e}})</script></li>
+</ul>
+<h5 id="The-elimination-algorithm"><a href="#The-elimination-algorithm" class="headerlink" title="The elimination algorithm"></a>The elimination algorithm</h5><p>… …</p>
+<h5 id="Complexity-of-Variable-Elimination"><a href="#Complexity-of-Variable-Elimination" class="headerlink" title="Complexity of Variable Elimination"></a>Complexity of Variable Elimination</h5><script type="math/tex; mode=display">\tau(Y) =  \sum_z \prod_{\phi \in F} \phi</script><p>Here $y$ is the unknow variable waited of elimination, $x$ is under the eliminating, $m$ is the factor during the elimination</p>
+<ul>
+<li>Product:<script type="math/tex; mode=display">m_x^{\prime} (x,y_1,...,y_k) = \prod_{i=1}^k m_i(x,y_{c_i})</script></li>
+<li>Sum:<script type="math/tex; mode=display">m_x(y_1,...,y_k) = \sum_x m^{\prime}_x (x,y_1,...,y_k)</script></li>
+</ul>
+<p>The multiplications is $k\cdot  | Var(X) |\cdot \prod_i |Var(Y_{C_i})|$</p>
+<h3 id="Graph-Elimination"><a href="#Graph-Elimination" class="headerlink" title="Graph Elimination"></a>Graph Elimination</h3><p><img src="/2018/08/14/PGM-2/pgm2img1.jpg" align="justify"></p>
+<ul>
+<li>Begin with the graph and an elimination ordering.</li>
+<li>For each variable in the ordering, connect all neighbors of the variable.</li>
+<li>Eliminate the variable.</li>
+</ul>
+<h1 id="Belief-Propagation"><a href="#Belief-Propagation" class="headerlink" title="Belief Propagation"></a>Belief Propagation</h1><p>The Chapter 1 we talk about the DAG. In this chapter we want to know elimination in Undirected graph, let’s see how it can be accomplished by seeing a specific case of equivalence in directed and undirected trees.</p>
+<p>Any undirected tree can be converted to a directed tree by choosing a root node and directing all edges away from it</p>
+<ul>
+<li><p>Undirected Tree:</p>
+<script type="math/tex; mode=display">p(x) = \frac{1}{Z}\left( \prod_{i\in V} \psi(x_i) \prod_{(i,j)\in E} \psi (x_i,x_j) \right)</script></li>
+<li><p>Directed Tree:</p>
+<script type="math/tex; mode=display">p(x)  = p(x_r) \prod_{(i,j)\in E} p(x_i|x_j)</script></li>
+<li><p>Equivalence:</p>
+<script type="math/tex; mode=display">\psi (x_r) = p(x_r);\ \psi(x_i,x_j)=p(x_j|x_i);\ Z=1,\psi(x_i) = 1</script></li>
+</ul>
+<h3 id="Elimination-on-tree"><a href="#Elimination-on-tree" class="headerlink" title="Elimination on tree"></a>Elimination on tree</h3><p>Elimination operation can be regarded as a message passing process.<br>Let $m_{ji}(x_i)$ is the factor resulting from eliminating variables from below up to $i$, which is a function of $x_i$ :</p>
+<script type="math/tex; mode=display">m_{ji}(x_i) = \sum_{x_j} \left( \psi(x_j)\psi(x_i,x_j) \prod_{k\in N(j)\setminus i} m_{kj}(x_j) \right)</script><p>message from $i$ to $j$ only related with opposite side nodes of the arrow, then the probability is :</p>
+<script type="math/tex; mode=display">p(x_i)\propto \psi(x_i) \prod_{e\in N(i)} m_{ei}(x_i)</script><p>when calculate the different value of $p(x_i)$ we find the $m_{ij}(x_i)$ are re-used, so we can store the value of $m$</p>
+<p>Naively this complexity of message passing is $O(NC)$ (where N=nodes, C=complexity of one complete passing/clique bottleneck). However, actually, you can get it in two passes: 2C, or $O(C)$</p>
+<p><strong>belief propagation is only valid on trees</strong></p>
+<h3 id="Factor-Trees"><a href="#Factor-Trees" class="headerlink" title="Factor Trees"></a>Factor Trees</h3><p>Let’s define a transformation of any GM named <strong>Factor Tree</strong>, every factors(clique) in distribution represent a new node in new graph, below is an example,  a property is that $f$ nodes only connect $x$ nodes.</p>
+<p><img src="/2018/08/14/PGM-2/pgm2img2.jpg" align="justify"></p>
+<p>There are not only one transformation for a graph. The above graph are still a non-tree, we need get a tree like example 3.</p>
+<p><img src="/2018/08/14/PGM-2/pgm2img3.jpg" align="justify"></p>
+<p>There are two kinds of variables<br><img src="/2018/08/14/PGM-2/pgm2img4.jpg" align="justify"></p>
+<ul>
+<li>$\nu$ : from variables to factors<script type="math/tex; mode=display">\nu_{is}(x_i) = \prod_{t\in N(i)\setminus s} \mu_{ti}(x_i)</script></li>
+<li>$\mu$ : from factors to variables<script type="math/tex; mode=display">\mu_{si}(x_i) = \sum_{x_{N(s)}\setminus i}\left( f_s(x_{N(s)}) \prod_{j\in N(s)\setminus i} \nu_{js}(x_j)\right)</script><ul>
+<li><strong>_the first $\sum$ operation of the above function it the iters of all possible value of the variables._</strong></li>
+</ul>
+</li>
+</ul>
+<p>Factor tree is broder than a non-tree, which means</p>
+<p>.</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/08/14/PGM-2/" target="_blank" rel="external">http://yoursite.com/2018/08/14/PGM-2/</a>
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/E.jpg" alt="Eulring">
+            Eulring
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PGM/">PGM</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/14/PGM-2/&title=《PGM-2》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/14/PGM-2/&title=《PGM-2》 — EyEular&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/14/PGM-2/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PGM-2》 — EyEular&url=http://yoursite.com/2018/08/14/PGM-2/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/14/PGM-2/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/08/09/Random-Record/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Random-Record</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        thanks~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wepay.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wepay.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Eulring &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/14/PGM-2/&title=《PGM-2》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/14/PGM-2/&title=《PGM-2》 — EyEular&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/14/PGM-2/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PGM-2》 — EyEular&url=http://yoursite.com/2018/08/14/PGM-2/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/14/PGM-2/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/08/14/PGM-2/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '(一条消息未读。。)';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'EyEular';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+</html>

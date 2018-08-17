@@ -13,27 +13,27 @@
     
     
     
-    <title>PGM-1 | EyEular</title>
+    <title>PGM-Representation | EyEular</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="# For a joint distribution $P(X_1,X_2,…,X_n)$, can be written in two ways  All Dependent: $P(X_1,X_2,…,X_n) = P(X_1)P(X_2|X_1)P(X_2|X_1,X_2)…P(X_n|X_1,…,X_{n-1})$ pro: the formular are correct in any">
-<meta name="keywords" content="Math &amp; AI">
+    <meta name="keywords" content="PGM">
+    <meta name="description" content="Introduction of PGMWhy Using PGMFor a joint distribution $P(X_1,X_2,…,X_n)$, can be written in two ways  All Dependent: $P(X_1,X_2,…,X_n) = P(X_1)P(X_2|X_1)P(X_2|X_1,X_2)…P(X_n|X_1,…,X_{n-1})$ pro: th">
+<meta name="keywords" content="PGM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PGM-1">
+<meta property="og:title" content="PGM-Representation">
 <meta property="og:url" content="http://yoursite.com/2018/08/08/PGM-1/index.html">
 <meta property="og:site_name" content="EyEular">
-<meta property="og:description" content="# For a joint distribution $P(X_1,X_2,…,X_n)$, can be written in two ways  All Dependent: $P(X_1,X_2,…,X_n) = P(X_1)P(X_2|X_1)P(X_2|X_1,X_2)…P(X_n|X_1,…,X_{n-1})$ pro: the formular are correct in any">
+<meta property="og:description" content="Introduction of PGMWhy Using PGMFor a joint distribution $P(X_1,X_2,…,X_n)$, can be written in two ways  All Dependent: $P(X_1,X_2,…,X_n) = P(X_1)P(X_2|X_1)P(X_2|X_1,X_2)…P(X_n|X_1,…,X_{n-1})$ pro: th">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2018/08/08/PGM-1/pgm1img2.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/08/08/PGM-1/pgm1img3.jpg">
-<meta property="og:updated_time" content="2018-08-11T01:44:33.368Z">
+<meta property="og:image" content="http://yoursite.com/2018/08/08/PGM-1/pgm1img4.jpg">
+<meta property="og:updated_time" content="2018-08-14T02:46:12.948Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PGM-1">
-<meta name="twitter:description" content="# For a joint distribution $P(X_1,X_2,…,X_n)$, can be written in two ways  All Dependent: $P(X_1,X_2,…,X_n) = P(X_1)P(X_2|X_1)P(X_2|X_1,X_2)…P(X_n|X_1,…,X_{n-1})$ pro: the formular are correct in any">
+<meta name="twitter:title" content="PGM-Representation">
+<meta name="twitter:description" content="Introduction of PGMWhy Using PGMFor a joint distribution $P(X_1,X_2,…,X_n)$, can be written in two ways  All Dependent: $P(X_1,X_2,…,X_n) = P(X_1)P(X_2|X_1)P(X_2|X_1,X_2)…P(X_n|X_1,…,X_{n-1})$ pro: th">
 <meta name="twitter:image" content="http://yoursite.com/2018/08/08/PGM-1/pgm1img2.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
@@ -122,7 +122,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">PGM-1</div>
+        <div class="flex-col header-title ellipsis">PGM-Representation</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -144,7 +144,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">PGM-1</h1>
+        <h1 class="title">PGM-Representation</h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-08-08T12:51:00.000Z" itemprop="datePublished" class="page-time">
@@ -167,7 +167,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Graph-model-and-Bayesian"><span class="post-toc-number">1.</span> <span class="post-toc-text">Graph model and Bayesian</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Active-trail"><span class="post-toc-number">2.</span> <span class="post-toc-text">Active trail</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Introduction-of-PGM"><span class="post-toc-number">1.</span> <span class="post-toc-text">Introduction of PGM</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Why-Using-PGM"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">Why Using PGM</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Bayesian-Network"><span class="post-toc-number">2.</span> <span class="post-toc-text">Bayesian Network</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Graph-model-and-Bayesian"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">Graph model and Bayesian</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Independencies-Three-Basic-Model"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">Independencies (Three Basic Model)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Active-trail"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">Active trail</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Undirected-GM"><span class="post-toc-number">3.</span> <span class="post-toc-text">Undirected GM</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Independence"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">Independence:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Exponential-Model"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">Exponential Model</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Boltzmann-Machines"><span class="post-toc-number">3.0.2.0.1.</span> <span class="post-toc-text">Boltzmann Machines</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Restricted-Boltzmann-Machines"><span class="post-toc-number">3.0.2.0.2.</span> <span class="post-toc-text">Restricted Boltzmann Machines</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Conditional-Random-Fields"><span class="post-toc-number">3.0.2.0.3.</span> <span class="post-toc-text">Conditional Random Fields</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
         </nav>
     </aside>
     
@@ -175,7 +175,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">PGM-1</h1>
+        <h1 class="post-card-title">PGM-Representation</h1>
         <div class="post-meta">
             <time class="post-time" title="2018-08-08 20:51:00" datetime="2018-08-08T12:51:00.000Z"  itemprop="datePublished">2018-08-08</time>
 
@@ -190,8 +190,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>#</p>
-<p>For a joint distribution $P(X_1,X_2,…,X_n)$, can be written in two ways</p>
+            <h1 id="Introduction-of-PGM"><a href="#Introduction-of-PGM" class="headerlink" title="Introduction of PGM"></a>Introduction of PGM</h1><h3 id="Why-Using-PGM"><a href="#Why-Using-PGM" class="headerlink" title="Why Using PGM"></a>Why Using PGM</h3><p>For a joint distribution $P(X_1,X_2,…,X_n)$, can be written in two ways</p>
 <ul>
 <li>All Dependent: $P(X_1,X_2,…,X_n) = P(X_1)P(X_2|X_1)P(X_2|X_1,X_2)…P(X_n|X_1,…,X_{n-1})$<ul>
 <li>pro: the formular are correct in any case</li>
@@ -210,28 +209,9 @@
 <li><strong>Directed edges</strong> give causality relationships (Bayesian Network or Directed Graphical Model)</li>
 <li><strong>Undirected edges</strong> simply give correlations between variables (Markov Random Field or Undirected Graphical model)</li>
 </ul>
-<p>Factorization Theorem</p>
-<script type="math/tex; mode=display">P(X_1,X_2,...,X_n) = \prod_{i=1:n} P(X_i|Parents(X_i))</script><p><img src="/2018/08/08/PGM-1/pgm1img2.jpg" align="justify"></p>
-<ul>
-<li>a: Cascade<ul>
-<li>$Y$ observed $X,Z$ are independent</li>
-</ul>
-</li>
-<li>b: Common parent<ul>
-<li>$Y$ observed $X,Z$ are independent</li>
-<li>$Y$ unknow $X,Z$ are dependent</li>
-</ul>
-</li>
-<li>c: V-structure<ul>
-<li>$Y$ observed $X,Z$ are dependent</li>
-<li>$Y$ unknow $X,Z$ are independent</li>
-</ul>
-</li>
-</ul>
-<p>Let $P$ be a distribution of $X$, $I(P)$ is the set of independence assertions of the form $(X \bot Y | Z)$ that hold in $P$. $I(G)$ is the sub-set of the $I(P)$,</p>
-<p>We say that $K$ is an $I$-map for a _set_ of independencies $I$ if $I(K) ⊆ I$</p>
-<p>概率图模型就是用简洁明了的 Graph 来紧凑表示复杂的概率分布，Graph 的 node 表示随机变量，edge 表示直接的概率关系。但给定一张 Graph，这张 Graph 能否等价地表示这个概率分布呢？这就是 I-map 这块要回答的。一个概率分布 P 包含有一堆条件独立关系，把这个条件独立关系的集合称为 I(P)；一张 Graph G 也包含了一堆条件独立关系，把这堆条件独立关系的集合称为 I(G)。如果 I(G) 包含于 I(P)，那么就把这张 Graph G 叫做这个概率分布的 I-map (Independence-map)。显而易见，只要是 I(P) 的 子集，其对应的 Graph 就是概率分布 P 的 I-map，所以 I-map 可以有很多。只有 I(G) = I(P) 时，对应的 Graph 才可以等价地表示这个概率分布，也叫做 P 的 P-map (Perfect-map)。</p>
-<h3 id="Graph-model-and-Bayesian"><a href="#Graph-model-and-Bayesian" class="headerlink" title="Graph model and Bayesian"></a>Graph model and Bayesian</h3><p>Suppose the distribution is $A\leftarrow B \rightarrow C$</p>
+<h1 id="Bayesian-Network"><a href="#Bayesian-Network" class="headerlink" title="Bayesian Network"></a>Bayesian Network</h1><p>Firstly the Bayesian Network is <strong>DAG</strong> (Directed Acyclic Graph)</p>
+<p><strong>Factorization Theorem</strong> : The probability of specific BN</p>
+<script type="math/tex; mode=display">P(X_1,X_2,...,X_n) = \prod_{i=1:n} P(X_i|Parents(X_i))</script><h3 id="Graph-model-and-Bayesian"><a href="#Graph-model-and-Bayesian" class="headerlink" title="Graph model and Bayesian"></a>Graph model and Bayesian</h3><p>Suppose the distribution is $A\leftarrow B \rightarrow C$</p>
 <ul>
 <li>Bayesian Interpretation: $P(ABC) = P(B) P(A|B) P(C|B)$</li>
 <li><p>Graph Model Interpretation: $I(G) = \{ A\bot C |B \}$<br>now we want to prove $I(P(ABC)) = I(\{ A\bot C |B \})$</p>
@@ -246,6 +226,25 @@
 <li>Independent : we already know the height of father, so whether $Y$ is dont influence $X$</li>
 </ul>
 <p><strong>local Markov assumption :</strong><br>each node $X_i$ is independent of its nondescendants given its parents.<br>_when you confirm the parents, you only dependent with your childs_</p>
+<script type="math/tex; mode=display">I_l(G):\{ X_i\bot NonDescendants_{X_i} | Pa_{X_i} : \forall i \}</script><h3 id="Independencies-Three-Basic-Model"><a href="#Independencies-Three-Basic-Model" class="headerlink" title="Independencies (Three Basic Model)"></a>Independencies (Three Basic Model)</h3><p><img src="/2018/08/08/PGM-1/pgm1img2.jpg" align="justify"></p>
+<ul>
+<li><strong>a: Cascade</strong><ul>
+<li>$Y$ observed $X,Z$ are independent</li>
+</ul>
+</li>
+<li><strong>b: Common parent</strong><ul>
+<li>$Y$ observed $X,Z$ are independent</li>
+<li>$Y$ unknow $X,Z$ are dependent</li>
+</ul>
+</li>
+<li><strong>c: V-structure</strong><ul>
+<li>$Y$ observed $X,Z$ are dependent</li>
+<li>$Y$ unknow $X,Z$ are independent</li>
+</ul>
+</li>
+</ul>
+<p>Let $P$ be a distribution of $X$, $I(P)$ is the set of independence assertions of the form $(X \bot Y | Z)$ that hold in $P$. $I(G)$ is the sub-set of the $I(P)$,</p>
+<p>We say that $K$ is an $I$-map for a _set_ of independencies $I$ if $I(K) ⊆ I$</p>
 <h3 id="Active-trail"><a href="#Active-trail" class="headerlink" title="Active trail"></a>Active trail</h3><ul>
 <li>Causal Trail $X → Z → Y$ : active iff $Z$ is not observed.</li>
 <li>Evidential Trail $X ← Z ← Y$ : active iff $Z$ is not observed.</li>
@@ -255,11 +254,51 @@
 <p>Definition : Let $\textbf{X}, \textbf{Y} , \textbf{Z}$ be three sets of nodes in $G$. We say that $\textbf{X}$ and $\textbf{Y}$ are d-separated given $\textbf{Z}$, denoted $dsep_G(\textbf{X};\textbf{Y}|\textbf{Z})$, if there is no active trail between any node $X \in \textbf{X}$ and $Y \in \textbf{Y}$ given $\textbf{Z}$</p>
 <p>Definition: $I(G)=$ all independence properties that correspond to d- separation:</p>
 <script type="math/tex; mode=display">I(G) = {X \bot Y | Z : dsep_G(X \bot Y | Z)}</script><hr>
-<p>Clique Example<br><img src="/2018/08/08/PGM-1/pgm1img3.jpg"></p>
+<h1 id="Undirected-GM"><a href="#Undirected-GM" class="headerlink" title="Undirected GM"></a>Undirected GM</h1><p>An undirected graphical model represents a distribution $P(X1,…Xn)$ defined by an undirected graph H, and a set of positive-valued potential functions $\psi_c$ corresponding to each clique $c \in C$ of $H$ such that:</p>
+<script type="math/tex; mode=display">\begin{align}
+P(X_1,...,X_n) = \frac{1}{Z} \prod_{c\in C} \psi_c(X_c) \\
+Z = \sum_{X_1,...,X_n} \prod_{c\in C} \psi_c(X_c)
+\end{align}</script><p>potential function can be joint and conditional probability function, or even a table of values</p>
+<p>Clique Example<br><img src="/2018/08/08/PGM-1/pgm1img4.jpg"></p>
 <ul>
 <li>max-cliques = $\{A,B,D\}, \{B,C,D\}$,</li>
 <li>sub-cliques = $\{A,B\}, \{C,D\}, …\text{ all edges and single point}$</li>
 </ul>
+<script type="math/tex; mode=display">\begin{align}
+P^{\prime}(x_1,x_2,x_3,x_4) = \frac{1}{Z} \psi_c(X_{124}) \times \psi_c(X_{234}) \\
+Z = \sum_{x_1,x_2,x_3,x_4} \psi_c(X_{124})
+\end{align}</script><h3 id="Independence"><a href="#Independence" class="headerlink" title="Independence:"></a>Independence:</h3><ul>
+<li><strong>global Markov independencies $I(H)$</strong> $= \{ A\bot C|B:sep_H(A,C|B) \}$<ul>
+<li>any disjoint A,B,C in distribution, B separates A and C, A is independent of C given B.</li>
+</ul>
+</li>
+<li><strong>local Markov independencies $I_l(H)$</strong>   $=\{X_i \bot V \setminus (X\cup MB_{X_i})|MB_{X_i} :\forall i  \}$<ul>
+<li>Independent with node that dont near it.</li>
+</ul>
+</li>
+<li><strong>pairwise Markov independencies $I_p(H)$</strong> $=\{X \bot Y|V \setminus \{X,Y\}:\{X,Y\}\notin E\}$<ul>
+<li>Independent when no shared edge.</li>
+</ul>
+</li>
+<li><strong>Markov blanket</strong> of $X_i$ denoted $MB_{X_i}$, is the neighbors of $X_i$ in graph</li>
+<li>B separates A and C if every path from A to C through B: $sep_H(A,C|B)$</li>
+</ul>
+<p>relation of local and global</p>
+<ul>
+<li>Thm: $P\models I(H) \Rightarrow P \models I_l(H) \Rightarrow P \models I_p(H)$</li>
+<li>Corollary: For a positive distribution P, global, local, and pairwise indepedencies are equivalent</li>
+</ul>
+<h3 id="Exponential-Model"><a href="#Exponential-Model" class="headerlink" title="Exponential Model"></a>Exponential Model</h3><p>Form discussed above, we need find a clique potential can ensure the positive distribution, one form is negative exponential: $\Psi (\mathbf{x}_c) = exp\{ -\phi_c(\mathbf{x_c}) \}$</p>
+<p>The exponential form of the distribution structure is:</p>
+<script type="math/tex; mode=display">p(\mathbf{x}) = \frac{1}{Z}\mathop{exp}\left\{ - \sum_{c\in C} \phi_c(\mathbf{x_c}) \right\}=\frac{1}{Z} \mathop{exp}\{ -H(\mathbf{x}) \}</script><p>$H(\mathbf{x})$ is the “free energy”.</p>
+<h5 id="Boltzmann-Machines"><a href="#Boltzmann-Machines" class="headerlink" title="Boltzmann Machines"></a>Boltzmann Machines</h5><p>A Boltzmann Machine is a fully connected graph with pairwise potentials on binary-valued nodes. The energy function for this is expressed in sub-clique form, which comes from the physics tradition.</p>
+<script type="math/tex; mode=display">\begin{align}
+P(\mathbf{x}) &= \frac{1}{Z} \mathop{exp} \left\{ \sum_{i,j} \phi_{ij}(x_i,x_j) \right\} \\
+&= \frac{1}{Z} \mathop{exp} \left\{ \sum_{i,j} \theta_{ij}x_ix_j + \sum_i \alpha_i x_i + C \right\} \\
+&= \frac{1}{Z} \mathop{exp} \left\{ (x-\mu)^T \Theta (x-\mu) \right\}
+\end{align}</script><h5 id="Restricted-Boltzmann-Machines"><a href="#Restricted-Boltzmann-Machines" class="headerlink" title="Restricted Boltzmann Machines"></a>Restricted Boltzmann Machines</h5><p>This is inspired by the Boltzmann Machine and is responsible for much of the deep learning craze. An RBM consists of many layers. Within each layer, there are two sublayers: one of hidden units (factors, $h_j$), and one of visible units ($x_i$). The probability function for an RBM is</p>
+<script type="math/tex; mode=display">p(x,h|\theta) = \mathop{exp} \left\{ \sum_i \theta_i \phi_i (x_i) + \sum_j \theta_j \phi_j(h_j) + \sum_{i,j} \theta_{i,j} \phi_{i,j} (x_i,h_j) - A(\theta) \right\}</script><h5 id="Conditional-Random-Fields"><a href="#Conditional-Random-Fields" class="headerlink" title="Conditional Random Fields"></a>Conditional Random Fields</h5><p>…</p>
+<p>.</p>
 
         </div>
 
@@ -288,6 +327,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PGM/">PGM</a></li></ul>
+
 
             
 <div class="page-share-wrap">
@@ -296,7 +337,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/08/PGM-1/&title=《PGM-1》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/08/PGM-1/&title=《PGM-Representation》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -306,7 +347,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/08/PGM-1/&title=《PGM-1》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/08/PGM-1/&title=《PGM-Representation》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -316,7 +357,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PGM-1》 — EyEular&url=http://yoursite.com/2018/08/08/PGM-1/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PGM-Representation》 — EyEular&url=http://yoursite.com/2018/08/08/PGM-1/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -449,7 +490,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/08/PGM-1/&title=《PGM-1》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/08/PGM-1/&title=《PGM-Representation》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -459,7 +500,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/08/PGM-1/&title=《PGM-1》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/08/PGM-1/&title=《PGM-Representation》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -469,7 +510,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PGM-1》 — EyEular&url=http://yoursite.com/2018/08/08/PGM-1/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PGM-Representation》 — EyEular&url=http://yoursite.com/2018/08/08/PGM-1/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
