@@ -13,30 +13,25 @@
     
     
     
-    <title>Stochastic-Process （Abbreviate &amp; Notation） | EyEular</title>
+    <title>PGM-3 | EyEular</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Probability">
-    <meta name="description" content="r.v.s.: random variable sequence i.i.d: individual identical distribution w.p.: with probability PMF (Probability Mass Function) $P(X=x)$ CDF (Cumulative Distribution Function) $P(X \leq x)$ PDF (Prob">
-<meta name="keywords" content="Probability">
+    <meta name="keywords" content="PGM">
+    <meta name="description" content="The Exponential Familyrandom variable $\mathbf{X}$ is in the exponential family \begin{align} P(\mathbf{X}=x;\eta) &amp;= h(x)\mathop{exp}\{ \eta^T\mathbf{T}(x) - A(\eta) \} \\ &amp;= \frac{1}{Z(\eta)} h(x) e">
+<meta name="keywords" content="PGM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Stochastic-Process （Abbreviate &amp; Notation）">
-<meta property="og:url" content="http://yoursite.com/2018/07/02/Stochastic-Process-0/index.html">
+<meta property="og:title" content="PGM-3">
+<meta property="og:url" content="http://yoursite.com/2018/08/18/PGM-3/index.html">
 <meta property="og:site_name" content="EyEular">
-<meta property="og:description" content="r.v.s.: random variable sequence i.i.d: individual identical distribution w.p.: with probability PMF (Probability Mass Function) $P(X=x)$ CDF (Cumulative Distribution Function) $P(X \leq x)$ PDF (Prob">
+<meta property="og:description" content="The Exponential Familyrandom variable $\mathbf{X}$ is in the exponential family \begin{align} P(\mathbf{X}=x;\eta) &amp;= h(x)\mathop{exp}\{ \eta^T\mathbf{T}(x) - A(\eta) \} \\ &amp;= \frac{1}{Z(\eta)} h(x) e">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2018/07/02/Stochastic-Process-0/img1.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/07/02/Stochastic-Process-0/sp0img1.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/07/02/Stochastic-Process-0/sp0img2.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/07/02/Stochastic-Process-0/sp0img4.jpg">
-<meta property="og:updated_time" content="2018-08-24T13:59:44.816Z">
+<meta property="og:updated_time" content="2018-08-21T02:28:38.721Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Stochastic-Process （Abbreviate &amp; Notation）">
-<meta name="twitter:description" content="r.v.s.: random variable sequence i.i.d: individual identical distribution w.p.: with probability PMF (Probability Mass Function) $P(X=x)$ CDF (Cumulative Distribution Function) $P(X \leq x)$ PDF (Prob">
-<meta name="twitter:image" content="http://yoursite.com/2018/07/02/Stochastic-Process-0/img1.jpg">
+<meta name="twitter:title" content="PGM-3">
+<meta name="twitter:description" content="The Exponential Familyrandom variable $\mathbf{X}$ is in the exponential family \begin{align} P(\mathbf{X}=x;\eta) &amp;= h(x)\mathop{exp}\{ \eta^T\mathbf{T}(x) - A(\eta) \} \\ &amp;= \frac{1}{Z(\eta)} h(x) e">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
     
@@ -124,7 +119,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Stochastic-Process （Abbreviate &amp; Notation）</div>
+        <div class="flex-col header-title ellipsis">PGM-3</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -146,11 +141,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Stochastic-Process （Abbreviate &amp; Notation）</h1>
+        <h1 class="title">PGM-3</h1>
         <h5 class="subtitle">
             
-                <time datetime="2018-07-02T08:54:34.000Z" itemprop="datePublished" class="page-time">
-  2018-07-02
+                <time datetime="2018-08-18T13:21:46.000Z" itemprop="datePublished" class="page-time">
+  2018-08-18
 </time>
 
 
@@ -169,17 +164,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Distributions"><span class="post-toc-number">1.</span> <span class="post-toc-text">Distributions</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#The-Exponential-Family"><span class="post-toc-number">1.</span> <span class="post-toc-text">The Exponential Family</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Example"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">Example</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Multivariate-Gaussian"><span class="post-toc-number">1.0.1.0.1.</span> <span class="post-toc-text">Multivariate Gaussian</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Bernoulli"><span class="post-toc-number">1.0.1.0.2.</span> <span class="post-toc-text">Bernoulli</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Others"><span class="post-toc-number">1.0.1.0.3.</span> <span class="post-toc-text">Others</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Why-Exponential-Family"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">Why Exponential Family</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Moment-generating-property"><span class="post-toc-number">1.0.2.0.1.</span> <span class="post-toc-text">Moment generating property</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
         </nav>
     </aside>
     
-<article id="post-Stochastic-Process-0"
+<article id="post-PGM-3"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Stochastic-Process （Abbreviate & Notation）</h1>
+        <h1 class="post-card-title">PGM-3</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-07-02 16:54:34" datetime="2018-07-02T08:54:34.000Z"  itemprop="datePublished">2018-07-02</time>
+            <time class="post-time" title="2018-08-18 21:21:46" datetime="2018-08-18T13:21:46.000Z"  itemprop="datePublished">2018-08-18</time>
 
             
 
@@ -192,31 +187,62 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>r.v.s.</strong>: random variable sequence</p>
-<p><strong>i.i.d</strong>: individual identical distribution</p>
-<p><strong>w.p.</strong>: with probability</p>
-<p><strong>PMF (Probability Mass Function)</strong> $P(X=x)$</p>
-<p><strong>CDF (Cumulative Distribution Function)</strong> $P(X \leq x)$</p>
-<p><strong>PDF (Probability Density Function)</strong> derivate of CDF</p>
-<p><strong>PGF (Probability Generating Function)</strong> $E(t^X) = \sum_{k=0}^{\infty} p_k t^k$</p>
-<p><strong>MGF (Moment Generating Function)</strong> $M(t) = E(e^{tX})$</p>
-<hr>
-<h1 id="Distributions"><a href="#Distributions" class="headerlink" title="Distributions"></a>Distributions</h1><ul>
-<li><strong>Binomial Distribution</strong> $X\sim B(n,p)$: number of success in n trails</li>
-<li><strong>HyperGeometric Distribution</strong> $X\sim HGeom(w,b,n)$: draw n balls between w white and b black</li>
-<li><strong>Geometric Distribution</strong> $X\sim Geom(p)$: number of the Bernoulli trails before success (First Success Distribution)</li>
-<li><strong>Negative Binomial Distribution</strong> $X\sim NBin(r,p)$: number of the Bernoulli trails before $r^{th}$ success</li>
-<li><strong>Poisson Distribution</strong> $X\sim Pois(\lambda)$: number of times an event occurs in an interval of time or space</li>
-<li><strong>Uniform Distribution</strong> $U\sim Unif(a,b)$: Distribution on the interval $(a,b)$</li>
-<li><strong>Standard Normal Distribution</strong> $X\sim N(0,1)$</li>
-<li><strong>Normal Distribution</strong> $X\sim N(\mu,\sigma^2)$</li>
-<li><strong>Beta Distribution</strong> $X\sim Beta(a,b)$</li>
-<li><strong>Multinomial Distribution</strong> $\mathbf{X}\sim Mult_k(n,\mathbf{p})$</li>
+            <h1 id="The-Exponential-Family"><a href="#The-Exponential-Family" class="headerlink" title="The Exponential Family"></a>The Exponential Family</h1><p>random variable $\mathbf{X}$ is in the exponential family</p>
+<script type="math/tex; mode=display">\begin{align}
+P(\mathbf{X}=x;\eta) &= h(x)\mathop{exp}\{ \eta^T\mathbf{T}(x) - A(\eta) \} \\
+&= \frac{1}{Z(\eta)} h(x) exp \{ \eta^T T(x) \}
+\end{align}</script><ul>
+<li>$\eta$ :  vector of natural parameters</li>
+<li>$\mathbf{T}$ :  vector of sufficient statistics</li>
+<li>$\mathbf{A}$ : log partition function</li>
+<li>$log Z(\eta) = A(\eta)$</li>
 </ul>
-<p><img src="/2018/07/02/Stochastic-Process-0/img1.jpg" align="justify" style=" width:600px;"></p>
-<p><img src="/2018/07/02/Stochastic-Process-0/sp0img1.jpg" align="justify"></p>
-<p><img src="/2018/07/02/Stochastic-Process-0/sp0img2.jpg" align="justify"></p>
-<p><img src="/2018/07/02/Stochastic-Process-0/sp0img4.jpg" align="justify"></p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><h5 id="Multivariate-Gaussian"><a href="#Multivariate-Gaussian" class="headerlink" title="Multivariate Gaussian"></a>Multivariate Gaussian</h5><script type="math/tex; mode=display">\begin{align}
+  P(\mathbf{x};\mu;\Sigma) &=  \frac{1}{(2\pi)^{p/2}|\Sigma|^{1/2}} \text{exp}\left(  -\frac{1}{2} (\mathbf{x}-\mu)^T \Sigma^{-1} (\mathbf{x}-\mu) \right) \\
+  &= \frac{1}{(2\pi)^{p/2}} \text{exp} \left( -\frac{1}{2}(\text{tr } \mathbf{x}^T\Sigma^{-1} \mathbf{x} +\mu^T \Sigma^{-1} \mu - 2 \mu^T \Sigma^{-1} \mathbf{x} +ln |\Sigma| )\right) \\
+  &=  \underbrace{ \frac{1}{(2\pi)^{p/2}} }_{h(\mathbf{x})} \text{exp} \left( -\frac{1}{2} \underbrace{\text{tr } \Sigma^{-1}\mathbf{x}\mathbf{x}^T}_{\text{vec}(\Sigma^{-1})^T \text{vec}(\mathbf{x}\mathbf{x}^T)} + \mu^T\Sigma^{-1}\mathbf{x} - \underbrace{\frac{1}{2} \mu^T \Sigma^{-1} \mu - \frac{1}{2} \text{ln}|\Sigma|   }_{A(\eta)} \right)
+\end{align}</script><p>This implies that:</p>
+<ul>
+<li>$\eta = \left( \Sigma^{-1} \mu, -\frac{1}{2} vec (\Sigma^{-1}) \right)$</li>
+<li>$\mathbf{T}(\mathbf{x}) = (\mathbf{x}, vec(\mathbf{x}\mathbf{x}^T))$</li>
+<li>$A(\eta) = \frac{1}{2} (\mu^T \Sigma^{-1} \mu + \text{ln} |\Sigma|)$</li>
+<li>$h(\mathbf{x}) = \frac{1}{(2\pi)^{p/2}}$</li>
+</ul>
+<h5 id="Bernoulli"><a href="#Bernoulli" class="headerlink" title="Bernoulli"></a>Bernoulli</h5><script type="math/tex; mode=display">\begin{align}
+P(x;p) &= p^x (1-p)^{1-x} \\
+\text{ln} P(x;p) &= x\text{ln}(p)+(1−x)\text{ln}(1−p) \\
+ &= x\text{ln}(p)−x\text{ln}(1−p)+\text{ln}(1−p) \\
+ &= x(\text{ln}(p)−\text{ln}(1−p))+\text{ln}(1−p) \\
+ &= x\text{ln} (\frac{p}{1-p}) + \text{ln} (1-p) \\
+ \text{exp} (\text{ln} P(x;p)) &= \text{exp} \left( x\text{ln} (\frac{p}{1-p}) + \text{ln} (1-p)  \right)
+\end{align}</script><p>This implies that:</p>
+<ul>
+<li>$\eta = \text{ln} (\frac{p}{1-p})$</li>
+<li>$T(x) = x$</li>
+<li>$A(\eta) = -\text{ln}(1-p)$</li>
+<li>$h(x) = 1$</li>
+</ul>
+<h5 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h5><p>the univariate Gaussian, Poisson, gamma, multinomial, linear regression, Ising model, restricted Boltzmann machines, and conditional random fields (CRFs) are all in the exponential family</p>
+<h3 id="Why-Exponential-Family"><a href="#Why-Exponential-Family" class="headerlink" title="Why Exponential Family"></a>Why Exponential Family</h3><h5 id="Moment-generating-property"><a href="#Moment-generating-property" class="headerlink" title="Moment generating property"></a>Moment generating property</h5><script type="math/tex; mode=display">\begin{align}
+  \int P(x,\eta) dx = \int h(x) e^{\eta^T T(x) - A(\eta)} dx &= 1 \\
+  \int h(x) e^{\eta^T T(x)} &= Z(\eta)
+\end{align}</script><p>-</p>
+<script type="math/tex; mode=display">\begin{align}
+  \frac{dA}{d\eta} &= \frac{d}{d\eta} log (Z(\eta)) = \frac{1}{Z(\eta)} \frac{d}{d\eta} Z(\eta) \\
+  &= \frac{1}{Z(\eta)} \frac{d}{d\eta} \int h(x) e^{\eta^T T(x)}dx \\
+  &= \int T(x) \frac{h(x) e^{\eta^T T(x)}}{Z(\eta)} = E[T(x)]
+\end{align}</script><p> -</p>
+<script type="math/tex; mode=display">\begin{align}
+\frac{d^2 A}{d^2 \eta} &= \int T^2(x) \frac{h(x) e^{\eta^T T(x)}}{Z(\eta)} dx - \int T(x) \frac{h(x) e^{\eta^T T(x)}}{Z(\eta)} dx \frac{1}{Z(\eta)} \frac{d}{d \eta} Z(\eta) \\
+&= E[T^2(x)] - E^2[T(x)] \\
+&= Var[T(x)]
+\end{align}</script><ul>
+<li><p>$A(\eta)$ is convex  since</p>
+<script type="math/tex; mode=display">\frac{d^2 A(\eta)}{d \eta^2} = Var[T(x)] > 0</script></li>
+<li><p>specific $\eta$ map to mean $\mu$, so we define an invert $\psi (\mu) = \eta$</p>
+</li>
+</ul>
+<p>.</p>
 
         </div>
 
@@ -225,7 +251,7 @@
         
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/07/02/Stochastic-Process-0/" target="_blank" rel="external">http://yoursite.com/2018/07/02/Stochastic-Process-0/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/08/18/PGM-3/" target="_blank" rel="external">http://yoursite.com/2018/08/18/PGM-3/</a>
         
     </div>
     <footer>
@@ -245,7 +271,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Probability/">Probability</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PGM/">PGM</a></li></ul>
 
 
             
@@ -255,7 +281,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/02/Stochastic-Process-0/&title=《Stochastic-Process （Abbreviate & Notation）》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/18/PGM-3/&title=《PGM-3》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -265,22 +291,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/02/Stochastic-Process-0/&title=《Stochastic-Process （Abbreviate & Notation）》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/18/PGM-3/&title=《PGM-3》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/02/Stochastic-Process-0/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/18/PGM-3/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stochastic-Process （Abbreviate & Notation）》 — EyEular&url=http://yoursite.com/2018/07/02/Stochastic-Process-0/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PGM-3》 — EyEular&url=http://yoursite.com/2018/08/18/PGM-3/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/02/Stochastic-Process-0/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/18/PGM-3/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -303,13 +329,20 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2018/07/04/Robust-PCA/" id="post-prev" class="post-nav-link">
+      <a href="/2018/08/21/PGM-0/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Robust PCA</h4>
+        <h4 class="title">PGM-0</h4>
       </a>
     </div>
   
 
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/08/14/PGM-2/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">PGM-2</h4>
+      </a>
+    </div>
   
 </nav>
 
@@ -401,7 +434,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/07/02/Stochastic-Process-0/&title=《Stochastic-Process （Abbreviate & Notation）》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/18/PGM-3/&title=《PGM-3》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -411,22 +444,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/07/02/Stochastic-Process-0/&title=《Stochastic-Process （Abbreviate & Notation）》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/18/PGM-3/&title=《PGM-3》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/02/Stochastic-Process-0/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/18/PGM-3/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Stochastic-Process （Abbreviate & Notation）》 — EyEular&url=http://yoursite.com/2018/07/02/Stochastic-Process-0/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PGM-3》 — EyEular&url=http://yoursite.com/2018/08/18/PGM-3/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/02/Stochastic-Process-0/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/18/PGM-3/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -437,7 +470,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/07/02/Stochastic-Process-0/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/08/18/PGM-3/" alt="微信分享二维码">
 </div>
 
 
