@@ -20,18 +20,18 @@
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="如果一个变量在两个 clique 之间出现，那么这个变量一定在这两个 clique 的路径之间 learning is parameter estimation sufficient statistics $T(x)$ means x self or some transformation of x 先验概率可理解为统计概率，后验概率可理解为条件概率 In Bayesian probabilit">
+    <meta name="description" content="如果一个变量在两个 clique 之间出现，那么这个变量一定在这两个 clique 的路径之间 learning is parameter estimation sufficient statistics $T(x)$ means x self or some transformation of x 先验概率可理解为统计概率，后验概率可理解为条件概率  In Bayesian probabili">
 <meta name="keywords" content="Math &amp; AI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Random-Record">
 <meta property="og:url" content="http://yoursite.com/2018/08/09/Random-Record/index.html">
 <meta property="og:site_name" content="EyEular">
-<meta property="og:description" content="如果一个变量在两个 clique 之间出现，那么这个变量一定在这两个 clique 的路径之间 learning is parameter estimation sufficient statistics $T(x)$ means x self or some transformation of x 先验概率可理解为统计概率，后验概率可理解为条件概率 In Bayesian probabilit">
+<meta property="og:description" content="如果一个变量在两个 clique 之间出现，那么这个变量一定在这两个 clique 的路径之间 learning is parameter estimation sufficient statistics $T(x)$ means x self or some transformation of x 先验概率可理解为统计概率，后验概率可理解为条件概率  In Bayesian probabili">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-23T02:35:24.527Z">
+<meta property="og:updated_time" content="2018-08-24T14:41:49.394Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Random-Record">
-<meta name="twitter:description" content="如果一个变量在两个 clique 之间出现，那么这个变量一定在这两个 clique 的路径之间 learning is parameter estimation sufficient statistics $T(x)$ means x self or some transformation of x 先验概率可理解为统计概率，后验概率可理解为条件概率 In Bayesian probabilit">
+<meta name="twitter:description" content="如果一个变量在两个 clique 之间出现，那么这个变量一定在这两个 clique 的路径之间 learning is parameter estimation sufficient statistics $T(x)$ means x self or some transformation of x 先验概率可理解为统计概率，后验概率可理解为条件概率  In Bayesian probabili">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
     
@@ -161,6 +161,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#For-example-the-Gaussian-family-is-conjugate-to-itself-or-self-conjugate-with-respect-to-a-Gaussian-likelihood-function-if-the-likelihood-function-is-Gaussian-choosing-a-Gaussian-prior-over-the-mean-will-ensure-that-the-posterior-distribution-is-also-Gaussian"><span class="post-toc-number">1.</span> <span class="post-toc-text">For example, the Gaussian family is conjugate to itself (or self-conjugate) with respect to a Gaussian likelihood function: if the likelihood function is Gaussian, choosing a Gaussian prior over the mean will ensure that the posterior distribution is also Gaussian</span></a></li></ol>
+        </nav>
+    </aside>
+    
 <article id="post-Random-Record"
   class="post-article article-type-post fade" itemprop="blogPost">
 
@@ -184,11 +191,22 @@
 <p>learning is parameter estimation</p>
 <p>sufficient statistics $T(x)$ means x self or some transformation of x</p>
 <p>先验概率可理解为统计概率，后验概率可理解为条件概率</p>
+<hr>
 <p>In Bayesian probability theory, if the posterior distributions $p(\theta | x)$ are in the same probability distribution family as the prior probability distribution $p(\theta)$, the prior and posterior are then called conjugate distributions, and the prior is called a conjugate prior for the likelihood function.</p>
-<p>For example, the Gaussian family is conjugate to itself (or self-conjugate) with respect to a Gaussian likelihood function: if the likelihood function is Gaussian, choosing a Gaussian prior over the mean will ensure that the posterior distribution is also Gaussian</p>
-<p>Learning Graphical Models</p>
+<h2 id="For-example-the-Gaussian-family-is-conjugate-to-itself-or-self-conjugate-with-respect-to-a-Gaussian-likelihood-function-if-the-likelihood-function-is-Gaussian-choosing-a-Gaussian-prior-over-the-mean-will-ensure-that-the-posterior-distribution-is-also-Gaussian"><a href="#For-example-the-Gaussian-family-is-conjugate-to-itself-or-self-conjugate-with-respect-to-a-Gaussian-likelihood-function-if-the-likelihood-function-is-Gaussian-choosing-a-Gaussian-prior-over-the-mean-will-ensure-that-the-posterior-distribution-is-also-Gaussian" class="headerlink" title="For example, the Gaussian family is conjugate to itself (or self-conjugate) with respect to a Gaussian likelihood function: if the likelihood function is Gaussian, choosing a Gaussian prior over the mean will ensure that the posterior distribution is also Gaussian"></a>For example, the Gaussian family is conjugate to itself (or self-conjugate) with respect to a Gaussian likelihood function: if the likelihood function is Gaussian, choosing a Gaussian prior over the mean will ensure that the posterior distribution is also Gaussian</h2><p>Learning Graphical Models</p>
 <p>The target is given the assignments and predict the best (most likely) structure of the network.</p>
 <p>“Optimal” here means the employed algorithms guarantee to<br>return a structure that maximizes the objectives (e.g., LogLik)</p>
+<script type="math/tex; mode=display">\begin{align}
+l(\theta_G,G;D) &= log p(D|\theta_G,G) \\
+&= log \prod_n \left(  \prod_i p(x_{n,i}|\mathbf{x}_{n,\pi_i(G)}, \theta_{i|\pi_i(G)})  \right)
+\end{align}</script><ul>
+<li>$\prod_n$ means enum $n$ data</li>
+<li>$\prod_i$ means enum all nodes</li>
+<li>$\mathbf{x}_{n,\pi_i(G)}$ is the assignments of x’s parents</li>
+</ul>
+<p>M is the number of the state, add this we can turn the count function into probability representation</p>
+<p>the right decomposited part is entropy !</p>
+<p>。</p>
 
         </div>
 

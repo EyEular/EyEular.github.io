@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-21T10:49:25.301Z</updated>
+  <updated>2018-09-09T07:50:49.181Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,18 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>PGM-0</title>
-    <link href="http://yoursite.com/2018/08/21/PGM-0/"/>
-    <id>http://yoursite.com/2018/08/21/PGM-0/</id>
-    <published>2018-08-21T02:28:56.000Z</published>
-    <updated>2018-08-21T10:49:25.301Z</updated>
+    <title>NLP-0</title>
+    <link href="http://yoursite.com/2018/09/09/NLP-0/"/>
+    <id>http://yoursite.com/2018/09/09/NLP-0/</id>
+    <published>2018-09-09T07:50:49.000Z</published>
+    <updated>2018-09-09T07:50:49.181Z</updated>
     
     <summary type="html">
     
     </summary>
     
     
-      <category term="PGM" scheme="http://yoursite.com/tags/PGM/"/>
+  </entry>
+  
+  <entry>
+    <title>Sparse-Coding</title>
+    <link href="http://yoursite.com/2018/09/09/Sparse-Coding/"/>
+    <id>http://yoursite.com/2018/09/09/Sparse-Coding/</id>
+    <published>2018-09-09T01:21:38.000Z</published>
+    <updated>2018-09-09T07:48:19.909Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="神经学启发"><a href="#神经学启发" class="headerlink" title="神经学启发"></a>神经学启发</h1><p>稀疏编码的概念来自于神经生物学。生物学家提出，哺乳类动物在长期的进化中，生成了能够快速，准确，低代价地表示自然图像的视觉神经方面的能力。我们直观地可以想象，我们的眼睛每看到的一副画面都是上亿像素的，而每一副图像我们都只用很少的代价重建与存储。我们把它叫做稀疏编码，即Sparse Coding。</p><p>从上可以看出稀疏编码的目的是：在大量的数据集中，选取很小部分作为元素来重建新的数据。</p><hr><h1 id="数学推导"><a href="#数学推导" class="headerlink" title="数学推导"></a>数学推导</h1><p>稀疏编码是一种 unsupervised learning，我们希望找到一组 over-complete 的 基向量 basic vector 来表示我们的数据，也就是数据 $\textbf{x}$ 可以表示为这些基向量的线性组合：</p><script type="math/tex; mode=display">  \textbf{x} = \sum_{i=1}^k a_i \phi_i</script><p>对于基向量的学习，我们一般有一组训练数据，另外，基向量的大小规定为 $\textbf{x}\in R^n$，同时，也是数据的大小。一般来讲，$n$ 维的数据最多只需要 $n$ 个线性不相关的基向量就可以了（使用 PCA），但是就 n 个基向量的话，可能有一个现象就是，没个数据可能都需要接近 n 个基向量来表示，我们希望 稀疏编码 能有一个优势，就是组成数据的基向量个数尽可能的小一些，也就是上面的 $\mathbf{a}$ 是稀疏的。。。</p><p>为了达成这个目的，我们可以增加基向量的个数 $k  &gt; n$，也就是说，一个数据，可能由多种基向量来表示了，在所有的表示中，我们可以尽可能的选取稀疏的表示方法。。</p><p>Sparse Coding 可以分为两个部分，一个是 Training 阶段，一个是 Coding阶段</p><h3 id="Training"><a href="#Training" class="headerlink" title="Training"></a>Training</h3><p>给定一些列样本数据 $[ x_1,x_2,… x_m]$ 我们希望学到一组基 $[ \phi_1,\phi_2,…,\phi_k  ]$ 来表示前面的数据，训练的 objective function 如下：</p><script type="math/tex; mode=display">\mathop{min}_{a,\phi} \sum_{i=1}^m \left \Vert x_i-\sum_{j=1}^k a_{i,j}\phi_j \right \Vert^2 + \lambda \sum_{i=1}^m \sum_{j=1}^k |a_{i,j}|</script><p>优化的迭代分为两部（都可以用凸优化来求解）</p><ul><li>固定字典 $\phi$ 更新 $a$，这个问题其实就是一个 Lasso 问题</li><li>固定表达 $a$ 更新 $\phi$，这个其实就是一个 QP 问题</li></ul><h3 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h3><p>给定一个新的数据，获得它关于字典的表达，这一步，其实就是上面的优化的第二步</p><script type="math/tex; mode=display">\mathop{min}_{a} \sum_{i=1}^m \left \Vert x_i-\sum_{j=1}^k a_{i,j}\phi_j \right \Vert^2 + \lambda \sum_{i=1}^m \sum_{j=1}^k |a_{i,j}|</script><hr><h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://www.cnblogs.com/aixueshuqian/p/3936892.html" target="_blank" rel="noopener">https://www.cnblogs.com/aixueshuqian/p/3936892.html</a><br><a href="https://www.cnblogs.com/caocan702/p/5666175.html" target="_blank" rel="noopener">https://www.cnblogs.com/caocan702/p/5666175.html</a><br>.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;神经学启发&quot;&gt;&lt;a href=&quot;#神经学启发&quot; class=&quot;headerlink&quot; title=&quot;神经学启发&quot;&gt;&lt;/a&gt;神经学启发&lt;/h1&gt;&lt;p&gt;稀疏编码的概念来自于神经生物学。生物学家提出，哺乳类动物在长期的进化中，生成了能够快速，准确，低代价地表示自然图像的
+      
+    
+    </summary>
+    
+    
+      <category term="ML" scheme="http://yoursite.com/tags/ML/"/>
     
   </entry>
   
@@ -90,9 +111,9 @@
     <link href="http://yoursite.com/2018/08/09/Random-Record/"/>
     <id>http://yoursite.com/2018/08/09/Random-Record/</id>
     <published>2018-08-09T10:55:56.000Z</published>
-    <updated>2018-08-23T02:35:24.527Z</updated>
+    <updated>2018-08-24T14:41:49.394Z</updated>
     
-    <content type="html"><![CDATA[<p>如果一个变量在两个 clique 之间出现，那么这个变量一定在这两个 clique 的路径之间</p><p>learning is parameter estimation</p><p>sufficient statistics $T(x)$ means x self or some transformation of x</p><p>先验概率可理解为统计概率，后验概率可理解为条件概率</p><p>In Bayesian probability theory, if the posterior distributions $p(\theta | x)$ are in the same probability distribution family as the prior probability distribution $p(\theta)$, the prior and posterior are then called conjugate distributions, and the prior is called a conjugate prior for the likelihood function.</p><p>For example, the Gaussian family is conjugate to itself (or self-conjugate) with respect to a Gaussian likelihood function: if the likelihood function is Gaussian, choosing a Gaussian prior over the mean will ensure that the posterior distribution is also Gaussian</p><p>Learning Graphical Models</p><p>The target is given the assignments and predict the best (most likely) structure of the network.</p><p>“Optimal” here means the employed algorithms guarantee to<br>return a structure that maximizes the objectives (e.g., LogLik)</p>]]></content>
+    <content type="html"><![CDATA[<p>如果一个变量在两个 clique 之间出现，那么这个变量一定在这两个 clique 的路径之间</p><p>learning is parameter estimation</p><p>sufficient statistics $T(x)$ means x self or some transformation of x</p><p>先验概率可理解为统计概率，后验概率可理解为条件概率</p><hr><p>In Bayesian probability theory, if the posterior distributions $p(\theta | x)$ are in the same probability distribution family as the prior probability distribution $p(\theta)$, the prior and posterior are then called conjugate distributions, and the prior is called a conjugate prior for the likelihood function.</p><h2 id="For-example-the-Gaussian-family-is-conjugate-to-itself-or-self-conjugate-with-respect-to-a-Gaussian-likelihood-function-if-the-likelihood-function-is-Gaussian-choosing-a-Gaussian-prior-over-the-mean-will-ensure-that-the-posterior-distribution-is-also-Gaussian"><a href="#For-example-the-Gaussian-family-is-conjugate-to-itself-or-self-conjugate-with-respect-to-a-Gaussian-likelihood-function-if-the-likelihood-function-is-Gaussian-choosing-a-Gaussian-prior-over-the-mean-will-ensure-that-the-posterior-distribution-is-also-Gaussian" class="headerlink" title="For example, the Gaussian family is conjugate to itself (or self-conjugate) with respect to a Gaussian likelihood function: if the likelihood function is Gaussian, choosing a Gaussian prior over the mean will ensure that the posterior distribution is also Gaussian"></a>For example, the Gaussian family is conjugate to itself (or self-conjugate) with respect to a Gaussian likelihood function: if the likelihood function is Gaussian, choosing a Gaussian prior over the mean will ensure that the posterior distribution is also Gaussian</h2><p>Learning Graphical Models</p><p>The target is given the assignments and predict the best (most likely) structure of the network.</p><p>“Optimal” here means the employed algorithms guarantee to<br>return a structure that maximizes the objectives (e.g., LogLik)</p><script type="math/tex; mode=display">\begin{align}l(\theta_G,G;D) &= log p(D|\theta_G,G) \\&= log \prod_n \left(  \prod_i p(x_{n,i}|\mathbf{x}_{n,\pi_i(G)}, \theta_{i|\pi_i(G)})  \right)\end{align}</script><ul><li>$\prod_n$ means enum $n$ data</li><li>$\prod_i$ means enum all nodes</li><li>$\mathbf{x}_{n,\pi_i(G)}$ is the assignments of x’s parents</li></ul><p>M is the number of the state, add this we can turn the count function into probability representation</p><p>the right decomposited part is entropy !</p><p>。</p>]]></content>
     
     <summary type="html">
     
@@ -180,29 +201,6 @@
   </entry>
   
   <entry>
-    <title>Stochastic-Process (Martingale)</title>
-    <link href="http://yoursite.com/2018/08/04/Stochastic-Process-9/"/>
-    <id>http://yoursite.com/2018/08/04/Stochastic-Process-9/</id>
-    <published>2018-08-04T07:16:54.000Z</published>
-    <updated>2018-08-04T07:46:59.326Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Stopping-Time"><a href="#Stopping-Time" class="headerlink" title="Stopping Time"></a>Stopping Time</h1><h3 id="Theorem-Mean-of-Random-Sum-is-Sum-of-Means"><a href="#Theorem-Mean-of-Random-Sum-is-Sum-of-Means" class="headerlink" title="Theorem (Mean of Random Sum is Sum of Means)"></a>Theorem (Mean of Random Sum is Sum of Means)</h3><p>Let $X_1,X_2,…,X_n$ be i.i.d. random variables and $N\geq 0$ independent of all $X_n$ Then</p><script type="math/tex; mode=display">E\left( \sum_{n=1}^N X_n \right) = E(N) E(X_1)</script><p>  <strong>Proof</strong> using Adam’s Law</p><script type="math/tex; mode=display">E\left(  \sum_{n=1}^N X_n \right) = E\left( E\left( \sum_{n=1}^N X_n|N \right) \right) = E(NE(X_1|N))</script><p>  Since $N$ is independent of $X_1$, we have</p><script type="math/tex; mode=display">E\left(  \sum_{n=1}^N X_n \right) = E(NE(X_1)) = E(X_1)E(N)</script>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Stopping-Time&quot;&gt;&lt;a href=&quot;#Stopping-Time&quot; class=&quot;headerlink&quot; title=&quot;Stopping Time&quot;&gt;&lt;/a&gt;Stopping Time&lt;/h1&gt;&lt;h3 id=&quot;Theorem-Mean-of-Rando
-      
-    
-    </summary>
-    
-    
-      <category term="Probability" scheme="http://yoursite.com/tags/Probability/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Stochastic-Process (Conditional Expectation)</title>
     <link href="http://yoursite.com/2018/08/03/Stochastic-Process-8/"/>
     <id>http://yoursite.com/2018/08/03/Stochastic-Process-8/</id>
@@ -222,6 +220,22 @@
     
     
       <category term="Probability" scheme="http://yoursite.com/tags/Probability/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PGM-0</title>
+    <link href="http://yoursite.com/2018/08/01/PGM-0/"/>
+    <id>http://yoursite.com/2018/08/01/PGM-0/</id>
+    <published>2018-08-01T02:28:56.000Z</published>
+    <updated>2018-09-09T01:13:56.505Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="PGM" scheme="http://yoursite.com/tags/PGM/"/>
     
   </entry>
   
@@ -464,30 +478,6 @@
     
     
       <category term="Probability" scheme="http://yoursite.com/tags/Probability/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Robust PCA</title>
-    <link href="http://yoursite.com/2018/07/04/Robust-PCA/"/>
-    <id>http://yoursite.com/2018/07/04/Robust-PCA/</id>
-    <published>2018-07-04T14:47:11.000Z</published>
-    <updated>2018-07-25T11:29:24.589Z</updated>
-    
-    <content type="html"><![CDATA[<hr><h1 id="Introduction-to-RPCA"><a href="#Introduction-to-RPCA" class="headerlink" title="Introduction to RPCA"></a>Introduction to RPCA</h1><p><br><br>The data we collect usually have the low rank property, but the property will vanished when the data is collected causing the noisy, but we can still decomposite the matrix into low-rank matrix and spares error matrix from the corruped data.</p><script type="math/tex; mode=display">  D=\underbrace{A}_{\text{low rank matrix}}+\underbrace{E}_{\text{sparse matrix}} \notag</script><p>Traditional approach for solving this problem is using PCA (Principal Components Analysis), there are many interpretation to PCA, one relate to rank is despiting the low value singular value as this componets contribute less to the data. Thus, it can be considered as the noisy. So we take the $k^{th}$ largest singular value and drop the rest , this can be represnt as the following formulation :</p><script type="math/tex; mode=display">  \mathop{min}_{A,E} \|E \|_F, \ \ \ \  \text{subject to } \ rank(A)\leq r, D = A + E \notag</script><p>PCA has a shortage that it is not robust to the outliers,  then the RPCA (Robust Principal Components Analysis) came out, RPCA could making the matrix recovery whether the noisy is large or not only if the sparse property is confirmed, the original form of the RPCA can be written as :</p><script type="math/tex; mode=display">  \mathop{min}_{A,E} rank(A) + \|E\|_0, \ \ \ \  \text{subject to } \ D = A + E \notag</script><p>The optimization formulation above is non-convex and is hard to get the solution, we can use the convex relax technology apply on it, then it turn out into the most used and the most efficient from:</p><script type="math/tex; mode=display">  \mathop{min}_{A,E} \|A\|_* + \|E\|_1, \ \ \ \  \text{subject to } \ D = A + E \notag</script><p>$| \cdot |_*$ is the unclear norm, which is the sum of the all singular values : $\sum_i^n\sigma_i$, $l_1$ norm of matrix $| \cdot |_1$ is the sum of absolute value of all the element : $\sum_i^n \sum_j^n |D_{ij}|$ .</p><hr><h1 id="Algorithm-of-RPCA"><a href="#Algorithm-of-RPCA" class="headerlink" title="Algorithm of RPCA"></a>Algorithm of RPCA</h1><p><br><br>Before introducting the Algorithm, we first introducing the two operators</p><h2 id="Singular-Value-Thresholding"><a href="#Singular-Value-Thresholding" class="headerlink" title="Singular Value Thresholding"></a>Singular Value Thresholding</h2><p>The optimal solution to the optimization problem : $\frac{1}{2} | X- Y |_F^2 + \tau |X|_*$ with the variable $X$ is thresholing the singular value of $X$</p><script type="math/tex; mode=display">\begin{align}  \mathcal{D}_{\tau}(X) :=  U \mathcal{D}_{\tau} (\Sigma) V^{\prime} ,  \ \ \mathcal{D}_{\tau}(\Sigma) = diag (  \{  \sigma_i - \tau  \}  )  \notag \\  \mathcal{D}_{\tau}(Y) = \mathop{arg} \mathop{min}_{X} \left \{    \frac{1}{2} \| X- Y \|_F^2 + \tau \|X\|_*  \right \} \notag\end{align}</script><h2 id="Soft-Thresholding"><a href="#Soft-Thresholding" class="headerlink" title="Soft Thresholding"></a>Soft Thresholding</h2><p>As same as the $l_1$ norm in vector, thresholding the absolute value of all the element in $X$.</p><script type="math/tex; mode=display">\begin{align}  \psi_{st}(Y) =  \mathop{arg} \mathop{min}_{X} \left \{    \frac{1}{2} \| X- Y \|_F^2 + \tau \|X\|_1  \right \} \notag\end{align}</script><p>There are various methods to solving the RPCA problem, the most successful one is slove the Augmented Lagrangian function of the original problem which we called ALM algorithm, the Augmented Lagrangian function is:</p><script type="math/tex; mode=display">\begin{align}  L(A,E,Y,\mu) = \|A\|_* + \lambda\|E\|_1+ \langle Y,D-A-E \rangle + \frac{\mu}{2} \| D- A -E \|_F^2 \notag\end{align}</script><p>Usually, we use ADMM to slove the ALM problems :</p><script type="math/tex; mode=display">\begin{align}  A_{k+1} &= SVT_{1/\mu_k}(D-E_k + \mu_k^{-1} Y_k) \notag \\  E_{k+1} &= ST_{\lambda/\mu_k} (D - A_{k+1} + \mu_k^{-1} Y_k) \notag \\  Y_{k+1} &= Y_k + \mu_k ( D - A_{k+1} - E_{k+1} ) \notag\end{align}</script>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;hr&gt;
-&lt;h1 id=&quot;Introduction-to-RPCA&quot;&gt;&lt;a href=&quot;#Introduction-to-RPCA&quot; class=&quot;headerlink&quot; title=&quot;Introduction to RPCA&quot;&gt;&lt;/a&gt;Introduction to RPCA&lt;
-      
-    
-    </summary>
-    
-    
-      <category term="Low-Rank" scheme="http://yoursite.com/tags/Low-Rank/"/>
     
   </entry>
   

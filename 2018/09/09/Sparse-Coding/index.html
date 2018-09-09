@@ -13,22 +13,25 @@
     
     
     
-    <title>PGM-0 | EyEular</title>
+    <title>Sparse-Coding | EyEular</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="PGM">
-    <meta name="keywords" content="PGM">
+    <meta name="keywords" content="ML">
+    <meta name="description" content="神经学启发稀疏编码的概念来自于神经生物学。生物学家提出，哺乳类动物在长期的进化中，生成了能够快速，准确，低代价地表示自然图像的视觉神经方面的能力。我们直观地可以想象，我们的眼睛每看到的一副画面都是上亿像素的，而每一副图像我们都只用很少的代价重建与存储。我们把它叫做稀疏编码，即Sparse Coding。 从上可以看出稀疏编码的目的是：在大量的数据集中，选取很小部分作为元素来重建新的数据。  数学推">
+<meta name="keywords" content="ML">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PGM-0">
-<meta property="og:url" content="http://yoursite.com/2018/08/21/PGM-0/index.html">
+<meta property="og:title" content="Sparse-Coding">
+<meta property="og:url" content="http://yoursite.com/2018/09/09/Sparse-Coding/index.html">
 <meta property="og:site_name" content="EyEular">
+<meta property="og:description" content="神经学启发稀疏编码的概念来自于神经生物学。生物学家提出，哺乳类动物在长期的进化中，生成了能够快速，准确，低代价地表示自然图像的视觉神经方面的能力。我们直观地可以想象，我们的眼睛每看到的一副画面都是上亿像素的，而每一副图像我们都只用很少的代价重建与存储。我们把它叫做稀疏编码，即Sparse Coding。 从上可以看出稀疏编码的目的是：在大量的数据集中，选取很小部分作为元素来重建新的数据。  数学推">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-21T10:49:25.301Z">
+<meta property="og:updated_time" content="2018-09-09T07:48:19.909Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PGM-0">
+<meta name="twitter:title" content="Sparse-Coding">
+<meta name="twitter:description" content="神经学启发稀疏编码的概念来自于神经生物学。生物学家提出，哺乳类动物在长期的进化中，生成了能够快速，准确，低代价地表示自然图像的视觉神经方面的能力。我们直观地可以想象，我们的眼睛每看到的一副画面都是上亿像素的，而每一副图像我们都只用很少的代价重建与存储。我们把它叫做稀疏编码，即Sparse Coding。 从上可以看出稀疏编码的目的是：在大量的数据集中，选取很小部分作为元素来重建新的数据。  数学推">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
     
@@ -116,7 +119,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">PGM-0</div>
+        <div class="flex-col header-title ellipsis">Sparse-Coding</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -138,11 +141,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">PGM-0</h1>
+        <h1 class="title">Sparse-Coding</h1>
         <h5 class="subtitle">
             
-                <time datetime="2018-08-21T02:28:56.000Z" itemprop="datePublished" class="page-time">
-  2018-08-21
+                <time datetime="2018-09-09T01:21:38.000Z" itemprop="datePublished" class="page-time">
+  2018-09-09
 </time>
 
 
@@ -158,13 +161,20 @@
 
 <div class="container body-wrap">
     
-<article id="post-PGM-0"
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#神经学启发"><span class="post-toc-number">1.</span> <span class="post-toc-text">神经学启发</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数学推导"><span class="post-toc-number">2.</span> <span class="post-toc-text">数学推导</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Training"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">Training</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Coding"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">Coding</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Reference"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">Reference</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Sparse-Coding"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">PGM-0</h1>
+        <h1 class="post-card-title">Sparse-Coding</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-08-21 10:28:56" datetime="2018-08-21T02:28:56.000Z"  itemprop="datePublished">2018-08-21</time>
+            <time class="post-time" title="2018-09-09 09:21:38" datetime="2018-09-09T01:21:38.000Z"  itemprop="datePublished">2018-09-09</time>
 
             
 
@@ -177,7 +187,24 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            
+            <h1 id="神经学启发"><a href="#神经学启发" class="headerlink" title="神经学启发"></a>神经学启发</h1><p>稀疏编码的概念来自于神经生物学。生物学家提出，哺乳类动物在长期的进化中，生成了能够快速，准确，低代价地表示自然图像的视觉神经方面的能力。我们直观地可以想象，我们的眼睛每看到的一副画面都是上亿像素的，而每一副图像我们都只用很少的代价重建与存储。我们把它叫做稀疏编码，即Sparse Coding。</p>
+<p>从上可以看出稀疏编码的目的是：在大量的数据集中，选取很小部分作为元素来重建新的数据。</p>
+<hr>
+<h1 id="数学推导"><a href="#数学推导" class="headerlink" title="数学推导"></a>数学推导</h1><p>稀疏编码是一种 unsupervised learning，我们希望找到一组 over-complete 的 基向量 basic vector 来表示我们的数据，也就是数据 $\textbf{x}$ 可以表示为这些基向量的线性组合：</p>
+<script type="math/tex; mode=display">
+  \textbf{x} = \sum_{i=1}^k a_i \phi_i</script><p>对于基向量的学习，我们一般有一组训练数据，另外，基向量的大小规定为 $\textbf{x}\in R^n$，同时，也是数据的大小。一般来讲，$n$ 维的数据最多只需要 $n$ 个线性不相关的基向量就可以了（使用 PCA），但是就 n 个基向量的话，可能有一个现象就是，没个数据可能都需要接近 n 个基向量来表示，我们希望 稀疏编码 能有一个优势，就是组成数据的基向量个数尽可能的小一些，也就是上面的 $\mathbf{a}$ 是稀疏的。。。</p>
+<p>为了达成这个目的，我们可以增加基向量的个数 $k  &gt; n$，也就是说，一个数据，可能由多种基向量来表示了，在所有的表示中，我们可以尽可能的选取稀疏的表示方法。。</p>
+<p>Sparse Coding 可以分为两个部分，一个是 Training 阶段，一个是 Coding阶段</p>
+<h3 id="Training"><a href="#Training" class="headerlink" title="Training"></a>Training</h3><p>给定一些列样本数据 $[ x_1,x_2,… x_m]$ 我们希望学到一组基 $[ \phi_1,\phi_2,…,\phi_k  ]$ 来表示前面的数据，训练的 objective function 如下：</p>
+<script type="math/tex; mode=display">\mathop{min}_{a,\phi} \sum_{i=1}^m \left \Vert x_i-\sum_{j=1}^k a_{i,j}\phi_j \right \Vert^2 + \lambda \sum_{i=1}^m \sum_{j=1}^k |a_{i,j}|</script><p>优化的迭代分为两部（都可以用凸优化来求解）</p>
+<ul>
+<li>固定字典 $\phi$ 更新 $a$，这个问题其实就是一个 Lasso 问题</li>
+<li>固定表达 $a$ 更新 $\phi$，这个其实就是一个 QP 问题</li>
+</ul>
+<h3 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h3><p>给定一个新的数据，获得它关于字典的表达，这一步，其实就是上面的优化的第二步</p>
+<script type="math/tex; mode=display">\mathop{min}_{a} \sum_{i=1}^m \left \Vert x_i-\sum_{j=1}^k a_{i,j}\phi_j \right \Vert^2 + \lambda \sum_{i=1}^m \sum_{j=1}^k |a_{i,j}|</script><hr>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://www.cnblogs.com/aixueshuqian/p/3936892.html" target="_blank" rel="noopener">https://www.cnblogs.com/aixueshuqian/p/3936892.html</a><br><a href="https://www.cnblogs.com/caocan702/p/5666175.html" target="_blank" rel="noopener">https://www.cnblogs.com/caocan702/p/5666175.html</a><br>.</p>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -185,7 +212,7 @@
         
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/08/21/PGM-0/" target="_blank" rel="external">http://yoursite.com/2018/08/21/PGM-0/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/09/09/Sparse-Coding/" target="_blank" rel="external">http://yoursite.com/2018/09/09/Sparse-Coding/</a>
         
     </div>
     <footer>
@@ -205,7 +232,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PGM/">PGM</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ML/">ML</a></li></ul>
 
 
             
@@ -215,7 +242,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/21/PGM-0/&title=《PGM-0》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/09/09/Sparse-Coding/&title=《Sparse-Coding》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -225,22 +252,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/21/PGM-0/&title=《PGM-0》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/09/09/Sparse-Coding/&title=《Sparse-Coding》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/21/PGM-0/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/09/Sparse-Coding/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PGM-0》 — EyEular&url=http://yoursite.com/2018/08/21/PGM-0/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Sparse-Coding》 — EyEular&url=http://yoursite.com/2018/09/09/Sparse-Coding/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/21/PGM-0/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/09/Sparse-Coding/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -260,7 +287,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/09/09/NLP-0/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">NLP-0</h4>
+      </a>
+    </div>
   
 
   
@@ -361,7 +395,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/21/PGM-0/&title=《PGM-0》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/09/09/Sparse-Coding/&title=《Sparse-Coding》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -371,22 +405,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/21/PGM-0/&title=《PGM-0》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/09/09/Sparse-Coding/&title=《Sparse-Coding》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/21/PGM-0/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/09/Sparse-Coding/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PGM-0》 — EyEular&url=http://yoursite.com/2018/08/21/PGM-0/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Sparse-Coding》 — EyEular&url=http://yoursite.com/2018/09/09/Sparse-Coding/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/21/PGM-0/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/09/Sparse-Coding/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -397,7 +431,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/08/21/PGM-0/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/09/09/Sparse-Coding/" alt="微信分享二维码">
 </div>
 
 
