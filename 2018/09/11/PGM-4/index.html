@@ -13,25 +13,32 @@
     
     
     
-    <title>Sparse-Coding | EyEular</title>
+    <title>PGM-Approximate Inference | EyEular</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="ML">
-    <meta name="description" content="神经学启发稀疏编码的概念来自于神经生物学。生物学家提出，哺乳类动物在长期的进化中，生成了能够快速，准确，低代价地表示自然图像的视觉神经方面的能力。我们直观地可以想象，我们的眼睛每看到的一副画面都是上亿像素的，而每一副图像我们都只用很少的代价重建与存储。我们把它叫做稀疏编码，即Sparse Coding。 从上可以看出稀疏编码的目的是：在大量的数据集中，选取很小部分作为元素来重建新的数据。  数学推">
-<meta name="keywords" content="ML">
+    <meta name="keywords" content="PGM">
+    <meta name="description" content="概率的推断就是计算 conditional 和 marginal，之前我们学习了 exact inference 也就是准确的推断概率图概率，我们学习message passing 算法、sum-product、 inference is answer a query Approximate inference 就是对于 inference 的一个数值估计，不一定最后的结果要在 0-1 之内 E">
+<meta name="keywords" content="PGM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sparse-Coding">
-<meta property="og:url" content="http://yoursite.com/2018/09/09/Sparse-Coding/index.html">
+<meta property="og:title" content="PGM-Approximate Inference">
+<meta property="og:url" content="http://yoursite.com/2018/09/11/PGM-4/index.html">
 <meta property="og:site_name" content="EyEular">
-<meta property="og:description" content="神经学启发稀疏编码的概念来自于神经生物学。生物学家提出，哺乳类动物在长期的进化中，生成了能够快速，准确，低代价地表示自然图像的视觉神经方面的能力。我们直观地可以想象，我们的眼睛每看到的一副画面都是上亿像素的，而每一副图像我们都只用很少的代价重建与存储。我们把它叫做稀疏编码，即Sparse Coding。 从上可以看出稀疏编码的目的是：在大量的数据集中，选取很小部分作为元素来重建新的数据。  数学推">
+<meta property="og:description" content="概率的推断就是计算 conditional 和 marginal，之前我们学习了 exact inference 也就是准确的推断概率图概率，我们学习message passing 算法、sum-product、 inference is answer a query Approximate inference 就是对于 inference 的一个数值估计，不一定最后的结果要在 0-1 之内 E">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-09T07:48:19.909Z">
+<meta property="og:image" content="http://yoursite.com/2018/09/11/PGM-4/pgm4img3.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/09/11/PGM-4/pgm4img1.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/09/11/PGM-4/pgm4img4.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/09/11/PGM-4/pgm4img2.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/09/11/PGM-4/pgm4img5.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/09/11/PGM-4/pgm4img6.jpg">
+<meta property="og:updated_time" content="2018-09-14T11:36:35.442Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sparse-Coding">
-<meta name="twitter:description" content="神经学启发稀疏编码的概念来自于神经生物学。生物学家提出，哺乳类动物在长期的进化中，生成了能够快速，准确，低代价地表示自然图像的视觉神经方面的能力。我们直观地可以想象，我们的眼睛每看到的一副画面都是上亿像素的，而每一副图像我们都只用很少的代价重建与存储。我们把它叫做稀疏编码，即Sparse Coding。 从上可以看出稀疏编码的目的是：在大量的数据集中，选取很小部分作为元素来重建新的数据。  数学推">
+<meta name="twitter:title" content="PGM-Approximate Inference">
+<meta name="twitter:description" content="概率的推断就是计算 conditional 和 marginal，之前我们学习了 exact inference 也就是准确的推断概率图概率，我们学习message passing 算法、sum-product、 inference is answer a query Approximate inference 就是对于 inference 的一个数值估计，不一定最后的结果要在 0-1 之内 E">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/11/PGM-4/pgm4img3.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
     
@@ -119,7 +126,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Sparse-Coding</div>
+        <div class="flex-col header-title ellipsis">PGM-Approximate Inference</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -141,11 +148,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Sparse-Coding</h1>
+        <h1 class="title">PGM-Approximate Inference</h1>
         <h5 class="subtitle">
             
-                <time datetime="2018-09-09T01:21:38.000Z" itemprop="datePublished" class="page-time">
-  2018-09-09
+                <time datetime="2018-09-11T00:50:05.000Z" itemprop="datePublished" class="page-time">
+  2018-09-11
 </time>
 
 
@@ -164,17 +171,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#神经学启发"><span class="post-toc-number">1.</span> <span class="post-toc-text">神经学启发</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数学推导"><span class="post-toc-number">2.</span> <span class="post-toc-text">数学推导</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Training"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">Training</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Coding"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">Coding</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Reference"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">Reference</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Exact-Inference-Revisit"><span class="post-toc-number">1.</span> <span class="post-toc-text">Exact Inference Revisit</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Sum-Product"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">Sum-Product</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Factor-Graph"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">Factor Graph</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Junction-Tree"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">Junction Tree</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Loopy-Belief-Propagation"><span class="post-toc-number">2.</span> <span class="post-toc-text">Loopy Belief Propagation</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LBP-The-Algorithm"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">LBP : The Algorithm</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LBP-The-Bethe-Approximation"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">LBP : The Bethe Approximation</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
     
-<article id="post-Sparse-Coding"
+<article id="post-PGM-4"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Sparse-Coding</h1>
+        <h1 class="post-card-title">PGM-Approximate Inference</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-09-09 09:21:38" datetime="2018-09-09T01:21:38.000Z"  itemprop="datePublished">2018-09-09</time>
+            <time class="post-time" title="2018-09-11 08:50:05" datetime="2018-09-11T00:50:05.000Z"  itemprop="datePublished">2018-09-11</time>
 
             
 
@@ -187,23 +194,52 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="神经学启发"><a href="#神经学启发" class="headerlink" title="神经学启发"></a>神经学启发</h1><p>稀疏编码的概念来自于神经生物学。生物学家提出，哺乳类动物在长期的进化中，生成了能够快速，准确，低代价地表示自然图像的视觉神经方面的能力。我们直观地可以想象，我们的眼睛每看到的一副画面都是上亿像素的，而每一副图像我们都只用很少的代价重建与存储。我们把它叫做稀疏编码，即Sparse Coding。</p>
-<p>从上可以看出稀疏编码的目的是：在大量的数据集中，选取很小部分作为元素来重建新的数据。</p>
-<hr>
-<h1 id="数学推导"><a href="#数学推导" class="headerlink" title="数学推导"></a>数学推导</h1><p>稀疏编码是一种 unsupervised learning，我们希望找到一组 over-complete 的 基向量 basic vector 来表示我们的数据，也就是数据 $\textbf{x}$ 可以表示为这些基向量的线性组合：</p>
-<script type="math/tex; mode=display">
-  \textbf{x} = \sum_{i=1}^k a_i \phi_i</script><p>对于基向量的学习，我们一般有一组训练数据，另外，基向量的大小规定为 $\textbf{x}\in R^n$，同时，也是数据的大小。一般来讲，$n$ 维的数据最多只需要 $n$ 个线性不相关的基向量就可以了（使用 PCA），但是就 n 个基向量的话，可能有一个现象就是，没个数据可能都需要接近 n 个基向量来表示，我们希望 稀疏编码 能有一个优势，就是组成数据的基向量个数尽可能的小一些，也就是上面的 $\mathbf{a}$ 是稀疏的。。。</p>
-<p>为了达成这个目的，我们可以增加基向量的个数 $k  &gt; n$，也就是说，一个数据，可能由多种基向量来表示了，在所有的表示中，我们可以尽可能的选取稀疏的表示方法。。</p>
-<p>Sparse Coding 可以分为两个部分，一个是 Training 阶段，一个是 Coding阶段</p>
-<h3 id="Training"><a href="#Training" class="headerlink" title="Training"></a>Training</h3><p>给定一些列样本数据 $[ x_1,x_2,… x_m]$ 我们希望学到一组基 $[ \phi_1,\phi_2,…,\phi_k  ]$ 来表示前面的数据，训练的 objective function 如下：</p>
-<script type="math/tex; mode=display">\mathop{min}_{a,\phi} \sum_{i=1}^m \left \Vert x_i-\sum_{j=1}^k a_{i,j}\phi_j \right \Vert^2 + \lambda \sum_{i=1}^m \sum_{j=1}^k |a_{i,j}|</script><p>优化的迭代分为两部（都可以用凸优化来求解）</p>
+            <p>概率的推断就是计算 conditional 和 marginal，之前我们学习了 exact inference 也就是准确的推断概率图概率，我们学习message passing 算法、sum-product、</p>
+<p>inference is answer a query</p>
+<p>Approximate inference 就是对于 inference 的一个数值估计，不一定最后的结果要在 0-1 之内</p>
+<h1 id="Exact-Inference-Revisit"><a href="#Exact-Inference-Revisit" class="headerlink" title="Exact Inference Revisit"></a>Exact Inference Revisit</h1><h3 id="Sum-Product"><a href="#Sum-Product" class="headerlink" title="Sum-Product"></a>Sum-Product</h3><p><img src="/2018/09/11/PGM-4/pgm4img3.jpg" align="justify"></p>
+<p><img src="/2018/09/11/PGM-4/pgm4img1.jpg" align="justify"></p>
+<h3 id="Factor-Graph"><a href="#Factor-Graph" class="headerlink" title="Factor Graph"></a>Factor Graph</h3><p><img src="/2018/09/11/PGM-4/pgm4img4.jpg" align="justify"></p>
+<h3 id="Junction-Tree"><a href="#Junction-Tree" class="headerlink" title="Junction Tree"></a>Junction Tree</h3><p><img src="/2018/09/11/PGM-4/pgm4img2.jpg" align="justify"></p>
+<blockquote>
+<p>在 Junction Tree 中 local Consistency 等价于 global Consistency</p>
+</blockquote>
+<h1 id="Loopy-Belief-Propagation"><a href="#Loopy-Belief-Propagation" class="headerlink" title="Loopy Belief Propagation"></a>Loopy Belief Propagation</h1><p>Junction Tree 虽然可以处理所有的 graph，但是只适用于树形结构，在密集结构中用 Junction Tree 复杂度依然会比较高，假设树变成了 gird，我们不打算用 Junction Tree 算法来计算出这个图的 inference 的精确解。<br><br><img src="/2018/09/11/PGM-4/pgm4img5.jpg" align="justify"></p>
+<h3 id="LBP-The-Algorithm"><a href="#LBP-The-Algorithm" class="headerlink" title="LBP : The Algorithm"></a>LBP : The Algorithm</h3><p>我们在这个图上运行直接做 Belief Propagation，在树形结构上，Belief Propagation 只要来回传递两次就能够得到精确解了，但是在这个图上，我们需要多次的运行 BP ，最终可能会收敛，也有可能会呈现出周期性的数值变化，也就是不收敛。</p>
+<p>一般来讲好的 近似可以通过以下的方式</p>
 <ul>
-<li>固定字典 $\phi$ 更新 $a$，这个问题其实就是一个 Lasso 问题</li>
-<li>固定表达 $a$ 更新 $\phi$，这个其实就是一个 QP 问题</li>
+<li>在固定的迭代次数后停止</li>
+<li>如果结果没有明显变化，就停止</li>
+<li>如果在数值上没有震荡，并且收敛了，那么通常就是接近真实了</li>
 </ul>
-<h3 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h3><p>给定一个新的数据，获得它关于字典的表达，这一步，其实就是上面的优化的第二步</p>
-<script type="math/tex; mode=display">\mathop{min}_{a} \sum_{i=1}^m \left \Vert x_i-\sum_{j=1}^k a_{i,j}\phi_j \right \Vert^2 + \lambda \sum_{i=1}^m \sum_{j=1}^k |a_{i,j}|</script><hr>
-<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://www.cnblogs.com/aixueshuqian/p/3936892.html" target="_blank" rel="noopener">https://www.cnblogs.com/aixueshuqian/p/3936892.html</a><br><a href="https://www.cnblogs.com/caocan702/p/5666175.html" target="_blank" rel="noopener">https://www.cnblogs.com/caocan702/p/5666175.html</a><br>.</p>
+<p><img src="/2018/09/11/PGM-4/pgm4img6.jpg" align="justify"></p>
+<h3 id="LBP-The-Bethe-Approximation"><a href="#LBP-The-Bethe-Approximation" class="headerlink" title="LBP : The Bethe Approximation"></a>LBP : The Bethe Approximation</h3><p>我们对于 LBP 算法的正确性做一个分析：</p>
+<p>一般来讲，真实的分布 P 是这样子的：</p>
+<script type="math/tex; mode=display">P(X) = \frac{1}{Z} \prod_{f_a \in F} f_a(X_a)</script><p>但是这种分布的计算很困难。。</p>
+<p>假设我们有另一个分布 Q ，在后面，Q 是我们近似得到的分布，我们希望来评价 Q 和 P 的相似度，对于某一事件不同概率的衡量，最常用的就是相对熵 KL Divergence ：</p>
+<script type="math/tex; mode=display">KL(Q_1\Vert Q_2) = \sum_X Q_1(X) log(\frac{Q_1(X)}{Q_2(X)})</script><p>相对熵是来衡量两个取值为正的函数或者概率分布之间的差异的，有以下的特性：</p>
+<ul>
+<li>$KL(Q_1\Vert Q_2) \geq 0$</li>
+<li>$KL(Q_1\Vert Q_2) = 0$ iff $Q_1=Q_2$</li>
+</ul>
+<p>相对熵还可以写成 <strong>信息熵</strong> 减去 <strong>交叉熵</strong>：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+KL(Q||P) &= \sum_X Q(X)log Q(X) - \sum_X Q(X) log P(X) \\
+&= -H_Q(X) -E_Q logP(X)
+\end{align}</script><p>我们把真实分布带入到 $P(X)$ 中，可以得到：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+  KL(Q||P) &= -H_Q(X) - E_Q log (\frac{1}{Z} \prod_{f_a \in F} f_a(X_a)) \\
+  &= -H_Q(X) - E_Q\sum_{f_a \in F}log f_a(X_a) + E_Q log Z
+\end{align}</script><p>我们定义一下 free-energy 为前两项：</p>
+<script type="math/tex; mode=display">F(P,Q) = -H_Q(X) - \sum_{f_a \in F} E_Q log f_a(X_a)</script><p>对于 Energy Functional：</p>
+<ul>
+<li>$\sum_{f_a \in F} E_Q log f_a(X_a)$ 的计算比较方便。。。</li>
+<li>$H_Q$ 的计算会比较复杂，因为我们需要遍历所有 $X$ 的取值再做计算<br>-</li>
+</ul>
+<p>d</p>
+<p>.</p>
 
         </div>
 
@@ -212,7 +248,7 @@
         
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/09/09/Sparse-Coding/" target="_blank" rel="external">http://yoursite.com/2018/09/09/Sparse-Coding/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/09/11/PGM-4/" target="_blank" rel="external">http://yoursite.com/2018/09/11/PGM-4/</a>
         
     </div>
     <footer>
@@ -232,7 +268,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ML/">ML</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PGM/">PGM</a></li></ul>
 
 
             
@@ -242,7 +278,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/09/09/Sparse-Coding/&title=《Sparse-Coding》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/09/11/PGM-4/&title=《PGM-Approximate Inference》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -252,22 +288,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/09/09/Sparse-Coding/&title=《Sparse-Coding》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/09/11/PGM-4/&title=《PGM-Approximate Inference》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/09/Sparse-Coding/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/11/PGM-4/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Sparse-Coding》 — EyEular&url=http://yoursite.com/2018/09/09/Sparse-Coding/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PGM-Approximate Inference》 — EyEular&url=http://yoursite.com/2018/09/11/PGM-4/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/09/Sparse-Coding/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/11/PGM-4/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -290,18 +326,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2018/09/09/NLP-0/" id="post-prev" class="post-nav-link">
+      <a href="/2018/09/14/NLP-1/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">NLP-Word-Vector</h4>
+        <h4 class="title">NLP-1</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018/08/18/PGM-3/" id="post-next" class="post-nav-link">
+      <a href="/2018/09/09/NLP-0/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">PGM-3</h4>
+        <h4 class="title">NLP-Word-Vector</h4>
       </a>
     </div>
   
@@ -395,7 +431,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/09/09/Sparse-Coding/&title=《Sparse-Coding》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/09/11/PGM-4/&title=《PGM-Approximate Inference》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -405,22 +441,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/09/09/Sparse-Coding/&title=《Sparse-Coding》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/09/11/PGM-4/&title=《PGM-Approximate Inference》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/09/Sparse-Coding/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/11/PGM-4/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Sparse-Coding》 — EyEular&url=http://yoursite.com/2018/09/09/Sparse-Coding/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PGM-Approximate Inference》 — EyEular&url=http://yoursite.com/2018/09/11/PGM-4/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/09/Sparse-Coding/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/11/PGM-4/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -431,7 +467,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/09/09/Sparse-Coding/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/09/11/PGM-4/" alt="微信分享二维码">
 </div>
 
 

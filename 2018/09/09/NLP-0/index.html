@@ -13,22 +13,30 @@
     
     
     
-    <title>NLP-0 | EyEular</title>
+    <title>NLP-Word-Vector | EyEular</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="keywords" content="Math &amp; AI">
+    <meta name="keywords" content="NLP">
+    <meta name="description" content="Word Vector 也就是词向量可以分为两种  Count Based：这种方法是通过统计完全局的信息最后来做特征提取 Direct Prediction：这种方法只选取来局部的统计，但是能够直接进行计算   有一种方法能够统一上面两种性质称为 GloVe 那么我们来介绍一下几种常见的方法  SVD CBOW SkipGram GloVe  词向量也就是把单词转换成为向量的表示，这样方便计算机">
+<meta name="keywords" content="NLP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NLP-0">
+<meta property="og:title" content="NLP-Word-Vector">
 <meta property="og:url" content="http://yoursite.com/2018/09/09/NLP-0/index.html">
 <meta property="og:site_name" content="EyEular">
+<meta property="og:description" content="Word Vector 也就是词向量可以分为两种  Count Based：这种方法是通过统计完全局的信息最后来做特征提取 Direct Prediction：这种方法只选取来局部的统计，但是能够直接进行计算   有一种方法能够统一上面两种性质称为 GloVe 那么我们来介绍一下几种常见的方法  SVD CBOW SkipGram GloVe  词向量也就是把单词转换成为向量的表示，这样方便计算机">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-09T07:50:49.181Z">
+<meta property="og:image" content="http://yoursite.com/2018/09/09/NLP-0/nlp0img5.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/09/09/NLP-0/nlp0img1.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/09/09/NLP-0/nlp0img2.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/09/09/NLP-0/nlp0img4.jpg">
+<meta property="og:updated_time" content="2018-09-14T02:23:40.457Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NLP-0">
+<meta name="twitter:title" content="NLP-Word-Vector">
+<meta name="twitter:description" content="Word Vector 也就是词向量可以分为两种  Count Based：这种方法是通过统计完全局的信息最后来做特征提取 Direct Prediction：这种方法只选取来局部的统计，但是能够直接进行计算   有一种方法能够统一上面两种性质称为 GloVe 那么我们来介绍一下几种常见的方法  SVD CBOW SkipGram GloVe  词向量也就是把单词转换成为向量的表示，这样方便计算机">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/09/NLP-0/nlp0img5.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
     
@@ -116,7 +124,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">NLP-0</div>
+        <div class="flex-col header-title ellipsis">NLP-Word-Vector</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -138,7 +146,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">NLP-0</h1>
+        <h1 class="title">NLP-Word-Vector</h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-09-09T07:50:49.000Z" itemprop="datePublished" class="page-time">
@@ -158,11 +166,18 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SVD-Method"><span class="post-toc-number">1.</span> <span class="post-toc-text">SVD Method</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CBOW-（Continuous-Bag-of-words-Models）"><span class="post-toc-number">2.</span> <span class="post-toc-text">CBOW （Continuous Bag of words Models）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#CBOW-Algorithm"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">CBOW Algorithm</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Skip-Gram"><span class="post-toc-number">3.</span> <span class="post-toc-text">Skip-Gram</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Skip-Gram-Algorithm"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">Skip-Gram Algorithm</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GloVe"><span class="post-toc-number">4.</span> <span class="post-toc-text">GloVe</span></a></li></ol>
+        </nav>
+    </aside>
+    
 <article id="post-NLP-0"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">NLP-0</h1>
+        <h1 class="post-card-title">NLP-Word-Vector</h1>
         <div class="post-meta">
             <time class="post-time" title="2018-09-09 15:50:49" datetime="2018-09-09T07:50:49.000Z"  itemprop="datePublished">2018-09-09</time>
 
@@ -177,7 +192,74 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            
+            <p>Word Vector 也就是词向量可以分为两种</p>
+<ul>
+<li>Count Based：这种方法是通过统计完全局的信息最后来做特征提取</li>
+<li>Direct Prediction：这种方法只选取来局部的统计，但是能够直接进行计算</li>
+</ul>
+<p><img src="/2018/09/09/NLP-0/nlp0img5.jpg" align="justify"></p>
+<p>有一种方法能够统一上面两种性质称为 GloVe</p>
+<p>那么我们来介绍一下几种常见的方法</p>
+<ul>
+<li>SVD</li>
+<li>CBOW</li>
+<li>SkipGram</li>
+<li>GloVe</li>
+</ul>
+<p>词向量也就是把单词转换成为向量的表示，这样方便计算机进行计算<br>运算</p>
+<p>首先，英语单词的数量很多有将近 13m，同时我们定义所有的单词集合为 $V$，以及单词的数量为 $|V|$</p>
+<p>最简单的词向量是 <strong>one-hot Vector</strong></p>
+<hr>
+<p>在讲词向量时，我们先来引出共现矩阵 co-occurrence matrix 的概念，我们假设共现矩阵为 X ，其元素 $X_{i,j}$ 表示单词 i 和单词 j 在同一个窗口一起出现的次数的统计，这里的统计是对于某个数据库下的统计。<br>共现矩阵在很多的算法中都会出现，为了让共现矩阵更加完善，我们会作出一下修改和限制，比如，我们会抑制共现矩阵中出现的较大元素让他们 $\leq 100$ ，比如一些常见的单词 ‘the’ ‘he’ 等等造成的统计<br>使用 ramp window 也就是共现矩阵中的元素更新不再是 +1 而是根据离中心词的距离加权考虑</p>
+<hr>
+<h3 id="SVD-Method"><a href="#SVD-Method" class="headerlink" title="SVD Method"></a>SVD Method</h3><p>直接对于共现矩阵做 SVD 分解，分解后选取前 k 大的特征值对应的特征向量来作为词向量</p>
+<p><img src="/2018/09/09/NLP-0/nlp0img1.jpg" align="justify"></p>
+<p>这个方法其实是有很多缺点的</p>
+<ul>
+<li>矩阵是稀疏的，因为很多次是不会一起出现的</li>
+<li>矩阵的维度很大，所以做 SVD 很花费时间</li>
+</ul>
+<hr>
+<h3 id="CBOW-（Continuous-Bag-of-words-Models）"><a href="#CBOW-（Continuous-Bag-of-words-Models）" class="headerlink" title="CBOW （Continuous Bag of words Models）"></a>CBOW （Continuous Bag of words Models）</h3><p>CBOW 其实就是计算以某个单词为中心，固定一个窗口，计算周围单词出现的概率乘积，然后对于这个乘积就是这个事件的概率，与此同时在训练的过程中，我们</p>
+<p>首先我们来看看这个问题的几个参数</p>
+<ul>
+<li>$w_i$ : 在字典 $|V|$ 中的单词 i</li>
+<li>$V (n\times |V|)$ : context 词向量矩阵</li>
+<li>$U (n\times |V|)$ : center 词向量矩阵</li>
+<li>$v_i (n\times 1)$ : V 矩阵的某一列，也就是 $w_i$ 的上下文词向量</li>
+<li>$u_i (n\times 1)$ : U 矩阵的某一列，也就是 $w_i$ 的中心词向量</li>
+<li>$m$ : 窗口的大小</li>
+</ul>
+<h5 id="CBOW-Algorithm"><a href="#CBOW-Algorithm" class="headerlink" title="CBOW Algorithm"></a>CBOW Algorithm</h5><ul>
+<li>对于 context 单词，我们生成 2m 个的 one-hot 向量 $[ x^{(c-m)},…,x^{(c-1)},x^{(c+1)},x^{(c+m)} ]$</li>
+<li>用 context 词向量矩阵乘以 one-hot vector 从而得到 context 单词对应的 context 词向量 $v_i = Vx^i$</li>
+<li>将这些得到的 context 词向量取均值得到 $\hat{v} = \frac{v_{c-m}+…+v_{c+m}}{2m}$</li>
+<li>用 center 词向量矩阵去乘以上面得到的 context 均值词向量矩阵得到：所有单词以中心词向量表示于所有 context 的乘积，结果就是对于每个单词的一个 score : $z = U\hat{v}$</li>
+<li>我们将 score 转换成概率，用 softmax 来实现：$\hat{y} = softmax(z)$</li>
+<li>首先我们是知道真实的分布的也就是中心单词的 one-hot vector ，为 $y$ , 这样我们就可以用各种 loss function 来优化了，一般是 cross entropy 。。</li>
+</ul>
+<p><img src="/2018/09/09/NLP-0/nlp0img2.jpg" align="justify"></p>
+<p>上面这张图 $W$ 相当于 context matrix ，$W^{\prime}$ 相当于 center matrix</p>
+<hr>
+<h3 id="Skip-Gram"><a href="#Skip-Gram" class="headerlink" title="Skip-Gram"></a>Skip-Gram</h3><h5 id="Skip-Gram-Algorithm"><a href="#Skip-Gram-Algorithm" class="headerlink" title="Skip-Gram Algorithm"></a>Skip-Gram Algorithm</h5><ul>
+<li>对于 center 单词，生成它的 one-hot 向量</li>
+<li>然后再获取中心单词的词向量 $v_c = V x$</li>
+<li>用上面的中心词向量乘以 context 词向量矩阵得到一个 $|V|$ 维向量</li>
+<li>对于这一个向量，我们取不同的位置的值做 softmax 预测，从而生成对应的 loss function</li>
+</ul>
+<p><img src="/2018/09/09/NLP-0/nlp0img4.jpg" align="justify"></p>
+<p>上面一张图是 CBOW 和 Skip-Gram 算法之间的比较，总的来说</p>
+<ul>
+<li>CBOW ：根据周围单词，来估计中心单词出现的概率</li>
+<li>Skip-Gram ：根据中心单词，来估计周围单词出现的概率</li>
+</ul>
+<hr>
+<h3 id="GloVe"><a href="#GloVe" class="headerlink" title="GloVe"></a>GloVe</h3><p>直接写出 Glove 模型的优化函数吧：</p>
+<script type="math/tex; mode=display">J(\theta)  = \frac{1}{2} \sum_{i,j=1}^w f(X_{ij}) (u_i^Tv_j - log X_{ij})^2</script><blockquote>
+<p>对于上面这个公式，f 其实是一个权重函数，$\theta$ 是所有的变量 $U,V$</p>
+</blockquote>
+<p>是</p>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -205,6 +287,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NLP/">NLP</a></li></ul>
+
 
             
 <div class="page-share-wrap">
@@ -213,7 +297,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/09/09/NLP-0/&title=《NLP-0》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/09/09/NLP-0/&title=《NLP-Word-Vector》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -223,7 +307,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/09/09/NLP-0/&title=《NLP-0》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/09/09/NLP-0/&title=《NLP-Word-Vector》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -233,7 +317,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NLP-0》 — EyEular&url=http://yoursite.com/2018/09/09/NLP-0/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NLP-Word-Vector》 — EyEular&url=http://yoursite.com/2018/09/09/NLP-0/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -258,7 +342,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/09/11/PGM-4/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">PGM-Approximate Inference</h4>
+      </a>
+    </div>
   
 
   
@@ -359,7 +450,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/09/09/NLP-0/&title=《NLP-0》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/09/09/NLP-0/&title=《NLP-Word-Vector》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -369,7 +460,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/09/09/NLP-0/&title=《NLP-0》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/09/09/NLP-0/&title=《NLP-Word-Vector》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -379,7 +470,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NLP-0》 — EyEular&url=http://yoursite.com/2018/09/09/NLP-0/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NLP-Word-Vector》 — EyEular&url=http://yoursite.com/2018/09/09/NLP-0/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

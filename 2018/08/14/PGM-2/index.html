@@ -13,33 +13,35 @@
     
     
     
-    <title>PGM-2 | EyEular</title>
+    <title>PGM-Exact Inference | EyEular</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="PGM">
-    <meta name="description" content="DAG Undirected Tree variable elimination   Undirected Tree-Like graph Graph Factor Tree   General Graph Junction Tree    Variable EliminationProbabilistic InferenceThere are two important tasks :  Qu">
+    <meta name="description" content="Variable Elimination某个确定了的概率图，它的推断可以看作是一个关于所有变量的函数，我们要求的是这个函数的具体值是多少，从概率的角度上消除变量，其实就是做这个函数的边缘化 marginalization，我们尽量争取每次计算(消除)的变量比较少，这样总的复杂度不会高。。Elimination 似乎可以适用于所有结构的 graph 。 Directed Chain假设我们的图的">
 <meta name="keywords" content="PGM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PGM-2">
+<meta property="og:title" content="PGM-Exact Inference">
 <meta property="og:url" content="http://yoursite.com/2018/08/14/PGM-2/index.html">
 <meta property="og:site_name" content="EyEular">
-<meta property="og:description" content="DAG Undirected Tree variable elimination   Undirected Tree-Like graph Graph Factor Tree   General Graph Junction Tree    Variable EliminationProbabilistic InferenceThere are two important tasks :  Qu">
+<meta property="og:description" content="Variable Elimination某个确定了的概率图，它的推断可以看作是一个关于所有变量的函数，我们要求的是这个函数的具体值是多少，从概率的角度上消除变量，其实就是做这个函数的边缘化 marginalization，我们尽量争取每次计算(消除)的变量比较少，这样总的复杂度不会高。。Elimination 似乎可以适用于所有结构的 graph 。 Directed Chain假设我们的图的">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2018/08/14/PGM-2/pgm2img1.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/14/PGM-2/pgm2img9.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/08/14/PGM-2/pgm2img2.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/08/14/PGM-2/pgm2img3.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/08/14/PGM-2/pgm2img4.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/08/14/PGM-2/pgm2img5.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/08/14/PGM-2/pgm2img6.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/08/14/PGM-2/pgm2img7.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/14/PGM-2/pgm2img11.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/08/14/PGM-2/pgm2img8.jpg">
-<meta property="og:updated_time" content="2018-08-18T13:18:16.666Z">
+<meta property="og:updated_time" content="2018-09-13T01:24:04.963Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PGM-2">
-<meta name="twitter:description" content="DAG Undirected Tree variable elimination   Undirected Tree-Like graph Graph Factor Tree   General Graph Junction Tree    Variable EliminationProbabilistic InferenceThere are two important tasks :  Qu">
+<meta name="twitter:title" content="PGM-Exact Inference">
+<meta name="twitter:description" content="Variable Elimination某个确定了的概率图，它的推断可以看作是一个关于所有变量的函数，我们要求的是这个函数的具体值是多少，从概率的角度上消除变量，其实就是做这个函数的边缘化 marginalization，我们尽量争取每次计算(消除)的变量比较少，这样总的复杂度不会高。。Elimination 似乎可以适用于所有结构的 graph 。 Directed Chain假设我们的图的">
 <meta name="twitter:image" content="http://yoursite.com/2018/08/14/PGM-2/pgm2img1.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
@@ -128,7 +130,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">PGM-2</div>
+        <div class="flex-col header-title ellipsis">PGM-Exact Inference</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -150,7 +152,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">PGM-2</h1>
+        <h1 class="title">PGM-Exact Inference</h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-08-14T02:46:32.000Z" itemprop="datePublished" class="page-time">
@@ -173,7 +175,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Variable-Elimination"><span class="post-toc-number">1.</span> <span class="post-toc-text">Variable Elimination</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Probabilistic-Inference"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">Probabilistic Inference</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Elimination"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">Elimination</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Directed-Chain"><span class="post-toc-number">1.0.2.0.1.</span> <span class="post-toc-text">Directed Chain</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Undirected-Chain"><span class="post-toc-number">1.0.2.0.2.</span> <span class="post-toc-text">Undirected Chain</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#General-Variable-Elimination"><span class="post-toc-number">1.0.2.0.3.</span> <span class="post-toc-text">General Variable Elimination</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#The-elimination-algorithm"><span class="post-toc-number">1.0.2.0.4.</span> <span class="post-toc-text">The elimination algorithm</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Complexity-of-Variable-Elimination"><span class="post-toc-number">1.0.2.0.5.</span> <span class="post-toc-text">Complexity of Variable Elimination</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Graph-Elimination"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">Graph Elimination</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Belief-Propagation"><span class="post-toc-number">2.</span> <span class="post-toc-text">Belief Propagation</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Elimination-on-tree"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">Elimination on tree</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Factor-Trees"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">Factor Trees</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Junction-Trees"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">Junction Trees</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Moral-Graph"><span class="post-toc-number">2.0.3.0.1.</span> <span class="post-toc-text">Moral Graph</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Triangulation"><span class="post-toc-number">2.0.3.0.2.</span> <span class="post-toc-text">Triangulation</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Clique-Tree"><span class="post-toc-number">2.0.3.0.3.</span> <span class="post-toc-text">Clique Tree</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Message-Passing"><span class="post-toc-number">2.0.3.0.4.</span> <span class="post-toc-text">Message Passing</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Variable-Elimination"><span class="post-toc-number">1.</span> <span class="post-toc-text">Variable Elimination</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Directed-Chain"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">Directed Chain</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Undirected-Chain"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">Undirected Chain</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Graph-Elimination"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">Graph Elimination</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Complexity-of-Variable-Elimination"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">Complexity of Variable Elimination</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Belief-Propagation"><span class="post-toc-number">2.</span> <span class="post-toc-text">Belief Propagation</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Trees"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">Trees</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Factor-Trees"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">Factor Trees</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Junction-Trees"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">Junction Trees</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Moral-Graph"><span class="post-toc-number">2.0.3.0.1.</span> <span class="post-toc-text">Moral Graph</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Triangulation"><span class="post-toc-number">2.0.3.0.2.</span> <span class="post-toc-text">Triangulation</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Clique-Tree"><span class="post-toc-number">2.0.3.0.3.</span> <span class="post-toc-text">Clique Tree</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Message-Passing"><span class="post-toc-number">2.0.3.0.4.</span> <span class="post-toc-text">Message Passing</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Appendix"><span class="post-toc-number">3.</span> <span class="post-toc-text">Appendix</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#General-Variable-Elimination"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">General Variable Elimination</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#The-elimination-algorithm"><span class="post-toc-number">3.0.1.0.1.</span> <span class="post-toc-text">The elimination algorithm</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Reference"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">Reference</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
     
@@ -181,7 +183,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">PGM-2</h1>
+        <h1 class="post-card-title">PGM-Exact Inference</h1>
         <div class="post-meta">
             <time class="post-time" title="2018-08-14 10:46:32" datetime="2018-08-14T02:46:32.000Z"  itemprop="datePublished">2018-08-14</time>
 
@@ -196,31 +198,9 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <ul>
-<li>DAG</li>
-<li>Undirected Tree<ul>
-<li>variable elimination</li>
-</ul>
-</li>
-<li>Undirected Tree-Like graph Graph<ul>
-<li>Factor Tree</li>
-</ul>
-</li>
-<li>General Graph<ul>
-<li>Junction Tree</li>
-</ul>
-</li>
-</ul>
-<h1 id="Variable-Elimination"><a href="#Variable-Elimination" class="headerlink" title="Variable Elimination"></a>Variable Elimination</h1><h3 id="Probabilistic-Inference"><a href="#Probabilistic-Inference" class="headerlink" title="Probabilistic Inference"></a>Probabilistic Inference</h3><p>There are two important tasks :</p>
-<ul>
-<li>Querying: Computing the likelihood of certain variables, optionally conditioned on another set of variables. This is generally called Probabilistic Inference</li>
-<li>Estimation: When the model itself is unknown, estimating a plausible model M from data D. This process is called Learning.</li>
-</ul>
-<p><strong>Likelihood</strong> : Likelihood is calculated to get the conditional probability of a different subset of variables conditioned based on Evidence $\mathbf{E} = \{ X_{k+1},…,X_n \}$, Evidence is the unknown variables, so we need eliminate the unsure variables to get the specific lieklihood.</p>
-<script type="math/tex; mode=display">P(\mathbf{e}) = \sum_{x_1}\cdots \sum_{x_k} P(x_1,...,x_k,\mathbf{e})</script><p><strong>Conditional Probability</strong> : The conditional probability distribution of some query nodes conditioned on an<br>evidence.</p>
-<script type="math/tex; mode=display">P(X|\mathbf{e}) = \frac{P(X,\mathbf{e})}{P(\mathbf{e})}= \frac{P(X,\mathbf{e})}{\sum_{x}P(X=x,\mathbf{e})}</script><p>Let $\mathbf{Y}$ be a subset of all domain variables $\mathbf{X} = \{ \mathbf{Y},\mathbf{Z} \}$, $\mathbf{Z}$ is the set of variables under elimination.</p>
-<script type="math/tex; mode=display">P(\mathbf{Y}|\mathbf{e}) = \sum_{z}P(\mathbf{Y},\mathbf{Z}=z|\mathbf{e})</script><p><strong>Most Probable Assignment</strong> : In this query, we are interested in finding only one set of values for the query variables that maximize the given conditional probability instead of finding the entire distribution.</p>
-<script type="math/tex; mode=display">MPA(\mathbf{Y}|\mathbf{e})=\mathop{arg}\mathop{max}_{y\in \mathbf{Y}}P(y|\mathbf{e})=\mathop{arg}\mathop{max}_{y\in \mathbf{Y}}\sum_{z} P(y,z|\mathbf{e})</script><h3 id="Elimination"><a href="#Elimination" class="headerlink" title="Elimination"></a>Elimination</h3><h5 id="Directed-Chain"><a href="#Directed-Chain" class="headerlink" title="Directed Chain"></a>Directed Chain</h5><p>Suppose the graph is $A\rightarrow B\rightarrow C\rightarrow D\rightarrow E$</p>
+            <hr>
+<h1 id="Variable-Elimination"><a href="#Variable-Elimination" class="headerlink" title="Variable Elimination"></a>Variable Elimination</h1><p>某个确定了的概率图，它的推断可以看作是一个关于所有变量的函数，我们要求的是这个函数的具体值是多少，从概率的角度上消除变量，其实就是做这个函数的边缘化 marginalization，<br>我们尽量争取每次计算(消除)的变量比较少，这样总的复杂度不会高。。<br>Elimination 似乎可以适用于所有结构的 graph 。</p>
+<h3 id="Directed-Chain"><a href="#Directed-Chain" class="headerlink" title="Directed Chain"></a>Directed Chain</h3><p>假设我们的图的结构是这样的 $A\rightarrow B\rightarrow C\rightarrow D\rightarrow E$</p>
 <script type="math/tex; mode=display">\begin{align}
 P(e) &= \sum_{a,b,c,d} p(a,b,c,d) \\
     &= \sum_{a,b,c,d} P (a)P (b|a)P (c|b)P (d|c)P (e|d) \\
@@ -229,12 +209,12 @@ P(e) &= \sum_{a,b,c,d} p(a,b,c,d) \\
     &= \sum_{d,c,b} P(c|b) P(d|c) P(e|d) p(b) \\
     &\ \cdots \\
     &= \sum_d P(e|d) p(d)
-\end{align}</script><p>Complexity:</p>
+\end{align}</script><p>复杂度 Complexity:</p>
 <ul>
-<li>Eliminate: costs $O(k^2 n)$ _the iter cost k and probability cost k_</li>
-<li>Naive: cost $O(k^n)$</li>
+<li>Eliminate 方法: costs $O(k^2 n)$ _这里面的 $k^2$ 表示迭代 k 次，每次计算概率也要 k_</li>
+<li>Naive 方法: cost $O(k^n)$</li>
 </ul>
-<h5 id="Undirected-Chain"><a href="#Undirected-Chain" class="headerlink" title="Undirected Chain"></a>Undirected Chain</h5><p>Suppose the graph is $A - B - C - D - E$</p>
+<h3 id="Undirected-Chain"><a href="#Undirected-Chain" class="headerlink" title="Undirected Chain"></a>Undirected Chain</h3><p>假设我们的图是这样的无向图 $A - B - C - D - E$</p>
 <script type="math/tex; mode=display">\begin{align}
 P(e) &= \sum_{a,b,c,d} \frac{1}{Z} \phi(b,a) \phi(c,b) \phi(d,c) \phi(e,d) \\
  &\propto \sum_{a,b,c,d} \phi(b,a) \phi(c,b) \phi(d,c) \phi(e,d) \\
@@ -242,8 +222,99 @@ P(e) &= \sum_{a,b,c,d} \frac{1}{Z} \phi(b,a) \phi(c,b) \phi(d,c) \phi(e,d) \\
  &= \sum_{a,b,c,d}  \phi(c,b) \phi(d,c) \phi(e,d) m_a(b)  \\
  &\ \cdots \\
  &= m_d(e)
-\end{align}</script><p>Finally we normalize to obtain a proper probability:</p>
-<script type="math/tex; mode=display">P(e) =  \frac{m_d(e)}{\sum_e m_d(e)}</script><h5 id="General-Variable-Elimination"><a href="#General-Variable-Elimination" class="headerlink" title="General Variable Elimination"></a>General Variable Elimination</h5><p>For different evidence, we may need construct different formulation use the method above, we want the computer can automatically calculate the elimination, more general form is needed design.</p>
+\end{align}</script><p>这里是无向图，原始的势函数运算成为 m 的结果不是概率，所以这里我们要 normalize 一下:</p>
+<script type="math/tex; mode=display">P(e) =  \frac{m_d(e)}{\sum_e m_d(e)}</script><h3 id="Graph-Elimination"><a href="#Graph-Elimination" class="headerlink" title="Graph Elimination"></a>Graph Elimination</h3><p><img src="/2018/08/14/PGM-2/pgm2img1.jpg" align="justify"><br>我们从一张图来看 Elimination 的每一次过程后，剩下的图的结构</p>
+<ul>
+<li>对于一张 graph 首先我们确认 elimination 的 order</li>
+<li>对于每一个待消除的变量，它会连接一些变量，我们将这些变量两两相连</li>
+<li>消除待消除的变量</li>
+</ul>
+<p><img src="/2018/08/14/PGM-2/pgm2img9.jpg" align="justify"></p>
+<p>我们再来观察每次 Elimination 后，也就是边缘化操作后形成的函数，发现这些函数的变量在一起，刚好能组成这个概率图结构的 cliques 集合，如果我们考虑这些 cliques 组成的树，那么 elimination 操作其实就是在这颗树上进行 message passing。</p>
+<p>Key insight 就是这些 message 其实是可以 reused 的，重复使用是指，当我们要进行多次 querying 的时候，信息的重复使用，所以我们希望设计好的算法，能够在 querying 的过程中保存下来这些信息，于是有了后面的 Sum-Product 算法。</p>
+<h3 id="Complexity-of-Variable-Elimination"><a href="#Complexity-of-Variable-Elimination" class="headerlink" title="Complexity of Variable Elimination"></a>Complexity of Variable Elimination</h3><p>这里 $y$ 未知的，后面操作可能要消除的变量，$x$ 是正在消除的变量，$m$ 是当前要消除的乘子，sum-product 算法分为下面两部</p>
+<ul>
+<li>Sum:<script type="math/tex; mode=display">m_x(y_1,...,y_k) = \sum_x m^{\prime}_x (x,y_1,...,y_k)</script></li>
+<li>Product:<script type="math/tex; mode=display">m_x^{\prime} (x,y_1,...,y_k) = \prod_{i=1}^k m_i(x,y_{c_i})</script></li>
+</ul>
+<p></p>
+<p>乘起来就是一次 Elimination 的复杂度： $k\cdot  | Var(X) |\cdot \prod_i |Var(Y_{C_i})|$<br>也就是当前变量的状态乘上，乘子也就是对应的 clique 的所有变量的状态叉乘</p>
+<p>我们发现整个算法的复杂度取决于最大的最大的 clique，我们称这个 clique 的变量数量 k 为 <strong>Tree-width</strong> , 同时要注意的是，不同的 elimination order 的 Tree-Width 是不同的，找到最优的 order 是 np-hard 问题。。。</p>
+<hr>
+<p></p>
+<h1 id="Belief-Propagation"><a href="#Belief-Propagation" class="headerlink" title="Belief Propagation"></a>Belief Propagation</h1><p>asd</p>
+<ul>
+<li>Trees<ul>
+<li>Two-pass Algorithm</li>
+</ul>
+</li>
+<li>Factor Trees<ul>
+<li>Message Passing on Factor Graph</li>
+</ul>
+</li>
+<li>Non-Trees (General Graph)<ul>
+<li>Junction Tree Algorithm</li>
+</ul>
+</li>
+</ul>
+<p>概率图中有向图模型其实是无向图的一种特例，从有向图到无向图的转换关系如下</p>
+<ul>
+<li><p>Undirected Tree:</p>
+<script type="math/tex; mode=display">p(x) = \frac{1}{Z}\left( \prod_{i\in V} \psi(x_i) \prod_{(i,j)\in E} \psi (x_i,x_j) \right)</script></li>
+<li><p>Directed Tree:</p>
+<script type="math/tex; mode=display">p(x)  = p(x_r) \prod_{(i,j)\in E} p(x_i|x_j)</script></li>
+<li><p>Equivalence:</p>
+<script type="math/tex; mode=display">\psi (x_r) = p(x_r);\ \psi(x_i,x_j)=p(x_j|x_i);\ Z=1,\psi(x_i) = 1</script></li>
+</ul>
+<h3 id="Trees"><a href="#Trees" class="headerlink" title="Trees"></a>Trees</h3><p>Elimination 操作可以看作是 message passing.</p>
+<p>令 $m_{ji}(x_i)$ 当作是从 i 那里变量消除后生成的乘子，同时，这就是 $x_i$ 的函数:</p>
+<script type="math/tex; mode=display">m_{ji}(x_i) = \sum_{x_j} \left( \psi(x_j)\psi(x_i,x_j) \prod_{k\in N(j)\setminus i} m_{kj}(x_j) \right)</script><p>上面的公式可以理解为：从 $i$ 到 $j$ 的信息，只和传递信息箭头相反的范围内的那些节点相关</p>
+<p>对于某个节点所对应的概率，我们可以这样表示：</p>
+<script type="math/tex; mode=display">p(x_i)\propto \psi(x_i) \prod_{e\in N(i)} m_{ei}(x_i)</script><p>可以看到计算 $p(x_i)$ 的时候， $m_{ij}(x_i)$ 会被重复的使用, 所以我们可以存储 $m$ 的值</p>
+<p>树的 Elimination 来做 querying 算法的复杂度是 $O(NC)$ (where N=nodes, C=complexity of one complete passing/clique bottleneck). 但是使用了 two path 算法（因为是无向图所以每条边有两个方向）以后，复杂度就变成了: 2C, or $O(C)$</p>
+<p><strong>belief propagation is only valid on trees</strong></p>
+<h3 id="Factor-Trees"><a href="#Factor-Trees" class="headerlink" title="Factor Trees"></a>Factor Trees</h3><p><br>首先，我们定义一个变换，这个变换把一个图变成了一个新的图，变换后的图称为 <strong>Factor Graph</strong>,如果变换后刚好是一颗树，那么我们也可以称之为 Factor Tree。 在新的 Factor Graph 中，每一个 factor (clique) 在图中表示一个节点 f, 下面是一个例子,  其中的一个性质就是 $f$ 节点只和 $x$ 节点相连，也就是说，x 的某个变量把它和其他变量的关系都托付给了 f 节点。</p>
+<p><img src="/2018/08/14/PGM-2/pgm2img2.jpg" align="justify"></p>
+<p>对于一个图，可能有好几种变换方式，我们希望变换后的结果就是一个树，和下面的 Example 3 一样。</p>
+<p><img src="/2018/08/14/PGM-2/pgm2img3.jpg" align="justify"></p>
+<p>另外变换后的图其实是一个二分图（bipartite），二分图每一侧都是一种类型的节点，所以信息传递策略于传统的方法有些不同。。有两种信息的传递方式</p>
+<p><img src="/2018/08/14/PGM-2/pgm2img4.jpg" align="justify"></p>
+<ul>
+<li>$\nu$ : from variables to factors（左图）<script type="math/tex; mode=display">\nu_{is}(x_i) = \prod_{t\in N(i)\setminus s} \mu_{ti}(x_i)</script></li>
+<li>$\mu$ : from factors to variables（右图）<script type="math/tex; mode=display">\mu_{si}(x_i) = \sum_{x_{N(s)}\setminus i}\left( f_s(x_{N(s)}) \prod_{j\in N(s)\setminus i} \nu_{js}(x_j)\right)</script><ul>
+<li><strong>_上面的 $\sum$ 操作是遍历变量的赋值，$\sum$ 操作下面的 x 可以看作是一个向量，遍历向量里面所有的赋值._</strong></li>
+</ul>
+</li>
+</ul>
+<p>Factor Tree 算法只能够处理一些长得像树的概率图</p>
+<h3 id="Junction-Trees"><a href="#Junction-Trees" class="headerlink" title="Junction Trees"></a>Junction Trees</h3><p>Junction tree data-structure for exact inference on general graphs</p>
+<p><strong>Algorithm</strong></p>
+<ul>
+<li>Moralization</li>
+<li>Triangulation</li>
+<li>Junction tree</li>
+<li>Message Propagation</li>
+</ul>
+<h5 id="Moral-Graph"><a href="#Moral-Graph" class="headerlink" title="Moral Graph"></a>Moral Graph</h5><p>因为我们要处理的是广泛结构的概率图模型，所以我们先把 BN 纳入到 MRF 的框架里面，这一步骤叫做 Moralization，我们知道 BN 中的 factor 是某些父变量对于指定变量的条件概率，我们不管哪些是条件变量，我们就把他们看成是一个整体的函数，我们的终极目的是生成一个 clique，clique 有要求是全联通的，于是我们就将这个变量的父节点两两配对相连，这样就形成了一个 clique，原来的 factor 就变成了势函数 potential。</p>
+<p>在这里我们得到一个启发，就是增加一条边后，原本的 graph 是新的 graph 的一种特殊情况。</p>
+<p><img src="/2018/08/14/PGM-2/pgm2img5.jpg" align="justify"></p>
+<h5 id="Triangulation"><a href="#Triangulation" class="headerlink" title="Triangulation"></a>Triangulation</h5><p>对于三角化的操作，我们可以先看后面两个操作的介绍再回来，因为这是为了解决后面问题的而诞生的一个步骤</p>
+<p>问题就是 Local Consistency 不能导出 Global Consistency，只有在三角化后的图中</p>
+<p>三角化以后的图是没有大于 4 个节点以上的环的， 三角化的方法就是在大的环中添加额外边</p>
+<h5 id="Clique-Tree"><a href="#Clique-Tree" class="headerlink" title="Clique Tree"></a>Clique Tree</h5><p><img src="/2018/08/14/PGM-2/pgm2img6.jpg" align="justify"></p>
+<p>下面的推断可以知道，有向图条件概率乘积的表达形式，其实就是 clique tree 表达形式的一种特殊情况</p>
+<script type="math/tex; mode=display">\begin{align}
+&P(X_1,X_2,X_3,X_4,X_5,X_6)\\
+& = P(X_1)P(X_2)P(X_3 | X_1,X_2)P(X_4 | X_3)P(X_5 | X_3)P(X_6 | X_4,X_5) \\
+& = P(X_1,X_2,X_3) \frac{P(X_3,X_4,X_5)}{P(X_3)} \frac{P(X_4,X_5,X_6)}{P(X_4,X_5)} \\
+& = \psi(X_1,X_2,X_3) \frac{\psi(X_3,X_4,X_5)}{\phi(X_3)} \frac{\psi(X_4,X_5,X_6)}{\phi(X_4,X_5)}
+\end{align}</script><p><strong>General Form :</strong> 之所以下面是要除以 cliques 之间的交集 S ，是因为交集的信息可能出现了多次</p>
+<script type="math/tex; mode=display">P(\mathbf{X}) = \frac{\prod_{c} \psi_c(\mathbf{X_c})}{\prod_{s} \phi_s(\mathbf{X_s})}</script><h5 id="Message-Passing"><a href="#Message-Passing" class="headerlink" title="Message Passing"></a>Message Passing</h5><p><br>传递方式有两种，这两种方法算出来的结果应该是一样的，这是我们做出的假设称为 <strong>Local Consistency</strong></p>
+<script type="math/tex; mode=display">P(S) = \sum_{V\setminus S} \psi(V) \qquad \qquad P(S) = \sum_{W\setminus S} \psi(W)</script><p>下面的第一行是 forward update，第二行是 backward update，其中 $\frac{\phi_S^*}{\phi_S}$ 是通过 Local Consistency 得出的，是建立起矩形节点两边沟通的桥梁</p>
+<p><img src="/2018/08/14/PGM-2/pgm2img7.jpg" align="justify"><br><img src="/2018/08/14/PGM-2/pgm2img11.jpg" align="justify"></p>
+<p>上面是 clique tree 信息传递的方式，</p>
+<p><strong>Shafer-Shenoy algorithm</strong><br><img src="/2018/08/14/PGM-2/pgm2img8.jpg" align="justify"></p>
+<h1 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h1><h3 id="General-Variable-Elimination"><a href="#General-Variable-Elimination" class="headerlink" title="General Variable Elimination"></a>General Variable Elimination</h3><p>为了让计算机能够自动的处理各种各样结构的概率图的 Elimination，我们可以设计一种更加 general 的形式，但是这个形式的设定，主要还是为了进行计算机的运算的。。</p>
 <ul>
 <li>Let $X$ be set of all random variables</li>
 <li>Let $F$ denote the set of factors and then for each $\phi \in F$,$Scope[\phi] \in X$</li>
@@ -268,67 +339,7 @@ P(e) &= \sum_{a,b,c,d} \frac{1}{Z} \phi(b,a) \phi(c,b) \phi(d,c) \phi(e,d) \\
 <li>Introducing evidence:<script type="math/tex; mode=display">\tau(\mathbf{Y},\mathbf{\bar{e}}) = \sum_{z,e}\prod_{\phi \in F} \phi \times \delta(\mathbf{\mathcal{E}},\bar{\mathbf{e}})</script></li>
 </ul>
 <h5 id="The-elimination-algorithm"><a href="#The-elimination-algorithm" class="headerlink" title="The elimination algorithm"></a>The elimination algorithm</h5><p>… …</p>
-<h5 id="Complexity-of-Variable-Elimination"><a href="#Complexity-of-Variable-Elimination" class="headerlink" title="Complexity of Variable Elimination"></a>Complexity of Variable Elimination</h5><script type="math/tex; mode=display">\tau(Y) =  \sum_z \prod_{\phi \in F} \phi</script><p>Here $y$ is the unknow variable waited of elimination, $x$ is under the eliminating, $m$ is the factor during the elimination</p>
-<ul>
-<li>Product:<script type="math/tex; mode=display">m_x^{\prime} (x,y_1,...,y_k) = \prod_{i=1}^k m_i(x,y_{c_i})</script></li>
-<li>Sum:<script type="math/tex; mode=display">m_x(y_1,...,y_k) = \sum_x m^{\prime}_x (x,y_1,...,y_k)</script></li>
-</ul>
-<p>The multiplications is $k\cdot  | Var(X) |\cdot \prod_i |Var(Y_{C_i})|$</p>
-<h3 id="Graph-Elimination"><a href="#Graph-Elimination" class="headerlink" title="Graph Elimination"></a>Graph Elimination</h3><p><img src="/2018/08/14/PGM-2/pgm2img1.jpg" align="justify"></p>
-<ul>
-<li>Begin with the graph and an elimination ordering.</li>
-<li>For each variable in the ordering, connect all neighbors of the variable.</li>
-<li>Eliminate the variable.</li>
-</ul>
-<h1 id="Belief-Propagation"><a href="#Belief-Propagation" class="headerlink" title="Belief Propagation"></a>Belief Propagation</h1><p>The Chapter 1 we talk about the DAG. In this chapter we want to know elimination in Undirected graph, let’s see how it can be accomplished by seeing a specific case of equivalence in directed and undirected trees.</p>
-<p>Any undirected tree can be converted to a directed tree by choosing a root node and directing all edges away from it</p>
-<ul>
-<li><p>Undirected Tree:</p>
-<script type="math/tex; mode=display">p(x) = \frac{1}{Z}\left( \prod_{i\in V} \psi(x_i) \prod_{(i,j)\in E} \psi (x_i,x_j) \right)</script></li>
-<li><p>Directed Tree:</p>
-<script type="math/tex; mode=display">p(x)  = p(x_r) \prod_{(i,j)\in E} p(x_i|x_j)</script></li>
-<li><p>Equivalence:</p>
-<script type="math/tex; mode=display">\psi (x_r) = p(x_r);\ \psi(x_i,x_j)=p(x_j|x_i);\ Z=1,\psi(x_i) = 1</script></li>
-</ul>
-<h3 id="Elimination-on-tree"><a href="#Elimination-on-tree" class="headerlink" title="Elimination on tree"></a>Elimination on tree</h3><p>Elimination operation can be regarded as a message passing process.<br>Let $m_{ji}(x_i)$ is the factor resulting from eliminating variables from below up to $i$, which is a function of $x_i$ :</p>
-<script type="math/tex; mode=display">m_{ji}(x_i) = \sum_{x_j} \left( \psi(x_j)\psi(x_i,x_j) \prod_{k\in N(j)\setminus i} m_{kj}(x_j) \right)</script><p>message from $i$ to $j$ only related with opposite side nodes of the arrow, then the probability is :</p>
-<script type="math/tex; mode=display">p(x_i)\propto \psi(x_i) \prod_{e\in N(i)} m_{ei}(x_i)</script><p>when calculate the different value of $p(x_i)$ we find the $m_{ij}(x_i)$ are re-used, so we can store the value of $m$</p>
-<p>Naively this complexity of message passing is $O(NC)$ (where N=nodes, C=complexity of one complete passing/clique bottleneck). However, actually, you can get it in two passes: 2C, or $O(C)$</p>
-<p><strong>belief propagation is only valid on trees</strong></p>
-<h3 id="Factor-Trees"><a href="#Factor-Trees" class="headerlink" title="Factor Trees"></a>Factor Trees</h3><p>Let’s define a transformation of tree-like GM named <strong>Factor Tree</strong>, every factors(clique) in distribution represent a new node in new graph, below is an example,  a property is that $f$ nodes only connect $x$ nodes.</p>
-<p><img src="/2018/08/14/PGM-2/pgm2img2.jpg" align="justify"></p>
-<p>There are not only one transformation for a graph. The above graph are still a non-tree, we need get a tree like example 3.</p>
-<p><img src="/2018/08/14/PGM-2/pgm2img3.jpg" align="justify"></p>
-<p>There are two kinds of variables<br><img src="/2018/08/14/PGM-2/pgm2img4.jpg" align="justify"></p>
-<ul>
-<li>$\nu$ : from variables to factors<script type="math/tex; mode=display">\nu_{is}(x_i) = \prod_{t\in N(i)\setminus s} \mu_{ti}(x_i)</script></li>
-<li>$\mu$ : from factors to variables<script type="math/tex; mode=display">\mu_{si}(x_i) = \sum_{x_{N(s)}\setminus i}\left( f_s(x_{N(s)}) \prod_{j\in N(s)\setminus i} \nu_{js}(x_j)\right)</script><ul>
-<li><strong>_the first $\sum$ operation of the above function it the iters of all possible value of the variables._</strong></li>
-</ul>
-</li>
-</ul>
-<p>Factor tree is broder than a original tree, but it can not handle the 4 nodes cycle.</p>
-<h3 id="Junction-Trees"><a href="#Junction-Trees" class="headerlink" title="Junction Trees"></a>Junction Trees</h3><p>Junction tree data-structure for exact inference on general graphs</p>
-<p><strong>Algorithm</strong></p>
-<ul>
-<li>Moralization</li>
-<li>Triangulation</li>
-<li>Junction tree</li>
-<li>Message Propagation</li>
-</ul>
-<h5 id="Moral-Graph"><a href="#Moral-Graph" class="headerlink" title="Moral Graph"></a>Moral Graph</h5><p>If the original graph is the directed graph, we connect the parents pairwise to build the moral graph like the figure below</p>
-<p><img src="/2018/08/14/PGM-2/pgm2img5.jpg" align="justify"></p>
-<h5 id="Triangulation"><a href="#Triangulation" class="headerlink" title="Triangulation"></a>Triangulation</h5><p>A triangulated graph is one in which <strong>_no cycles_</strong> with four or more nodes exist in which there is <strong>_no chord_</strong>, We triangulate a graph by adding chords.</p>
-<h5 id="Clique-Tree"><a href="#Clique-Tree" class="headerlink" title="Clique Tree"></a>Clique Tree</h5><p><img src="/2018/08/14/PGM-2/pgm2img6.jpg" align="justify"></p>
-<script type="math/tex; mode=display">\begin{align}
-&P(X_1,X_2,X_3,X_4,X_5,X_6)\\
-& = P(X_1)P(X_2)P(X_3 | X_1,X_2)P(X_4 | X_3)P(X_5 | X_3)P(X_6 | X_4,X_5) \\
-& = P(X_1,X_2,X_3) \frac{P(X_3,X_4,X_5)}{P(X_3)} \frac{P(X_4,X_5,X_6)}{P(X_4,X_5)} \\
-& = \psi(X_1,X_2,X_3) \frac{\psi(X_3,X_4,X_5)}{\phi(X_3)} \frac{\psi(X_4,X_5,X_6)}{\phi(X_4,X_5)}
-\end{align}</script><p><strong>General :</strong></p>
-<script type="math/tex; mode=display">P(\mathbf{X}) = \frac{\prod_{c} \psi_c(\mathbf{X_c})}{\prod_{s} \phi_s(\mathbf{X_s})}</script><h5 id="Message-Passing"><a href="#Message-Passing" class="headerlink" title="Message Passing"></a>Message Passing</h5><p><img src="/2018/08/14/PGM-2/pgm2img7.jpg" align="justify"></p>
-<p><strong>Shafer-Shenoy algorithm</strong><br><img src="/2018/08/14/PGM-2/pgm2img8.jpg" align="justify"></p>
-<p><a href="https://www.jianshu.com/p/f90100680749" target="_blank" rel="noopener">https://www.jianshu.com/p/f90100680749</a></p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://www.jianshu.com/p/f90100680749" target="_blank" rel="noopener">https://www.jianshu.com/p/f90100680749</a></p>
 <p>.</p>
 
         </div>
@@ -368,7 +379,7 @@ P(e) &= \sum_{a,b,c,d} \frac{1}{Z} \phi(b,a) \phi(c,b) \phi(d,c) \phi(e,d) \\
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/14/PGM-2/&title=《PGM-2》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/14/PGM-2/&title=《PGM-Exact Inference》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -378,7 +389,7 @@ P(e) &= \sum_{a,b,c,d} \frac{1}{Z} \phi(b,a) \phi(c,b) \phi(d,c) \phi(e,d) \\
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/14/PGM-2/&title=《PGM-2》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/14/PGM-2/&title=《PGM-Exact Inference》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -388,7 +399,7 @@ P(e) &= \sum_{a,b,c,d} \frac{1}{Z} \phi(b,a) \phi(c,b) \phi(d,c) \phi(e,d) \\
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PGM-2》 — EyEular&url=http://yoursite.com/2018/08/14/PGM-2/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PGM-Exact Inference》 — EyEular&url=http://yoursite.com/2018/08/14/PGM-2/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -521,7 +532,7 @@ P(e) &= \sum_{a,b,c,d} \frac{1}{Z} \phi(b,a) \phi(c,b) \phi(d,c) \phi(e,d) \\
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/14/PGM-2/&title=《PGM-2》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/14/PGM-2/&title=《PGM-Exact Inference》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -531,7 +542,7 @@ P(e) &= \sum_{a,b,c,d} \frac{1}{Z} \phi(b,a) \phi(c,b) \phi(d,c) \phi(e,d) \\
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/14/PGM-2/&title=《PGM-2》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/14/PGM-2/&title=《PGM-Exact Inference》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -541,7 +552,7 @@ P(e) &= \sum_{a,b,c,d} \frac{1}{Z} \phi(b,a) \phi(c,b) \phi(d,c) \phi(e,d) \\
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PGM-2》 — EyEular&url=http://yoursite.com/2018/08/14/PGM-2/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PGM-Exact Inference》 — EyEular&url=http://yoursite.com/2018/08/14/PGM-2/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

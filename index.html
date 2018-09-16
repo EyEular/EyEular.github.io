@@ -155,6 +155,138 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-MatplotLib-1"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-09-16 16:14:42" datetime="2018-09-16T08:14:42.000Z"  itemprop="datePublished">2018-09-16</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/09/16/MatplotLib-1/">MatplotLib-1</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+    
+
+        <a href="/2018/09/16/MatplotLib-1/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-NLP-1"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-09-14 20:01:35" datetime="2018-09-14T12:01:35.000Z"  itemprop="datePublished">2018-09-14</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/09/14/NLP-1/">NLP-1</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        .
+
+    
+
+        <a href="/2018/09/14/NLP-1/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NLP/">NLP</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-PGM-4"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-09-11 08:50:05" datetime="2018-09-11T00:50:05.000Z"  itemprop="datePublished">2018-09-11</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/09/11/PGM-4/">PGM-Approximate Inference</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        概率的推断就是计算 conditional 和 marginal，之前我们学习了 exact inference 也就是准确的推断概率图概率，我们学习message passing 算法、sum-product、
+inference is answer a query
+Approximate inference 就是对于 inference 的一个数值估计，不一定最后的结果要在 0-1 之...
+    
+
+        <a href="/2018/09/11/PGM-4/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PGM/">PGM</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-NLP-0"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -171,7 +303,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/09/09/NLP-0/">NLP-0</a>
+      <a class="post-title-link" href="/2018/09/09/NLP-0/">NLP-Word-Vector</a>
     </h3>
   
 
@@ -181,12 +313,32 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
+        Word Vector 也就是词向量可以分为两种
+
+Count Based：这种方法是通过统计完全局的信息最后来做特征提取
+Direct Prediction：这种方法只选取来局部的统计，但是能够直接进行计算
+
+
+有一种方法能够统一上面两种性质称为 GloVe
+那么我们来介绍一下几种常见的方法
+
+SVD
+CBOW
+SkipGram
+GloVe
+
+词向量也就是把单词转换成为向量的表示，这样方便...
     
 
         <a href="/2018/09/09/NLP-0/" class="post-more waves-effect waves-button">
             Continue reading...
         </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NLP/">NLP</a></li></ul>
+
     </div>
     
 </article>
@@ -306,7 +458,7 @@ P(\mathbf{X}=x;\eta) &= h(x)\mathop{exp}\{ \eta^T\mathbf{T}(x) - A(\eta) \} \\
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/08/14/PGM-2/">PGM-2</a>
+      <a class="post-title-link" href="/2018/08/14/PGM-2/">PGM-Exact Inference</a>
     </h3>
   
 
@@ -317,22 +469,8 @@ P(\mathbf{X}=x;\eta) &= h(x)\mathop{exp}\{ \eta^T\mathbf{T}(x) - A(\eta) \} \\
 
     
         
-DAG
-Undirected Tree
-variable elimination
-
-
-Undirected Tree-Like graph Graph
-Factor Tree
-
-
-General Graph
-Junction Tree
-
-
-
-Variable EliminationProbabilistic InferenceThere are two important tasks :
-...
+Variable Elimination某个确定了的概率图，它的推断可以看作是一个关于所有变量的函数，我们要求的是这个函数的具体值是多少，从概率的角度上消除变量，其实就是做这个函数的边缘化 marginalization，我们尽量争取每次计算(消除)的变量比较少，这样总的复杂度不会高。。Elimination 似乎可以适用于所有结构的 graph 。
+Directed Chain假设我们...
     
 
         <a href="/2018/08/14/PGM-2/" class="post-more waves-effect waves-button">
@@ -483,147 +621,6 @@ Classifi...
     <div class="post-footer">
         
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Probability/">Probability</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Stochastic-Process-10"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-08-04 16:05:13" datetime="2018-08-04T08:05:13.000Z"  itemprop="datePublished">2018-08-04</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/08/04/Stochastic-Process-10/">Stochastic-Process-10</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        Bayesian InferenceBayesian Inference FrameworkWe aim to extract information about $\Theta$, based on observing a collection $X = (X_1,…,X_n)$
-
-Unknow $\Theta$
-treated as a random variable
-prior dis...
-    
-
-        <a href="/2018/08/04/Stochastic-Process-10/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Probability/">Probability</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Stochastic-Process-8"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-08-03 20:33:40" datetime="2018-08-03T12:33:40.000Z"  itemprop="datePublished">2018-08-03</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/08/03/Stochastic-Process-8/">Stochastic-Process (Conditional Expectation)</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        Conditional Expectation Given An EventIf $Y$ is a discrete r.v.
-E(Y|A) = \sum_y P(Y=y|A)If $Y$ is continuous r.v.
-E(Y|A) = \int_{-\infty}^{\infty} yf(y|A)dyApproximationImage a large number of $n$ ...
-    
-
-        <a href="/2018/08/03/Stochastic-Process-8/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Probability/">Probability</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-PGM-0"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-08-01 10:28:56" datetime="2018-08-01T02:28:56.000Z"  itemprop="datePublished">2018-08-01</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/08/01/PGM-0/">PGM-0</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        
-    
-
-        <a href="/2018/08/01/PGM-0/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PGM/">PGM</a></li></ul>
 
     </div>
     

@@ -20,15 +20,18 @@
     
     
     <meta name="keywords" content="PGM">
-    <meta name="keywords" content="PGM">
+    <meta name="description" content="概率图有这么几种推断方式 概率图的任务通俗的讲有两个  Querying：给定或者不给定条件概率下，计算特定变量的概率称为：Inference Estimation：当模型某部分是未知的时候，通过数据 $D$ 来推断出未知的模型，这个称为：learning  InferenceQuerying 任务通常来说有三种 Likelihood : Likelihood is calculated to g">
+<meta name="keywords" content="PGM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PGM-0">
 <meta property="og:url" content="http://yoursite.com/2018/08/01/PGM-0/index.html">
 <meta property="og:site_name" content="EyEular">
+<meta property="og:description" content="概率图有这么几种推断方式 概率图的任务通俗的讲有两个  Querying：给定或者不给定条件概率下，计算特定变量的概率称为：Inference Estimation：当模型某部分是未知的时候，通过数据 $D$ 来推断出未知的模型，这个称为：learning  InferenceQuerying 任务通常来说有三种 Likelihood : Likelihood is calculated to g">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-09T01:13:56.505Z">
+<meta property="og:updated_time" content="2018-09-11T14:54:01.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PGM-0">
+<meta name="twitter:description" content="概率图有这么几种推断方式 概率图的任务通俗的讲有两个  Querying：给定或者不给定条件概率下，计算特定变量的概率称为：Inference Estimation：当模型某部分是未知的时候，通过数据 $D$ 来推断出未知的模型，这个称为：learning  InferenceQuerying 任务通常来说有三种 Likelihood : Likelihood is calculated to g">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
     
@@ -158,6 +161,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Inference"><span class="post-toc-number">1.</span> <span class="post-toc-text">Inference</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Learning"><span class="post-toc-number">2.</span> <span class="post-toc-text">Learning</span></a></li></ol>
+        </nav>
+    </aside>
+    
 <article id="post-PGM-0"
   class="post-article article-type-post fade" itemprop="blogPost">
 
@@ -177,7 +187,46 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            
+            <p>概率图有这么几种推断方式</p>
+<p>概率图的任务通俗的讲有两个</p>
+<ul>
+<li>Querying：给定或者不给定条件概率下，计算特定变量的概率称为：<strong>Inference</strong></li>
+<li>Estimation：当模型某部分是未知的时候，通过数据 $D$ 来推断出未知的模型，这个称为：<strong>learning</strong></li>
+</ul>
+<h3 id="Inference"><a href="#Inference" class="headerlink" title="Inference"></a>Inference</h3><p>Querying 任务通常来说有三种</p>
+<p><strong>Likelihood</strong> : Likelihood is calculated to get the conditional probability of a different subset of variables conditioned based on Evidence $\mathbf{E} = \{ X_{k+1},…,X_n \}$, Evidence is the unknown variables, so we need eliminate the unsure variables to get the specific lieklihood.</p>
+<script type="math/tex; mode=display">P(\mathbf{e}) = \sum_{x_1}\cdots \sum_{x_k} P(x_1,...,x_k,\mathbf{e})</script><p><strong>Conditional Probability</strong> : The conditional probability distribution of some query nodes conditioned on an<br>evidence.</p>
+<script type="math/tex; mode=display">P(X|\mathbf{e}) = \frac{P(X,\mathbf{e})}{P(\mathbf{e})}= \frac{P(X,\mathbf{e})}{\sum_{x}P(X=x,\mathbf{e})}</script><p>Let $\mathbf{Y}$ be a subset of all domain variables $\mathbf{X} = \{ \mathbf{Y},\mathbf{Z} \}$, $\mathbf{Z}$ is the set of variables under elimination.</p>
+<script type="math/tex; mode=display">P(\mathbf{Y}|\mathbf{e}) = \sum_{z}P(\mathbf{Y},\mathbf{Z}=z|\mathbf{e})</script><p><strong>Most Probable Assignment</strong> : In this query, we are interested in finding only one set of values for the query variables that maximize the given conditional probability instead of finding the entire distribution.</p>
+<script type="math/tex; mode=display">MPA(\mathbf{Y}|\mathbf{e})=\mathop{arg}\mathop{max}_{y\in \mathbf{Y}}P(y|\mathbf{e})=\mathop{arg}\mathop{max}_{y\in \mathbf{Y}}\sum_{z} P(y,z|\mathbf{e})</script><p>Inference 算法可以分为两种</p>
+<ul>
+<li><p>Exact inference（准确推断）</p>
+<ul>
+<li>Elimination</li>
+<li>Message-passing<ul>
+<li>sum-product</li>
+<li>belief propagation</li>
+</ul>
+</li>
+<li>Junction Tree</li>
+</ul>
+</li>
+<li><p>Approximate inference（近似推断）a</p>
+<ul>
+<li>Variational algorithms<ul>
+<li>Loopy belief propagation</li>
+<li>Mean field approximation</li>
+</ul>
+</li>
+</ul>
+<p>一般 Inference 最简单的方法是 Elimination 和 brute force，但是由于概率图模型往往有一些比较特别的结构，我们可以用 Message Passing 的算法来做</p>
+</li>
+</ul>
+<hr>
+<h3 id="Learning"><a href="#Learning" class="headerlink" title="Learning"></a>Learning</h3><p>根据观测数据，来推理模型中的参数</p>
+<p>在做 inference 的时候，我们希望能将有向图和无向图结合起来，比如，原先的子节点的父节点们，我们希望将他们</p>
+<hr>
+
         </div>
 
         <blockquote class="post-copyright">
