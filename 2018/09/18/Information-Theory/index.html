@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Information-Theory | EyEular</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Math">
+    <meta name="description" content="信息熵：编码方案完美时，最短平均编码长度 交叉熵：编码方案不一定完美时，平均编码长度 相对熵：不同方案之间的差异性的衡量  信息论引用了熵（entropy）的概念，熵的概念在物理中十分常见，是用来衡量系统的混沌程度的，相应的在信息科学中，熵是用来衡量不确定性的，信息熵的本质是香农信息量 $log \frac{1}{p}$ 的期望 下面我们就来讲讲这三个熵到底有什么含义 首先我们通过一个例子来引出">
+<meta name="keywords" content="Math">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Information-Theory">
+<meta property="og:url" content="http://yoursite.com/2018/09/18/Information-Theory/index.html">
+<meta property="og:site_name" content="EyEular">
+<meta property="og:description" content="信息熵：编码方案完美时，最短平均编码长度 交叉熵：编码方案不一定完美时，平均编码长度 相对熵：不同方案之间的差异性的衡量  信息论引用了熵（entropy）的概念，熵的概念在物理中十分常见，是用来衡量系统的混沌程度的，相应的在信息科学中，熵是用来衡量不确定性的，信息熵的本质是香农信息量 $log \frac{1}{p}$ 的期望 下面我们就来讲讲这三个熵到底有什么含义 首先我们通过一个例子来引出">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-09-20T04:10:54.194Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Information-Theory">
+<meta name="twitter:description" content="信息熵：编码方案完美时，最短平均编码长度 交叉熵：编码方案不一定完美时，平均编码长度 相对熵：不同方案之间的差异性的衡量  信息论引用了熵（entropy）的概念，熵的概念在物理中十分常见，是用来衡量系统的混沌程度的，相应的在信息科学中，熵是用来衡量不确定性的，信息熵的本质是香农信息量 $log \frac{1}{p}$ 的期望 下面我们就来讲讲这三个熵到底有什么含义 首先我们通过一个例子来引出">
+    
+        <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/E.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Eulring</h5>
+          <a href="mailto:bianjy@shanghaitech.edu.cn" title="bianjy@shanghaitech.edu.cn" class="mail">bianjy@shanghaitech.edu.cn</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-rebel"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-codepen"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-diamond"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/EyEular" target="_blank" >
+                <i class="icon icon-lg icon-gitlab"></i>
+                gayhub
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/links"  >
+                <i class="icon icon-lg icon-gg"></i>
+                Links
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-eye"></i>
+                About me
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Information-Theory</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Information-Theory</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-09-18T02:06:08.000Z" itemprop="datePublished" class="page-time">
+  2018-09-18
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息熵"><span class="post-toc-number">1.</span> <span class="post-toc-text">信息熵</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#交叉熵"><span class="post-toc-number">2.</span> <span class="post-toc-text">交叉熵</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#相对熵"><span class="post-toc-number">3.</span> <span class="post-toc-text">相对熵</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Reference"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">Reference</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Information-Theory"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Information-Theory</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-09-18 10:06:08" datetime="2018-09-18T02:06:08.000Z"  itemprop="datePublished">2018-09-18</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <ul>
+<li><strong>信息熵</strong>：编码方案完美时，最短平均编码长度</li>
+<li><strong>交叉熵</strong>：编码方案不一定完美时，平均编码长度</li>
+<li><strong>相对熵</strong>：不同方案之间的差异性的衡量</li>
+</ul>
+<p>信息论引用了熵（entropy）的概念，熵的概念在物理中十分常见，是用来衡量系统的混沌程度的，相应的在信息科学中，熵是用来衡量不确定性的，信息熵的本质是香农信息量 $log \frac{1}{p}$ 的期望</p>
+<p>下面我们就来讲讲这三个熵到底有什么含义</p>
+<p>首先我们通过一个例子来引出什么是信息熵：<br>假设一个箱子里面有4种不同颜色的球（a,b,c,d），A 从其中拿出一个，B 来猜（B 可以向 A 提问），B希望提问的次数越少越好。</p>
+<ul>
+<li><strong>case1</strong>：B 不知道颜色的分布，于是先问 “是否是 a,b”，如果是再问 “是否是 a”，不是改为问 “是否是 c”，猜球的次数为：$H=\frac{1}{4}\times 2+\frac{1}{4}\times 2+\frac{1}{4}\times 2+\frac{1}{4}\times 2=2$</li>
+<li><strong>case2</strong>：B 了解到 a 的比例为 1/2，b 的比例为 1/4，c 和 d 的比例都是 1/8，于是 B 先问 a，再问 b，最后问 c，猜球期望为：$H=\frac{1}{2}\times 1+\frac{1}{4}\times 2+\frac{1}{8}\times 3+\frac{1}{8}\times 3=1.75$</li>
+<li><p><strong>case3</strong>：B 了解到了里面的球全是 a，那么不用猜了：$H=1\times 0=0$</p>
+<p>_假设上面的 B 是足够聪明的，所以他做出策略是最优的_</p>
+</li>
+</ul>
+<hr>
+<h1 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h1><p>通过上面我们发现：针对特定概率为 $p$ 的小球，猜球的次数为 $log_2  \frac{1}{p}$，所以整体的期望为：</p>
+<script type="math/tex; mode=display">\sum_{i=1}^N p_k log_2 \frac{1}{p_k}</script><p>这就是信息熵，case1 的信息熵为 2，case2 的信息熵为 1.75，case3 的信息熵为 0.</p>
+<p><strong>信息熵代表随机变量或整个系统的不确定性，熵越大，随机变量或系统的不确定性就越大</strong>。<br>上面的熵 case1&gt;case2&gt;case3，在 case1 中，B 对于系统一无所知，在 case2 中，B 知道了系统的分布，但是取了哪个球并不知道，case3 中，B 对于系统完全了解了！所以2是这个系统熵的最大值</p>
+<hr>
+<h1 id="交叉熵"><a href="#交叉熵" class="headerlink" title="交叉熵"></a>交叉熵</h1><p>每个系统都会有一个真实的概率分布，称为真实分布，case1 的真实分布为 $(\frac{1}{4},\frac{1}{4},\frac{1}{4},\frac{1}{4})$，case2 的真实分布为 $(\frac{1}{2},\frac{1}{4},\frac{1}{8},\frac{1}{8})$,而根据真实分布，我们能够找到一个最优策略，以最小的代价消除系统的不确定性，而这个代价大小就是信息熵，记住，信息熵衡量了系统的不确定性，而我们要消除这个不确定性，所要付出的 [最小努力]（猜题次数、编码长度等）的大小就是信息熵。具体来讲，case1 只需要猜两次就能确定任何一个小球的颜色，case2 只需要猜测1.75次就能确定任何一个小球的颜色</p>
+<p>回到 case2 假设现在是 C 来猜，C 的智商不高，所以仍然使用了 case1 的策略来，相当于认为小球出现的概率是一样的，即分布为 $(\frac{1}{4},\frac{1}{4},\frac{1}{4},\frac{1}{4})$，这个分布就是非真实分布，最后的信息熵算出来又是 2 了，显然这个策略是不好的比最优策略多了 0.25，那么，当我们使用非最优策略消除系统的不确定性，所需要付出的努力的大小我们该如何去衡量呢？</p>
+<p>这就需要引入 <strong>交叉熵，其用来衡量在给定的真实分布下，使用非真实分布所指定的策略消除系统的不确定性所需要付出的努力的大小</strong>。</p>
+<p>交叉熵的公式如下，<strong>其中 $p_k$  表示真实分布，$q_k$ 表示非真实分布</strong></p>
+<script type="math/tex; mode=display">\sum_{i=1}^N p_k log_2 \frac{1}{q_k}</script><p>上面所讲将策略 1 用于 case 2，真实分布 $p_k=(\frac{1}{2},\frac{1}{4},\frac{1}{8},\frac{1}{8})$，非真实分布 $q_k=(\frac{1}{4},\frac{1}{4},\frac{1}{4},\frac{1}{4})$，交叉熵为 $\frac{1}{2}\times log_2 4+\frac{1}{4}\times log_2 4+\frac{1}{8}\times log_2 4+\frac{1}{8}\times log_2 4=2$ 比最优分布的 $1.75$ 大</p>
+<p>因此，交叉熵越低，策略就越好，最低的也就是真实的信息熵了，此时 $p_k=q_k$，这也是为什么在机器学习中的分类算法中，我们总是最小化交叉熵，因为交叉熵越低，就证明由算法所产生的策略最接近最优策略，也间接证明我们算法所算出的非真实分布越接近真实分布</p>
+<hr>
+<h1 id="相对熵"><a href="#相对熵" class="headerlink" title="相对熵"></a>相对熵</h1><p>我们如何衡量不同策略之间的差异呢？这里就需要用到相对熵（KL divergence），其用来衡量两个取值为正的函数或者概率分布之间的差异（可以发现相同的话每一项都是 0）：</p>
+<hr>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://www.zhihu.com/question/41252833answer/195901726" target="_blank" rel="noopener">https://www.zhihu.com/question/41252833answer/195901726</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/09/18/Information-Theory/" target="_blank" rel="external">http://yoursite.com/2018/09/18/Information-Theory/</a>
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/E.jpg" alt="Eulring">
+            Eulring
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Math/">Math</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/09/18/Information-Theory/&title=《Information-Theory》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/09/18/Information-Theory/&title=《Information-Theory》 — EyEular&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/18/Information-Theory/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Information-Theory》 — EyEular&url=http://yoursite.com/2018/09/18/Information-Theory/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/18/Information-Theory/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/09/22/PGM-CRF/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">PGM-CRF</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/09/16/MatplotLib-1/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">MatplotLib-1</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        thanks~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wepay.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wepay.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Eulring &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/09/18/Information-Theory/&title=《Information-Theory》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/09/18/Information-Theory/&title=《Information-Theory》 — EyEular&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/18/Information-Theory/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Information-Theory》 — EyEular&url=http://yoursite.com/2018/09/18/Information-Theory/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/18/Information-Theory/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/09/18/Information-Theory/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '(一条消息未读。。)';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'EyEular';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+</html>

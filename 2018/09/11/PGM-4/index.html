@@ -34,7 +34,10 @@
 <meta property="og:image" content="http://yoursite.com/2018/09/11/PGM-4/pgm4img2.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/09/11/PGM-4/pgm4img5.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/09/11/PGM-4/pgm4img6.jpg">
-<meta property="og:updated_time" content="2018-09-14T11:36:35.442Z">
+<meta property="og:image" content="http://yoursite.com/2018/09/11/PGM-4/pgm4img8.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/09/11/PGM-4/pgm4img7.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/09/11/PGM-4/pgm4img10.jpg">
+<meta property="og:updated_time" content="2018-09-21T07:38:45.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PGM-Approximate Inference">
 <meta name="twitter:description" content="概率的推断就是计算 conditional 和 marginal，之前我们学习了 exact inference 也就是准确的推断概率图概率，我们学习message passing 算法、sum-product、 inference is answer a query Approximate inference 就是对于 inference 的一个数值估计，不一定最后的结果要在 0-1 之内 E">
@@ -204,6 +207,7 @@
 <blockquote>
 <p>在 Junction Tree 中 local Consistency 等价于 global Consistency</p>
 </blockquote>
+<hr>
 <h1 id="Loopy-Belief-Propagation"><a href="#Loopy-Belief-Propagation" class="headerlink" title="Loopy Belief Propagation"></a>Loopy Belief Propagation</h1><p>Junction Tree 虽然可以处理所有的 graph，但是只适用于树形结构，在密集结构中用 Junction Tree 复杂度依然会比较高，假设树变成了 gird，我们不打算用 Junction Tree 算法来计算出这个图的 inference 的精确解。<br><br><img src="/2018/09/11/PGM-4/pgm4img5.jpg" align="justify"></p>
 <h3 id="LBP-The-Algorithm"><a href="#LBP-The-Algorithm" class="headerlink" title="LBP : The Algorithm"></a>LBP : The Algorithm</h3><p>我们在这个图上运行直接做 Belief Propagation，在树形结构上，Belief Propagation 只要来回传递两次就能够得到精确解了，但是在这个图上，我们需要多次的运行 BP ，最终可能会收敛，也有可能会呈现出周期性的数值变化，也就是不收敛。</p>
 <p>一般来讲好的 近似可以通过以下的方式</p>
@@ -215,8 +219,8 @@
 <p><img src="/2018/09/11/PGM-4/pgm4img6.jpg" align="justify"></p>
 <h3 id="LBP-The-Bethe-Approximation"><a href="#LBP-The-Bethe-Approximation" class="headerlink" title="LBP : The Bethe Approximation"></a>LBP : The Bethe Approximation</h3><p>我们对于 LBP 算法的正确性做一个分析：</p>
 <p>一般来讲，真实的分布 P 是这样子的：</p>
-<script type="math/tex; mode=display">P(X) = \frac{1}{Z} \prod_{f_a \in F} f_a(X_a)</script><p>但是这种分布的计算很困难。。</p>
-<p>假设我们有另一个分布 Q ，在后面，Q 是我们近似得到的分布，我们希望来评价 Q 和 P 的相似度，对于某一事件不同概率的衡量，最常用的就是相对熵 KL Divergence ：</p>
+<script type="math/tex; mode=display">P(X) = \frac{1}{Z} \prod_{f_a \in F} f_a(X_a)</script><p>但是这种分布的计算很困难（$f_a 是 factor graph 的算子$）。。</p>
+<p>于是我们转向另一个分布 Q ，在后面，Q 是我们近似得到的分布，我们希望来评价 Q，也就是 Q 和 P 的相似度，对于某一事件不同概率的衡量，最常用的就是相对熵 KL Divergence ：</p>
 <script type="math/tex; mode=display">KL(Q_1\Vert Q_2) = \sum_X Q_1(X) log(\frac{Q_1(X)}{Q_2(X)})</script><p>相对熵是来衡量两个取值为正的函数或者概率分布之间的差异的，有以下的特性：</p>
 <ul>
 <li>$KL(Q_1\Vert Q_2) \geq 0$</li>
@@ -238,8 +242,46 @@ KL(Q||P) &= \sum_X Q(X)log Q(X) - \sum_X Q(X) log P(X) \\
 <li>$\sum_{f_a \in F} E_Q log f_a(X_a)$ 的计算比较方便。。。</li>
 <li>$H_Q$ 的计算会比较复杂，因为我们需要遍历所有 $X$ 的取值再做计算<br>-</li>
 </ul>
-<p>d</p>
-<p>.</p>
+<p>树形结构的 Energy Functional Tree 是有 closed-forms，也就是说某些 energy functional 是好可以计算的</p>
+<p>当因子图树一颗树的时候 Bathe Approximation 和 Gibbs free energy 是等价的</p>
+<p>我们用一张图来说明一下推导的流程</p>
+<p><img src="/2018/09/11/PGM-4/pgm4img8.jpg" style=" width:600px;"></p>
+<ul>
+<li>首先我们将原图转化成因子图，可以得出图的分布的表示</li>
+<li>我们假设一种分布和原分布进行比较，得出和原分布之间的 energy function</li>
+<li>我们定义这种近似分布为 bathe approximation，这个分布只和 $b_a$ 和 $b_i$ 相关</li>
+<li>我们对 bathe 的 energy function 进行优化，从而得到 $b_a$ 和 $b_i$ 的更新值</li>
+<li>$b_a$ 和 $b_i$ 优化的方式引入到图里面就是在做 BP ！</li>
+</ul>
+<blockquote>
+<p>用 Bathe 来近似原分布相当于在图上做 BP</p>
+</blockquote>
+<p>每一种假设的近似分布都对应这一种更新策略<br>我们先来考虑图 (a) 树形的结构，树形结构的概率图都可以转换成树形结构的因子图，树形结构的因子图的概率可以写成</p>
+<script type="math/tex; mode=display">b(\mathbf{x}) = \prod_a b_a(\mathbf{x}_a) \prod_i b_i(x_i)^{1-d_i}</script><ul>
+<li>$d_i$: degree of point i</li>
+<li>$b_a$: doubleton (pairwise) factor</li>
+<li>$b_i$: singleton factor</li>
+</ul>
+<p>我们会对图 (b) 也使用 $b(\mathbf{x})$ 来近似计算概率，这种近似称为 bethe approximation，若 bethe 近似和 gibbs 分布完全相等，当且仅当因子图是树形的</p>
+<p><img src="/2018/09/11/PGM-4/pgm4img7.jpg" style=" width:600px;"><br><br>下面，我们来求这两个图的 free energy 并进行优化，来求解近似分布 b 从而得到 b 的更新策略，而后要用来从数值优化的形式转化到结构上</p>
+<p><strong>a</strong></p>
+<script type="math/tex; mode=display">H_{tree} = -\sum_a \sum_{x_a} b_a(x_a) log b_a(x_a) + \sum_i (d_i-1) \sum_{x_i} b_i (x_i) log b_a(x_i)</script><script type="math/tex; mode=display">
+\begin{align}F_{tree} &= \sum_a \sum_{x_a} b_a(x_a) log \left( \frac{b_a(x_a)}{f_a(x_a)}  \right) + \sum_i (1-d_i) \sum_{x_i} b_i(x_i) log b_i (x_i) \notag  \\
+&= F_{12} + F_{23} + ... + F_{67} + F_{78} - F_1 - F_5 - F_2 - F_6 - F_3 - F_7
+\end{align}</script><p>$H_{tree}$ 是分布 $b(\mathbf{x})$ 的信息熵，H 的形式应该是根据连续变量的信息熵公式得出的</p>
+<p><strong>b</strong></p>
+<script type="math/tex; mode=display">H_{Bethe} = -\sum_a \sum_{x_a} b_a(x_a) log b_a(x_a) + \sum_i (d_i-1) \sum_{x_i} b_i (x_i) log b_a(x_i)</script><script type="math/tex; mode=display">
+\begin{align}F_{tree} &= \sum_a \sum_{x_a} b_a(x_a) log \left( \frac{b_a(x_a)}{f_a(x_a)}  \right) + \sum_i (1-d_i) \sum_{x_i} b_i(x_i) log b_i (x_i) \notag  \\
+&= F_{12} + F_{23} + ... + F_{67} + F_{78} - F_1 - F_5 - 2F_2 - 2F_6 - ... - F_8
+\end{align}</script><p>free energy 公式想要进行优化，还要有一些约束：</p>
+<ul>
+<li>$\sum_{\mathbf{x}_a} b_a(\mathbf{x}_a) = 1$</li>
+<li>$\sum_i b_i(x_i) = 1$</li>
+<li>$\sum_{\mathbf{x}_a \setminus x_i} b_a(\mathbf{x}_a) = b_i(x_i)$</li>
+</ul>
+<p>最终的优化目标函数变为了:</p>
+<script type="math/tex; mode=display">L = F_{Bethe} + \sum_i \gamma_i \left \{  1 - \sum_{x_i} b_i (x_i)  \right \}  + \sum_a \sum_{i\in N(a)} \sum_{x_i}  \lambda_{ai} (x_i)   \left\{  b_i(x_i) - \sum_{\mathbf{x}_a \setminus x_i} b_a(\mathbf{x}_a)  \right\}</script><p>对目标函数求导得到<br><img src="/2018/09/11/PGM-4/pgm4img10.jpg" style=" width:600px;"><br>上面的 $\lambda_{ai}$ 可以替换成：</p>
+<script type="math/tex; mode=display">\lambda_{ai} = log (m_{i\rightarrow a} (x_i)) = log \prod _{b\in N(i) \setminus a} m_{b\rightarrow i} (x_i)</script><p>.</p>
 
         </div>
 
@@ -328,7 +370,7 @@ KL(Q||P) &= \sum_X Q(X)log Q(X) - \sum_X Q(X) log P(X) \\
     <div class="waves-block waves-effect prev">
       <a href="/2018/09/14/NLP-1/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">NLP-1</h4>
+        <h4 class="title">NLP-</h4>
       </a>
     </div>
   
@@ -337,7 +379,7 @@ KL(Q||P) &= \sum_X Q(X)log Q(X) - \sum_X Q(X) log P(X) \\
     <div class="waves-block waves-effect next">
       <a href="/2018/09/09/NLP-0/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">NLP-Word-Vector</h4>
+        <h4 class="title">NLP-Basis</h4>
       </a>
     </div>
   

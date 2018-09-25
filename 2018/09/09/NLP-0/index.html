@@ -13,29 +13,30 @@
     
     
     
-    <title>NLP-Word-Vector | EyEular</title>
+    <title>NLP-Basis | EyEular</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="NLP">
-    <meta name="description" content="Word Vector 也就是词向量可以分为两种  Count Based：这种方法是通过统计完全局的信息最后来做特征提取 Direct Prediction：这种方法只选取来局部的统计，但是能够直接进行计算   有一种方法能够统一上面两种性质称为 GloVe 那么我们来介绍一下几种常见的方法  SVD CBOW SkipGram GloVe  词向量也就是把单词转换成为向量的表示，这样方便计算机">
+    <meta name="description" content="Word VectorWord Vector 也就是词向量可以分为两种  Count Based：这种方法是通过统计完全局的信息最后来做特征提取 Direct Prediction：这种方法只选取来局部的统计，但是能够直接进行计算   有一种方法能够统一上面两种性质称为 GloVe 那么我们来介绍一下几种常见的方法  SVD CBOW SkipGram GloVe  词向量也就是把单词转换成为向量">
 <meta name="keywords" content="NLP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NLP-Word-Vector">
+<meta property="og:title" content="NLP-Basis">
 <meta property="og:url" content="http://yoursite.com/2018/09/09/NLP-0/index.html">
 <meta property="og:site_name" content="EyEular">
-<meta property="og:description" content="Word Vector 也就是词向量可以分为两种  Count Based：这种方法是通过统计完全局的信息最后来做特征提取 Direct Prediction：这种方法只选取来局部的统计，但是能够直接进行计算   有一种方法能够统一上面两种性质称为 GloVe 那么我们来介绍一下几种常见的方法  SVD CBOW SkipGram GloVe  词向量也就是把单词转换成为向量的表示，这样方便计算机">
+<meta property="og:description" content="Word VectorWord Vector 也就是词向量可以分为两种  Count Based：这种方法是通过统计完全局的信息最后来做特征提取 Direct Prediction：这种方法只选取来局部的统计，但是能够直接进行计算   有一种方法能够统一上面两种性质称为 GloVe 那么我们来介绍一下几种常见的方法  SVD CBOW SkipGram GloVe  词向量也就是把单词转换成为向量">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2018/09/09/NLP-0/nlp0img5.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/09/09/NLP-0/nlp0img1.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/09/09/NLP-0/nlp0img2.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/09/09/NLP-0/nlp0img4.jpg">
-<meta property="og:updated_time" content="2018-09-14T02:23:40.457Z">
+<meta property="og:image" content="http://yoursite.com/2018/09/09/NLP-0/nlp0img6.jpg">
+<meta property="og:updated_time" content="2018-09-21T14:49:38.320Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NLP-Word-Vector">
-<meta name="twitter:description" content="Word Vector 也就是词向量可以分为两种  Count Based：这种方法是通过统计完全局的信息最后来做特征提取 Direct Prediction：这种方法只选取来局部的统计，但是能够直接进行计算   有一种方法能够统一上面两种性质称为 GloVe 那么我们来介绍一下几种常见的方法  SVD CBOW SkipGram GloVe  词向量也就是把单词转换成为向量的表示，这样方便计算机">
+<meta name="twitter:title" content="NLP-Basis">
+<meta name="twitter:description" content="Word VectorWord Vector 也就是词向量可以分为两种  Count Based：这种方法是通过统计完全局的信息最后来做特征提取 Direct Prediction：这种方法只选取来局部的统计，但是能够直接进行计算   有一种方法能够统一上面两种性质称为 GloVe 那么我们来介绍一下几种常见的方法  SVD CBOW SkipGram GloVe  词向量也就是把单词转换成为向量">
 <meta name="twitter:image" content="http://yoursite.com/2018/09/09/NLP-0/nlp0img5.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
@@ -124,7 +125,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">NLP-Word-Vector</div>
+        <div class="flex-col header-title ellipsis">NLP-Basis</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -146,7 +147,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">NLP-Word-Vector</h1>
+        <h1 class="title">NLP-Basis</h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-09-09T07:50:49.000Z" itemprop="datePublished" class="page-time">
@@ -169,7 +170,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SVD-Method"><span class="post-toc-number">1.</span> <span class="post-toc-text">SVD Method</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CBOW-（Continuous-Bag-of-words-Models）"><span class="post-toc-number">2.</span> <span class="post-toc-text">CBOW （Continuous Bag of words Models）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#CBOW-Algorithm"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">CBOW Algorithm</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Skip-Gram"><span class="post-toc-number">3.</span> <span class="post-toc-text">Skip-Gram</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Skip-Gram-Algorithm"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">Skip-Gram Algorithm</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GloVe"><span class="post-toc-number">4.</span> <span class="post-toc-text">GloVe</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Word-Vector"><span class="post-toc-number">1.</span> <span class="post-toc-text">Word Vector</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SVD-Method"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">SVD Method</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CBOW-（Continuous-Bag-of-words-Models）"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">CBOW （Continuous Bag of words Models）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#CBOW-Algorithm"><span class="post-toc-number">1.0.2.0.1.</span> <span class="post-toc-text">CBOW Algorithm</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Skip-Gram"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">Skip-Gram</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Skip-Gram-Algorithm"><span class="post-toc-number">1.0.3.0.1.</span> <span class="post-toc-text">Skip-Gram Algorithm</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GloVe"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">GloVe</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Dependecy-Parsing"><span class="post-toc-number">2.</span> <span class="post-toc-text">Dependecy Parsing</span></a></li></ol>
         </nav>
     </aside>
     
@@ -177,7 +178,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">NLP-Word-Vector</h1>
+        <h1 class="post-card-title">NLP-Basis</h1>
         <div class="post-meta">
             <time class="post-time" title="2018-09-09 15:50:49" datetime="2018-09-09T07:50:49.000Z"  itemprop="datePublished">2018-09-09</time>
 
@@ -192,7 +193,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>Word Vector 也就是词向量可以分为两种</p>
+            <h1 id="Word-Vector"><a href="#Word-Vector" class="headerlink" title="Word Vector"></a>Word Vector</h1><p>Word Vector 也就是词向量可以分为两种</p>
 <ul>
 <li>Count Based：这种方法是通过统计完全局的信息最后来做特征提取</li>
 <li>Direct Prediction：这种方法只选取来局部的统计，但是能够直接进行计算</li>
@@ -258,7 +259,15 @@
 <script type="math/tex; mode=display">J(\theta)  = \frac{1}{2} \sum_{i,j=1}^w f(X_{ij}) (u_i^Tv_j - log X_{ij})^2</script><blockquote>
 <p>对于上面这个公式，f 其实是一个权重函数，$\theta$ 是所有的变量 $U,V$</p>
 </blockquote>
-<p>是</p>
+<hr>
+<h1 id="Dependecy-Parsing"><a href="#Dependecy-Parsing" class="headerlink" title="Dependecy Parsing"></a>Dependecy Parsing</h1><p>如何描述语法，有两种主流观点，其中</p>
+<ul>
+<li>一种是短语结构文法：这种短语语法用固定数量的rule分解句子为短语和单词、分解短语为更短的短语或单词。。。</li>
+<li>一种是依存结构：用单词之间的依存关系来表达语法。如果一个单词修饰另一个单词，则称该单词依赖于另一个单词。</li>
+</ul>
+<p>为什么要引用描述语法呢，因为一个句子，可以看作是几个单词的组合，但是机器要理解的是这些单词传递给人的意思，所以不仅仅是单词的出现，这些单词是如何表达意思的同样重要，因为这些句子可能会有多种意思的表达。。</p>
+<p><img src="/2018/09/09/NLP-0/nlp0img6.jpg" align="justify"></p>
+<p>比如这句活就可能有两个意思，但是确定了句法树，也就是上面的箭头，一个句子的意思就得到了确定。</p>
 
         </div>
 
@@ -297,7 +306,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/09/09/NLP-0/&title=《NLP-Word-Vector》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/09/09/NLP-0/&title=《NLP-Basis》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -307,7 +316,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/09/09/NLP-0/&title=《NLP-Word-Vector》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/09/09/NLP-0/&title=《NLP-Basis》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -317,7 +326,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NLP-Word-Vector》 — EyEular&url=http://yoursite.com/2018/09/09/NLP-0/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NLP-Basis》 — EyEular&url=http://yoursite.com/2018/09/09/NLP-0/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -450,7 +459,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/09/09/NLP-0/&title=《NLP-Word-Vector》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/09/09/NLP-0/&title=《NLP-Basis》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -460,7 +469,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/09/09/NLP-0/&title=《NLP-Word-Vector》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/09/09/NLP-0/&title=《NLP-Basis》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -470,7 +479,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NLP-Word-Vector》 — EyEular&url=http://yoursite.com/2018/09/09/NLP-0/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NLP-Basis》 — EyEular&url=http://yoursite.com/2018/09/09/NLP-0/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
