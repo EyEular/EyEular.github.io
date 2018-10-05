@@ -13,25 +13,31 @@
     
     
     
-    <title>PGM-0 | EyEular</title>
+    <title>RL-1 | EyEular</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="PGM">
-    <meta name="description" content="BasisDiscriminative &amp;amp; Generative Model 判别模型 Discriminative Model，又可以称为条件模型，或条件概率模型。估计的是条件概率分布(conditional distribution) 生成模型 Generative Model，又叫产生式模型。估计的是联合概率分布（joint probability distribution）  对于">
-<meta name="keywords" content="PGM">
+    <meta name="keywords" content="RL">
+    <meta name="description" content="RL 和传统的监督学习和无监督学习是有区别的，RL 没有 label 只有 reward 数据是有时序性的，也就是数据之间并不是独立的 数据只会对它后面的数据造成影响  比如一个棋局只会对后面的落子有影响，当前位置只会对后面的位置移动产生作用  Reward一个 Reward  $R_t$ 就是一个常数的信号，用来对状态的衡量，或者 agent 在时间 $t$ 做的好坏程度，agent 的目">
+<meta name="keywords" content="RL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PGM-0">
-<meta property="og:url" content="http://yoursite.com/2018/08/01/PGM-0/index.html">
+<meta property="og:title" content="RL-1">
+<meta property="og:url" content="http://yoursite.com/2018/10/04/RL-1/index.html">
 <meta property="og:site_name" content="EyEular">
-<meta property="og:description" content="BasisDiscriminative &amp;amp; Generative Model 判别模型 Discriminative Model，又可以称为条件模型，或条件概率模型。估计的是条件概率分布(conditional distribution) 生成模型 Generative Model，又叫产生式模型。估计的是联合概率分布（joint probability distribution）  对于">
+<meta property="og:description" content="RL 和传统的监督学习和无监督学习是有区别的，RL 没有 label 只有 reward 数据是有时序性的，也就是数据之间并不是独立的 数据只会对它后面的数据造成影响  比如一个棋局只会对后面的落子有影响，当前位置只会对后面的位置移动产生作用  Reward一个 Reward  $R_t$ 就是一个常数的信号，用来对状态的衡量，或者 agent 在时间 $t$ 做的好坏程度，agent 的目">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-03T08:49:13.552Z">
+<meta property="og:image" content="http://yoursite.com/2018/10/04/RL-1/rlimg1.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/10/04/RL-1/rl1img2.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/10/04/RL-1/rl1img4.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/10/04/RL-1/rl1img3.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/10/04/RL-1/rl1img5.jpg">
+<meta property="og:updated_time" content="2018-10-05T15:18:44.104Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PGM-0">
-<meta name="twitter:description" content="BasisDiscriminative &amp;amp; Generative Model 判别模型 Discriminative Model，又可以称为条件模型，或条件概率模型。估计的是条件概率分布(conditional distribution) 生成模型 Generative Model，又叫产生式模型。估计的是联合概率分布（joint probability distribution）  对于">
+<meta name="twitter:title" content="RL-1">
+<meta name="twitter:description" content="RL 和传统的监督学习和无监督学习是有区别的，RL 没有 label 只有 reward 数据是有时序性的，也就是数据之间并不是独立的 数据只会对它后面的数据造成影响  比如一个棋局只会对后面的落子有影响，当前位置只会对后面的位置移动产生作用  Reward一个 Reward  $R_t$ 就是一个常数的信号，用来对状态的衡量，或者 agent 在时间 $t$ 做的好坏程度，agent 的目">
+<meta name="twitter:image" content="http://yoursite.com/2018/10/04/RL-1/rlimg1.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
     
@@ -119,7 +125,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">PGM-0</div>
+        <div class="flex-col header-title ellipsis">RL-1</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -141,11 +147,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">PGM-0</h1>
+        <h1 class="title">RL-1</h1>
         <h5 class="subtitle">
             
-                <time datetime="2018-08-01T02:28:56.000Z" itemprop="datePublished" class="page-time">
-  2018-08-01
+                <time datetime="2018-10-04T08:51:19.000Z" itemprop="datePublished" class="page-time">
+  2018-10-04
 </time>
 
 
@@ -164,17 +170,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Basis"><span class="post-toc-number">1.</span> <span class="post-toc-text">Basis</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Discriminative-amp-Generative-Model"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">Discriminative &amp; Generative Model</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#PGM"><span class="post-toc-number">2.</span> <span class="post-toc-text">PGM</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Inference"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">Inference</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Learning"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">Learning</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Reward"><span class="post-toc-number">1.</span> <span class="post-toc-text">Reward</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#State"><span class="post-toc-number">2.</span> <span class="post-toc-text">State</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Agent"><span class="post-toc-number">3.</span> <span class="post-toc-text">Agent</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Policy"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">Policy</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Value-Function"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">Value Function</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Model"><span class="post-toc-number">3.0.3.</span> <span class="post-toc-text">Model</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
     
-<article id="post-PGM-0"
+<article id="post-RL-1"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">PGM-0</h1>
+        <h1 class="post-card-title">RL-1</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-08-01 10:28:56" datetime="2018-08-01T02:28:56.000Z"  itemprop="datePublished">2018-08-01</time>
+            <time class="post-time" title="2018-10-04 16:51:19" datetime="2018-10-04T08:51:19.000Z"  itemprop="datePublished">2018-10-04</time>
 
             
 
@@ -187,99 +193,44 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="Basis"><a href="#Basis" class="headerlink" title="Basis"></a>Basis</h1><h3 id="Discriminative-amp-Generative-Model"><a href="#Discriminative-amp-Generative-Model" class="headerlink" title="Discriminative &amp; Generative Model"></a>Discriminative &amp; Generative Model</h3><ul>
-<li>判别模型 Discriminative Model，又可以称为条件模型，或条件概率模型。估计的是条件概率分布(conditional distribution)</li>
-<li>生成模型 Generative Model，又叫产生式模型。估计的是联合概率分布（joint probability distribution）</li>
-</ul>
-<p>对于这两个模型，我们用一个例子就能很好的解释：假设我们有一些数据 $(x,y)$，数据只有四组：$(1,0), (1,0), (2,0), (2,1)$</p>
-<p><strong>Generative Model</strong> :</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>p(x,y)</th>
-<th>y=0</th>
-<th>y=1</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>x=0</td>
-<td>1/2</td>
-<td>0</td>
-</tr>
-<tr>
-<td>x=1</td>
-<td>1/4</td>
-<td>1/4</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>Discriminative Model</strong> :</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>p(x\</th>
-<th>y)</th>
-<th>y=0</th>
-<th>y=1</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>x=0</td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr>
-<td>x=1</td>
-<td>1/2</td>
-<td>1/2</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 id="PGM"><a href="#PGM" class="headerlink" title="PGM"></a>PGM</h1><p>概率图有这么几种推断方式</p>
-<p>概率图的任务通俗的讲有两个</p>
+            <p>RL 和传统的监督学习和无监督学习是有区别的，RL 没有 label 只有 reward</p>
+<p>数据是有时序性的，也就是数据之间并不是独立的</p>
+<p>数据只会对它后面的数据造成影响</p>
+<blockquote>
+<p>比如一个棋局只会对后面的落子有影响，当前位置只会对后面的位置移动产生作用</p>
+</blockquote>
+<h3 id="Reward"><a href="#Reward" class="headerlink" title="Reward"></a>Reward</h3><p>一个 Reward  $R_t$ 就是一个常数的信号，用来对状态的衡量，或者 agent 在时间 $t$ 做的好坏程度，agent 的目标就是最大化 reward，RL 的基础就是建立在最大化 reward 的假设</p>
+<p>下面是一些 reward 在特定任务下的例子：</p>
+<p><img src="/2018/10/04/RL-1/rlimg1.jpg" width="600"></p>
+<h3 id="State"><a href="#State" class="headerlink" title="State"></a>State</h3><p><img src="/2018/10/04/RL-1/rl1img2.jpg" align="justify"></p>
 <ul>
-<li>Querying：给定或者不给定条件概率下，计算特定变量的概率称为：<strong>Inference</strong></li>
-<li>Estimation：当模型某部分是未知的时候，通过数据 $D$ 来推断出未知的模型，这个称为：<strong>learning</strong></li>
-</ul>
-<h3 id="Inference"><a href="#Inference" class="headerlink" title="Inference"></a>Inference</h3><p>Querying 任务通常来说有三种</p>
-<p><strong>Likelihood</strong> : Likelihood is calculated to get the conditional probability of a different subset of variables conditioned based on Evidence $\mathbf{E} = \{ X_{k+1},…,X_n \}$, Evidence is the unknown variables, so we need eliminate the unsure variables to get the specific lieklihood.</p>
-<script type="math/tex; mode=display">P(\mathbf{e}) = \sum_{x_1}\cdots \sum_{x_k} P(x_1,...,x_k,\mathbf{e})</script><p><strong>Conditional Probability</strong> : The conditional probability distribution of some query nodes conditioned on an<br>evidence.</p>
-<script type="math/tex; mode=display">P(X|\mathbf{e}) = \frac{P(X,\mathbf{e})}{P(\mathbf{e})}= \frac{P(X,\mathbf{e})}{\sum_{x}P(X=x,\mathbf{e})}</script><p>Let $\mathbf{Y}$ be a subset of all domain variables $\mathbf{X} = \{ \mathbf{Y},\mathbf{Z} \}$, $\mathbf{Z}$ is the set of variables under elimination.</p>
-<script type="math/tex; mode=display">P(\mathbf{Y}|\mathbf{e}) = \sum_{z}P(\mathbf{Y},\mathbf{Z}=z|\mathbf{e})</script><p><strong>Most Probable Assignment</strong> : In this query, we are interested in finding only one set of values for the query variables that maximize the given conditional probability instead of finding the entire distribution.</p>
-<script type="math/tex; mode=display">MPA(\mathbf{Y}|\mathbf{e})=\mathop{arg}\mathop{max}_{y\in \mathbf{Y}}P(y|\mathbf{e})=\mathop{arg}\mathop{max}_{y\in \mathbf{Y}}\sum_{z} P(y,z|\mathbf{e})</script><p>Inference 算法可以分为两种</p>
-<ul>
-<li><p>Exact inference（准确推断）</p>
-<ul>
-<li>Elimination</li>
-<li>Message-passing<ul>
-<li>sum-product</li>
-<li>belief propagation</li>
-</ul>
-</li>
-<li>Junction Tree</li>
-</ul>
-</li>
-<li><p>Approximate inference（近似推断）a</p>
-<ul>
-<li>Variational algorithms<ul>
-<li>Loopy belief propagation</li>
-<li>Mean field approximation</li>
+<li>History：可以由上面介绍的组成一个序列 $H_t= O_1,R_1,A_1,…,A_{t-1},O_t,R_t$</li>
+<li>State： 其实就是信息，决定着接下来会发生的信息是什么，State 只和 history 有关 $S_t = f(H_t)$<ul>
+<li>Environment State：隐藏在能给出反馈的环境中，一般是看不到的，看到也没用。。</li>
+<li>Agent State：决策者的状态 $S_t^a = f(H_t)$</li>
+<li>Information State：只包含历史中有用信息，例如假设了 Markov 性，inf state 只有之前的状态</li>
 </ul>
 </li>
 </ul>
-<p>一般 Inference 最简单的方法是 Elimination 和 brute force，但是由于概率图模型往往有一些比较特别的结构，我们可以用 Message Passing 的算法来做</p>
-</li>
+<p>Fully Observation Environments：$O_t = S_t^a = S_t^e$</p>
+<p>Partially Observation Environments：间接的观察环境</p>
+<h3 id="Agent"><a href="#Agent" class="headerlink" title="Agent"></a>Agent</h3><p>RL 的 agent 一般有如下几个组件构成</p>
+<ul>
+<li>Policy：agent 的行为函数</li>
+<li>Value function：评价 state 或者 action 的好坏</li>
+<li>Model：agent 对于 Environment 的表示</li>
 </ul>
-<hr>
-<h3 id="Learning"><a href="#Learning" class="headerlink" title="Learning"></a>Learning</h3><p>根据观测数据，来推理模型中的参数</p>
-<p>在做 inference 的时候，我们希望能将有向图和无向图结合起来，比如，原先的子节点的父节点们，我们希望将他们</p>
-<hr>
+<p><img src="/2018/10/04/RL-1/rl1img4.jpg" width="600"></p>
+<h5 id="Policy"><a href="#Policy" class="headerlink" title="Policy"></a>Policy</h5><p>policy 是 state 到 action 的映射，是 agent 的行为</p>
+<p>Deterministic Policy：$a = \pi(s)$</p>
+<p>Stochastic policy：$\pi(a|s) = P[A_t = a | S_t = s]$</p>
+<p><img src="/2018/10/04/RL-1/rl1img3.jpg" width="400"></p>
+<h5 id="Value-Function"><a href="#Value-Function" class="headerlink" title="Value Function"></a>Value Function</h5><p>对于未来的预测</p>
+<script type="math/tex; mode=display">v_{pi}(s) = E_{\pi}[R_{t+1} + \gamma R_{t+1} + \gamma^2 R_{t+3}+...|S_t=s]</script><p><img src="/2018/10/04/RL-1/rl1img5.jpg" width="400"></p>
+<h5 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h5><p>model 是用来预测 environment 接下来会做什么</p>
+<p>$\mathcal{P}$ 用来预测接下来的的 state</p>
+<p>$\mathcal{R}$ 用来预测接下来的 reward</p>
+<script type="math/tex; mode=display">\mathcal{P}_{ss^{\prime}} = P[S_{t+1} = S^{\prime}|S_t = s, A_t = a]</script><script type="math/tex; mode=display">\mathcal{R}_s^a  = E[R_{t+1}|S_t = s, A_t = a]</script><p>.</p>
 
         </div>
 
@@ -288,7 +239,7 @@
         
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/08/01/PGM-0/" target="_blank" rel="external">http://yoursite.com/2018/08/01/PGM-0/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/10/04/RL-1/" target="_blank" rel="external">http://yoursite.com/2018/10/04/RL-1/</a>
         
     </div>
     <footer>
@@ -308,7 +259,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PGM/">PGM</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RL/">RL</a></li></ul>
 
 
             
@@ -318,7 +269,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/01/PGM-0/&title=《PGM-0》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/10/04/RL-1/&title=《RL-1》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -328,22 +279,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/01/PGM-0/&title=《PGM-0》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/10/04/RL-1/&title=《RL-1》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/01/PGM-0/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/10/04/RL-1/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PGM-0》 — EyEular&url=http://yoursite.com/2018/08/01/PGM-0/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RL-1》 — EyEular&url=http://yoursite.com/2018/10/04/RL-1/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/01/PGM-0/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/10/04/RL-1/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -366,18 +317,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2018/08/03/Stochastic-Process-8/" id="post-prev" class="post-nav-link">
+      <a href="/2018/10/05/RCNN/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Stochastic-Process (Conditional Expectation)</h4>
+        <h4 class="title">R-CNN</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018/07/31/Stochastic-Process-7/" id="post-next" class="post-nav-link">
+      <a href="/2018/09/25/NLP-2/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Stochastic-Process (Conjugacy &amp; Bayesian)</h4>
+        <h4 class="title">NLP-2</h4>
       </a>
     </div>
   
@@ -471,7 +422,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/01/PGM-0/&title=《PGM-0》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/10/04/RL-1/&title=《RL-1》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -481,22 +432,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/01/PGM-0/&title=《PGM-0》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/10/04/RL-1/&title=《RL-1》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/01/PGM-0/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/10/04/RL-1/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PGM-0》 — EyEular&url=http://yoursite.com/2018/08/01/PGM-0/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RL-1》 — EyEular&url=http://yoursite.com/2018/10/04/RL-1/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/01/PGM-0/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/10/04/RL-1/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -507,7 +458,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/08/01/PGM-0/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/10/04/RL-1/" alt="微信分享二维码">
 </div>
 
 

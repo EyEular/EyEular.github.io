@@ -37,7 +37,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/09/11/PGM-4/pgm4img8.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/09/11/PGM-4/pgm4img7.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/09/11/PGM-4/pgm4img10.jpg">
-<meta property="og:updated_time" content="2018-09-21T07:38:45.322Z">
+<meta property="og:updated_time" content="2018-09-25T12:36:13.418Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PGM-Approximate Inference">
 <meta name="twitter:description" content="概率的推断就是计算 conditional 和 marginal，之前我们学习了 exact inference 也就是准确的推断概率图概率，我们学习message passing 算法、sum-product、 inference is answer a query Approximate inference 就是对于 inference 的一个数值估计，不一定最后的结果要在 0-1 之内 E">
@@ -221,10 +221,10 @@
 <p>一般来讲，真实的分布 P 是这样子的：</p>
 <script type="math/tex; mode=display">P(X) = \frac{1}{Z} \prod_{f_a \in F} f_a(X_a)</script><p>但是这种分布的计算很困难（$f_a 是 factor graph 的算子$）。。</p>
 <p>于是我们转向另一个分布 Q ，在后面，Q 是我们近似得到的分布，我们希望来评价 Q，也就是 Q 和 P 的相似度，对于某一事件不同概率的衡量，最常用的就是相对熵 KL Divergence ：</p>
-<script type="math/tex; mode=display">KL(Q_1\Vert Q_2) = \sum_X Q_1(X) log(\frac{Q_1(X)}{Q_2(X)})</script><p>相对熵是来衡量两个取值为正的函数或者概率分布之间的差异的，有以下的特性：</p>
+<script type="math/tex; mode=display">KL(Q\Vert P) = \sum_X Q(X) log(\frac{Q(X)}{P(X)})</script><p>相对熵是来衡量两个取值为正的函数或者概率分布之间的差异的，有以下的特性：</p>
 <ul>
-<li>$KL(Q_1\Vert Q_2) \geq 0$</li>
-<li>$KL(Q_1\Vert Q_2) = 0$ iff $Q_1=Q_2$</li>
+<li>$KL(Q\Vert P) \geq 0$</li>
+<li>$KL(Q\Vert P) = 0$ iff $Q=P$</li>
 </ul>
 <p>相对熵还可以写成 <strong>信息熵</strong> 减去 <strong>交叉熵</strong>：</p>
 <script type="math/tex; mode=display">

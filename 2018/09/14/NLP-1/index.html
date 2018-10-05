@@ -43,7 +43,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/09/14/NLP-1/nlp1img14.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/09/14/NLP-1/nlp1img15.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/09/14/NLP-1/nlp1img16.jpg">
-<meta property="og:updated_time" content="2018-09-25T01:28:06.504Z">
+<meta property="og:updated_time" content="2018-09-25T07:02:56.473Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLP-">
 <meta name="twitter:description" content="Language Model语言模型（Language Model） 语言模型是用来预测下一个出现的单词会是哪一个的，说的数学一些就是给定一个单词序列 $x^1,x^2,…,x^t$，来计算下一个单词 $x^{t+1}$ 的概率分布： P(x^{t+1}=w_j|x^1,x^2,...,x^t) 其中 $w_j$ 是单词 j 的词向量  我们将任务做一个简化，我们不去考虑离下一个词太远的词的影响，">
@@ -180,7 +180,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Language-Model"><span class="post-toc-number">1.</span> <span class="post-toc-text">Language Model</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#fixed-window-Neural-Language-Model"><span class="post-toc-number">2.</span> <span class="post-toc-text">fixed-window Neural Language Model</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Recurrent-Neural-Networks-RNN-Language-Model"><span class="post-toc-number">3.</span> <span class="post-toc-text">Recurrent Neural Networks (RNN) Language Model</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#RNN-Gradient"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">RNN Gradient</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决-RNN-梯度消失的方法"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">解决 RNN 梯度消失的方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GRUS"><span class="post-toc-number">3.0.3.</span> <span class="post-toc-text">GRUS</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LSTM"><span class="post-toc-number">3.0.4.</span> <span class="post-toc-text">LSTM</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Reference"><span class="post-toc-number">3.0.5.</span> <span class="post-toc-text">Reference</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Language-Model"><span class="post-toc-number">1.</span> <span class="post-toc-text">Language Model</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#fixed-window-Neural-Language-Model"><span class="post-toc-number">2.</span> <span class="post-toc-text">fixed-window Neural Language Model</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Recurrent-Neural-Networks-RNN-Language-Model"><span class="post-toc-number">3.</span> <span class="post-toc-text">Recurrent Neural Networks (RNN) Language Model</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#RNN-Gradient"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">RNN Gradient</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决-RNN-梯度消失的方法"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">解决 RNN 梯度消失的方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GRUS"><span class="post-toc-number">3.0.3.</span> <span class="post-toc-text">GRUS</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LSTM"><span class="post-toc-number">3.0.4.</span> <span class="post-toc-text">LSTM</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#LSTM-Structure"><span class="post-toc-number">3.0.4.0.1.</span> <span class="post-toc-text">LSTM Structure</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Reference"><span class="post-toc-number">3.0.5.</span> <span class="post-toc-text">Reference</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
     
@@ -300,11 +300,48 @@ P(x^{t+1} | x^t,...,x^{t-n+2}) &= \frac{P(x^{t+1},x^t,...,x^{t-n+2})}{P(x^t,...,
 <p><img src="/2018/09/14/NLP-1/nlp1img9.jpg" align="justify"></p>
 <p><img src="/2018/09/14/NLP-1/nlp1img10.jpg" align="justify"></p>
 <p><img src="/2018/09/14/NLP-1/nlp1img11.jpg" align="justify"></p>
-<p><img src="/2018/09/14/NLP-1/nlp1img12.jpg" align="justify"></p>
+<blockquote>
+<p>上面黄色的区域是有参数需要学习的 layer，粉色的是直接进行的计算操作，计算操作有相乘还有相加等等。。</p>
+</blockquote>
+<h5 id="LSTM-Structure"><a href="#LSTM-Structure" class="headerlink" title="LSTM Structure"></a>LSTM Structure</h5><p><img src="/2018/09/14/NLP-1/nlp1img12.jpg" align="justify"></p>
+<blockquote>
+<ul>
+<li>上面这条线贯穿着整个结构的称为 cell state，传递着最主要的信息</li>
+<li>LSTM 有能力控制这个信息传输的增和删</li>
+</ul>
+</blockquote>
 <p><img src="/2018/09/14/NLP-1/nlp1img13.jpg" align="justify"></p>
+<blockquote>
+<ul>
+<li>确定了哪些信息我们要从 cell state 中删去</li>
+<li>黄色的是 sigmoid 函数，输出在 0-1 之间</li>
+<li>状态 1 表示完全保留 cell state $C_{i-1}$</li>
+<li>状态 0 表示完全抛弃 cell state $C_{i-1}$</li>
+</ul>
+</blockquote>
 <p><img src="/2018/09/14/NLP-1/nlp1img14.jpg" align="justify"></p>
+<blockquote>
+<ul>
+<li>这一步决定了我们要保存哪些数据</li>
+<li>sigmoid 函数决定哪些数据我们要更新</li>
+<li>tanh 层生成了一个新的向量 $\hat{C}_t$ 待用于生成新的 $C_t$</li>
+</ul>
+</blockquote>
 <p><img src="/2018/09/14/NLP-1/nlp1img15.jpg" align="justify"></p>
+<blockquote>
+<ul>
+<li>将删选后的信息 $f_t * C_{t-1}$ 和新生成的信息 $\hat{C}_t$ 做一个相加</li>
+</ul>
+</blockquote>
 <p><img src="/2018/09/14/NLP-1/nlp1img16.jpg" align="justify"></p>
+<blockquote>
+<ul>
+<li>最后我们决定信息的输出</li>
+<li>上面 sigmoid 节点的输出 $o_t$ 和输入 $x_t$ 以及之前输出 $h_{t-1}$ 有关</li>
+<li>最终的输出 $h_t$ 和 $o_t$ 以及 cell state $C_t$ 相关</li>
+<li>$h_t$ 有两个去处，一个是直接输出，还有一个是做为 $h_{t+1}$ 的生成信息 </li>
+</ul>
+</blockquote>
 <hr>
 <h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p>  <a href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/" target="_blank" rel="noopener">https://colah.github.io/posts/2015-08-Understanding-LSTMs/</a></p>
 <p>.</p>

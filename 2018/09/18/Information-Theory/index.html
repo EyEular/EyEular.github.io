@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="EyEular">
 <meta property="og:description" content="信息熵：编码方案完美时，最短平均编码长度 交叉熵：编码方案不一定完美时，平均编码长度 相对熵：不同方案之间的差异性的衡量  信息论引用了熵（entropy）的概念，熵的概念在物理中十分常见，是用来衡量系统的混沌程度的，相应的在信息科学中，熵是用来衡量不确定性的，信息熵的本质是香农信息量 $log \frac{1}{p}$ 的期望 下面我们就来讲讲这三个熵到底有什么含义 首先我们通过一个例子来引出">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-20T04:10:54.194Z">
+<meta property="og:updated_time" content="2018-09-25T14:12:53.437Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Information-Theory">
 <meta name="twitter:description" content="信息熵：编码方案完美时，最短平均编码长度 交叉熵：编码方案不一定完美时，平均编码长度 相对熵：不同方案之间的差异性的衡量  信息论引用了熵（entropy）的概念，熵的概念在物理中十分常见，是用来衡量系统的混沌程度的，相应的在信息科学中，熵是用来衡量不确定性的，信息熵的本质是香农信息量 $log \frac{1}{p}$ 的期望 下面我们就来讲讲这三个熵到底有什么含义 首先我们通过一个例子来引出">
@@ -215,7 +215,14 @@
 <p>因此，交叉熵越低，策略就越好，最低的也就是真实的信息熵了，此时 $p_k=q_k$，这也是为什么在机器学习中的分类算法中，我们总是最小化交叉熵，因为交叉熵越低，就证明由算法所产生的策略最接近最优策略，也间接证明我们算法所算出的非真实分布越接近真实分布</p>
 <hr>
 <h1 id="相对熵"><a href="#相对熵" class="headerlink" title="相对熵"></a>相对熵</h1><p>我们如何衡量不同策略之间的差异呢？这里就需要用到相对熵（KL divergence），其用来衡量两个取值为正的函数或者概率分布之间的差异（可以发现相同的话每一项都是 0）：</p>
-<hr>
+<script type="math/tex; mode=display">KL(P||Q) = \sum_x p(x) log \frac{p(x)}{q(x)}</script><blockquote>
+<ul>
+<li>$p(x)$ 是真实分布</li>
+<li>$q(x)$ 是近似分布</li>
+</ul>
+</blockquote>
+<p><strong>相对熵</strong> 可以写成 <strong>交叉熵</strong> 和 <strong>信息熵</strong> 之差。。</p>
+<script type="math/tex; mode=display">KL(p||q) = H(p,q) - H(p) = \sum_{k=1}^N p_k log_2 \frac{p_k}{q_k}</script><hr>
 <h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://www.zhihu.com/question/41252833answer/195901726" target="_blank" rel="noopener">https://www.zhihu.com/question/41252833answer/195901726</a></p>
 
         </div>

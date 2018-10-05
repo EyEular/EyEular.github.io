@@ -13,25 +13,31 @@
     
     
     
-    <title>PGM-0 | EyEular</title>
+    <title>R-CNN | EyEular</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="PGM">
-    <meta name="description" content="BasisDiscriminative &amp;amp; Generative Model 判别模型 Discriminative Model，又可以称为条件模型，或条件概率模型。估计的是条件概率分布(conditional distribution) 生成模型 Generative Model，又叫产生式模型。估计的是联合概率分布（joint probability distribution）  对于">
-<meta name="keywords" content="PGM">
+    <meta name="keywords" content="DL">
+    <meta name="description" content="R-CNNR-CNN 流程  对输入图片使用 select search 选择 2000 个区域 select search 有区域合并的操作   拉伸缩放图片到固定尺寸（227 * 227）传入 CNN 生成 4096 维的特征向量 对于特征用 SVM 预测每个类别（C+1，1是背景），通过 IoU 来打分 预测最大的判别为一类 最后对这些区域根据极大值抑制来合并和省略   对于每一个类，都训练">
+<meta name="keywords" content="DL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PGM-0">
-<meta property="og:url" content="http://yoursite.com/2018/08/01/PGM-0/index.html">
+<meta property="og:title" content="R-CNN">
+<meta property="og:url" content="http://yoursite.com/2018/10/05/RCNN/index.html">
 <meta property="og:site_name" content="EyEular">
-<meta property="og:description" content="BasisDiscriminative &amp;amp; Generative Model 判别模型 Discriminative Model，又可以称为条件模型，或条件概率模型。估计的是条件概率分布(conditional distribution) 生成模型 Generative Model，又叫产生式模型。估计的是联合概率分布（joint probability distribution）  对于">
+<meta property="og:description" content="R-CNNR-CNN 流程  对输入图片使用 select search 选择 2000 个区域 select search 有区域合并的操作   拉伸缩放图片到固定尺寸（227 * 227）传入 CNN 生成 4096 维的特征向量 对于特征用 SVM 预测每个类别（C+1，1是背景），通过 IoU 来打分 预测最大的判别为一类 最后对这些区域根据极大值抑制来合并和省略   对于每一个类，都训练">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-03T08:49:13.552Z">
+<meta property="og:image" content="http://yoursite.com/2018/10/05/RCNN/rcnnimg2.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/10/05/RCNN/rcnnimg1.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/10/05/RCNN/rcnnimg3.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/10/05/RCNN/rcnnimg4.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/10/05/RCNN/rcnnimg5.jpg">
+<meta property="og:updated_time" content="2018-10-05T13:21:07.743Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PGM-0">
-<meta name="twitter:description" content="BasisDiscriminative &amp;amp; Generative Model 判别模型 Discriminative Model，又可以称为条件模型，或条件概率模型。估计的是条件概率分布(conditional distribution) 生成模型 Generative Model，又叫产生式模型。估计的是联合概率分布（joint probability distribution）  对于">
+<meta name="twitter:title" content="R-CNN">
+<meta name="twitter:description" content="R-CNNR-CNN 流程  对输入图片使用 select search 选择 2000 个区域 select search 有区域合并的操作   拉伸缩放图片到固定尺寸（227 * 227）传入 CNN 生成 4096 维的特征向量 对于特征用 SVM 预测每个类别（C+1，1是背景），通过 IoU 来打分 预测最大的判别为一类 最后对这些区域根据极大值抑制来合并和省略   对于每一个类，都训练">
+<meta name="twitter:image" content="http://yoursite.com/2018/10/05/RCNN/rcnnimg2.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
     
@@ -119,7 +125,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">PGM-0</div>
+        <div class="flex-col header-title ellipsis">R-CNN</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -141,11 +147,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">PGM-0</h1>
+        <h1 class="title">R-CNN</h1>
         <h5 class="subtitle">
             
-                <time datetime="2018-08-01T02:28:56.000Z" itemprop="datePublished" class="page-time">
-  2018-08-01
+                <time datetime="2018-10-05T02:21:58.000Z" itemprop="datePublished" class="page-time">
+  2018-10-05
 </time>
 
 
@@ -164,17 +170,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Basis"><span class="post-toc-number">1.</span> <span class="post-toc-text">Basis</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Discriminative-amp-Generative-Model"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">Discriminative &amp; Generative Model</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#PGM"><span class="post-toc-number">2.</span> <span class="post-toc-text">PGM</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Inference"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">Inference</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Learning"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">Learning</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#R-CNN"><span class="post-toc-number">1.</span> <span class="post-toc-text">R-CNN</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#SPPnet"><span class="post-toc-number">2.</span> <span class="post-toc-text">SPPnet</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Fast-R-CNN"><span class="post-toc-number">3.</span> <span class="post-toc-text">Fast R-CNN</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Reference"><span class="post-toc-number">4.</span> <span class="post-toc-text">Reference</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-PGM-0"
+<article id="post-RCNN"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">PGM-0</h1>
+        <h1 class="post-card-title">R-CNN</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-08-01 10:28:56" datetime="2018-08-01T02:28:56.000Z"  itemprop="datePublished">2018-08-01</time>
+            <time class="post-time" title="2018-10-05 10:21:58" datetime="2018-10-05T02:21:58.000Z"  itemprop="datePublished">2018-10-05</time>
 
             
 
@@ -187,99 +193,45 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="Basis"><a href="#Basis" class="headerlink" title="Basis"></a>Basis</h1><h3 id="Discriminative-amp-Generative-Model"><a href="#Discriminative-amp-Generative-Model" class="headerlink" title="Discriminative &amp; Generative Model"></a>Discriminative &amp; Generative Model</h3><ul>
-<li>判别模型 Discriminative Model，又可以称为条件模型，或条件概率模型。估计的是条件概率分布(conditional distribution)</li>
-<li>生成模型 Generative Model，又叫产生式模型。估计的是联合概率分布（joint probability distribution）</li>
-</ul>
-<p>对于这两个模型，我们用一个例子就能很好的解释：假设我们有一些数据 $(x,y)$，数据只有四组：$(1,0), (1,0), (2,0), (2,1)$</p>
-<p><strong>Generative Model</strong> :</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>p(x,y)</th>
-<th>y=0</th>
-<th>y=1</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>x=0</td>
-<td>1/2</td>
-<td>0</td>
-</tr>
-<tr>
-<td>x=1</td>
-<td>1/4</td>
-<td>1/4</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>Discriminative Model</strong> :</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>p(x\</th>
-<th>y)</th>
-<th>y=0</th>
-<th>y=1</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>x=0</td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr>
-<td>x=1</td>
-<td>1/2</td>
-<td>1/2</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 id="PGM"><a href="#PGM" class="headerlink" title="PGM"></a>PGM</h1><p>概率图有这么几种推断方式</p>
-<p>概率图的任务通俗的讲有两个</p>
+            <h1 id="R-CNN"><a href="#R-CNN" class="headerlink" title="R-CNN"></a>R-CNN</h1><p>R-CNN 流程</p>
 <ul>
-<li>Querying：给定或者不给定条件概率下，计算特定变量的概率称为：<strong>Inference</strong></li>
-<li>Estimation：当模型某部分是未知的时候，通过数据 $D$ 来推断出未知的模型，这个称为：<strong>learning</strong></li>
-</ul>
-<h3 id="Inference"><a href="#Inference" class="headerlink" title="Inference"></a>Inference</h3><p>Querying 任务通常来说有三种</p>
-<p><strong>Likelihood</strong> : Likelihood is calculated to get the conditional probability of a different subset of variables conditioned based on Evidence $\mathbf{E} = \{ X_{k+1},…,X_n \}$, Evidence is the unknown variables, so we need eliminate the unsure variables to get the specific lieklihood.</p>
-<script type="math/tex; mode=display">P(\mathbf{e}) = \sum_{x_1}\cdots \sum_{x_k} P(x_1,...,x_k,\mathbf{e})</script><p><strong>Conditional Probability</strong> : The conditional probability distribution of some query nodes conditioned on an<br>evidence.</p>
-<script type="math/tex; mode=display">P(X|\mathbf{e}) = \frac{P(X,\mathbf{e})}{P(\mathbf{e})}= \frac{P(X,\mathbf{e})}{\sum_{x}P(X=x,\mathbf{e})}</script><p>Let $\mathbf{Y}$ be a subset of all domain variables $\mathbf{X} = \{ \mathbf{Y},\mathbf{Z} \}$, $\mathbf{Z}$ is the set of variables under elimination.</p>
-<script type="math/tex; mode=display">P(\mathbf{Y}|\mathbf{e}) = \sum_{z}P(\mathbf{Y},\mathbf{Z}=z|\mathbf{e})</script><p><strong>Most Probable Assignment</strong> : In this query, we are interested in finding only one set of values for the query variables that maximize the given conditional probability instead of finding the entire distribution.</p>
-<script type="math/tex; mode=display">MPA(\mathbf{Y}|\mathbf{e})=\mathop{arg}\mathop{max}_{y\in \mathbf{Y}}P(y|\mathbf{e})=\mathop{arg}\mathop{max}_{y\in \mathbf{Y}}\sum_{z} P(y,z|\mathbf{e})</script><p>Inference 算法可以分为两种</p>
-<ul>
-<li><p>Exact inference（准确推断）</p>
-<ul>
-<li>Elimination</li>
-<li>Message-passing<ul>
-<li>sum-product</li>
-<li>belief propagation</li>
+<li>对输入图片使用 select search 选择 2000 个区域<ul>
+<li>select search 有区域合并的操作</li>
 </ul>
 </li>
-<li>Junction Tree</li>
+<li>拉伸缩放图片到固定尺寸（227 * 227）传入 CNN 生成 4096 维的特征向量</li>
+<li>对于特征用 SVM 预测每个类别（C+1，1是背景），通过 IoU 来打分</li>
+<li>预测最大的判别为一类</li>
+<li>最后对这些区域根据极大值抑制来合并和省略</li>
 </ul>
-</li>
-<li><p>Approximate inference（近似推断）a</p>
+<p><img src="/2018/10/05/RCNN/rcnnimg2.jpg" align="justify"></p>
+<p>对于每一个类，都训练一个 SVM 分类器，优化的核心是建立一个 loss 方程，对于 SVM 的 loss function 我们要有 predict 的正负样本，以及 groundtruth 的正负样本</p>
 <ul>
-<li>Variational algorithms<ul>
-<li>Loopy belief propagation</li>
-<li>Mean field approximation</li>
+<li>predict：对于每一个区域的对应的类 SVM 直接返回 0/1（负样本或者正样本）</li>
+<li>groundtruth：把所有的框和真实手工标注的框做一个 IoU 的计算，然后根据 IoU 的阈值来生成 data 的负样本与正样本，然后还要进行一次极大值抑制，尽管有些框的 IoU 大于阈值了，但是依旧判为负样本，因为它周围已经有比他更大的了。。</li>
 </ul>
-</li>
-</ul>
-<p>一般 Inference 最简单的方法是 Elimination 和 brute force，但是由于概率图模型往往有一些比较特别的结构，我们可以用 Message Passing 的算法来做</p>
-</li>
-</ul>
+<p>我们还可以对位置进行一个修正（用修正后的位置来计算 IoU）：输入为深度网络pool5层的4096维特征，输出为 xy 方向的缩放和平移。 训练样本判定为本类的候选框中，和真值重叠面积大于 0.6 的候选框，loss 为真实框和预测框的二范数。这个预测应该是在一次识别操作之后进行的。。</p>
+<p><img src="/2018/10/05/RCNN/rcnnimg1.jpg" align="justify"></p>
 <hr>
-<h3 id="Learning"><a href="#Learning" class="headerlink" title="Learning"></a>Learning</h3><p>根据观测数据，来推理模型中的参数</p>
-<p>在做 inference 的时候，我们希望能将有向图和无向图结合起来，比如，原先的子节点的父节点们，我们希望将他们</p>
+<h1 id="SPPnet"><a href="#SPPnet" class="headerlink" title="SPPnet"></a>SPPnet</h1><p><img src="/2018/10/05/RCNN/rcnnimg3.jpg" align="justify"></p>
+<p>R-CNN 对于每一个 region 图片都进行了卷积，这样效率很低，一个直观的 idea 就是直接做一次卷积生成一个 feature map，然后在这个 feature map 中找到对应的 region，但是这样有一个问题，就是最后我们的全连接层是固定尺寸的，在 R-CNN 中，我们通过 warp 区域来使输入一致，在 SPPnet 中，我们在 feature map 上面，是否也可以 warp 呢 ？答案是不可以的。。。因为在图像进行 warp，伸展以后图像的意义仍然保留了，但是特征图 warp 以后，不经过修正，就失去意义了。。。所以我们要对 feature 重新提取特征。</p>
+<p><img src="/2018/10/05/RCNN/rcnnimg4.jpg" width="500px"></p>
+<p>SPP 全名是 Spatial Pyramid Pooling，借用了图像金字塔的概念，如上图所示，我们将图像分成 $4\times 4$<br>, $2\times 2$, $1\times 1$ 的区域，然后做这些区域的 max-pooling，假设经过卷积我们得到的 feature map 是 $n\times m\times 256$ 的，经过 SPP 以后，就变成了 $21\times 256$ 的了</p>
+<p>SPP 还有要解决的点就是根据 region 在图像中的位置找到，对应在 feature map 中的位置。。<br>计算公式是这样的：$(x, y) = (Sx^{\prime}, Sy^{\prime})$，其中 S 是所有步长的乘积，实际中的公式为：</p>
+<script type="math/tex; mode=display">x^{\prime} = \lfloor x/S \rfloor + 1</script><p><img src="/2018/10/05/RCNN/rcnnimg5.jpg" align="justify"></p>
+<p>论文中用到的 ZF-5 模型，它的 S 就是 $2^4$ 也就是里面的四个 str 2</p>
 <hr>
+<h1 id="Fast-R-CNN"><a href="#Fast-R-CNN" class="headerlink" title="Fast R-CNN"></a>Fast R-CNN</h1><p>R-CNN 缓慢的原因是因为，对于每一张图片都进行来深度网络的卷积<br>SPPnet 解决 R-CNN 的这个问题，但是 SPPnet 还是有缺陷的，就是和 R-CNN 一样仍然是 multi-stage 的框架</p>
+<p>Fast R-CNN 的优点是：</p>
+<ul>
+<li>更高的探测精度</li>
+<li>在一个 stage 上通过不同任务的 loss 完成训练</li>
+<li>训练可以更新网络的每一层</li>
+<li>feature 的存储不需要放在硬盘上</li>
+</ul>
+<p>-</p>
+<hr>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://zhuanlan.zhihu.com/p/23006190" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/23006190</a><br><a href="https://blog.csdn.net/xjz18298268521/article/details/52681966" target="_blank" rel="noopener">https://blog.csdn.net/xjz18298268521/article/details/52681966</a></p>
 
         </div>
 
@@ -288,7 +240,7 @@
         
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/08/01/PGM-0/" target="_blank" rel="external">http://yoursite.com/2018/08/01/PGM-0/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/10/05/RCNN/" target="_blank" rel="external">http://yoursite.com/2018/10/05/RCNN/</a>
         
     </div>
     <footer>
@@ -308,7 +260,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PGM/">PGM</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DL/">DL</a></li></ul>
 
 
             
@@ -318,7 +270,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/01/PGM-0/&title=《PGM-0》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/10/05/RCNN/&title=《R-CNN》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -328,22 +280,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/01/PGM-0/&title=《PGM-0》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/10/05/RCNN/&title=《R-CNN》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/01/PGM-0/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/10/05/RCNN/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PGM-0》 — EyEular&url=http://yoursite.com/2018/08/01/PGM-0/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《R-CNN》 — EyEular&url=http://yoursite.com/2018/10/05/RCNN/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/01/PGM-0/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/10/05/RCNN/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -363,21 +315,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2018/08/03/Stochastic-Process-8/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Stochastic-Process (Conditional Expectation)</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018/07/31/Stochastic-Process-7/" id="post-next" class="post-nav-link">
+      <a href="/2018/10/04/RL-1/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Stochastic-Process (Conjugacy &amp; Bayesian)</h4>
+        <h4 class="title">RL-1</h4>
       </a>
     </div>
   
@@ -471,7 +416,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/01/PGM-0/&title=《PGM-0》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/10/05/RCNN/&title=《R-CNN》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -481,22 +426,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/01/PGM-0/&title=《PGM-0》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/10/05/RCNN/&title=《R-CNN》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/01/PGM-0/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/10/05/RCNN/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PGM-0》 — EyEular&url=http://yoursite.com/2018/08/01/PGM-0/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《R-CNN》 — EyEular&url=http://yoursite.com/2018/10/05/RCNN/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/01/PGM-0/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/10/05/RCNN/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -507,7 +452,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/08/01/PGM-0/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/10/05/RCNN/" alt="微信分享二维码">
 </div>
 
 

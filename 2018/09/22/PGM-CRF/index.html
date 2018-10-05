@@ -19,16 +19,21 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="keywords" content="Math &amp; AI">
+    <meta name="keywords" content="PGM">
+    <meta name="description" content="CRF 可以看作是 logistics 回归的一个扩展 Notions $\mathbf{X}$: 我们观测到的输入变量 $\mathbf{Y}$: 我们待预测的输出变量 $\sum_{\mathbf{y} \setminus y_s}$: 在$y_s$ 给定的情况下，y 中所有其他变量的可能的取值的遍历  G &amp;amp; DClassificationClassification 是分类问题，通">
+<meta name="keywords" content="PGM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PGM-CRF">
 <meta property="og:url" content="http://yoursite.com/2018/09/22/PGM-CRF/index.html">
 <meta property="og:site_name" content="EyEular">
+<meta property="og:description" content="CRF 可以看作是 logistics 回归的一个扩展 Notions $\mathbf{X}$: 我们观测到的输入变量 $\mathbf{Y}$: 我们待预测的输出变量 $\sum_{\mathbf{y} \setminus y_s}$: 在$y_s$ 给定的情况下，y 中所有其他变量的可能的取值的遍历  G &amp;amp; DClassificationClassification 是分类问题，通">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-22T02:25:18.346Z">
+<meta property="og:image" content="http://yoursite.com/2018/09/22/PGM-CRF/pgmcrf_img1.jpg">
+<meta property="og:updated_time" content="2018-10-04T08:50:25.664Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PGM-CRF">
+<meta name="twitter:description" content="CRF 可以看作是 logistics 回归的一个扩展 Notions $\mathbf{X}$: 我们观测到的输入变量 $\mathbf{Y}$: 我们待预测的输出变量 $\sum_{\mathbf{y} \setminus y_s}$: 在$y_s$ 给定的情况下，y 中所有其他变量的可能的取值的遍历  G &amp;amp; DClassificationClassification 是分类问题，通">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/22/PGM-CRF/pgmcrf_img1.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
     
@@ -158,6 +163,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Notions"><span class="post-toc-number">1.</span> <span class="post-toc-text">Notions</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#G-amp-D"><span class="post-toc-number">2.</span> <span class="post-toc-text">G &amp; D</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Classification"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">Classification</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Sequence-Models"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">Sequence Models</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Comparision"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">Comparision</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Linear-Chain-CRFs"><span class="post-toc-number">3.</span> <span class="post-toc-text">Linear Chain CRFs</span></a></li></ol>
+        </nav>
+    </aside>
+    
 <article id="post-PGM-CRF"
   class="post-article article-type-post fade" itemprop="blogPost">
 
@@ -177,7 +189,47 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            
+            <p>CRF 可以看作是 logistics 回归的一个扩展</p>
+<h3 id="Notions"><a href="#Notions" class="headerlink" title="Notions"></a>Notions</h3><ul>
+<li>$\mathbf{X}$: 我们观测到的输入变量</li>
+<li>$\mathbf{Y}$: 我们待预测的输出变量</li>
+<li>$\sum_{\mathbf{y} \setminus y_s}$: 在$y_s$ 给定的情况下，y 中所有其他变量的可能的取值的遍历</li>
+</ul>
+<h3 id="G-amp-D"><a href="#G-amp-D" class="headerlink" title="G &amp; D"></a>G &amp; D</h3><h5 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h5><p>Classification 是分类问题，通过给定的特征向量 $\mathbf{x}$ 我们来估计隐藏在这些数据后面的类别 $y$ 是什么，其中一个简单的方法是假设特征向量里面的变量都是相互独立的，这称为 <strong>_naive Bayes classifier_</strong> 这是基于 x 的联合分布：</p>
+<script type="math/tex; mode=display">p(y|\mathbf{x}) = p(y) \prod_{k=1}^K p(x_k | y)</script><p>上面的公式也是可以写成因子图的表示形式的</p>
+<p>另一个比较常见的模型就是 logistic regression：</p>
+<script type="math/tex; mode=display">p(y|\mathbf{x}) = \frac{1}{Z(\mathbf{x})}  exp \left{   \sum_{k=1}^K \theta_k f_k (y, \mathbf{x})   \right}</script><h5 id="Sequence-Models"><a href="#Sequence-Models" class="headerlink" title="Sequence Models"></a>Sequence Models</h5><p>Classifier 只能对于单变量做预测，我们希望能对多变量做预测，为了引出这个模型，我们来讨论一个 NLP 的应用，称为 NER，NER 是用来定义一个词的类别的，比如，china，它的 NER 就是 location，更加具体一些，给定一个句子，我们确定哪些词是组合在一起的，同时对于这些词做一个区分。</p>
+<p>一个直观的 NER 方法是对于单词做独立的区分，这种方法每个单词和它周围的单词是独立的，比如 new york 是一个地名，但是 new york times 它就是一个报纸了。。。一个方法就是把这些输出变量都串起来，形成一个链式的模型，称为 HMM，HMM 有两个独立性假设</p>
+<ul>
+<li>每一个 state $y_t$ 只和前一个 state $y_{t-2}$ 相关</li>
+<li>观测 $x_t$ 由 $y_t$ 导出</li>
+</ul>
+<p>于是，state y 和 观测 x 的联合分布可以写成</p>
+<script type="math/tex; mode=display">p(\mathbf{y},\mathbf{x}) = p(y_1) \prod_{t=2}^ T p(y_t|y_{t-1}) p(x_t|y_t)</script><h5 id="Comparision"><a href="#Comparision" class="headerlink" title="Comparision"></a>Comparision</h5><p>Generative Model</p>
+<ul>
+<li>Naive Bayes</li>
+<li>HMM</li>
+</ul>
+<p>Discriminative Model</p>
+<ul>
+<li>logistic regression</li>
+</ul>
+<p>我们还回忆一下生成模型和判别模型的区别，生成模型中概率的一部分是分给 x 的，所以生成模型最后的联合分布的概率通常很小，就比如 naive bayes，对于判别模型，概率是 0-1 之间的条件，这就符合了逻辑回归呀，在条件概率中，x 只对 y 的概率有影响，但是完全不出现在概率中。之所以不对 $p(x)$ 建模，是因为输入的特征变量之间的相关性太高</p>
+<p><img src="/2018/09/22/PGM-CRF/pgmcrf_img1.jpg" align="justify"></p>
+<h3 id="Linear-Chain-CRFs"><a href="#Linear-Chain-CRFs" class="headerlink" title="Linear Chain CRFs"></a>Linear Chain CRFs</h3><p>我们重写 HMM 模型到一个更加 general 的 case：</p>
+<script type="math/tex; mode=display">p(\mathbf{y}, \mathbf{x}) = \frac{1}{Z}   \prod_{t=1}^T  exp \left \{  \sum_{i,j \in  S} 1_{\{y_t=i\}} 1_{\{y_{t-1}=j\}} + \sum_{i \in S} \sum_{o \in O} \mu_{oi} 1_{\{y_t = i\}} 1_{\{x_t = o\}} \right \}</script><p>当 $\theta_{ij} = log p(y^{\prime} = i | y = j)$ 时，$\mu_{oi} = log p(x=o|y=i)$ 时，就是 HMM 了，写成更一般的简洁一些的形式，即把指数的参数直接写成 feature function 为 $f_k(y_t,y_{t-1},x_t)$ 的形式：</p>
+<script type="math/tex; mode=display">p(\mathbf{y}, \mathbf{x}) = \frac{1}{Z} \prod_{t=1}^T exp \left\{  \sum_{k=1}^K \theta_k f_k (y_t, y_{t-1},x_t)  \right\}</script><p>上面是生成模型，根据 bayes 定理我们把它写成条件概率的判别模型：</p>
+<script type="math/tex; mode=display">p(\mathbf{y}| \mathbf{x}) = \frac{p(\mathbf{y}, \mathbf{x})}{\sum_{\mathbf{y^{\prime}}}} = \frac{\prod_{t=1}^T exp \left\{  \sum_{k=1}^K \theta_k f_k(y_t,y_{t-1},x_t) \right\}}{\sum_{\mathbf{y^{\prime}}} \prod_{t=1}^T  exp \left \{ \sum_{k=1}^K \theta_k f_k(y_t^{\prime}, y_{t-1}^{\prime},x_t)  \right \} }</script><p>上面的条件概率就是 linear-chain CRF，</p>
+<p><strong>Definition：linear-chain CRF</strong></p>
+<script type="math/tex; mode=display">p(\mathbf{y}| \mathbf{x}) = \frac{1}{Z(\mathbf{x})} \prod_{t=1}^T exp \left\{  \sum_{k=1}^K \theta_k f_k(y_t,y_{t-1},\mathbf{x}_t)  \right\}</script><blockquote>
+<ul>
+<li>$Y,X$ 是随机变量</li>
+<li>$\theta$ 是参数向量</li>
+<li>$f_k(y,y^{\prime},x_t)$ 是 feature function</li>
+</ul>
+</blockquote>
+<p>。</p>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -205,6 +257,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PGM/">PGM</a></li></ul>
+
 
             
 <div class="page-share-wrap">
@@ -258,7 +312,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/09/25/NLP-2/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">NLP-2</h4>
+      </a>
+    </div>
   
 
   
