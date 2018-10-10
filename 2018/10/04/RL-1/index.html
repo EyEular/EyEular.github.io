@@ -13,7 +13,7 @@
     
     
     
-    <title>RL-1 | EyEular</title>
+    <title>RL1-introduction | EyEular</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
@@ -23,7 +23,7 @@
     <meta name="description" content="RL 和传统的监督学习和无监督学习是有区别的，RL 没有 label 只有 reward 数据是有时序性的，也就是数据之间并不是独立的 数据只会对它后面的数据造成影响  比如一个棋局只会对后面的落子有影响，当前位置只会对后面的位置移动产生作用  Reward一个 Reward  $R_t$ 就是一个常数的信号，用来对状态的衡量，或者 agent 在时间 $t$ 做的好坏程度，agent 的目">
 <meta name="keywords" content="RL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RL-1">
+<meta property="og:title" content="RL1-introduction">
 <meta property="og:url" content="http://yoursite.com/2018/10/04/RL-1/index.html">
 <meta property="og:site_name" content="EyEular">
 <meta property="og:description" content="RL 和传统的监督学习和无监督学习是有区别的，RL 没有 label 只有 reward 数据是有时序性的，也就是数据之间并不是独立的 数据只会对它后面的数据造成影响  比如一个棋局只会对后面的落子有影响，当前位置只会对后面的位置移动产生作用  Reward一个 Reward  $R_t$ 就是一个常数的信号，用来对状态的衡量，或者 agent 在时间 $t$ 做的好坏程度，agent 的目">
@@ -33,9 +33,10 @@
 <meta property="og:image" content="http://yoursite.com/2018/10/04/RL-1/rl1img4.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/10/04/RL-1/rl1img3.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/10/04/RL-1/rl1img5.jpg">
-<meta property="og:updated_time" content="2018-10-05T15:18:44.104Z">
+<meta property="og:image" content="http://yoursite.com/2018/10/04/RL-1/rl1img7.jpg">
+<meta property="og:updated_time" content="2018-10-06T07:57:27.365Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RL-1">
+<meta name="twitter:title" content="RL1-introduction">
 <meta name="twitter:description" content="RL 和传统的监督学习和无监督学习是有区别的，RL 没有 label 只有 reward 数据是有时序性的，也就是数据之间并不是独立的 数据只会对它后面的数据造成影响  比如一个棋局只会对后面的落子有影响，当前位置只会对后面的位置移动产生作用  Reward一个 Reward  $R_t$ 就是一个常数的信号，用来对状态的衡量，或者 agent 在时间 $t$ 做的好坏程度，agent 的目">
 <meta name="twitter:image" content="http://yoursite.com/2018/10/04/RL-1/rlimg1.jpg">
     
@@ -125,7 +126,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">RL-1</div>
+        <div class="flex-col header-title ellipsis">RL1-introduction</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -147,7 +148,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">RL-1</h1>
+        <h1 class="title">RL1-introduction</h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-10-04T08:51:19.000Z" itemprop="datePublished" class="page-time">
@@ -178,7 +179,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">RL-1</h1>
+        <h1 class="post-card-title">RL1-introduction</h1>
         <div class="post-meta">
             <time class="post-time" title="2018-10-04 16:51:19" datetime="2018-10-04T08:51:19.000Z"  itemprop="datePublished">2018-10-04</time>
 
@@ -230,7 +231,8 @@
 <h5 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h5><p>model 是用来预测 environment 接下来会做什么</p>
 <p>$\mathcal{P}$ 用来预测接下来的的 state</p>
 <p>$\mathcal{R}$ 用来预测接下来的 reward</p>
-<script type="math/tex; mode=display">\mathcal{P}_{ss^{\prime}} = P[S_{t+1} = S^{\prime}|S_t = s, A_t = a]</script><script type="math/tex; mode=display">\mathcal{R}_s^a  = E[R_{t+1}|S_t = s, A_t = a]</script><p>.</p>
+<script type="math/tex; mode=display">\mathcal{P}_{ss^{\prime}} = P[S_{t+1} = S^{\prime}|S_t = s, A_t = a]</script><script type="math/tex; mode=display">\mathcal{R}_s^a  = E[R_{t+1}|S_t = s, A_t = a]</script><p><img src="/2018/10/04/RL-1/rl1img7.jpg" align="justify"></p>
+<p>.</p>
 
         </div>
 
@@ -269,7 +271,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/10/04/RL-1/&title=《RL-1》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/10/04/RL-1/&title=《RL1-introduction》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -279,7 +281,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/10/04/RL-1/&title=《RL-1》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/10/04/RL-1/&title=《RL1-introduction》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -289,7 +291,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RL-1》 — EyEular&url=http://yoursite.com/2018/10/04/RL-1/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RL1-introduction》 — EyEular&url=http://yoursite.com/2018/10/04/RL-1/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -422,7 +424,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/10/04/RL-1/&title=《RL-1》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/10/04/RL-1/&title=《RL1-introduction》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -432,7 +434,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/10/04/RL-1/&title=《RL-1》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/10/04/RL-1/&title=《RL1-introduction》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -442,7 +444,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RL-1》 — EyEular&url=http://yoursite.com/2018/10/04/RL-1/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RL1-introduction》 — EyEular&url=http://yoursite.com/2018/10/04/RL-1/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

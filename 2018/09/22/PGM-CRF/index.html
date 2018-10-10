@@ -19,20 +19,20 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="PGM">
-    <meta name="description" content="CRF 可以看作是 logistics 回归的一个扩展 Notions $\mathbf{X}$: 我们观测到的输入变量 $\mathbf{Y}$: 我们待预测的输出变量 $\sum_{\mathbf{y} \setminus y_s}$: 在$y_s$ 给定的情况下，y 中所有其他变量的可能的取值的遍历  G &amp;amp; DClassificationClassification 是分类问题，通">
-<meta name="keywords" content="PGM">
+    <meta name="keywords" content="MATH">
+    <meta name="description" content="CRF 可以看作是 logistics 回归的一个扩展 ModelingNotions $\mathbf{X}$: 我们观测到的输入变量 $\mathbf{Y}$: 我们待预测的输出变量 $\sum_{\mathbf{y} \setminus y_s}$: 在$y_s$ 给定的情况下，y 中所有其他变量的可能的取值的遍历  G &amp;amp; DClassificationClassification">
+<meta name="keywords" content="MATH">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PGM-CRF">
 <meta property="og:url" content="http://yoursite.com/2018/09/22/PGM-CRF/index.html">
 <meta property="og:site_name" content="EyEular">
-<meta property="og:description" content="CRF 可以看作是 logistics 回归的一个扩展 Notions $\mathbf{X}$: 我们观测到的输入变量 $\mathbf{Y}$: 我们待预测的输出变量 $\sum_{\mathbf{y} \setminus y_s}$: 在$y_s$ 给定的情况下，y 中所有其他变量的可能的取值的遍历  G &amp;amp; DClassificationClassification 是分类问题，通">
+<meta property="og:description" content="CRF 可以看作是 logistics 回归的一个扩展 ModelingNotions $\mathbf{X}$: 我们观测到的输入变量 $\mathbf{Y}$: 我们待预测的输出变量 $\sum_{\mathbf{y} \setminus y_s}$: 在$y_s$ 给定的情况下，y 中所有其他变量的可能的取值的遍历  G &amp;amp; DClassificationClassification">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2018/09/22/PGM-CRF/pgmcrf_img1.jpg">
-<meta property="og:updated_time" content="2018-10-04T08:50:25.664Z">
+<meta property="og:updated_time" content="2018-10-10T07:18:46.477Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PGM-CRF">
-<meta name="twitter:description" content="CRF 可以看作是 logistics 回归的一个扩展 Notions $\mathbf{X}$: 我们观测到的输入变量 $\mathbf{Y}$: 我们待预测的输出变量 $\sum_{\mathbf{y} \setminus y_s}$: 在$y_s$ 给定的情况下，y 中所有其他变量的可能的取值的遍历  G &amp;amp; DClassificationClassification 是分类问题，通">
+<meta name="twitter:description" content="CRF 可以看作是 logistics 回归的一个扩展 ModelingNotions $\mathbf{X}$: 我们观测到的输入变量 $\mathbf{Y}$: 我们待预测的输出变量 $\sum_{\mathbf{y} \setminus y_s}$: 在$y_s$ 给定的情况下，y 中所有其他变量的可能的取值的遍历  G &amp;amp; DClassificationClassification">
 <meta name="twitter:image" content="http://yoursite.com/2018/09/22/PGM-CRF/pgmcrf_img1.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
@@ -166,7 +166,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Notions"><span class="post-toc-number">1.</span> <span class="post-toc-text">Notions</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#G-amp-D"><span class="post-toc-number">2.</span> <span class="post-toc-text">G &amp; D</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Classification"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">Classification</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Sequence-Models"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">Sequence Models</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Comparision"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">Comparision</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Linear-Chain-CRFs"><span class="post-toc-number">3.</span> <span class="post-toc-text">Linear Chain CRFs</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Modeling"><span class="post-toc-number">1.</span> <span class="post-toc-text">Modeling</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Notions"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">Notions</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#G-amp-D"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">G &amp; D</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Classification"><span class="post-toc-number">1.0.2.0.1.</span> <span class="post-toc-text">Classification</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Sequence-Models"><span class="post-toc-number">1.0.2.0.2.</span> <span class="post-toc-text">Sequence Models</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Comparision"><span class="post-toc-number">1.0.2.0.3.</span> <span class="post-toc-text">Comparision</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Linear-Chain-CRFs"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">Linear Chain CRFs</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#General-CRFs"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">General CRFs</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Inference"><span class="post-toc-number">2.</span> <span class="post-toc-text">Inference</span></a></li></ol>
         </nav>
     </aside>
     
@@ -190,7 +190,7 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>CRF 可以看作是 logistics 回归的一个扩展</p>
-<h3 id="Notions"><a href="#Notions" class="headerlink" title="Notions"></a>Notions</h3><ul>
+<h1 id="Modeling"><a href="#Modeling" class="headerlink" title="Modeling"></a>Modeling</h1><h3 id="Notions"><a href="#Notions" class="headerlink" title="Notions"></a>Notions</h3><ul>
 <li>$\mathbf{X}$: 我们观测到的输入变量</li>
 <li>$\mathbf{Y}$: 我们待预测的输出变量</li>
 <li>$\sum_{\mathbf{y} \setminus y_s}$: 在$y_s$ 给定的情况下，y 中所有其他变量的可能的取值的遍历</li>
@@ -198,7 +198,7 @@
 <h3 id="G-amp-D"><a href="#G-amp-D" class="headerlink" title="G &amp; D"></a>G &amp; D</h3><h5 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h5><p>Classification 是分类问题，通过给定的特征向量 $\mathbf{x}$ 我们来估计隐藏在这些数据后面的类别 $y$ 是什么，其中一个简单的方法是假设特征向量里面的变量都是相互独立的，这称为 <strong>_naive Bayes classifier_</strong> 这是基于 x 的联合分布：</p>
 <script type="math/tex; mode=display">p(y|\mathbf{x}) = p(y) \prod_{k=1}^K p(x_k | y)</script><p>上面的公式也是可以写成因子图的表示形式的</p>
 <p>另一个比较常见的模型就是 logistic regression：</p>
-<script type="math/tex; mode=display">p(y|\mathbf{x}) = \frac{1}{Z(\mathbf{x})}  exp \left{   \sum_{k=1}^K \theta_k f_k (y, \mathbf{x})   \right}</script><h5 id="Sequence-Models"><a href="#Sequence-Models" class="headerlink" title="Sequence Models"></a>Sequence Models</h5><p>Classifier 只能对于单变量做预测，我们希望能对多变量做预测，为了引出这个模型，我们来讨论一个 NLP 的应用，称为 NER，NER 是用来定义一个词的类别的，比如，china，它的 NER 就是 location，更加具体一些，给定一个句子，我们确定哪些词是组合在一起的，同时对于这些词做一个区分。</p>
+<script type="math/tex; mode=display">p(y|\mathbf{x}) = \frac{1}{Z(\mathbf{x})}  exp \left\{   \sum_{k=1}^K \theta_k f_k (y, \mathbf{x})   \right\}</script><h5 id="Sequence-Models"><a href="#Sequence-Models" class="headerlink" title="Sequence Models"></a>Sequence Models</h5><p>Classifier 只能对于单变量做预测，我们希望能对多变量做预测，为了引出这个模型，我们来讨论一个 NLP 的应用，称为 NER，NER 是用来定义一个词的类别的，比如，china，它的 NER 就是 location，更加具体一些，给定一个句子，我们确定哪些词是组合在一起的，同时对于这些词做一个区分。</p>
 <p>一个直观的 NER 方法是对于单词做独立的区分，这种方法每个单词和它周围的单词是独立的，比如 new york 是一个地名，但是 new york times 它就是一个报纸了。。。一个方法就是把这些输出变量都串起来，形成一个链式的模型，称为 HMM，HMM 有两个独立性假设</p>
 <ul>
 <li>每一个 state $y_t$ 只和前一个 state $y_{t-2}$ 相关</li>
@@ -224,11 +224,13 @@
 <script type="math/tex; mode=display">p(\mathbf{y}| \mathbf{x}) = \frac{1}{Z(\mathbf{x})} \prod_{t=1}^T exp \left\{  \sum_{k=1}^K \theta_k f_k(y_t,y_{t-1},\mathbf{x}_t)  \right\}</script><blockquote>
 <ul>
 <li>$Y,X$ 是随机变量</li>
-<li>$\theta$ 是参数向量</li>
+<li>$\theta$ 是参数向量，总共有 K 个变量</li>
 <li>$f_k(y,y^{\prime},x_t)$ 是 feature function</li>
 </ul>
 </blockquote>
-<p>。</p>
+<h3 id="General-CRFs"><a href="#General-CRFs" class="headerlink" title="General CRFs"></a>General CRFs</h3><p>把 linear-chain CRF 中的 linear-chain factor 用 more general 的 factor 表示就是 General CRFs</p>
+<script type="math/tex; mode=display">p(\mathbf{y}|\mathbf{x}) = \frac{1}{Z(\mathbf{x})} \prod_{\Psi_A \in G} exp \left\{ \sum_{k=1}^{K(A)} \theta_{ak} f_{ak}(\mathbf{y}_a,\mathbf{x}_a) \right\}</script><p>General form 的参数似乎更多，对于 linear-chain，相同的 weight 作用于每一个时间轴上的 $\Psi_t(y_t,y_{t-1},x_t)$，对于 General 的形式，我们将 G 的 factors 分成 $C= \{ C_1,C_2,…,C_p \}$ 每一个 clique $C_p$ 对应这一个 suffcient statistics $\{ f_{pk}(\mathbf{x}_p, \mathbf{y}_p) \}$ 以及参数 $\theta_p \in R^{K(p)}$，于是 CRF 可以写成：</p>
+<script type="math/tex; mode=display">p(\mathbf{y}|\mathbf{x}) = \frac{1}{Z(\mathbf{x})} \prod_{C_p\in C} \prod_{\Psi_c \in C_p} \Psi (\mathbf{x}_c,\mathbf{y}_c; \theta_p)</script><script type="math/tex; mode=display">\Psi (\mathbf{x}_c,\mathbf{y}_c; \theta_p) = exp  \left\{  \sum_{k=1}^{K(p)} \theta_{pk} f_{pk} (\mathbf{x}_c,\mathbf{y}_c)  \right\}</script><h1 id="Inference"><a href="#Inference" class="headerlink" title="Inference"></a>Inference</h1><p>。</p>
 
         </div>
 
@@ -257,7 +259,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PGM/">PGM</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MATH/">MATH</a></li></ul>
 
 
             
