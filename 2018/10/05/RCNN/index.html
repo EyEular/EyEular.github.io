@@ -42,6 +42,8 @@
 <meta property="og:image" content="http://yoursite.com/2018/10/05/RCNN/rcnnimg12.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/10/05/RCNN/rcnnimg13.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/10/05/RCNN/rcnnimg14.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/10/05/RCNN/rcnnimg24.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/10/05/RCNN/rcnnimg25.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/10/05/RCNN/rcnnimg15.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/10/05/RCNN/rcnnimg16.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/10/05/RCNN/rcnnimg17.jpg">
@@ -50,7 +52,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/10/05/RCNN/rcnnimg23.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/10/05/RCNN/rcnnimg19.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/10/05/RCNN/rcnnimg21.jpg">
-<meta property="og:updated_time" content="2018-10-12T04:36:01.270Z">
+<meta property="og:updated_time" content="2018-10-12T04:48:24.715Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="R-CNN">
 <meta name="twitter:description" content="R-CNNR-CNN 流程  对输入图片使用 select search 选择 2000 个区域 select search 有区域合并的操作   拉伸缩放图片到固定尺寸（227 * 227）传入 CNN 生成 4096 维的特征向量 对于特征用 SVM 预测每个类别（C+1，1是背景），通过 IoU 来打分 预测最大的判别为一类 最后对这些区域根据极大值抑制来合并和省略   对于每一个类，都训练">
@@ -283,7 +285,8 @@
 <li>使用第二步的Fast-RCNN网络参数初始化一个新的RPN网络，但是把RPN、Fast-RCNN共享的那些卷积层的learning rate设置为0，也就是不更新，仅仅更新RPN特有的那些网络层，重新训练，此时，两个网络已经共享了所有公共的卷积层</li>
 <li>仍然固定共享的那些网络层，把Fast-RCNN特有的网络层也加入进来，形成一个unified network，继续训练，fine tune Fast-RCNN 特有的网络层，此时，该网络已经实现我们设想的目标，即网络内部预测proposal并实现检测的功能</li>
 </ol>
-<h1 id="Mask-R-CNN"><a href="#Mask-R-CNN" class="headerlink" title="Mask R-CNN"></a>Mask R-CNN</h1><p>再加一个输出，用来做 mask 的 loss，并且把这个 loss 加入到总的 loss 里面</p>
+<h1 id="Mask-R-CNN"><a href="#Mask-R-CNN" class="headerlink" title="Mask R-CNN"></a>Mask R-CNN</h1><p><img src="/2018/10/05/RCNN/rcnnimg24.jpg" align="justify"><br><img src="/2018/10/05/RCNN/rcnnimg25.jpg" align="justify"></p>
+<p>再加一个输出，用来做 mask 的 loss，并且把这个 loss 加入到总的 loss 里面</p>
 <p>ROI 和 GT 的 IOU 大于 0.5 就认为是 positive</p>
 <p>loss_mask 只在 positive 的样例上进行定义</p>
 <p>Mask RCNN 相对于 faster RCNN 的一个很大的改进就是 ROI pooling 变成了 ROI align</p>
