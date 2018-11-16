@@ -19,16 +19,21 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="keywords" content="Math &amp; AI">
+    <meta name="keywords" content="nlp">
+    <meta name="description" content="Show Attend and Tell编码 Encoder输入是一张图片，输出是 caption，其中 caption 是长度为 C 的 K 维词向量 y = \{ \mathbf{y}_1,...,\mathbf{y}_C \}, \mathbf{y}_i \in R^K对于一张图片我们使用卷积神经网络来提取特征，总共提取 L 个特征向量，每一个都是 D 维的，对应这图像中的一部分 a = \">
+<meta name="keywords" content="nlp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IC-paper-1">
 <meta property="og:url" content="http://yoursite.com/2018/10/15/IC-paper-1/index.html">
 <meta property="og:site_name" content="EyEular">
+<meta property="og:description" content="Show Attend and Tell编码 Encoder输入是一张图片，输出是 caption，其中 caption 是长度为 C 的 K 维词向量 y = \{ \mathbf{y}_1,...,\mathbf{y}_C \}, \mathbf{y}_i \in R^K对于一张图片我们使用卷积神经网络来提取特征，总共提取 L 个特征向量，每一个都是 D 维的，对应这图像中的一部分 a = \">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-15T09:00:33.272Z">
+<meta property="og:image" content="http://yoursite.com/2018/10/15/IC-paper-1/icpimg1.jpg">
+<meta property="og:updated_time" content="2018-10-27T14:26:13.290Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IC-paper-1">
+<meta name="twitter:description" content="Show Attend and Tell编码 Encoder输入是一张图片，输出是 caption，其中 caption 是长度为 C 的 K 维词向量 y = \{ \mathbf{y}_1,...,\mathbf{y}_C \}, \mathbf{y}_i \in R^K对于一张图片我们使用卷积神经网络来提取特征，总共提取 L 个特征向量，每一个都是 D 维的，对应这图像中的一部分 a = \">
+<meta name="twitter:image" content="http://yoursite.com/2018/10/15/IC-paper-1/icpimg1.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
     
@@ -158,6 +163,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Show-Attend-and-Tell"><span class="post-toc-number">1.</span> <span class="post-toc-text">Show Attend and Tell</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#编码-Encoder"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">编码 Encoder</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解码-Decoder"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">解码 Decoder</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Hard-Attention"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">Hard Attention</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
 <article id="post-IC-paper-1"
   class="post-article article-type-post fade" itemprop="blogPost">
 
@@ -177,7 +189,24 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            
+            <h1 id="Show-Attend-and-Tell"><a href="#Show-Attend-and-Tell" class="headerlink" title="Show Attend and Tell"></a>Show Attend and Tell</h1><h3 id="编码-Encoder"><a href="#编码-Encoder" class="headerlink" title="编码 Encoder"></a>编码 Encoder</h3><p>输入是一张图片，输出是 caption，其中 caption 是长度为 C 的 K 维词向量</p>
+<script type="math/tex; mode=display">y = \{ \mathbf{y}_1,...,\mathbf{y}_C \}, \mathbf{y}_i \in R^K</script><p>对于一张图片我们使用卷积神经网络来提取特征，总共提取 L 个特征向量，每一个都是 D 维的，对应这图像中的一部分</p>
+<script type="math/tex; mode=display">a = \{ \mathbf{a}_1,...,\mathbf{a}_L \}, \mathbf{a}_i \in R^D</script><p>从低层的卷积层提取特征</p>
+<h3 id="解码-Decoder"><a href="#解码-Decoder" class="headerlink" title="解码 Decoder"></a>解码 Decoder</h3><p><img src="/2018/10/15/IC-paper-1/icpimg1.jpg" width="400px"></p>
+<p>使用 LSTM 解码</p>
+<p>进行解码的 $\hat{z}_t$ 是通过一个机制 $\phi$ 来计算 $\mathbf{a}_i,(i&lt;L)$ 得出的，每一个 i 对应着图片的不同的区域，对于每个u 区域 $\phi$ 生成一个整数权重 $\alpha_i$，代表用这个区域来聚焦能生成正确的下一个单词的概率。</p>
+<p>RNN 每一次的迭代的值的变化和传递如下所示</p>
+<p>首先对于每个区域我们生成它的价值：</p>
+<script type="math/tex; mode=display">e_{ti} = f_{att} (a_i,h_{t-1})</script><blockquote>
+<p>这里面 t 是 RNN 中的第 t 次迭代，i 表示区域</p>
+</blockquote>
+<p>然后就是生成概率了</p>
+<script type="math/tex; mode=display">\alpha_{ti} = \frac{\exp{(e_{ti})}}{\sum_{k=1}^L \exp{(e_{tk})}}</script><p>最后生成 context 向量 $\hat{z}_t$：</p>
+<script type="math/tex; mode=display">\hat{z}_t = \phi(\{ a_i \}, \{\alpha_i\})</script><p>最初的 $h_0$ 和 $c_0$ 是通过区域特征的均值来取得的</p>
+<script type="math/tex; mode=display">c_0 = f_{init} \left( \frac{1}{L} \sum_i^L a_i \right),h_0 = f_{init} \left( \frac{1}{L} \sum_i^L a_i \right)</script><h3 id="Hard-Attention"><a href="#Hard-Attention" class="headerlink" title="Hard Attention"></a>Hard Attention</h3><p>首先定义一个 one-hot 向量，$s_{t,i}$ 这个向量的第 i 个元素为 1 ，说明，我们对于区域 i 进行了特征的提取，那么这个 one-hot 向量就是由 $\alpha$ 定义的多维分布：</p>
+<script type="math/tex; mode=display">p(s_{t,i} = 1 | s_{j<t},a) = \alpha_{t,i}</script><p>然后 context 向量的生成方式就变成了：</p>
+<script type="math/tex; mode=display">\hat{z}_t =\sum_i s_{t,i}a_i</script><p>。</p>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -205,6 +234,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nlp/">nlp</a></li></ul>
+
 
             
 <div class="page-share-wrap">

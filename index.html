@@ -155,6 +155,142 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-EM-Algorithm"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-11-16 22:26:14" datetime="2018-11-16T14:26:14.000Z"  itemprop="datePublished">2018-11-16</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/11/16/EM-Algorithm/">EM-Algorithm</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+    
+
+        <a href="/2018/11/16/EM-Algorithm/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-NLP-4"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-11-08 20:33:10" datetime="2018-11-08T12:33:10.000Z"  itemprop="datePublished">2018-11-08</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/11/08/NLP-4/">Neural machine translation by jointly learning to align and translate</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        seq2seq这篇论文可以看作是 sequence to sequence 论文的升级版，首先我们回顾一下 seq2seq 模型
+h_t = f(x_t, h_{t-1})
+这里 f 可以是一个 LSTM
+c = q(\{ h_1,...,h_{T_x}  \})这里 q 的运算可以是取最后一个 hidden state $h_{T_x}$
+
+我们的目标是最大化概率：
+p(y) = \pro...
+    
+
+        <a href="/2018/11/08/NLP-4/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NLP/">NLP</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-NLP-3"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-11-01 21:59:13" datetime="2018-11-01T13:59:13.000Z"  itemprop="datePublished">2018-11-01</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/11/01/NLP-3/">Attention is all you need</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Backgrounnd传统的处理序列学习的任务，我们通常使用的是 RNN，
+Structureencoder-decoder Stacks最常用的序列生成模型用的都是 encoder-decoder 结构，attention 模型也不例外，不过不同于传统的 seq2seq 模型，attention 模型每次都是将所有的输入数据一起做的 encoding。还要指出的是，这里的 attenti...
+    
+
+        <a href="/2018/11/01/NLP-3/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NLP/">NLP</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-GPU-service-config"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -231,12 +367,20 @@ nouveau 禁用首先我们要禁用 n...
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
+        Show Attend and Tell编码 Encoder输入是一张图片，输出是 caption，其中 caption 是长度为 C 的 K 维词向量
+y = \{ \mathbf{y}_1,...,\mathbf{y}_C \}, \mathbf{y}_i \in R^K对于一张图片我们使用卷积神经网络来提取特征，总共提取 L 个特征向量，每一个都是 D 维的，对应这图像中的一部分
+a ...
     
 
         <a href="/2018/10/15/IC-paper-1/" class="post-more waves-effect waves-button">
             Continue reading...
         </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nlp/">nlp</a></li></ul>
+
     </div>
     
 </article>
@@ -510,7 +654,12 @@ select search 有区域合并的操作
 
 比如一个棋局只会对后面的落子有影响，当前位置只会对后面的位置移动产生作用
 
-Reward一个 Reward  $R_t$ 就是一个常数的信号，用来对状态的衡量，或者 agent 在时间 $t$ 做的好坏程度，agent...
+RL 的方法可以分为
+
+Model-free RL
+Model-based RL
+
+Reward一个 Reward  $R_t$ 就是一个常数...
     
 
         <a href="/2018/10/04/RL-1/" class="post-more waves-effect waves-button">
@@ -521,160 +670,6 @@ Reward一个 Reward  $R_t$ 就是一个常数的信号，用来对状态的衡�
     <div class="post-footer">
         
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RL/">RL</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-NLP-2"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-09-25 19:26:50" datetime="2018-09-25T11:26:50.000Z"  itemprop="datePublished">2018-09-25</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/09/25/NLP-2/">NLP-2</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        Machine TranslationStatistical Machine Translation早期的机器翻译的方法是 SMT，S 代表 statistic 表示统计的意思，然后 14 年的时候，一切都变了。。。
-Neural Machine TranslationNMT 降临了，吊打了 SMT，所以 SMT 我就不学啦，哈哈哈
-
-Seq-to-Seq model
-
-
-上图称为 sequ...
-    
-
-        <a href="/2018/09/25/NLP-2/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NLP/">NLP</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-PGM-CRF"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-09-22 10:25:18" datetime="2018-09-22T02:25:18.000Z"  itemprop="datePublished">2018-09-22</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/09/22/PGM-CRF/">PGM-CRF</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        CRF 可以看作是 logistics 回归的一个扩展
-ModelingNotions
-$\mathbf{X}$: 我们观测到的输入变量
-$\mathbf{Y}$: 我们待预测的输出变量
-$\sum_{\mathbf{y} \setminus y_s}$: 在$y_s$ 给定的情况下，y 中所有其他变量的可能的取值的遍历
-
-G &amp; DClassificationClassificat...
-    
-
-        <a href="/2018/09/22/PGM-CRF/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MATH/">MATH</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Information-Theory"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-09-18 10:06:08" datetime="2018-09-18T02:06:08.000Z"  itemprop="datePublished">2018-09-18</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/09/18/Information-Theory/">Information-Theory</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        
-信息熵：编码方案完美时，最短平均编码长度
-交叉熵：编码方案不一定完美时，平均编码长度
-相对熵：不同方案之间的差异性的衡量
-
-信息论引用了熵（entropy）的概念，熵的概念在物理中十分常见，是用来衡量系统的混沌程度的，相应的在信息科学中，熵是用来衡量不确定性的，信息熵的本质是香农信息量 $log \frac{1}{p}$ 的期望
-下面我们就来讲讲这三个熵到底有什么含义
-首先我们通过一个例子...
-    
-
-        <a href="/2018/09/18/Information-Theory/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MATH/">MATH</a></li></ul>
 
     </div>
     

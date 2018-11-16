@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Attention is all you need | EyEular</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="NLP">
+    <meta name="description" content="Backgrounnd传统的处理序列学习的任务，我们通常使用的是 RNN， Structureencoder-decoder Stacks最常用的序列生成模型用的都是 encoder-decoder 结构，attention 模型也不例外，不过不同于传统的 seq2seq 模型，attention 模型每次都是将所有的输入数据一起做的 encoding。还要指出的是，这里的 attention">
+<meta name="keywords" content="NLP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Attention is all you need">
+<meta property="og:url" content="http://yoursite.com/2018/11/01/NLP-3/index.html">
+<meta property="og:site_name" content="EyEular">
+<meta property="og:description" content="Backgrounnd传统的处理序列学习的任务，我们通常使用的是 RNN， Structureencoder-decoder Stacks最常用的序列生成模型用的都是 encoder-decoder 结构，attention 模型也不例外，不过不同于传统的 seq2seq 模型，attention 模型每次都是将所有的输入数据一起做的 encoding。还要指出的是，这里的 attention">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2018/11/01/NLP-3/nlp3img1.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/11/01/NLP-3/nlp3img2.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/11/01/NLP-3/nlp3img4.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/11/01/NLP-3/nlp3img6.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/11/01/NLP-3/nlp3img5.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/11/01/NLP-3/nlp3img3.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/11/01/NLP-3/nlp3img7.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/11/01/NLP-3/nlp3img8.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/11/01/NLP-3/nlp3img9.jpg">
+<meta property="og:updated_time" content="2018-11-08T12:37:24.529Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Attention is all you need">
+<meta name="twitter:description" content="Backgrounnd传统的处理序列学习的任务，我们通常使用的是 RNN， Structureencoder-decoder Stacks最常用的序列生成模型用的都是 encoder-decoder 结构，attention 模型也不例外，不过不同于传统的 seq2seq 模型，attention 模型每次都是将所有的输入数据一起做的 encoding。还要指出的是，这里的 attention">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/01/NLP-3/nlp3img1.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/E.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Eulring</h5>
+          <a href="mailto:bianjy@shanghaitech.edu.cn" title="bianjy@shanghaitech.edu.cn" class="mail">bianjy@shanghaitech.edu.cn</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-rebel"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-codepen"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-diamond"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/EyEular" target="_blank" >
+                <i class="icon icon-lg icon-gitlab"></i>
+                gayhub
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/links"  >
+                <i class="icon icon-lg icon-gg"></i>
+                Links
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-eye"></i>
+                About me
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Attention is all you need</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Attention is all you need</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-11-01T13:59:13.000Z" itemprop="datePublished" class="page-time">
+  2018-11-01
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Backgrounnd"><span class="post-toc-number">1.</span> <span class="post-toc-text">Backgrounnd</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Structure"><span class="post-toc-number">2.</span> <span class="post-toc-text">Structure</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#encoder-decoder-Stacks"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">encoder-decoder Stacks</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Attention"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Attention</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Position-Encoding"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Position Encoding</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Trainging"><span class="post-toc-number">3.</span> <span class="post-toc-text">Trainging</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Reference"><span class="post-toc-number">4.</span> <span class="post-toc-text">Reference</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-NLP-3"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Attention is all you need</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-11-01 21:59:13" datetime="2018-11-01T13:59:13.000Z"  itemprop="datePublished">2018-11-01</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Backgrounnd"><a href="#Backgrounnd" class="headerlink" title="Backgrounnd"></a><strong>Backgrounnd</strong></h1><p>传统的处理序列学习的任务，我们通常使用的是 RNN，</p>
+<h1 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a><strong>Structure</strong></h1><h2 id="encoder-decoder-Stacks"><a href="#encoder-decoder-Stacks" class="headerlink" title="encoder-decoder Stacks"></a>encoder-decoder Stacks</h2><p>最常用的序列生成模型用的都是 encoder-decoder 结构，attention 模型也不例外，不过不同于传统的 seq2seq 模型，attention 模型每次都是将所有的输入数据一起做的 encoding。还要指出的是，这里的 attention 模型和 Bahdanau 14 年的论文引用 attention 机制来做 mt 是不一样的，这里，google 将 attention 作为了流的所有的部分，并且抛弃了传统 RNN 一个输入接着一个输入的做法。</p>
+<p>于是，新的 Attention 结构能够进行并行计算了，而且每次运算的复杂度也可以减少，同时维持了精度。</p>
+<p><img src="/2018/11/01/NLP-3/nlp3img1.jpg" width="600px"></p>
+<h2 id="Attention"><a href="#Attention" class="headerlink" title="Attention"></a>Attention</h2><p>Attention 是这篇论文的亮点也是核心所在，从上面的结构我们可以发现，attention 模型的输入是三个，如果这三个都是出自同一个 input 我们称这个 attention 模块为 self-attention</p>
+<p><img src="/2018/11/01/NLP-3/nlp3img2.jpg" align="justify"></p>
+<p><strong>Scaled Dot-product Attention</strong></p>
+<p>结合上面整体的架构和 self-attention 模块，我们来详细的描述一下 Scaled Dot-product 过程的 pipeline：</p>
+<ul>
+<li>总的输入 $X$ 一般是一个 $n \times C$ 的矩阵，这里 n 表示这段话有 n 个词，C 表示这个词的 one-hot vector 的长度（也就是字典的大小）一般所有用神经网络处理文本的输入都是这样的</li>
+<li>对于输入做一个 embedding：$X = XE$ 得到一个 $n \times d_m$ 的向量，这一步，和其他的 RNN 也一样</li>
+<li>用三个不同的需要学习的矩阵 $W^Q(d_m \times d_k), W^K(d_m \times d_k), W^V(d_m \times d_v)$ 再对输入做一个映射，生成三个不同的矩阵 $Q(n\times d_k), K(n\times d_k), V(n\times d_v)$ 到这里也就是上面最左边的图片下面的输入。这三个矩阵 Q K V 其实都是有各自的含义的：<ul>
+<li>Q K 的作用是生成一个 $n \times n$ 的 attention 权重表</li>
+<li>Q 是 query 的缩写，表示我们的询问期望的是哪些词向量</li>
+<li>V 相当于是最原始输入的句子的每个词向量的表达</li>
+</ul>
+</li>
+<li>有了输入，我们可以直接得到 self-attention 模块的计算公式：<script type="math/tex; mode=display">Attention(Q,K,V) = softmax(\frac{QK^T}{\sqrt{d_k}})V</script><ul>
+<li>当 Q 与 K 做矩阵运算后，底下除了一个系数，这个算是一个归一化的 trick 吧，也是名称 Scaled 的由来</li>
+<li>最后 softmax(.) 的结果就是 $n \times n$ 的 attention 权重表</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2018/11/01/NLP-3/nlp3img4.jpg" align="justify"></p>
+<p>最后借用别人的一张图来概括整个过程</p>
+<p><strong>Multi-Head Attention</strong></p>
+<p>上面介绍的 Scaled Dot-product 是为了引出 Multi-Head Attention 的，Multi-Head Attention 相当于做了 $h$ 次不同的 Scaled Dot-product Attention，然后把这 h 个矩阵拼起来，再做最后一次线性变换</p>
+<p><img src="/2018/11/01/NLP-3/nlp3img6.jpg" align="justify"></p>
+<p>公式为：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+  MultiHead(Q, K, V) &= Concat(head_1,...,head_h) W^O \notag \\
+  head_i &= Attention(XW_i^Q, XW_i^K, XW_i^V) \notag
+\end{align}</script><blockquote>
+<p>$W_i^Q \in R^{d_m \times d_k}, W_i^K \in R^{d_m \times d_k}, W_i^K \in V^{d_m \times d_v}$</p>
+</blockquote>
+<p>为什么要多次投影呢，从下面一张图可以看到，single attention 只能够 focus 句子的某一部分，而 multi-head attention 的不同 head 能 focus 不同的句子的部分，图中是指 “it” 应该和哪些部分相关</p>
+<p><img src="/2018/11/01/NLP-3/nlp3img5.jpg" align="justify"></p>
+<h2 id="Position-Encoding"><a href="#Position-Encoding" class="headerlink" title="Position Encoding"></a>Position Encoding</h2><p>由于每次，我们直接把所有的词向量全部放入了模型中进行训练，所以这样就丢失了时间上的信息，也就是词与词之间的先后顺序的关联，为了解决这个问题，我们直接在输入上面做一些手脚。比如在最上面的那张 attention 结构图中，像太极一样的符号就是 positional Encoding，具体的公式是：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+  PE_{pos, 2i} &= sin(pos / 10000^{2i/d_m}) \notag \\
+  PE_{pos, 2i+1} &= cos(pos / 10000^{2i/d_m})
+\end{align}</script><blockquote>
+<p>上面的公式可以生成一个新的 $n\times d_m$ 大小的矩阵（和 input 的大小一样）&lt;/br&gt;<br>生成的矩阵直接和输入做一个叠加 &lt;/br&gt;<br>pos 的取值范围是 $(0, n)$ 表示&lt;/br&gt;<br>i 的取值范围是 $(0, d_m)$</p>
+</blockquote>
+<p><img src="/2018/11/01/NLP-3/nlp3img3.jpg" align="justify"></p>
+<p>上面的图就是生成的 position encoding 的具体的样子，可以发现层于层之间的 encoding 会比较接近，同时如果某两层差序列上的距离差的比较远的话，他们的向量的表示也会比较远，且差距和序列差距呈正相关？最后这些结果会反应在矩阵的投影上</p>
+<h1 id="Trainging"><a href="#Trainging" class="headerlink" title="Trainging"></a><strong>Trainging</strong></h1><p><img src="/2018/11/01/NLP-3/nlp3img7.jpg" align="justify"></p>
+<p><img src="/2018/11/01/NLP-3/nlp3img8.jpg" align="justify"></p>
+<p><img src="/2018/11/01/NLP-3/nlp3img9.jpg" align="justify"></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a><strong>Reference</strong></h1><p><a href="https://jalammar.github.io/illustrated-transformer/" target="_blank" rel="noopener">https://jalammar.github.io/illustrated-transformer/</a></p>
+<p><a href="https://qianqianqiao.github.io/2018/10/23/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-Attention-is-All-You-Need/" target="_blank" rel="noopener">https://qianqianqiao.github.io/2018/10/23/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-Attention-is-All-You-Need/</a></p>
+<p>Vaswani, A., et al. (2017). Attention is all you need. Advances in Neural Information Processing Systems.</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/11/01/NLP-3/" target="_blank" rel="external">http://yoursite.com/2018/11/01/NLP-3/</a>
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/E.jpg" alt="Eulring">
+            Eulring
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NLP/">NLP</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/11/01/NLP-3/&title=《Attention is all you need》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/11/01/NLP-3/&title=《Attention is all you need》 — EyEular&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/11/01/NLP-3/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Attention is all you need》 — EyEular&url=http://yoursite.com/2018/11/01/NLP-3/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/11/01/NLP-3/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/11/08/NLP-4/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Neural machine translation by jointly learning to align and translate</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/10/15/GPU-service-config/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">GPU-service-config</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        thanks~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wepay.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wepay.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Eulring &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/11/01/NLP-3/&title=《Attention is all you need》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/11/01/NLP-3/&title=《Attention is all you need》 — EyEular&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/11/01/NLP-3/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Attention is all you need》 — EyEular&url=http://yoursite.com/2018/11/01/NLP-3/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/11/01/NLP-3/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/11/01/NLP-3/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '(一条消息未读。。)';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'EyEular';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+</html>

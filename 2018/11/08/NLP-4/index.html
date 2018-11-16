@@ -13,32 +13,27 @@
     
     
     
-    <title>RL1-introduction | EyEular</title>
+    <title>Neural machine translation by jointly learning to align and translate | EyEular</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="RL">
-    <meta name="description" content="RL 和传统的监督学习和无监督学习是有区别的，RL 没有 label 只有 reward 数据是有时序性的，也就是数据之间并不是独立的 数据只会对它后面的数据造成影响  比如一个棋局只会对后面的落子有影响，当前位置只会对后面的位置移动产生作用  RL 的方法可以分为  Model-free RL Model-based RL  Reward一个 Reward  $R_t$ 就是一个常数的信号">
-<meta name="keywords" content="RL">
+    <meta name="keywords" content="NLP">
+    <meta name="description" content="seq2seq这篇论文可以看作是 sequence to sequence 论文的升级版，首先我们回顾一下 seq2seq 模型 h_t = f(x_t, h_{t-1}) 这里 f 可以是一个 LSTM c = q(\{ h_1,...,h_{T_x}  \})这里 q 的运算可以是取最后一个 hidden state $h_{T_x}$  我们的目标是最大化概率： p(y) = \prod_{">
+<meta name="keywords" content="NLP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RL1-introduction">
-<meta property="og:url" content="http://yoursite.com/2018/10/04/RL-1/index.html">
+<meta property="og:title" content="Neural machine translation by jointly learning to align and translate">
+<meta property="og:url" content="http://yoursite.com/2018/11/08/NLP-4/index.html">
 <meta property="og:site_name" content="EyEular">
-<meta property="og:description" content="RL 和传统的监督学习和无监督学习是有区别的，RL 没有 label 只有 reward 数据是有时序性的，也就是数据之间并不是独立的 数据只会对它后面的数据造成影响  比如一个棋局只会对后面的落子有影响，当前位置只会对后面的位置移动产生作用  RL 的方法可以分为  Model-free RL Model-based RL  Reward一个 Reward  $R_t$ 就是一个常数的信号">
+<meta property="og:description" content="seq2seq这篇论文可以看作是 sequence to sequence 论文的升级版，首先我们回顾一下 seq2seq 模型 h_t = f(x_t, h_{t-1}) 这里 f 可以是一个 LSTM c = q(\{ h_1,...,h_{T_x}  \})这里 q 的运算可以是取最后一个 hidden state $h_{T_x}$  我们的目标是最大化概率： p(y) = \prod_{">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2018/10/04/RL-1/rlimg1.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/10/04/RL-1/rl1img2.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/10/04/RL-1/rl1img4.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/10/04/RL-1/rl1img3.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/10/04/RL-1/rl1img5.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/10/04/RL-1/rl1img7.jpg">
-<meta property="og:updated_time" content="2018-11-12T01:55:54.047Z">
+<meta property="og:image" content="http://yoursite.com/2018/11/08/NLP-4/nlp4img1.jpg">
+<meta property="og:updated_time" content="2018-11-08T13:36:19.843Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RL1-introduction">
-<meta name="twitter:description" content="RL 和传统的监督学习和无监督学习是有区别的，RL 没有 label 只有 reward 数据是有时序性的，也就是数据之间并不是独立的 数据只会对它后面的数据造成影响  比如一个棋局只会对后面的落子有影响，当前位置只会对后面的位置移动产生作用  RL 的方法可以分为  Model-free RL Model-based RL  Reward一个 Reward  $R_t$ 就是一个常数的信号">
-<meta name="twitter:image" content="http://yoursite.com/2018/10/04/RL-1/rlimg1.jpg">
+<meta name="twitter:title" content="Neural machine translation by jointly learning to align and translate">
+<meta name="twitter:description" content="seq2seq这篇论文可以看作是 sequence to sequence 论文的升级版，首先我们回顾一下 seq2seq 模型 h_t = f(x_t, h_{t-1}) 这里 f 可以是一个 LSTM c = q(\{ h_1,...,h_{T_x}  \})这里 q 的运算可以是取最后一个 hidden state $h_{T_x}$  我们的目标是最大化概率： p(y) = \prod_{">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/08/NLP-4/nlp4img1.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="EyEular" href="/atom.xml">
     
@@ -126,7 +121,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">RL1-introduction</div>
+        <div class="flex-col header-title ellipsis">Neural machine translation by jointly learning to align and translate</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -148,11 +143,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">RL1-introduction</h1>
+        <h1 class="title">Neural machine translation by jointly learning to align and translate</h1>
         <h5 class="subtitle">
             
-                <time datetime="2018-10-04T08:51:19.000Z" itemprop="datePublished" class="page-time">
-  2018-10-04
+                <time datetime="2018-11-08T12:33:10.000Z" itemprop="datePublished" class="page-time">
+  2018-11-08
 </time>
 
 
@@ -171,17 +166,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Reward"><span class="post-toc-number">1.</span> <span class="post-toc-text">Reward</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#State"><span class="post-toc-number">2.</span> <span class="post-toc-text">State</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Agent"><span class="post-toc-number">3.</span> <span class="post-toc-text">Agent</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Policy"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">Policy</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Value-Function"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">Value Function</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Model"><span class="post-toc-number">3.0.3.</span> <span class="post-toc-text">Model</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#seq2seq"><span class="post-toc-number">1.</span> <span class="post-toc-text">seq2seq</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Decoder"><span class="post-toc-number">2.</span> <span class="post-toc-text">Decoder</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Encoder"><span class="post-toc-number">3.</span> <span class="post-toc-text">Encoder</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Setting"><span class="post-toc-number">4.</span> <span class="post-toc-text">Setting</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Rederence"><span class="post-toc-number">5.</span> <span class="post-toc-text">Rederence</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-RL-1"
+<article id="post-NLP-4"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">RL1-introduction</h1>
+        <h1 class="post-card-title">Neural machine translation by jointly learning to align and translate</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-10-04 16:51:19" datetime="2018-10-04T08:51:19.000Z"  itemprop="datePublished">2018-10-04</time>
+            <time class="post-time" title="2018-11-08 20:33:10" datetime="2018-11-08T12:33:10.000Z"  itemprop="datePublished">2018-11-08</time>
 
             
 
@@ -194,50 +189,36 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>RL 和传统的监督学习和无监督学习是有区别的，RL 没有 label 只有 reward</p>
-<p>数据是有时序性的，也就是数据之间并不是独立的</p>
-<p>数据只会对它后面的数据造成影响</p>
-<blockquote>
-<p>比如一个棋局只会对后面的落子有影响，当前位置只会对后面的位置移动产生作用</p>
+            <h1 id="seq2seq"><a href="#seq2seq" class="headerlink" title="seq2seq"></a><strong>seq2seq</strong></h1><p>这篇论文可以看作是 sequence to sequence 论文的升级版，首先我们回顾一下 seq2seq 模型</p>
+<script type="math/tex; mode=display">h_t = f(x_t, h_{t-1})</script><blockquote>
+<p>这里 f 可以是一个 LSTM</p>
+<script type="math/tex; mode=display">c = q(\{ h_1,...,h_{T_x}  \})</script><p>这里 q 的运算可以是取最后一个 hidden state $h_{T_x}$</p>
 </blockquote>
-<p>RL 的方法可以分为</p>
-<ul>
-<li>Model-free RL</li>
-<li>Model-based RL</li>
+<p>我们的目标是最大化概率：</p>
+<script type="math/tex; mode=display">p(y) = \prod_{t=1}^T p(y_t|\{ y_1,...,t_{t-1} \}. c)</script><blockquote>
+<p>这里面的 c 对于每一个条件概率都是一样的</p>
+</blockquote>
+<p>在 RNN 中，上面的条件概率可以写成是：</p>
+<script type="math/tex; mode=display">p(y_t|\{ y_1,...,t_{t-1} \}. c) = g(y_{t-1}, s_t, c)</script><blockquote>
+<p>这里面 s 是 RNN 中的 hidden state</p>
+</blockquote>
+<h1 id="Decoder"><a href="#Decoder" class="headerlink" title="Decoder"></a><strong>Decoder</strong></h1><p>承接上面的我们先来研究 decoder，把 encoder 放到后面</p>
+<p>在这篇论文中，我嗯的目标函数变成了：</p>
+<script type="math/tex; mode=display">p(y) = \prod_{t=1}^T p(y_t|\{ y_1,...,t_{t-1} \}. c_i)</script><p>条件概率是</p>
+<script type="math/tex; mode=display">p(y_t|\{ y_1,...,t_{t-1} \}. c_i) = g(y_{t-1}, s_t, c_i)</script><p>我们发现这里面的 $c_i$ 对于每一个 RNN 循环都是不同的，$c_i$ 其实是 encoder 每一层的加权</p>
+<script type="math/tex; mode=display">c_i = \sum_{j=1}^{T_x} \alpha_{ij} h_j</script><p>权重是通过 softmax 得到的</p>
+<script type="math/tex; mode=display">\alpha_{ij} = \frac{exp(e_{ij})}{\sum_{k=1}^{T_x}exp(e_{ik}) }</script><p>每一层的 encoder 中的 $h_j$ 对于第 i 层的 decoder 的影响可以下面公式来计算</p>
+<script type="math/tex; mode=display">e_{ij} = a(s_{i-1}, h_j)</script><p>论文里面 a 的计算方式为：</p>
+<script type="math/tex; mode=display">a(s_{i-1}, h_j) = v^T_a tanh (W_a s_{i-1} + U_a h_j)</script><h1 id="Encoder"><a href="#Encoder" class="headerlink" title="Encoder"></a><strong>Encoder</strong></h1><p>正向做一遍 RNN 得到 $(\overrightarrow{h_1},…,\overrightarrow{h_T} )$</p>
+<p>反向做一遍 RNN 得到 $(\overleftarrow{h_1},…,\overleftarrow{h_T} )$</p>
+<p>最后将两个得到的 hidden state 每个对应的位置拼接起来，就形成了我们想要的结果 ：</p>
+<script type="math/tex; mode=display">h_j =  [\overrightarrow{h_1^T}; \overleftarrow{h_1^T}]^T</script><h1 id="Setting"><a href="#Setting" class="headerlink" title="Setting"></a><strong>Setting</strong></h1><ul>
+<li>使用 SGD 训练，minibatch 是 80 个 sentence</li>
+<li>模型训练完以后，做预测的时候使用 beam search</li>
 </ul>
-<h3 id="Reward"><a href="#Reward" class="headerlink" title="Reward"></a>Reward</h3><p>一个 Reward  $R_t$ 就是一个常数的信号，用来对状态的衡量，或者 agent 在时间 $t$ 做的好坏程度，agent 的目标就是最大化 reward，RL 的基础就是建立在最大化 reward 的假设</p>
-<p>下面是一些 reward 在特定任务下的例子：</p>
-<p><img src="/2018/10/04/RL-1/rlimg1.jpg" width="600"></p>
-<h3 id="State"><a href="#State" class="headerlink" title="State"></a>State</h3><p><img src="/2018/10/04/RL-1/rl1img2.jpg" align="justify"></p>
-<ul>
-<li>History：可以由上面介绍的组成一个序列 $H_t= O_1,R_1,A_1,…,A_{t-1},O_t,R_t$</li>
-<li>State： 其实就是信息，决定着接下来会发生的信息是什么，State 只和 history 有关 $S_t = f(H_t)$<ul>
-<li>Environment State：隐藏在能给出反馈的环境中，一般是看不到的，看到也没用。。</li>
-<li>Agent State：决策者的状态 $S_t^a = f(H_t)$</li>
-<li>Information State：只包含历史中有用信息，例如假设了 Markov 性，inf state 只有之前的状态</li>
-</ul>
-</li>
-</ul>
-<p>Fully Observation Environments：$O_t = S_t^a = S_t^e$</p>
-<p>Partially Observation Environments：间接的观察环境</p>
-<h3 id="Agent"><a href="#Agent" class="headerlink" title="Agent"></a>Agent</h3><p>RL 的 agent 一般有如下几个组件构成</p>
-<ul>
-<li>Policy：agent 的行为函数</li>
-<li>Value function：评价 state 或者 action 的好坏</li>
-<li>Model：agent 对于 Environment 的表示</li>
-</ul>
-<p><img src="/2018/10/04/RL-1/rl1img4.jpg" width="600"></p>
-<h5 id="Policy"><a href="#Policy" class="headerlink" title="Policy"></a>Policy</h5><p>policy 是 state 到 action 的映射，是 agent 的行为</p>
-<p>Deterministic Policy：$a = \pi(s)$</p>
-<p>Stochastic policy：$\pi(a|s) = P[A_t = a | S_t = s]$</p>
-<p><img src="/2018/10/04/RL-1/rl1img3.jpg" width="400"></p>
-<h5 id="Value-Function"><a href="#Value-Function" class="headerlink" title="Value Function"></a>Value Function</h5><p>对于未来的预测</p>
-<script type="math/tex; mode=display">v_{pi}(s) = E_{\pi}[R_{t+1} + \gamma R_{t+1} + \gamma^2 R_{t+3}+...|S_t=s]</script><p><img src="/2018/10/04/RL-1/rl1img5.jpg" width="400"></p>
-<h5 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h5><p>model 是用来预测 environment 接下来会做什么</p>
-<p>$\mathcal{P}$ 用来预测接下来的的 state</p>
-<p>$\mathcal{R}$ 用来预测接下来的 reward</p>
-<script type="math/tex; mode=display">\mathcal{P}_{ss^{\prime}} = P[S_{t+1} = S^{\prime}|S_t = s, A_t = a]</script><script type="math/tex; mode=display">\mathcal{R}_s^a  = E[R_{t+1}|S_t = s, A_t = a]</script><p><img src="/2018/10/04/RL-1/rl1img7.jpg" align="justify"></p>
-<p>.</p>
+<p><img src="/2018/11/08/NLP-4/nlp4img1.jpg" align="justify"></p>
+<p>这是最后将权重可视化以后的结果，高亮区域 (i,j) 表示，输出的 $j^{th}$ 单词的和输入的 $i^{th}$ 单词关系密切</p>
+<h1 id="Rederence"><a href="#Rederence" class="headerlink" title="Rederence"></a><strong>Rederence</strong></h1><p>Bahdanau, D., et al. (2014). “Neural machine translation by jointly learning to align and translate.” arXiv preprint arXiv:1409.0473.</p>
 
         </div>
 
@@ -246,7 +227,7 @@
         
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/10/04/RL-1/" target="_blank" rel="external">http://yoursite.com/2018/10/04/RL-1/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/11/08/NLP-4/" target="_blank" rel="external">http://yoursite.com/2018/11/08/NLP-4/</a>
         
     </div>
     <footer>
@@ -266,7 +247,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RL/">RL</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NLP/">NLP</a></li></ul>
 
 
             
@@ -276,7 +257,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/10/04/RL-1/&title=《RL1-introduction》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/11/08/NLP-4/&title=《Neural machine translation by jointly learning to align and translate》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -286,22 +267,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/10/04/RL-1/&title=《RL1-introduction》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/11/08/NLP-4/&title=《Neural machine translation by jointly learning to align and translate》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/10/04/RL-1/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/11/08/NLP-4/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RL1-introduction》 — EyEular&url=http://yoursite.com/2018/10/04/RL-1/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Neural machine translation by jointly learning to align and translate》 — EyEular&url=http://yoursite.com/2018/11/08/NLP-4/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/10/04/RL-1/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/11/08/NLP-4/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -324,18 +305,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2018/10/05/RCNN/" id="post-prev" class="post-nav-link">
+      <a href="/2018/11/16/EM-Algorithm/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">R-CNN</h4>
+        <h4 class="title">EM-Algorithm</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018/09/25/NLP-2/" id="post-next" class="post-nav-link">
+      <a href="/2018/11/01/NLP-3/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Machine Translation</h4>
+        <h4 class="title">Attention is all you need</h4>
       </a>
     </div>
   
@@ -429,7 +410,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/10/04/RL-1/&title=《RL1-introduction》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/11/08/NLP-4/&title=《Neural machine translation by jointly learning to align and translate》 — EyEular&pic=http://yoursite.com/img/E.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -439,22 +420,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/10/04/RL-1/&title=《RL1-introduction》 — EyEular&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/11/08/NLP-4/&title=《Neural machine translation by jointly learning to align and translate》 — EyEular&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/10/04/RL-1/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/11/08/NLP-4/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RL1-introduction》 — EyEular&url=http://yoursite.com/2018/10/04/RL-1/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Neural machine translation by jointly learning to align and translate》 — EyEular&url=http://yoursite.com/2018/11/08/NLP-4/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/10/04/RL-1/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/11/08/NLP-4/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -465,7 +446,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/10/04/RL-1/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/11/08/NLP-4/" alt="微信分享二维码">
 </div>
 
 
