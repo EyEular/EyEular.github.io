@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-11-16T14:26:14.599Z</updated>
+  <updated>2018-11-18T09:53:27.025Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,12 +21,26 @@
     <link href="http://yoursite.com/2018/11/16/EM-Algorithm/"/>
     <id>http://yoursite.com/2018/11/16/EM-Algorithm/</id>
     <published>2018-11-16T14:26:14.000Z</published>
-    <updated>2018-11-16T14:26:14.599Z</updated>
+    <updated>2018-11-18T09:53:27.025Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="PCA"><a href="#PCA" class="headerlink" title="PCA"></a>PCA</h1><ul><li>数学角度：<br>-</li></ul><p>从数据中提取低维特征</p><ul><li>一般通过 SVD 来计算</li></ul><p>回顾一下 PCA</p><p>假设数据是中心化的：$\sum_{i=1}^n x_i = 0$</p><p>在方向 v 上的任意投影也是中心化的，$\sum_{i=1}^n v^T x_i = 0$</p><p>我们希望数据之间能够越离散越好，相当于让投影后的方差最大：</p><script type="math/tex; mode=display">\mathop{max}_v  \sum{i=1}^n (v^T x_i)^2 \ \ \ \ s.t.\ v^tv = 1</script><p>也可以写成：</p><script type="math/tex; mode=display">\mathop{max}_v  v^TXX^Tv \ \ \ \ s.t.\ v^tv = 1</script><p>使用 Lagrangian 乘子对于 v 求导得 0 后：</p><script type="math/tex; mode=display">(XX^T - \lambda I )v = 0 \rightarrow XX^T v = \lambda v</script><p>观察上面右边这个式子我们发现，这个很像特征值和特征向量的表示形式</p><ul><li>$XX^T$：协方差矩阵</li><li>$v$：上面协方差举证的特征向量</li></ul><h1 id="EM-Algotirhm"><a href="#EM-Algotirhm" class="headerlink" title="EM Algotirhm"></a>EM Algotirhm</h1><h1 id="Gaussian-Mixture-Model"><a href="#Gaussian-Mixture-Model" class="headerlink" title="Gaussian Mixture Model"></a>Gaussian Mixture Model</h1><p>假设我们的数据分布在拥有 K 个 gaussian 核的空间中，每个数据点的概率等于它属于每个核的概率总和：</p><script type="math/tex; mode=display">p(x) = \sum_{k=1}^K \pi_k N (x| \mu_k ,\Sigma_k)</script><p>其中 $\pi_k$ 是 mixing coefficient：</p><script type="math/tex; mode=display">\sum_{k=1}^K \pi_k = 1, \ \ \ \ \pi_k\geq 0</script><p>于是所有数据点的 likelihood 就是：</p><script type="math/tex; mode=display">\mathop{ln} p(X|\pi,\mu,\Sigma) = \sum_{n=1}^N ln \left(  \sum_{k=1}^K \pi_k N (x^{(n)}| \mu_k, \Sigma_k)  \right)</script><p>w.r.t $\Theta = \{ \pi_k, \mu_k, \Sigma_k\}$</p><h2 id="Latent-Variable"><a href="#Latent-Variable" class="headerlink" title="Latent Variable"></a>Latent Variable</h2><p>我们可以用一个隐变量 z 来表示哪一个 Gaussian 以多大的概率产生了我们的观测 x，从而可以解释上式括号内的项的由来</p><p>令 $z\sim Categorical(\pi)$, 有：</p><script type="math/tex; mode=display">\begin{align}p(x) &= \sum_{k=1}^K p(x, z=k) \\ &= \underbrace{p(z=k)}_{\pi_k} \underbrace{p(x|z=k)}_{N(x|\mu_k,\Sigma_k)}\end{align}</script><p>最后给定数据，变量为 $\Theta$ 的 likelihood 就变成了：</p><script type="math/tex; mode=display">\begin{align}  l(\pi,\mu,\Sigma) = ln \ p(X|\pi,\mu,\Sigma) &= \sum_{n=1}^N ln \ p(x^{(n)}|\pi,\mu,\Sigma) \\  &=\sum_{n=1}^N ln \sum_{z^{(n)}= 1 }^K  p(z^{(n)} | \pi)\ p(x^{(n)}|z^{(n)}; \mu, \Sigma)\end{align}</script><p>现在的问题就是我们如何来优化这个目标函数</p><h1 id="Expectation-Maximization"><a href="#Expectation-Maximization" class="headerlink" title="Expectation Maximization"></a>Expectation Maximization</h1><p>EM 算法分为两步：</p><ol><li>E-step：对于每个 gaussian 计算对于每个点的后验概率 posterior</li><li>M-step：在给定每个点的概率下，重新计算 gaussian 的参数，使似然最大</li></ol><p><img src="/2018/11/16/EM-Algorithm/emimg1.jpg" align="justify"></p><p>EM 算法要解决的问题的一般形式为：</p><script type="math/tex; mode=display">ln\ p(x|\Theta) = ln \sum_z p(x,z|\Theta)</script><p>z 是 latent variable，也就是说，z 一开始我们是不知道的。。所以 EM 算法其实是 unsupervised learning</p><p>但是对于 latent variable，我们可以做一个预测 $p(Z|X,\Theta^{old})$</p><p>于是，一般形式的 EM 算法为：</p><ol><li>Initialize: $\Theta^{old}$</li><li>E-step：compute $p(Z|X,\Theta^{old})$</li><li>M-step：maximize $Q(\Theta, \Theta^{old}) = \sum_z p(Z|X,\Theta^{old})ln p(X,Z|\Theta)$</li><li>If not converged set $\Theta^{old} = \Theta$ and go to step 2</li></ol>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;h1 id=&quot;PCA&quot;&gt;&lt;a href=&quot;#PCA&quot; class=&quot;headerlink&quot; title=&quot;PCA&quot;&gt;&lt;/a&gt;PCA&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;数学角度：&lt;br&gt;-&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;从数据中提取低维特征&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一般通过 SVD 来计
+      
+    
     </summary>
     
+    
+      <category term="DL" scheme="http://yoursite.com/tags/DL/"/>
     
   </entry>
   

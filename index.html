@@ -181,12 +181,29 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
+        PCA
+数学角度：-
+
+从数据中提取低维特征
+
+一般通过 SVD 来计算
+
+回顾一下 PCA
+假设数据是中心化的：$\sum_{i=1}^n x_i = 0$
+在方向 v 上的任意投影也是中心化的，$\sum_{i=1}^n v^T x_i = 0$
+我们希望数据之间能够越离散越好，相当于让投影后的方差最大：
+\mathop{max}_v  \sum{i=1}^n (v^T x_i)^2 \...
     
 
         <a href="/2018/11/16/EM-Algorithm/" class="post-more waves-effect waves-button">
             Continue reading...
         </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DL/">DL</a></li></ul>
+
     </div>
     
 </article>
